@@ -48,12 +48,12 @@ const VideoHero = () => {
   }, []);
 
   return (
-    <section className="about-header" ref={sectionRef}>
+    <section className="video-hero-header" ref={sectionRef}>
       <div className="video-hero-video-wrapper">
         {isLoading && (
-          <div className="about-video-loading">
-            <div className="about-spinner"></div>
-            <p className="about-loading-text">Loading...</p>
+          <div className="video-hero-video-loading">
+            <div className="video-hero-spinner"></div>
+            <p className="video-hero-loading-text">Loading...</p>
           </div>
         )}
 
@@ -78,10 +78,13 @@ const VideoHero = () => {
       {/* Cursor Following Lines */}
       <div
         ref={horizontalLineRef}
-        className="about-cursor-horizontal-line"
+        className="video-hero-cursor-horizontal-line"
       ></div>
 
-      <div ref={verticalLineRef} className="about-cursor-vertical-line"></div>
+      <div
+        ref={verticalLineRef}
+        className="video-hero-cursor-vertical-line"
+      ></div>
 
       <div className="video-hero-content">
         <div className="video-hero-text">

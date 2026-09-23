@@ -1,4 +1,4 @@
-.about-header {
+.video-hero-header {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -33,7 +33,7 @@
 
 /* Loading screen */
 
-.about-video-loading {
+.video-hero-video-loading {
   position: absolute;
   top: 0;
   left: 0;
@@ -46,23 +46,23 @@
   z-index: 5;
 }
 
-.about-spinner {
+.video-hero-spinner {
   width: 50px;
   height: 50px;
   border: 4px solid rgba(255, 255, 255, 0.3);
   border-top-color: #fff;
   border-radius: 50%;
-  animation: about-spin 1s linear infinite;
+  animation: video-hero-spin 1s linear infinite;
 }
 
-.about-loading-text {
+.video-hero-loading-text {
   position: absolute;
   color: white;
   font-size: 1.2rem;
   margin-top: 100px;
 }
 
-@keyframes about-spin {
+@keyframes video-hero-spin {
   to {
     transform: rotate(360deg);
   }
@@ -94,7 +94,7 @@
 
 /* Cursor Following Lines */
 
-.about-cursor-horizontal-line {
+.video-hero-cursor-horizontal-line {
   position: absolute;
   top: 50%;
   left: 0;
@@ -105,7 +105,7 @@
   pointer-events: none;
 }
 
-.about-cursor-vertical-line {
+.video-hero-cursor-vertical-line {
   position: absolute;
   top: 0;
   left: 50%;
