@@ -117,7 +117,7 @@ function Navbar() {
         {/* Desktop Menu */}
         <div className="navbar-content navbar-desktop" ref={desktopMenuRef}>
           <a href="/">Home</a>
-          <a href="#about">About</a>
+          <a href="/about">About</a>
           <a href="#why-we">Why We</a>
           <a href="#contact">Contact Us</a>
         </div>
@@ -145,7 +145,7 @@ function Navbar() {
           </div>
 
           <div ref={(el) => (menuItemsRef.current[1] = el)}>
-            <a href="#about" onClick={closeMenu}>
+            <a href="/about" onClick={closeMenu}>
               About
             </a>
           </div>

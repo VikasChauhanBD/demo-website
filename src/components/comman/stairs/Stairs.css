@@ -1,0 +1,21 @@
+.stair-parent {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.stair-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.stair {
+  height: 100%;
+  width: 20%;
+  background-color: #000000;
+}
