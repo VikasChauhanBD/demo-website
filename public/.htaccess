@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.corebtr\.com$ [NC]
+RewriteRule ^ https://corebtr.com%{REQUEST_URI} [L,R=301]
+# React SPA routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Allow Salesforce Embedded Messaging iframe
+    Header always set Content-Security-Policy "frame-ancestors 'self' https://corebtr.my.site.com"
+    # Remove blocking header if present
+    Header always unset X-Frame-Options
+</IfModule>
