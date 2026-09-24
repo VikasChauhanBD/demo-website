@@ -5,15 +5,23 @@
     "Noto Color Emoji", sans-serif;
 }
 
-body {
-  font-family: var(--font-sans);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* #feb122 - yellow

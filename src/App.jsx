@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/comman/navbar/Navbar";
 import Footer from "./components/comman/footer/Footer";
@@ -20,30 +20,32 @@ import ScrollToTop from "./hooks/ScrollToTop";
 function App() {
   return (
     <>
-      <Navbar />
-      <ScrollToTop />
+      <BrowserRouter>
+        <Navbar />
+        <ScrollToTop />
 
-      <Routes>
-        <Route path="/" element={<HeroPage />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Routes>
+          <Route path="/" element={<HeroPage />} />
+          <Route path="/about" element={<AboutPage />} />
 
-        {/* ----------- Policy Pages ---------------- */}
+          {/* ----------- Policy Pages ---------------- */}
 
-        <Route path="/fair-usage-policy" element={<FairUsagePolicyPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        <Route path="/terms" element={<TermsAndConditions />} />
-        <Route
-          path="/cancellation-refund"
-          element={<CancellationPolicyPage />}
-        />
-        <Route path="/device-policy" element={<DevicePolicyPage />} />
-        <Route
-          path="/shipping-delivery"
-          element={<ShippingAndDeliveryPolicyPage />}
-        />
-      </Routes>
+          <Route path="/fair-usage-policy" element={<FairUsagePolicyPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route
+            path="/cancellation-refund"
+            element={<CancellationPolicyPage />}
+          />
+          <Route path="/device-policy" element={<DevicePolicyPage />} />
+          <Route
+            path="/shipping-delivery"
+            element={<ShippingAndDeliveryPolicyPage />}
+          />
+        </Routes>
 
-      <Footer />
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
