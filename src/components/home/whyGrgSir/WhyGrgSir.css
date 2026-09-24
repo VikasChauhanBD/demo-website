@@ -34,7 +34,7 @@
 .why-grg-container {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -328,7 +328,7 @@
 
 /* ---------------------------------- Responsive ------------------------- */
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .why-grg-cards {
     grid-template-columns: repeat(2, 1fr);
   }

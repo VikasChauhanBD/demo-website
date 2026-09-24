@@ -7,6 +7,7 @@ import Footer from "./components/comman/footer/Footer";
 
 import HeroPage from "./pages/HeroPage";
 import AboutPage from "./pages/AboutPage";
+import ClassesPage from "./pages/ClassesPage";
 
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsAndConditions from "./pages/TermsAndConditionsPage";
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HeroPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/classes" element={<ClassesPage />} />
 
           {/* ----------- Policy Pages ---------------- */}
 
