@@ -1,139 +1,129 @@
-import { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./AboutSection.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import Image from "../../../assets/images/hero.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
-  const sectionRef = useRef(null);
+  const container = useRef(null);
 
-  useEffect(() => {
-    const section = sectionRef.current;
+  useGSAP(
+    () => {
+      const section = container.current;
 
-    if (!section) return;
+      const badge = section.querySelector(".home-about-badge");
+      const headingLines = section.querySelectorAll(".home-about-heading-line");
+      const description = section.querySelector(".home-about-description");
+      const button = section.querySelector(".home-about-cta");
+      const image = section.querySelector(".home-about-image");
 
-    const badge = section.querySelector(".home-about-badge");
-    const headingLines = section.querySelectorAll(".home-about-heading-line");
-    const subheading = section.querySelector(".home-about-subheading");
-    const description = section.querySelector(".home-about-description");
-    const button = section.querySelector(".home-about-cta");
-    const image = section.querySelector(".home-about-image");
-
-    const elements = [badge, ...headingLines, subheading, description, button];
-
-    gsap.set(elements, {
-      opacity: 0,
-    });
-
-    gsap.set(badge, {
-      y: -20,
-    });
-
-    gsap.set(headingLines, {
-      y: 35,
-    });
-
-    gsap.set(subheading, {
-      y: 20,
-    });
-
-    gsap.set(description, {
-      y: 20,
-    });
-
-    gsap.set(button, {
-      y: 20,
-      scale: 0.92,
-    });
-
-    gsap.set(image, {
-      opacity: 0,
-      scale: 1.08,
-      clipPath: "inset(0 0 100% 0)",
-    });
-
-    const timeline = gsap.timeline({
-      paused: true,
-      defaults: {
-        ease: "power3.out",
-      },
-    });
-
-    timeline
-      .to(badge, {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-      })
-      .to(
-        headingLines,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: 0.1,
-        },
-        "-=0.25",
-      )
-      .to(
-        subheading,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-        },
-        "-=0.3",
-      )
-      .to(
-        description,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-        },
-        "-=0.35",
-      )
-      .to(
-        button,
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-        },
-        "-=0.3",
-      )
-      .to(
-        image,
-        {
-          opacity: 1,
-          scale: 1,
-          clipPath: "inset(0 0 0% 0)",
-          duration: 1,
-        },
-        "-=0.8",
+      const elements = [badge, ...headingLines, description, button].filter(
+        Boolean,
       );
 
-    const scrollTrigger = ScrollTrigger.create({
-      trigger: section,
-      start: "top 75%",
-      once: true,
-      onEnter: () => {
-        timeline.play();
-      },
-    });
+      // Initial states
+      gsap.set(elements, {
+        opacity: 0,
+      });
 
-    return () => {
-      scrollTrigger.kill();
-      timeline.kill();
-    };
-  }, []);
+      gsap.set(badge, {
+        y: -20,
+      });
+
+      gsap.set(headingLines, {
+        y: 35,
+      });
+
+      gsap.set(description, {
+        y: 20,
+      });
+
+      gsap.set(button, {
+        y: 20,
+        scale: 0.92,
+      });
+
+      gsap.set(image, {
+        opacity: 0,
+        scale: 1.08,
+        clipPath: "inset(0 0 100% 0)",
+      });
+
+      // Animation timeline
+      const timeline = gsap.timeline({
+        paused: true,
+        defaults: {
+          ease: "power3.out",
+        },
+      });
+
+      timeline
+        .to(badge, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+        })
+        .to(
+          headingLines,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.1,
+          },
+          "-=0.25",
+        )
+        .to(
+          description,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+          },
+          "-=0.3",
+        )
+        .to(
+          button,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.5,
+          },
+          "-=0.3",
+        )
+        .to(
+          image,
+          {
+            opacity: 1,
+            scale: 1,
+            clipPath: "inset(0 0 0% 0)",
+            duration: 1,
+          },
+          "-=0.8",
+        );
+
+      // ScrollTrigger
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 75%",
+        once: true,
+        onEnter: () => {
+          timeline.play();
+        },
+      });
+    },
+    {
+      scope: container,
+    },
+  );
 
   return (
     <div className="home-about-page">
-      <section className="home-about-section" ref={sectionRef}>
+      <section className="home-about-section" ref={container}>
         <div className="home-about-container">
           <div className="home-about-content">
             <span className="home-about-badge">MEET</span>
@@ -182,7 +172,6 @@ const AboutSection = () => {
           <div className="home-about-image-col">
             <div className="home-about-image-wrapper">
               <img
-                // src="https://testca.xyz/wp-content/uploads/2026/09/e7402209df87b123a6b1213843d0de44.jpg"
                 src={Image}
                 alt="Dr. Gobind Rai Garg"
                 className="home-about-image"

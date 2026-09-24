@@ -1,29 +1,29 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import "./MoreSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function MoreSection() {
-  const sectionRef = useRef(null);
-  const textRef = useRef(null);
+  const container = useRef(null);
 
-  useLayoutEffect(() => {
-    const section = sectionRef.current;
-    const text = textRef.current;
+  useGSAP(
+    () => {
+      const section = container.current;
+      const text = section.querySelector(".more-section-content h2");
 
-    if (!section || !text) return;
+      if (!section || !text) return;
 
-    const words = text.textContent.trim().split(/\s+/);
+      const words = text.textContent.trim().split(/\s+/);
 
-    text.innerHTML = words
-      .map((word) => `<span class="more-word">${word}</span>`)
-      .join(" ");
+      text.innerHTML = words
+        .map((word) => `<span class="more-word">${word}</span>`)
+        .join(" ");
 
-    const wordElements = text.querySelectorAll(".more-word");
+      const wordElements = text.querySelectorAll(".more-word");
 
-    const ctx = gsap.context(() => {
       gsap.to(wordElements, {
         color: "#000000",
         ease: "none",
@@ -37,17 +37,16 @@ function MoreSection() {
           pinSpacing: true,
         },
       });
-    }, section);
-
-    return () => {
-      ctx.revert();
-    };
-  }, []);
+    },
+    {
+      scope: container,
+    },
+  );
 
   return (
-    <section className="more-section" ref={sectionRef}>
+    <section className="more-section" ref={container}>
       <div className="more-section-content">
-        <h2 ref={textRef}>
+        <h2>
           What We Do We are deeply immersed in the areas in which we invest,
           supporting ideas and organizations that contribute to our four program
           areas
