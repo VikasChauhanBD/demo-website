@@ -16,6 +16,22 @@ const VideoHero = () => {
     () => {
       const section = container.current;
 
+      gsap.fromTo(
+        ".video-hero-text h1",
+        {
+          y: 40,
+          scale: 0.5,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power3.out",
+        },
+      );
+
       const horizontalLine = section.querySelector(
         ".video-hero-cursor-horizontal-line",
       );

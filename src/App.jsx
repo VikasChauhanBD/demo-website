@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/comman/navbar/Navbar";
 import Footer from "./components/comman/footer/Footer";
 
-import HeroPage from "./pages/HeroPage";
+import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ClassesPage from "./pages/ClassesPage";
 
@@ -26,7 +26,7 @@ function App() {
         <ScrollToTop />
 
         <Routes>
-          <Route path="/" element={<HeroPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/classes" element={<ClassesPage />} />
 
