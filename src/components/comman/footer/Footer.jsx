@@ -50,10 +50,13 @@ function Footer() {
           <div className="footer-column footer-animate">
             <h3>Explore</h3>
 
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#why-we">Why We</a>
-            <a href="#contact">Contact Us</a>
+            <a href="/">Home</a>
+            <a href="/about">About Dr. GRG</a>
+            <a href="/classes">Offline / Online Classes</a>
+            <a href="#plans">Buy New Plans</a>
+            <a href="#schedules">Schedules</a>
+            <a href="#results">Results / Students’ Feedback</a>
+            <a href="#blogs">Blogs</a>
           </div>
 
           {/* Policies */}

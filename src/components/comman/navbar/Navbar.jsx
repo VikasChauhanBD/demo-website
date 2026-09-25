@@ -117,9 +117,12 @@ function Navbar() {
         {/* Desktop Menu */}
         <div className="navbar-content navbar-desktop" ref={desktopMenuRef}>
           <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="#why-we">Why We</a>
-          <a href="#contact">Contact Us</a>
+          <a href="/about">About Dr. GRG</a>
+          <a href="/classes">Offline / Online Classes</a>
+          <a href="#plans">Buy New Plans</a>
+          <a href="#schedules">Schedules</a>
+          <a href="#results">Results / Students’ Feedback</a>
+          <a href="#blogs">Blogs</a>
         </div>
 
         {/* Hamburger */}
@@ -146,19 +149,37 @@ function Navbar() {
 
           <div ref={(el) => (menuItemsRef.current[1] = el)}>
             <a href="/about" onClick={closeMenu}>
-              About
+              About Dr. GRG
             </a>
           </div>
 
           <div ref={(el) => (menuItemsRef.current[2] = el)}>
-            <a href="#why-we" onClick={closeMenu}>
-              Why We
+            <a href="/classes" onClick={closeMenu}>
+              Offline / Online Classes
             </a>
           </div>
 
           <div ref={(el) => (menuItemsRef.current[3] = el)}>
-            <a href="#contact" onClick={closeMenu}>
-              Contact Us
+            <a href="#plans" onClick={closeMenu}>
+              Buy New Plans
+            </a>
+          </div>
+
+          <div ref={(el) => (menuItemsRef.current[3] = el)}>
+            <a href="#schedules" onClick={closeMenu}>
+              Schedules
+            </a>
+          </div>
+
+          <div ref={(el) => (menuItemsRef.current[3] = el)}>
+            <a href="#results" onClick={closeMenu}>
+              Results / Students’ Feedback
+            </a>
+          </div>
+
+          <div ref={(el) => (menuItemsRef.current[3] = el)}>
+            <a href="#blogs" onClick={closeMenu}>
+              Blogs
             </a>
           </div>
         </div>

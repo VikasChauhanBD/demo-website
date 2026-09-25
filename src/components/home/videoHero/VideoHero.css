@@ -127,7 +127,7 @@
 }
 
 .video-hero-text h1 {
-  font-size: 72px;
+  font-size: 60px;
   font-weight: 400;
   line-height: 1.2;
   margin: 0;
@@ -191,9 +191,14 @@
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 868px) {
+  .video-hero-header {
+    align-items: end;
+  }
+
   .video-hero-content {
     width: 100%;
     padding: 20px;
+    margin-bottom: 2rem;
   }
 
   .video-hero-text h1 {
@@ -208,6 +213,6 @@
 
 @media (max-width: 500px) {
   .video-hero-text h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
 }
