@@ -77,7 +77,7 @@ const VideoHero = () => {
           preload="auto"
         >
           <source
-            src="https://cdn.dribbble.com/userupload/47317464/file/86921485b5c9c3a81c0f0a91b214e6af.mp4"
+            src="https://cdn.dribbble.com/userupload/49117125/file/7ad9bf57473f6fad669b1132870e1eb4.mp4"
             type="video/mp4"
           />
         </video>
@@ -93,8 +93,11 @@ const VideoHero = () => {
       <div className="video-hero-content">
         <div className="video-hero-text">
           <h1>
-            10x Australian <span>Windsurfing Champion</span>. Design leader @
-            Brisbane Agency. Building the big thing in data startups.
+            A NEW ERA OF <span>PHARMACOLOGY</span>.
+            <br />
+            Learn Pharmacology directly from Dr. Gobind Rai Garg (Pharma Guru)
+            <br />
+            For <b>MBBS • NEET PG • INI-CET • FMGE</b>
           </h1>
         </div>
       </div>
