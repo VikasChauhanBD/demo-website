@@ -340,7 +340,7 @@
 
 /* Mobile */
 
-@media (max-width: 868px) {
+@media (max-width: 800px) {
   .why-grg-section {
     padding: 75px 16px;
   }

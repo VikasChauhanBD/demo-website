@@ -165,7 +165,7 @@
   }
 }
 
-@media (max-width: 868px) {
+@media (max-width: 800px) {
   .footer-section {
     padding: 60px 20px 25px;
   }
@@ -190,7 +190,7 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 500px) {
   .footer-section {
     padding: 55px 18px 20px;
   }

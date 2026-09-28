@@ -239,7 +239,7 @@
   }
 }
 
-@media (max-width: 868px) {
+@media (max-width: 800px) {
   .classes-hero-section {
     height: 700px;
   }
@@ -291,7 +291,7 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 500px) {
   .classes-hero-section {
     height: 520px;
   }

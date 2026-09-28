@@ -153,7 +153,7 @@
 
 /* ---------------------------------- Responsive ------------------------- */
 
-@media (max-width: 868px) {
+@media (max-width: 800px) {
   .navbar-container {
     padding: 16px 20px;
   }
@@ -178,7 +178,7 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 500px) {
   .navbar-container {
     padding: 14px 16px;
   }

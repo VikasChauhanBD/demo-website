@@ -398,7 +398,7 @@
   }
 }
 
-@media (max-width: 868px) {
+@media (max-width: 800px) {
   .device-policy-header h1 {
     font-size: 32px;
   }

@@ -43,7 +43,7 @@ body {
 
 }
 
-@media (max-width: 868px) {
+@media (max-width: 800px) {
   .heading{
   font-size: 32px;
 }
@@ -58,7 +58,7 @@ body {
 }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 500px) {
 
 } */
 

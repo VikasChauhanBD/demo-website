@@ -66,7 +66,7 @@
 }
 
 .demo-heading {
-  font-size: 62px;
+  font-size: clamp(32px, 4.3vw, 62px);
   font-weight: 200;
   font-family: "PP Editorial New", serif;
   margin-bottom: 2rem;
@@ -89,4 +89,153 @@
   text-decoration: none;
   color: #202020;
   margin-top: 2rem;
+}
+
+/* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 1300px) {
+  .demo-left-top-img {
+    top: 2%;
+    left: 4%;
+  }
+
+  .demo-left-bottom-img {
+    bottom: 4%;
+    left: 10%;
+  }
+
+  .demo-right-top-img {
+    top: 0;
+    right: 4%;
+  }
+
+  .demo-right-bottom-img {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .demo-section {
+    padding: 60px 20px;
+  }
+
+  .demo-circle-div {
+    padding: 80px 0;
+  }
+
+  .demo-circle {
+    width: 720px;
+    height: 720px;
+    max-width: 78vw;
+    max-height: 78vw;
+    padding: 40px;
+  }
+
+  .demo-heading {
+    font-size: 48px;
+    margin-bottom: 1.5rem;
+  }
+
+  .demo-para {
+    max-width: 420px;
+    font-size: 17px;
+    line-height: 27px;
+  }
+
+  .demo-cta {
+    font-size: 17px;
+    padding: 9px 18px;
+    margin-top: 1.5rem;
+  }
+
+  .demo-left-top-img {
+    width: 160px;
+    height: 160px;
+    top: 0;
+    left: 0;
+  }
+
+  .demo-left-bottom-img {
+    width: 190px;
+    height: 120px;
+    bottom: 0;
+    left: 0;
+  }
+
+  .demo-right-top-img {
+    width: 220px;
+    height: 150px;
+    top: 0;
+    right: 0;
+  }
+
+  .demo-right-bottom-img {
+    width: 200px;
+    height: 220px;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  /* .demo-section {
+    padding: 80px 15px;
+  } */
+
+  .demo-circle-div {
+    min-height: 700px;
+  }
+
+  .demo-circle {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-width: 92vw;
+    max-height: 92vw;
+    padding: 35px 25px;
+  }
+
+  .demo-heading {
+    font-size: clamp(28px, 8vw, 42px);
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+  }
+
+  .demo-para {
+    max-width: 90%;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .demo-cta {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-top: 1.2rem;
+  }
+
+  .demo-left-top-img {
+    width: 100px;
+    height: 100px;
+    top: 7%;
+  }
+
+  .demo-left-bottom-img {
+    width: 130px;
+    height: 80px;
+    bottom: 8%;
+    left: 4%;
+  }
+
+  .demo-right-top-img {
+    width: 140px;
+    height: 95px;
+    top: 2%;
+    right: 0;
+  }
+
+  .demo-right-bottom-img {
+    width: 120px;
+    height: 150px;
+  }
 }

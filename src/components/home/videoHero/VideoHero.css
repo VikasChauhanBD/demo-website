@@ -190,7 +190,17 @@
 
 /* ---------------------------------- Responsive ------------------------- */
 
-@media (max-width: 868px) {
+@media (max-width: 1300px) {
+  .video-hero-content {
+    width: 80%;
+  }
+
+  .video-hero-text h1 {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 800px) {
   .video-hero-header {
     align-items: end;
   }

@@ -67,7 +67,7 @@
   }
 }
 
-@media (max-width: 868px) {
+@media (max-width: 800px) {
   .main-container {
     width: 85%;
   }
