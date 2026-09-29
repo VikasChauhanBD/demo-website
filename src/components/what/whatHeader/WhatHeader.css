@@ -1,0 +1,116 @@
+.what-header-section {
+  width: 100%;
+  height: 100vh;
+  background-color: #ecf3f3;
+  overflow: hidden;
+  position: relative;
+}
+
+.what-header-circle-div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.what-header-circle {
+  width: 1100px;
+  height: 1100px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 12rem;
+}
+
+.what-header-content {
+  width: 82%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-header-heading {
+  width: 100%;
+  margin: 0;
+  font-size: clamp(32px, 4.3vw, 62px);
+  font-weight: 200;
+  font-family: "PP Editorial New", serif;
+  line-height: 1.08;
+  text-align: center;
+  overflow: hidden;
+}
+
+.what-header-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px);
+  will-change: transform, opacity;
+}
+
+/* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 1300px) {
+  .what-header-circle {
+    width: 1000px;
+    height: 1000px;
+  }
+
+  .what-header-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+  .what-header-section {
+    height: 100svh;
+  }
+
+  .what-header-circle {
+    width: 850px;
+    height: 850px;
+    margin-bottom: 6rem;
+  }
+
+  .what-header-content {
+    width: 72%;
+  }
+
+  .what-header-heading {
+    font-size: clamp(36px, 6vw, 48px);
+  }
+}
+
+@media (max-width: 500px) {
+  .what-header-section {
+    height: 100svh;
+  }
+
+  .what-header-circle {
+    width: 700px;
+    height: 700px;
+    margin-bottom: 0;
+  }
+
+  .what-header-content {
+    width: 58%;
+  }
+
+  .what-header-heading {
+    font-size: clamp(28px, 8vw, 42px);
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 380px) {
+  .what-header-content {
+    width: 350px;
+  }
+}
