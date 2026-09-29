@@ -310,6 +310,8 @@
   border-color: #075c78;
 }
 
+/* ---------------------------------- Responsive ------------------------- */
+
 @media (max-width: 1300px) {
   .faq-hero {
     height: 340px;
