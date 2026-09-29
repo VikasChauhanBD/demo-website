@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ClassesPage from "./pages/ClassesPage";
 import WhatPage from "./pages/WhatPage";
+import FaqsPage from "./pages/FaqsPage";
 
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsAndConditions from "./pages/TermsAndConditionsPage";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/classes" element={<ClassesPage />} />
           <Route path="/what-we-do" element={<WhatPage />} />
+          <Route path="/faqs" element={<FaqsPage />} />
 
           {/* ----------- Policy Pages ---------------- */}
 
