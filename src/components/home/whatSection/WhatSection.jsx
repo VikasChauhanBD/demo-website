@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import "./Programs.css";
+import "./WhatSection.css";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -15,7 +15,7 @@ const restState = [
 
 const pileTilts = [-8, 6, -5, 9];
 
-function Programs() {
+function WhatSection() {
   const container = useRef(null);
 
   useGSAP(
@@ -23,10 +23,9 @@ function Programs() {
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 581px)", () => {
-        const cardsContainer =
-          container.current.querySelector(".programs-cards");
+        const cardsContainer = container.current.querySelector(".what-cards");
 
-        const cards = gsap.utils.toArray(".programs-card", cardsContainer);
+        const cards = gsap.utils.toArray(".what-card", cardsContainer);
 
         cards.forEach((card, i) => {
           gsap.set(card, {
@@ -136,7 +135,7 @@ function Programs() {
       });
 
       mm.add("(max-width: 500px)", () => {
-        const cards = gsap.utils.toArray(".programs-card", container.current);
+        const cards = gsap.utils.toArray(".what-card", container.current);
 
         gsap.set(cards, {
           x: 0,
@@ -155,32 +154,38 @@ function Programs() {
   );
 
   return (
-    <div className="programs-container" ref={container}>
-      <div className="programs-header">
+    <div className="what-container" ref={container}>
+      <div className="what-header">
         <div>
-          <h4 className="programs-label">
-            <span></span>Our Programs
+          <h4 className="what-label">
+            <span></span>What You Get
           </h4>
-          <h2 className="programs-heading">Foundation’s Work</h2>
+          <h2 className="what-heading">In Pharmacology By Dr. GRG</h2>
         </div>
 
-        <p className="programs-para">
-          We are deeply immersed in the areas in which we invest, supporting
-          ideas and organizations that contribute to our four program areas:
-          Arts & Culture, Education, Health, and Policy & Advocacy.
-        </p>
+        <div className="what-para">
+          <h3>GOGA Express - where Pharmacology Comes Alive</h3>
+          <p>
+            When you study with Goga Express, you don’t just memories. You
+            understand the concepts, mechanisms, clinical connections and
+            applications behind Pharmacology.
+            <br />
+            <br />
+            Inside the lectures, you get:
+          </p>
+        </div>
       </div>
 
-      <div className="programs-cards">
-        <div className="programs-card card-1">
-          <div className="programs-card-image">
+      <div className="what-cards">
+        <div className="what-card card-1">
+          <div className="what-card-image">
             <img
               src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp"
               alt=""
             />
           </div>
 
-          <div className="programs-card-content">
+          <div className="what-card-content">
             <h3>Arts & Culture</h3>
             <p>
               Art and artists are crucial for fostering human connection,
@@ -190,15 +195,15 @@ function Programs() {
           </div>
         </div>
 
-        <div className="programs-card card-2">
-          <div className="programs-card-image">
+        <div className="what-card card-2">
+          <div className="what-card-image">
             <img
               src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp"
               alt=""
             />
           </div>
 
-          <div className="programs-card-content">
+          <div className="what-card-content">
             <h3>Education</h3>
             <p>
               enabling informed decisions, fostering innovation, and driving
@@ -208,17 +213,17 @@ function Programs() {
           </div>
         </div>
 
-        <h2>Program Areas</h2>
+        <h2>GOGA EXPRESS</h2>
 
-        <div className="programs-card card-3">
-          <div className="programs-card-image">
+        <div className="what-card card-3">
+          <div className="what-card-image">
             <img
               src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-03-jpg.webp"
               alt=""
             />
           </div>
 
-          <div className="programs-card-content">
+          <div className="what-card-content">
             <h3>Health</h3>
             <p>
               Healthy futures for people and the planet promote sustainability,
@@ -228,15 +233,15 @@ function Programs() {
           </div>
         </div>
 
-        <div className="programs-card card-4">
-          <div className="programs-card-image">
+        <div className="what-card card-4">
+          <div className="what-card-image">
             <img
               src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-04-jpg.webp"
               alt=""
             />
           </div>
 
-          <div className="programs-card-content">
+          <div className="what-card-content">
             <h3>Policy & Advocacy</h3>
             <p>
               Promoting economic fairness and prosperity is crucial for reducing
@@ -250,4 +255,4 @@ function Programs() {
   );
 }
 
-export default Programs;
+export default WhatSection;

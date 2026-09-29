@@ -16,7 +16,9 @@ const VideoHero = () => {
     () => {
       const section = container.current;
 
-      gsap.fromTo(
+      const heroTimeline = gsap.timeline();
+
+      heroTimeline.fromTo(
         ".video-hero-text h1",
         {
           y: 40,
@@ -30,6 +32,23 @@ const VideoHero = () => {
           duration: 1.5,
           ease: "power3.out",
         },
+      );
+
+      heroTimeline.fromTo(
+        ".video-hero-cta",
+        {
+          y: 40,
+          opacity: 0,
+          scale: 0.9,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+        },
+        "-=0.4",
       );
 
       const horizontalLine = section.querySelector(
@@ -115,6 +134,8 @@ const VideoHero = () => {
             <br />
             For <b>MBBS • NEET PG • INI-CET • FMGE</b>
           </h1>
+
+          <button className="video-hero-cta">START LEARNING</button>
         </div>
       </div>
     </section>

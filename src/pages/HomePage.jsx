@@ -1,20 +1,22 @@
 import React from "react";
 import VideoHero from "../components/home/videoHero/VideoHero";
-import Demo from "../components/home/demo/Demo";
-import MoreSection from "../components/home/moreSection/MoreSection";
+import IntroSection from "../components/home/introSection/IntroSection";
+import WhatSection from "../components/home/whatSection/WhatSection";
+import WhySection from "../components/home/whySection/WhySection";
+import WhoSection from "../components/home/whoSection/WhoSection";
 import AboutSection from "../components/home/aboutSection/AboutSection";
-import WhyGrgSir from "../components/home/whyGrgSir/WhyGrgSir";
-import Programs from "../components/home/programs/Programs";
+import OurVision from "../components/home/ourVision/OurVision";
 
 function HomePage() {
   return (
     <div>
       <VideoHero />
-      <Demo />
-      <Programs />
-      {/* <MoreSection /> */}
-      {/* <AboutSection /> */}
-      {/* <WhyGrgSir /> */}
+      <IntroSection />
+      <WhatSection />
+      <WhySection />
+      <WhoSection />
+      <AboutSection />
+      <OurVision />
     </div>
   );
 }

@@ -135,37 +135,29 @@ const AboutSection = () => {
             </h2>
 
             <p className="home-about-description">
-              Widely known as <strong>GRG Sir</strong> or{" "}
-              <strong>GOGA Sir</strong>, Dr. Gobind Rai Garg has been teaching
-              Pharmacology for more than <strong>18 years</strong>.
+              <b>
+                MBBS | MD Pharmacology, UCMS Delhi Ex-Assistant Professor,
+                Department of Pharmacology, Maulana Azad Medical College
+              </b>
               <br />
               <br />
-              He is <strong>MBBS, MD Pharmacology from UCMS Delhi</strong> and a
-              former{" "}
-              <strong>
-                Assistant Professor in the Department of Pharmacology at Maulana
-                Azad Medical College
-              </strong>
-              .
+              Known to generations of medical students as <b>
+                GRG Sir
+              </b> and <b>GOGA Sir</b>, Dr. Gobind Rai Garg has spent more than
+              18 years teaching undergraduate medical students and medical
+              entrance aspirants.
               <br />
               <br />
-              Over the years, he has taught generations of{" "}
-              <strong>
-                undergraduate medical students and PGMEE/FMGE aspirants
-              </strong>
-              .
+              His teaching is known for making difficult drug names easier to
+              remember, breaking down complicated mechanisms and using stories
+              and mnemonics that stay with you long after the lecture ends.
               <br />
               <br />
-              His classes are known for simple explanations, stories, clinical
-              connections and, of course, his <strong>
-                famous mnemonics
-              </strong>{" "}
-              that make difficult Pharmacology topics easier to remember.
+              Because Pharmacology is not only about remembering a drug.
               <br />
               <br />
-              He has also authored and co-authored books covering{" "}
-              <strong>Pharmacology, Pathology and Genetics</strong> for medical
-              students and entrance-exam preparation.
+              It is about knowing{" "}
+              <b>why it works, where it is used, and what can go wrong</b>.
             </p>
           </div>
 

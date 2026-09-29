@@ -1,10 +1,10 @@
-.demo-section {
+.intro-section {
   width: 100%;
   background-color: #fef9f2;
   padding: 150px 20px;
 }
 
-.demo-circle-div {
+.intro-circle-div {
   width: 100%;
   position: relative;
   display: flex;
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.demo-circle {
+.intro-circle {
   width: 1100px;
   height: 1100px;
   max-width: 80vw;
@@ -27,21 +27,21 @@
   text-align: center;
 }
 
-.demo-circle-div img {
+.intro-circle-div img {
   position: absolute;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.demo-left-top-img {
+.intro-left-top-img {
   width: 220px;
   height: 220px;
   top: 12%;
-  left: 9%;
+  left: 12%;
   z-index: 1;
 }
 
-.demo-left-bottom-img {
+.intro-left-bottom-img {
   width: 250px;
   height: 150px;
   bottom: 8%;
@@ -49,7 +49,7 @@
   z-index: 1;
 }
 
-.demo-right-top-img {
+.intro-right-top-img {
   width: 320px;
   height: 220px;
   top: 2%;
@@ -57,7 +57,7 @@
   z-index: 1;
 }
 
-.demo-right-bottom-img {
+.intro-right-bottom-img {
   width: 300px;
   height: 350px;
   bottom: 2%;
@@ -65,23 +65,28 @@
   z-index: 1;
 }
 
-.demo-heading {
+.intro-heading {
   font-size: clamp(32px, 4.3vw, 62px);
-  font-weight: 200;
-  font-family: "PP Editorial New", serif;
-  margin-bottom: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
-.demo-para {
+.intro-sub-heading {
+  font-size: clamp(18px, 1.4vw, 28px);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.intro-para {
   width: 100%;
-  max-width: 500px;
-  font-size: 20px;
+  max-width: 950px;
+  font-size: 18px;
   font-weight: 400;
-  font-family: Inter, sans-serif;
   line-height: 32px;
 }
 
-.demo-cta {
+.intro-cta {
   border: 2px solid #202020;
   padding: 10px 20px;
   border-radius: 50px;
@@ -94,83 +99,70 @@
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1300px) {
-  .demo-left-top-img {
+  .intro-left-top-img {
     top: 2%;
     left: 4%;
   }
 
-  .demo-left-bottom-img {
+  .intro-left-bottom-img {
     bottom: 4%;
     left: 10%;
   }
 
-  .demo-right-top-img {
+  .intro-right-top-img {
     top: 0;
     right: 4%;
   }
 
-  .demo-right-bottom-img {
+  .intro-right-bottom-img {
     bottom: 0;
     right: 0;
   }
 }
 
-@media (max-width: 800px) {
-  .demo-section {
+@media (max-width: 900px) {
+  .intro-section {
     padding: 60px 20px;
   }
 
-  .demo-circle-div {
+  .intro-circle-div {
     padding: 80px 0;
   }
 
-  .demo-circle {
-    width: 720px;
-    height: 720px;
-    max-width: 78vw;
-    max-height: 78vw;
+  .intro-circle {
+    max-width: 98vw;
+    max-height: 98vw;
     padding: 40px;
   }
 
-  .demo-heading {
-    font-size: 48px;
-    margin-bottom: 1.5rem;
-  }
-
-  .demo-para {
-    max-width: 420px;
-    font-size: 17px;
-    line-height: 27px;
-  }
-
-  .demo-cta {
-    font-size: 17px;
+  .intro-cta {
+    font-size: 16px;
     padding: 9px 18px;
     margin-top: 1.5rem;
   }
 
-  .demo-left-top-img {
+  .intro-left-top-img {
     width: 160px;
     height: 160px;
     top: 0;
     left: 0;
   }
 
-  .demo-left-bottom-img {
+  .intro-left-bottom-img {
     width: 190px;
     height: 120px;
     bottom: 0;
     left: 0;
   }
 
-  .demo-right-top-img {
+  .intro-right-top-img {
     width: 220px;
     height: 150px;
     top: 0;
     right: 0;
   }
 
-  .demo-right-bottom-img {
+  .intro-right-bottom-img {
     width: 200px;
     height: 220px;
     bottom: 0;
@@ -179,62 +171,48 @@
 }
 
 @media (max-width: 500px) {
-  /* .demo-section {
-    padding: 80px 15px;
-  } */
-
-  .demo-circle-div {
+  .intro-circle-div {
+    padding: 260px 0 280px;
     min-height: 700px;
   }
 
-  .demo-circle {
+  .intro-circle {
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
-    max-width: 92vw;
-    max-height: 92vw;
-    padding: 35px 25px;
+    padding: 40px 10px;
   }
 
-  .demo-heading {
-    font-size: clamp(28px, 8vw, 42px);
-    line-height: 1.05;
-    margin-bottom: 1.2rem;
+  .intro-para {
+    width: 100%;
+    font-size: 16px;
   }
 
-  .demo-para {
-    max-width: 90%;
-    font-size: 14px;
-    line-height: 21px;
-  }
-
-  .demo-cta {
+  .intro-cta {
     font-size: 14px;
     padding: 8px 16px;
     margin-top: 1.2rem;
   }
 
-  .demo-left-top-img {
+  .intro-left-top-img {
     width: 100px;
     height: 100px;
-    top: 7%;
   }
 
-  .demo-left-bottom-img {
+  .intro-left-bottom-img {
     width: 130px;
     height: 80px;
-    bottom: 8%;
     left: 4%;
   }
 
-  .demo-right-top-img {
+  .intro-right-top-img {
     width: 140px;
     height: 95px;
     top: 2%;
     right: 0;
   }
 
-  .demo-right-bottom-img {
+  .intro-right-bottom-img {
     width: 120px;
     height: 150px;
   }

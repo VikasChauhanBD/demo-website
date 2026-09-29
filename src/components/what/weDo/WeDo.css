@@ -104,7 +104,7 @@
 
 /* ---------------------------------- Responsive ------------------------- */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .we-do-section {
     padding: 70px 20px 90px;
   }

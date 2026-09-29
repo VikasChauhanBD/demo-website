@@ -1,6 +1,6 @@
 .home-about-page {
   width: 100%;
-  background: #ecf3f3;
+  background: #fef9f2;
 }
 
 .home-about-section {
@@ -23,9 +23,9 @@
   margin-bottom: 24px;
   padding: 6px 16px;
   border-radius: 9999px;
-  background: #e8f0fb;
-  color: #1767be;
-  font-size: 14px;
+  background: #e7a579;
+  color: #ffffff;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -95,7 +95,7 @@
 
 /* ---------------------------------- Responsive ------------------------- */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .home-about-container {
     grid-template-columns: 1fr;
     padding: 80px 16px;

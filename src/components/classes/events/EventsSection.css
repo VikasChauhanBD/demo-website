@@ -287,7 +287,7 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .events-section {
     min-height: auto;
     padding: 28px 0 25px;

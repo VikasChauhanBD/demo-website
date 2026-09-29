@@ -1,5 +1,5 @@
 import React from "react";
-import "./Demo.css";
+import "./IntroSection.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,11 +7,11 @@ import { NavLink } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Demo() {
+function IntroSection() {
   useGSAP(() => {
     // Circle animation
     gsap.fromTo(
-      ".demo-circle",
+      ".intro-circle",
       {
         scale: 0.5,
         opacity: 0,
@@ -22,7 +22,7 @@ function Demo() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".demo-section",
+          trigger: ".intro-section",
           start: "top 50%",
           toggleActions: "play none none none",
         },
@@ -31,7 +31,7 @@ function Demo() {
 
     // Content animation
     gsap.fromTo(
-      ".demo-heading",
+      ".intro-heading",
       {
         y: 40,
         opacity: 0,
@@ -42,7 +42,7 @@ function Demo() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".demo-heading",
+          trigger: ".intro-heading",
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -50,7 +50,7 @@ function Demo() {
     );
 
     gsap.fromTo(
-      ".demo-para",
+      ".intro-sub-heading",
       {
         y: 40,
         opacity: 0,
@@ -61,7 +61,7 @@ function Demo() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".demo-para",
+          trigger: ".intro-sub-heading",
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -69,7 +69,7 @@ function Demo() {
     );
 
     gsap.fromTo(
-      ".demo-cta",
+      ".intro-para",
       {
         y: 40,
         opacity: 0,
@@ -80,7 +80,26 @@ function Demo() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".demo-cta",
+          trigger: ".intro-para",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+
+    gsap.fromTo(
+      ".intro-cta",
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".intro-cta",
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -89,7 +108,7 @@ function Demo() {
 
     // Set initial state for all images
     gsap.set(
-      ".demo-left-top-img, .demo-right-top-img, .demo-left-bottom-img, .demo-right-bottom-img",
+      ".intro-left-top-img, .intro-right-top-img, .intro-left-bottom-img, .intro-right-bottom-img",
       {
         opacity: 0,
         scale: 1.08,
@@ -98,56 +117,56 @@ function Demo() {
     );
 
     // TOP LEFT
-    gsap.to(".demo-left-top-img", {
+    gsap.to(".intro-left-top-img", {
       opacity: 1,
       scale: 1,
       clipPath: "inset(0 0 0% 0)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".demo-section",
+        trigger: ".intro-section",
         start: "top 50%",
         toggleActions: "play none none none",
       },
     });
 
     // TOP RIGHT
-    gsap.to(".demo-right-top-img", {
+    gsap.to(".intro-right-top-img", {
       opacity: 1,
       scale: 1,
       clipPath: "inset(0 0 0% 0)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".demo-section",
+        trigger: ".intro-section",
         start: "top 50%",
         toggleActions: "play none none none",
       },
     });
 
     // BOTTOM LEFT
-    gsap.to(".demo-left-bottom-img", {
+    gsap.to(".intro-left-bottom-img", {
       opacity: 1,
       scale: 1,
       clipPath: "inset(0 0 0% 0)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".demo-left-bottom-img",
+        trigger: ".intro-left-bottom-img",
         start: "top 80%",
         toggleActions: "play none none none",
       },
     });
 
     // BOTTOM RIGHT
-    gsap.to(".demo-right-bottom-img", {
+    gsap.to(".intro-right-bottom-img", {
       opacity: 1,
       scale: 1,
       clipPath: "inset(0 0 0% 0)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".demo-right-bottom-img",
+        trigger: ".intro-right-bottom-img",
         start: "top 80%",
         toggleActions: "play none none none",
       },
@@ -155,45 +174,56 @@ function Demo() {
   });
 
   return (
-    <div className="demo-section">
-      <div className="demo-circle-div">
+    <div className="intro-section">
+      <div className="intro-circle-div">
         <img
-          className="demo-left-top-img"
+          className="intro-left-top-img"
           src="https://www.hejlfoundation.org/app/uploads/2024/06/pexels-pixabay-33703-1-jpg.webp"
           alt=""
         />
 
         <img
-          className="demo-left-bottom-img"
+          className="intro-left-bottom-img"
           src="https://www.hejlfoundation.org/app/uploads/2024/06/ben-mullins-je240kkjiua-unsplash-2-jpg.webp"
           alt=""
         />
 
-        <div className="demo-circle">
-          <h2 className="demo-heading">
-            We Invest in Transformative Ideas,
-            <br />
-            Individuals and Organizations
-          </h2>
+        <div className="intro-circle">
+          <h2 className="intro-heading">Pharmacology With Dr. GRG</h2>
 
-          <p className="demo-para">
-            We are dedicated to fulfilling our mission. Explore our full
-            database of grants to gain a deeper understanding of the
-            organizations we support and the remarkable impact they have made
-            thus far.
+          <h4 className="intro-sub-heading">
+            Understand It. Enjoy it. Apply It.
+          </h4>
+
+          <p className="intro-para">
+            Pharmacology can feel like a lot when you first start studying it.
+            <br />
+            There are drug names, mechanisms, classifications, adverse effects
+            and clinical uses , and somehow, you have to remember all of it.
+            <br />
+            Pharmacology By GRG's approach is simple:
+            <br />
+            <b>
+              Understand the concept first. Find an easy way to remember it.
+              Then practise using it.
+            </b>
+            <br />
+            Whether you're starting Pharmacology in <b>Second Prof MBBS</b> or
+            preparing for <b>NEET PG, INI-CET or FMGE</b>, this is a place to
+            learn, practise and revise Pharmacology with GRG Sir.
           </p>
 
-          <NavLink className="demo-cta">Explore Grants</NavLink>
+          <NavLink className="intro-cta">Start Learning</NavLink>
         </div>
 
         <img
-          className="demo-right-top-img"
+          className="intro-right-top-img"
           src="https://www.hejlfoundation.org/app/uploads/2024/06/opera4-e1635375200792-jpg.webp"
           alt=""
         />
 
         <img
-          className="demo-right-bottom-img"
+          className="intro-right-bottom-img"
           src="https://www.hejlfoundation.org/app/uploads/2024/06/cdc-n6z8c6nugfe-unsplash-1-jpg.webp"
           alt=""
         />
@@ -202,4 +232,4 @@ function Demo() {
   );
 }
 
-export default Demo;
+export default IntroSection;
