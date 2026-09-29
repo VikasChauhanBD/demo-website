@@ -34,9 +34,11 @@ function Programs() {
           });
         });
 
-        const spread = gsap.fromTo(
-          cards,
-          {
+        let played = false;
+
+        // Puts ALL cards in the centered pile (explicit, for every card)
+        const setPile = () => {
+          gsap.set(cards, {
             x: (i, el) =>
               cardsContainer.clientWidth / 2 -
               (el.offsetLeft + el.offsetWidth / 2),
@@ -45,23 +47,52 @@ function Programs() {
               (el.offsetTop + el.offsetHeight / 2),
             rotation: (i) => pileTilts[i],
             scale: 0.85,
+          });
+        };
+
+        setPile();
+
+        // Pile -> rest positions (start values are read from the pile above)
+        const spread = gsap.to(cards, {
+          x: (i) => restState[i].x,
+          y: (i) => restState[i].y,
+          rotation: (i) => restState[i].rotation,
+          scale: 1,
+          duration: 1.4,
+          ease: "power3.inOut",
+          stagger: 0.08,
+          paused: true,
+        });
+
+        const trigger = ScrollTrigger.create({
+          trigger: cardsContainer,
+          start: "center 85%",
+          end: "max",
+          once: true,
+          onEnter: () => {
+            played = true;
+            spread.play();
           },
-          {
-            x: (i) => restState[i].x,
-            y: (i) => restState[i].y,
-            rotation: (i) => restState[i].rotation,
-            scale: 1,
-            duration: 1.4,
-            ease: "power3.inOut",
-            stagger: 0.08,
-            immediateRender: true,
-            scrollTrigger: {
-              trigger: cardsContainer,
-              start: "center 85%",
-              invalidateOnRefresh: true,
-            },
-          },
-        );
+        });
+
+        // Re-apply the pile if layout changes before the animation has played
+        const onRefreshInit = contextSafe(() => {
+          if (!played) setPile();
+        });
+
+        ScrollTrigger.addEventListener("refreshInit", onRefreshInit);
+
+        // Images change card heights when they load, so re-measure
+        const onImgLoad = contextSafe(() => {
+          if (!played) setPile();
+          ScrollTrigger.refresh();
+        });
+
+        const imgs = Array.from(cardsContainer.querySelectorAll("img"));
+
+        imgs.forEach((img) => {
+          if (!img.complete) img.addEventListener("load", onImgLoad);
+        });
 
         const cleanups = cards.map((card, i) => {
           const straighten = contextSafe(() => {
@@ -95,7 +126,13 @@ function Programs() {
           };
         });
 
-        return () => cleanups.forEach((fn) => fn());
+        return () => {
+          cleanups.forEach((fn) => fn());
+          ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
+          imgs.forEach((img) => img.removeEventListener("load", onImgLoad));
+          trigger.kill();
+          spread.kill();
+        };
       });
 
       mm.add("(max-width: 500px)", () => {
