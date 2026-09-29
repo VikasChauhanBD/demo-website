@@ -1,0 +1,377 @@
+.events-section {
+  width: 100%;
+  min-height: 600px;
+  background: #000000;
+  color: #ffffff;
+  padding: 100px 10px;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.events-header {
+  width: calc(100% - 350px);
+  margin: 0 auto 39px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.events-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.events-heading h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 29px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -1.4px;
+  white-space: nowrap;
+}
+
+.discover-events {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.58);
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.discover-events:hover {
+  color: #ffffff;
+}
+
+.discover-events svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.discover-events:hover svg {
+  transform: translateX(3px);
+}
+
+.events-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.events-arrows button {
+  width: 41px;
+  height: 41px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #242427;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.events-arrows button:hover {
+  background: #3a3a3d;
+  transform: scale(1.04);
+}
+
+.events-arrows button:first-child svg {
+  transform: rotate(180deg);
+}
+
+.events-arrows svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.events-slider {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-left: 180px;
+  padding-right: 180px;
+  box-sizing: border-box;
+  scroll-padding-left: 180px;
+  scroll-padding-right: 180px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.events-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.event-card {
+  flex: 0 0 300px;
+  width: 300px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  scroll-snap-align: start;
+  background: #111111;
+  min-width: 0;
+}
+
+.event-card-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.event-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.event-card:hover .event-media {
+  transform: scale(1.045);
+}
+
+.event-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.04) 25%,
+    rgba(0, 0, 0, 0.18) 45%,
+    rgba(0, 0, 0, 0.73) 80%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+}
+
+.event-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  padding: 25px 22px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.event-logo {
+  display: block;
+  width: 170px;
+  max-width: 90%;
+  height: 130px;
+  object-fit: contain;
+  object-position: center bottom;
+  margin: 0 0 14px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.4s ease;
+}
+
+.event-card:hover .event-logo {
+  transform: translateY(-3px);
+}
+
+.event-logo-0 {
+  height: 110px;
+}
+
+.event-logo-1 {
+  width: 165px;
+  height: 85px;
+}
+
+.event-logo-2 {
+  height: 115px;
+}
+
+.event-logo-3 {
+  height: 130px;
+}
+
+.event-logo-4 {
+  height: 135px;
+}
+
+.event-logo-5 {
+  height: 105px;
+}
+
+.event-logo-6 {
+  height: 120px;
+}
+
+.event-content p {
+  width: 100%;
+  max-width: 245px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.events-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.pagination-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pagination-dot.active {
+  background: #ffffff;
+  transform: scale(1.08);
+}
+
+/* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 1300px) {
+  .events-header {
+    width: calc(100% - 60px);
+  }
+
+  .events-slider {
+    padding-left: 30px;
+    padding-right: 30px;
+    scroll-padding-left: 30px;
+    scroll-padding-right: 30px;
+  }
+
+  .event-card {
+    flex-basis: 285px;
+    width: 285px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 800px) {
+  .events-section {
+    min-height: auto;
+    padding: 28px 0 25px;
+  }
+
+  .events-header {
+    width: calc(100% - 30px);
+    margin-bottom: 25px;
+    align-items: flex-start;
+  }
+
+  .events-heading {
+    gap: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .events-heading h2 {
+    font-size: 27px;
+    letter-spacing: -1px;
+  }
+
+  .discover-events {
+    font-size: 14px;
+  }
+
+  .events-arrows {
+    display: none;
+  }
+
+  .events-slider {
+    gap: 9px;
+    padding-left: 15px;
+    padding-right: 15px;
+    scroll-padding-left: 15px;
+    scroll-padding-right: 15px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .event-card {
+    flex: 0 0 calc(100vw - 60px);
+    width: calc(100vw - 60px);
+    height: 500px;
+    border-radius: 14px;
+  }
+
+  .event-content {
+    padding: 25px 18px 27px;
+  }
+
+  .event-logo {
+    width: 175px;
+    max-width: 88%;
+    height: 125px;
+  }
+
+  .event-content p {
+    font-size: 15px;
+  }
+
+  .events-pagination {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .events-heading h2 {
+    font-size: 25px;
+  }
+
+  .events-slider {
+    padding-left: 12px;
+    padding-right: 12px;
+    scroll-padding-left: 12px;
+    scroll-padding-right: 12px;
+  }
+
+  .event-card {
+    flex-basis: calc(100vw - 45px);
+    width: calc(100vw - 45px);
+    height: 470px;
+  }
+
+  .event-content p {
+    font-size: 14px;
+  }
+}
