@@ -1,4 +1,4 @@
-.what-header-section {
+.plans-header-section {
   width: 100%;
   height: 100vh;
   background-color: #ecf3f3;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.what-header-circle-div {
+.plans-header-circle-div {
   width: 100%;
   height: 100%;
   position: relative;
@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-.what-header-circle {
+.plans-header-circle {
   width: 1100px;
   height: 1100px;
   flex-shrink: 0;
@@ -29,7 +29,7 @@
   margin-bottom: 12rem;
 }
 
-.what-header-content {
+.plans-header-content {
   width: 82%;
   max-width: 1000px;
   display: flex;
@@ -37,7 +37,7 @@
   justify-content: center;
 }
 
-.what-header-heading {
+.plans-header-heading {
   width: 100%;
   margin: 0;
   font-size: clamp(32px, 4.3vw, 62px);
@@ -48,7 +48,7 @@
   overflow: hidden;
 }
 
-.what-header-word {
+.plans-header-word {
   display: inline-block;
   opacity: 0;
   transform: translateY(60px);
@@ -58,59 +58,59 @@
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1300px) {
-  .what-header-circle {
+  .plans-header-circle {
     width: 1000px;
     height: 1000px;
   }
 
-  .what-header-content {
+  .plans-header-content {
     width: 80%;
   }
 }
 
 @media (max-width: 900px) {
-  .what-header-section {
+  .plans-header-section {
     height: 100svh;
   }
 
-  .what-header-circle {
+  .plans-header-circle {
     width: 850px;
     height: 850px;
     margin-bottom: 6rem;
   }
 
-  .what-header-content {
+  .plans-header-content {
     width: 72%;
   }
 
-  .what-header-heading {
+  .plans-header-heading {
     font-size: clamp(36px, 6vw, 48px);
   }
 }
 
 @media (max-width: 500px) {
-  .what-header-section {
+  .plans-header-section {
     height: 100svh;
   }
 
-  .what-header-circle {
+  .plans-header-circle {
     width: 700px;
     height: 700px;
     margin-bottom: 0;
   }
 
-  .what-header-content {
+  .plans-header-content {
     width: 58%;
   }
 
-  .what-header-heading {
+  .plans-header-heading {
     font-size: clamp(28px, 8vw, 42px);
     line-height: 1.5;
   }
 }
 
 @media (max-width: 380px) {
-  .what-header-content {
+  .plans-header-content {
     width: 350px;
   }
 }

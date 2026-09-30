@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import "./WeDo.css";
+import "./PlansFeature.css";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -42,7 +42,7 @@ const circleData = [
   { top: "90%", left: "80%", size: 110, type: "ring" },
 ];
 
-function WeDo() {
+function PlansFeature() {
   const sectionRef = useRef(null);
   const svgRef = useRef(null);
   const dotPathRef = useRef(null);
@@ -62,14 +62,16 @@ function WeDo() {
         const H = sectionRect.height;
         svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
 
-        const points = gsap.utils.toArray(".we-do-media", section).map((el) => {
-          const r = el.getBoundingClientRect();
-          return {
-            x: r.left - sectionRect.left + r.width / 2,
-            top: r.top - sectionRect.top,
-            bottom: r.bottom - sectionRect.top,
-          };
-        });
+        const points = gsap.utils
+          .toArray(".plans-feature-media", section)
+          .map((el) => {
+            const r = el.getBoundingClientRect();
+            return {
+              x: r.left - sectionRect.left + r.width / 2,
+              top: r.top - sectionRect.top,
+              bottom: r.bottom - sectionRect.top,
+            };
+          });
 
         if (!points.length) return;
 
@@ -131,7 +133,7 @@ function WeDo() {
 
       /* ---------- circles zoom up with scroll ---------- */
       gsap.utils
-        .toArray(".we-do-circle", sectionRef.current)
+        .toArray(".plans-feature-circle", sectionRef.current)
         .forEach((circle) => {
           gsap.fromTo(
             circle,
@@ -156,11 +158,11 @@ function WeDo() {
   );
 
   return (
-    <div className="we-do-section" ref={sectionRef}>
+    <div className="plans-feature-section" ref={sectionRef}>
       {circleData.map((c, i) => (
         <span
           key={i}
-          className={`we-do-circle we-do-circle--${c.type}`}
+          className={`plans-feature-circle plans-feature-circle--${c.type}`}
           style={{
             top: c.top,
             left: c.left,
@@ -170,10 +172,14 @@ function WeDo() {
         />
       ))}
 
-      <svg className="we-do-line" ref={svgRef} preserveAspectRatio="none">
+      <svg
+        className="plans-feature-line"
+        ref={svgRef}
+        preserveAspectRatio="none"
+      >
         <defs>
           <mask
-            id="we-do-line-mask"
+            id="plans-feature-line-mask"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -195,23 +201,23 @@ function WeDo() {
           strokeWidth="4"
           strokeLinecap="butt"
           strokeDasharray="16 12"
-          mask="url(#we-do-line-mask)"
+          mask="url(#plans-feature-line-mask)"
         />
       </svg>
 
       <h2>Program Areas</h2>
 
-      <div className="we-do-wrap">
+      <div className="plans-feature-wrap">
         {programData.map((item, index) => (
           <div
             key={item.title}
-            className={`we-do-card ${index % 2 !== 0 ? "we-do-card--reverse" : ""}`}
+            className={`plans-feature-card ${index % 2 !== 0 ? "plans-feature-card--reverse" : ""}`}
           >
-            <div className="we-do-media">
+            <div className="plans-feature-media">
               <img src={item.image} alt={item.title} />
             </div>
 
-            <div className="we-do-content">
+            <div className="plans-feature-content">
               <h3>{item.title}</h3>
               {item.para.split("</br>").map((text, i) => (
                 <p key={i}>{text.trim()}</p>
@@ -224,4 +230,4 @@ function WeDo() {
   );
 }
 
-export default WeDo;
+export default PlansFeature;

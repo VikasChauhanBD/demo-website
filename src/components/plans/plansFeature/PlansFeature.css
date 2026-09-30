@@ -1,11 +1,11 @@
-.we-do-section {
+.plans-feature-section {
   position: relative;
   overflow: hidden;
   padding: 100px 24px 140px;
   background: #ecf3f3;
 }
 
-.we-do-section h2 {
+.plans-feature-section h2 {
   position: relative;
   z-index: 2;
   margin: 0 0 100px;
@@ -15,7 +15,7 @@
   color: #0b1b3f;
 }
 
-.we-do-circle {
+.plans-feature-circle {
   position: absolute;
   z-index: 0;
   border-radius: 50%;
@@ -23,23 +23,23 @@
   transform-origin: center center;
 }
 
-.we-do-circle--fill {
+.plans-feature-circle--fill {
   background: #ffffff;
 }
 
-.we-do-circle--ring {
+.plans-feature-circle--ring {
   border: 3px solid #b7cdfc;
   background: transparent;
   box-sizing: border-box;
 }
 
-.we-do-wrap {
+.plans-feature-wrap {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.we-do-line {
+.plans-feature-line {
   position: absolute;
   top: 0;
   left: 0;
@@ -50,7 +50,7 @@
   pointer-events: none;
 }
 
-.we-do-card {
+.plans-feature-card {
   position: relative;
   z-index: 2;
   display: grid;
@@ -60,15 +60,15 @@
   margin-bottom: 180px;
 }
 
-.we-do-card:last-child {
+.plans-feature-card:last-child {
   margin-bottom: 0;
 }
 
-.we-do-card--reverse .we-do-media {
+.plans-feature-card--reverse .plans-feature-media {
   order: 2;
 }
 
-.we-do-media {
+.plans-feature-media {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -77,58 +77,58 @@
   box-shadow: 0 20px 50px rgba(11, 27, 63, 0.15);
 }
 
-.we-do-media img {
+.plans-feature-media img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.we-do-content h3 {
+.plans-feature-content h3 {
   margin: 0 0 20px;
   font-size: 34px;
   font-weight: 700;
   color: #0b1b3f;
 }
 
-.we-do-content p {
+.plans-feature-content p {
   margin: 0 0 16px;
   font-size: 16px;
   line-height: 1.7;
   color: #444444;
 }
 
-.we-do-content p:last-child {
+.plans-feature-content p:last-child {
   margin-bottom: 0;
 }
 
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 900px) {
-  .we-do-section {
+  .plans-feature-section {
     padding: 70px 20px 90px;
   }
 
-  .we-do-section h2 {
+  .plans-feature-section h2 {
     margin-bottom: 60px;
     font-size: 34px;
   }
 
-  .we-do-line {
+  .plans-feature-line {
     display: none;
   }
 
-  .we-do-card {
+  .plans-feature-card {
     grid-template-columns: 1fr;
     gap: 28px;
     margin-bottom: 80px;
   }
 
-  .we-do-card--reverse .we-do-media {
+  .plans-feature-card--reverse .plans-feature-media {
     order: 0;
   }
 
-  .we-do-content h3 {
+  .plans-feature-content h3 {
     font-size: 26px;
   }
 }

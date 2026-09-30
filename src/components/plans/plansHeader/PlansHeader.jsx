@@ -1,5 +1,5 @@
 import React from "react";
-import "./WhatHeader.css";
+import "./PlansHeader.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,13 +7,13 @@ import { NavLink } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function WhatHeader() {
+function PlansHeader() {
   useGSAP(() => {
-    const words = gsap.utils.toArray(".what-header-word");
+    const words = gsap.utils.toArray(".plans-header-word");
 
     // Circle animation
     gsap.fromTo(
-      ".what-header-circle",
+      ".plans-header-circle",
       {
         scale: 0.5,
         opacity: 0,
@@ -47,13 +47,13 @@ function WhatHeader() {
     "We are deeply immersed in the areas in which we invest, supporting ideas and organizations that contribute to our four program areas";
 
   return (
-    <div className="what-header-section">
-      <div className="what-header-circle-div">
-        <div className="what-header-circle">
-          <div className="what-header-content">
-            <h1 className="what-header-heading">
+    <div className="plans-header-section">
+      <div className="plans-header-circle-div">
+        <div className="plans-header-circle">
+          <div className="plans-header-content">
+            <h1 className="plans-header-heading">
               {headingText.split(" ").map((word, index) => (
-                <span className="what-header-word" key={index}>
+                <span className="plans-header-word" key={index}>
                   {word}&nbsp;
                 </span>
               ))}
@@ -65,4 +65,4 @@ function WhatHeader() {
   );
 }
 
-export default WhatHeader;
+export default PlansHeader;
