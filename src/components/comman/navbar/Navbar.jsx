@@ -118,11 +118,12 @@ function Navbar() {
         <div className="navbar-content navbar-desktop" ref={desktopMenuRef}>
           <a href="/">Home</a>
           <a href="/about">About Dr. GRG</a>
-          <a href="/classes">Offline / Online Classes</a>
-          <a href="#plans">Buy New Plans</a>
-          <a href="#schedules">Schedules</a>
-          <a href="#results">Results / Students’ Feedback</a>
-          <a href="#blogs">Blogs</a>
+          <a href="/classes">Classes</a>
+          <a href="/buy-new-plans">Buy New Plans</a>
+          <a href="/schedules">Schedules</a>
+          <a href="/results">Results</a>
+          <a href="/blogs">Blogs</a>
+          <a href="/faqs">FAQs</a>
         </div>
 
         {/* Hamburger */}
@@ -155,31 +156,37 @@ function Navbar() {
 
           <div ref={(el) => (menuItemsRef.current[2] = el)}>
             <a href="/classes" onClick={closeMenu}>
-              Offline / Online Classes
+              Classes
             </a>
           </div>
 
           <div ref={(el) => (menuItemsRef.current[3] = el)}>
-            <a href="#plans" onClick={closeMenu}>
+            <a href="/buy-new-plans" onClick={closeMenu}>
               Buy New Plans
             </a>
           </div>
 
           <div ref={(el) => (menuItemsRef.current[3] = el)}>
-            <a href="#schedules" onClick={closeMenu}>
+            <a href="/schedules" onClick={closeMenu}>
               Schedules
             </a>
           </div>
 
           <div ref={(el) => (menuItemsRef.current[3] = el)}>
-            <a href="#results" onClick={closeMenu}>
-              Results / Students’ Feedback
+            <a href="/results" onClick={closeMenu}>
+              Results
             </a>
           </div>
 
           <div ref={(el) => (menuItemsRef.current[3] = el)}>
-            <a href="#blogs" onClick={closeMenu}>
+            <a href="/blogs" onClick={closeMenu}>
               Blogs
+            </a>
+          </div>
+
+          <div ref={(el) => (menuItemsRef.current[3] = el)}>
+            <a href="/faqs" onClick={closeMenu}>
+              FAQs
             </a>
           </div>
         </div>

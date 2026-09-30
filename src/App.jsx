@@ -9,6 +9,10 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ClassesPage from "./pages/ClassesPage";
 import PlansPage from "./pages/PlansPage";
+import SchedulesPage from "./pages/SchedulesPage";
+import ResultsPage from "./pages/ResultsPage";
+import BlogsPage from "./pages/BlogsPage";
+import FaqsPage from "./pages/FaqsPage";
 
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsAndConditions from "./pages/TermsAndConditionsPage";
@@ -31,6 +35,10 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/classes" element={<ClassesPage />} />
           <Route path="/buy-new-plans" element={<PlansPage />} />
+          <Route path="/schedules" element={<SchedulesPage />} />
+          <Route path="/results" element={<ResultsPage />} />
+          <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/faqs" element={<FaqsPage />} />
 
           {/* ----------- Policy Pages ---------------- */}
 

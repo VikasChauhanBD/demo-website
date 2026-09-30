@@ -52,11 +52,12 @@ function Footer() {
 
             <a href="/">Home</a>
             <a href="/about">About Dr. GRG</a>
-            <a href="/classes">Offline / Online Classes</a>
-            <a href="#plans">Buy New Plans</a>
-            <a href="#schedules">Schedules</a>
-            <a href="#results">Results / Students’ Feedback</a>
-            <a href="#blogs">Blogs</a>
+            <a href="/classes">Classes</a>
+            <a href="/buy-new-plans">Buy New Plans</a>
+            <a href="/schedules">Schedules</a>
+            <a href="/results">Results</a>
+            <a href="/blogs">Blogs</a>
+            <a href="/faqs">FAQs</a>
           </div>
 
           {/* Policies */}
