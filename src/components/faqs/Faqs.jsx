@@ -1,5 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Faqs.css";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const generalQuestions = [
   {
@@ -149,63 +154,136 @@ const grantQuestions = [
   },
 ];
 
-const CurvedFAQTitle = ({ scrollY }) => {
-  const scrollRotation = scrollY * 0.018;
+const TITLE_PHRASE = "Frequently Asked Questions";
+const TITLE_REPEAT = 8;
+const TITLE_TEXT = Array(TITLE_REPEAT).fill(TITLE_PHRASE).join(" ");
+
+const CurvedFAQTitle = () => {
+  const wrapRef = useRef(null);
+  const svgRef = useRef(null);
+  const pathRef = useRef(null);
+  const textRef = useRef(null);
+  const textPathRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const wrap = wrapRef.current;
+      const svg = svgRef.current;
+      const path = pathRef.current;
+      const text = textRef.current;
+      const textPath = textPathRef.current;
+
+      if (!wrap || !svg || !path || !text || !textPath) {
+        return undefined;
+      }
+
+      const state = { cycle: 900, progress: 0 };
+
+      const render = () => {
+        const offset = gsap.utils.wrap(
+          -state.cycle,
+          0,
+          -state.progress * state.cycle - window.scrollY * 0.6,
+        );
+
+        textPath.setAttribute("startOffset", offset);
+      };
+
+      const build = () => {
+        const { width, height } = svg.getBoundingClientRect();
+
+        if (!width || !height) {
+          return;
+        }
+
+        const pad = width * 0.15;
+        const edgeY = height * 0.8;
+        const peakY = height * 0.45;
+        const controlY = 2 * peakY - edgeY;
+
+        path.setAttribute(
+          "d",
+          `M ${-pad} ${edgeY} Q ${width / 2} ${controlY} ${width + pad} ${edgeY}`,
+        );
+
+        let length = 0;
+
+        try {
+          length = text.getSubStringLength(0, TITLE_PHRASE.length + 1);
+        } catch (error) {
+          length = 0;
+        }
+
+        if (!length) {
+          length = textPath.getComputedTextLength() / TITLE_REPEAT;
+        }
+
+        if (length) {
+          state.cycle = length;
+        }
+
+        render();
+      };
+
+      build();
+
+      const resizeObserver = new ResizeObserver(build);
+      resizeObserver.observe(svg);
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(build);
+      }
+
+      const mm = gsap.matchMedia();
+
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.to(state, {
+          progress: 1,
+          duration: 32,
+          ease: "none",
+          repeat: -1,
+          onUpdate: render,
+        });
+
+        gsap.fromTo(
+          wrap,
+          { y: 0 },
+          {
+            keyframes: [
+              { y: 7, duration: 7 },
+              { y: -5, duration: 7 },
+            ],
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+          },
+        );
+
+        ScrollTrigger.create({
+          start: 0,
+          end: "max",
+          onUpdate: render,
+        });
+      });
+
+      return () => {
+        resizeObserver.disconnect();
+        mm.revert();
+      };
+    },
+    { scope: wrapRef },
+  );
 
   return (
-    <div
-      className="faq-curved-title"
-      style={{
-        transform: `
-          translate3d(-50%, 0, 0)
-          rotate(${scrollRotation}deg)
-        `,
-      }}
-    >
-      <svg
-        className="faq-curved-svg"
-        viewBox="0 0 1600 1600"
-        preserveAspectRatio="xMidYMid meet"
-        aria-hidden="true"
-      >
+    <div className="faq-curved-title" ref={wrapRef}>
+      <svg className="faq-curved-svg" ref={svgRef} aria-hidden="true">
         <defs>
-          <path
-            id="faqCircularPath"
-            d="
-              M 800 80
-
-              C 1198 80
-                1520 402
-                1520 800
-
-              C 1520 1198
-                1198 1520
-                800 1520
-
-              C 402 1520
-                80 1198
-                80 800
-
-              C 80 402
-                402 80
-                800 80
-
-              Z
-            "
-          />
+          <path id="faqCircularPath" ref={pathRef} d="M 0 0" />
         </defs>
 
-        <text className="faq-circular-text">
-          <textPath href="#faqCircularPath" startOffset="0%">
-            Frequently Asked Questions
-            {"     "}
-            Frequently Asked Questions
-            {"     "}
-            Frequently Asked Questions
-            {"     "}
-            Frequently Asked Questions
-            {"     "}
-            Frequently Asked Questions
+        <text className="faq-circular-text" ref={textRef}>
+          <textPath ref={textPathRef} href="#faqCircularPath" startOffset="0">
+            {TITLE_TEXT}
           </textPath>
         </text>
       </svg>
@@ -228,32 +306,6 @@ const Faqs = () => {
   const [activeTab, setActiveTab] = useState("general");
   const [openIndex, setOpenIndex] = useState(null);
   const [hoverIndex, setHoverIndex] = useState(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (ticking) {
-        return;
-      }
-
-      window.requestAnimationFrame(() => {
-        setScrollY(window.scrollY);
-        ticking = false;
-      });
-
-      ticking = true;
-    };
-
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const questions = activeTab === "general" ? generalQuestions : grantQuestions;
 
@@ -270,7 +322,7 @@ const Faqs = () => {
   return (
     <main className="hejl-faq-page">
       <section className="faq-hero" aria-hidden="true">
-        <CurvedFAQTitle scrollY={scrollY} />
+        <CurvedFAQTitle />
       </section>
 
       <section className="faq-navigation">

@@ -1,0 +1,176 @@
+.faqs-header-section {
+  width: 100%;
+  background-color: #fef9f2;
+  padding: 120px 20px;
+}
+
+.faqs-header-circle-div {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faqs-header-circle {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.faqs-header-circle-div img {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.faqs-header-image1 {
+  width: 150px;
+  height: 150px;
+  top: 12%;
+  left: 12%;
+  z-index: 1;
+}
+
+.faqs-header-image2 {
+  width: 80px;
+  height: 80px;
+  top: 8%;
+  right: 28%;
+  z-index: 1;
+}
+
+.faqs-header-image3 {
+  width: 120px;
+  height: 80px;
+  bottom: 8%;
+  left: 20%;
+  z-index: 1;
+}
+
+.faqs-header-image4 {
+  width: 130px;
+  height: 160px;
+  bottom: 0;
+  right: 48%;
+  z-index: 1;
+}
+
+.faqs-header-image5 {
+  width: 220px;
+  height: 120px;
+  bottom: 20%;
+  right: 10%;
+  z-index: 1;
+}
+
+.faqs-header-heading {
+  font-size: clamp(32px, 4.3vw, 62px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.faqs-header-para {
+  width: 100%;
+  max-width: 600px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: auto;
+}
+
+/* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 1300px) {
+  .faqs-header-image1 {
+    left: 6%;
+  }
+
+  .faqs-header-image2 {
+    top: 8%;
+    right: 28%;
+  }
+
+  .faqs-header-image3 {
+    left: 13%;
+  }
+
+  .faqs-header-image4 {
+    right: 40%;
+  }
+
+  .faqs-header-image5 {
+    bottom: 15%;
+    right: 4%;
+  }
+}
+
+@media (max-width: 900px) {
+  .faqs-header-section {
+    padding: 60px 20px;
+  }
+
+  .faqs-header-circle-div {
+    padding: 80px 0;
+  }
+
+  .faqs-header-image1 {
+    top: 6%;
+    left: 4%;
+  }
+
+  .faqs-header-image2 {
+    top: 15%;
+    right: 8%;
+  }
+
+  .faqs-header-image3 {
+    left: 2%;
+    bottom: 18%;
+  }
+
+  .faqs-header-image4 {
+    right: 50%;
+  }
+
+  .faqs-header-image5 {
+    bottom: 12%;
+    right: 2%;
+  }
+}
+
+@media (max-width: 500px) {
+  .faqs-header-section {
+    padding: 80px 10px;
+  }
+
+  .faqs-header-image1 {
+    width: 120px;
+    height: 120px;
+    top: 2%;
+    left: 2%;
+  }
+
+  .faqs-header-image2 {
+    top: 12%;
+    right: 4%;
+  }
+
+  .faqs-header-image3 {
+    left: 2%;
+    bottom: 14%;
+  }
+
+  .faqs-header-image4 {
+    right: 32%;
+    bottom: 0;
+  }
+
+  .faqs-header-image5 {
+    width: 100px;
+    height: 100px;
+    bottom: 4%;
+    right: 0;
+  }
+}
