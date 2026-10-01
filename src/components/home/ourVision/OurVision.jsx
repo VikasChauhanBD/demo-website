@@ -107,8 +107,6 @@ const OurVision = () => {
       <div className="vision-container">
         <div className="vision-top">
           <span className="vision-label">OUR VISION</span>
-
-          <span className="vision-number">01</span>
         </div>
 
         <div className="vision-main">
@@ -158,11 +156,11 @@ const OurVision = () => {
                 <strong> It is to help you remember better.</strong>
               </p>
 
-              <a href="#start-learning" className="vision-cta">
+              {/* <a href="#start-learning" className="vision-cta">
                 <span>START YOUR PHARMACOLOGY JOURNEY</span>
 
                 <span className="vision-cta-arrow">↗</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

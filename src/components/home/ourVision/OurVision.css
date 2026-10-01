@@ -1,8 +1,8 @@
 .vision-section {
   width: 100%;
   padding: 140px 40px;
-  background: #fef9f2;
-  color: #111111;
+  background: #004d7a;
+  color: #ffffff;
   overflow: hidden;
 }
 
@@ -17,18 +17,13 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 25px;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.2);
+  border-bottom: 1px solid #ff9b6b;
 }
 
 .vision-label {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.16em;
-}
-
-.vision-number {
-  font-size: 13px;
-  font-weight: 500;
 }
 
 .vision-main {
@@ -43,7 +38,6 @@
 }
 
 .vision-title-line {
-  font-family: "PP Editorial New", serif;
   font-size: clamp(58px, 7vw, 110px);
   font-weight: 200;
   line-height: 0.95;
@@ -52,7 +46,7 @@
 }
 
 .vision-title-line span {
-  color: #174ea6;
+  color: #ff9b6b;
 }
 
 .vision-content {
@@ -64,11 +58,11 @@
   margin: 0 0 25px;
   font-size: clamp(17px, 1.4vw, 21px);
   line-height: 1.5;
-  color: #3c3c3c;
+  color: #ffffff;
 }
 
 .vision-description strong {
-  color: #111111;
+  color: #ff9b6b;
   font-weight: 600;
 }
 
@@ -78,12 +72,11 @@
   gap: 10px;
   margin: 45px 0;
   padding-left: 25px;
-  border-left: 2px solid #174ea6;
+  border-left: 2px solid #ff9b6b;
 }
 
 .vision-highlight-word {
   display: block;
-  font-family: "PP Editorial New", serif;
   font-size: clamp(24px, 2.2vw, 34px);
   font-weight: 200;
   line-height: 1.2;
@@ -91,7 +84,7 @@
 
 .vision-bottom {
   padding-top: 35px;
-  border-top: 1px solid rgba(17, 17, 17, 0.2);
+  border-top: 1px solid #ff9b6b;
 }
 
 .vision-closing {

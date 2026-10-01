@@ -1,6 +1,6 @@
 .home-about-page {
   width: 100%;
-  background: #fef9f2;
+  background: #ffffff;
 }
 
 .home-about-section {
@@ -23,8 +23,8 @@
   margin-bottom: 24px;
   padding: 6px 16px;
   border-radius: 9999px;
-  background: #e7a579;
-  color: #ffffff;
+  background: #e1dace;
+  color: #004d7a;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -32,7 +32,7 @@
 
 .home-about-heading {
   margin: 0;
-  color: #000000;
+  color: #222222;
   font-size: 38px;
   font-weight: 700;
   line-height: 1.08;
@@ -52,7 +52,7 @@
 
 .home-about-description {
   margin: 24px 0 0;
-  color: #3f3f3f;
+  color: #222222;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -61,9 +61,9 @@
   display: inline-block;
   margin-top: 32px;
   padding: 14px 32px;
-  border: 1px solid #ff732d;
+  border: 1px solid #ff9b6b;
   border-radius: 8px;
-  background: #ff732d;
+  background: #ff9b6b;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
@@ -73,7 +73,7 @@
 
 .home-about-cta:hover {
   background: transparent;
-  color: #ff732d;
+  color: #ff9b6b;
   transform: translateY(-2px);
 }
 

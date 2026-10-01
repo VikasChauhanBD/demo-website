@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   padding: 80px 20px;
-  background: #fef9f2;
+  background: #ffffff;
 }
 
 .why-section-content {
@@ -13,13 +13,13 @@
 
 .why-section-heading {
   font-size: 64px;
-  color: #000000;
+  color: #222222;
   font-weight: 400;
 }
 
 .why-section-sub-heading {
   font-size: 28px;
-  color: #000000;
+  color: #222222;
   font-weight: 400;
   margin-bottom: 1.5rem;
 }

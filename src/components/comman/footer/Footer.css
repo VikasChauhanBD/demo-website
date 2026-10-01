@@ -3,7 +3,7 @@
   overflow: hidden;
   padding: 100px 50px 30px;
   background: #e1dace;
-  color: #111111;
+  color: #222222;
 }
 
 .footer-container {
@@ -58,7 +58,7 @@
 .footer-brand p {
   max-width: 350px;
   margin: 0 0 35px;
-  color: #353535;
+  color: #222222;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -71,7 +71,7 @@
 }
 
 .footer-social > span {
-  color: #353535;
+  color: #222222;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -132,7 +132,7 @@
 
 .footer-column a {
   position: relative;
-  color: #353535;
+  color: #222222;
   font-size: 16px;
   text-decoration: none;
   transition:
@@ -178,7 +178,7 @@
 .footer-bottom span,
 .footer-bottom-links a {
   margin: 0;
-  color: #353535;
+  color: #222222;
   font-size: 14px;
 }
 
@@ -195,7 +195,7 @@
 }
 
 .footer-bottom-links a {
-  color: #353535;
+  color: #222222;
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -206,7 +206,7 @@
 
 /* ---------------------------------- Responsive ------------------------- */
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .footer-section {
     padding: 80px 35px 25px;
   }

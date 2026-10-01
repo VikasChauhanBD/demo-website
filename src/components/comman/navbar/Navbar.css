@@ -50,7 +50,7 @@
   position: relative;
   padding: 10px 16px;
   border-radius: 14px;
-  color: #202020;
+  color: #222222;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
@@ -61,11 +61,11 @@
 
 .navbar-content a:hover {
   background-color: #f1f6ff;
-  color: #0464de;
+  color: #004d7a;
 }
 
 .navbar-content a.active {
-  background-color: #0464de;
+  background-color: #004d7a;
   color: #ffffff;
 }
 
@@ -136,7 +136,7 @@
   display: block;
   padding: 14px 16px;
   border-radius: 13px;
-  color: #202020;
+  color: #222222;
   text-decoration: none;
   font-size: 17px;
   font-weight: 500;
@@ -148,7 +148,7 @@
 .navbar-mobile a:hover,
 .navbar-mobile a.active {
   background: #eaf3ff;
-  color: #0464de;
+  color: #004d7a;
 }
 
 /* ---------------------------------- Responsive ------------------------- */

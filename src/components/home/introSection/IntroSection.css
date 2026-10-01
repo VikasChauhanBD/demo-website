@@ -1,6 +1,6 @@
 .intro-section {
   width: 100%;
-  background-color: #fef9f2;
+  background-color: #ffffff;
   padding: 150px 20px;
 }
 
@@ -17,7 +17,7 @@
   height: 1100px;
   max-width: 80vw;
   max-height: 80vw;
-  background-color: #faece2;
+  background-color: #e1dace;
   border-radius: 50%;
   padding: 50px;
   display: flex;
@@ -69,6 +69,7 @@
   font-size: clamp(32px, 4.3vw, 62px);
   font-weight: 400;
   line-height: 1.5;
+  color: #004d7a;
 }
 
 .intro-sub-heading {
@@ -76,6 +77,7 @@
   font-weight: 500;
   line-height: 1.4;
   margin-bottom: 1.5rem;
+  color: #222222;
 }
 
 .intro-para {
@@ -84,16 +86,23 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 32px;
+  color: #222222;
 }
 
 .intro-cta {
-  border: 2px solid #202020;
+  border: 2px solid #ff9b6b;
   padding: 10px 20px;
   border-radius: 50px;
   font-size: 20px;
   text-decoration: none;
-  color: #202020;
+  background-color: #ff9b6b;
+  color: #ffffff;
   margin-top: 2rem;
+}
+
+.intro-cta:hover {
+  color: #ff9b6b;
+  background: transparent;
 }
 
 /* ---------------------------------- Responsive ------------------------- */

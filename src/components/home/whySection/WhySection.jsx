@@ -30,7 +30,7 @@ function WhySection() {
           color: "#d1d1d1",
         },
         {
-          color: "#000000",
+          color: "#222222",
           ease: "none",
           stagger: 0.08,
           duration: 0.08,
