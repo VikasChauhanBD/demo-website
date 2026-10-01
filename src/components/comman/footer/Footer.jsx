@@ -1,30 +1,49 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Footer.css";
 
 import Logo from "../../../assets/images/grg.jpeg";
-
-gsap.registerPlugin(ScrollTrigger);
 
 function Footer() {
   const footerRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".footer-animate", {
-        y: 35,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 90%",
-          once: true,
+      const tl = gsap.timeline();
+
+      tl.from(
+        ".footer-title",
+        {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+          ease: "power4.out",
         },
-      });
+        "-=0.45",
+      )
+        .from(
+          ".footer-content-item",
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: "power3.out",
+          },
+          "-=0.5",
+        )
+        .from(
+          ".footer-line",
+          {
+            scaleX: 0,
+            transformOrigin: "left",
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.4",
+        );
     }, footerRef);
 
     return () => ctx.revert();
@@ -33,54 +52,98 @@ function Footer() {
   return (
     <footer className="footer-section" ref={footerRef}>
       <div className="footer-container">
-        <div className="footer-top">
-          {/* Brand */}
-          <div className="footer-brand footer-animate">
-            <a href="#home" className="footer-logo">
+        <div className="footer-hero">
+          <h2 className="footer-title">
+            MASTER
+            <br />
+            <span>PHARMACOLOGY.</span>
+          </h2>
+        </div>
+
+        <div className="footer-main">
+          <div className="footer-brand footer-content-item">
+            <Link to="/" className="footer-logo">
               <img src={Logo} alt="GRG Logo" />
-            </a>
+            </Link>
 
             <p>
-              Learn Pharmacology with understanding, clinical connections,
-              stories and memorable mnemonics.
+              Understand Pharmacology. Remember it. Apply it. Learn with GRG Sir
+              and build concepts that stay with you.
             </p>
+
+            <div className="footer-social">
+              <span>FOLLOW GRG SIR</span>
+
+              <div className="footer-social-links">
+                <a
+                  href="https://www.instagram.com/pharmacologybydrgrg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram />
+                </a>
+
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <FaFacebookF />
+                </a>
+
+                <a
+                  href="https://www.youtube.com/@DrGobindRaiGarg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <FaYoutube />
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Main Pages */}
-          <div className="footer-column footer-animate">
-            <h3>Explore</h3>
+          <div className="footer-links footer-content-item">
+            <div className="footer-column">
+              <h3>Explore</h3>
 
-            <a href="/">Home</a>
-            <a href="/about">About Dr. GRG</a>
-            <a href="/classes">Classes</a>
-            <a href="/buy-new-plans">Buy New Plans</a>
-            <a href="/schedules">Schedules</a>
-            <a href="/results">Results</a>
-            <a href="/blogs">Blogs</a>
-            <a href="/faqs">FAQs</a>
-          </div>
+              <Link to="/">Home</Link>
+              <Link to="/about">About Dr. GRG</Link>
+              <Link to="/classes">Classes</Link>
+              <Link to="/buy-new-plans">Buy New Plans</Link>
+              <Link to="/schedules">Schedules</Link>
+              <Link to="/results">Results</Link>
+              <Link to="/blogs">Blogs</Link>
+              <Link to="/faqs">FAQs</Link>
+            </div>
 
-          {/* Policies */}
-          <div className="footer-column footer-animate">
-            <h3>Policies</h3>
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms">Terms & Conditions</Link>
-            <Link to="/cancellation-refund">Cancellation & Refund</Link>
-            <Link to="/shipping-delivery">Shipping & Delivery</Link>
-            <Link to="/device-policy">Device Policy</Link>
-            <Link to="/fair-usage-policy">Fair Usage Policy</Link>
+            <div className="footer-column">
+              <h3>Policies</h3>
+
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/terms">Terms & Conditions</Link>
+              <Link to="/cancellation-refund">Cancellation & Refund</Link>
+              <Link to="/shipping-delivery">Shipping & Delivery</Link>
+              <Link to="/device-policy">Device Policy</Link>
+              <Link to="/fair-usage-policy">Fair Usage Policy</Link>
+            </div>
           </div>
         </div>
 
-        <div className="footer-divider"></div>
+        <div className="footer-line"></div>
 
-        <div className="footer-bottom footer-animate">
+        <div className="footer-bottom footer-content-item">
           <p>© {new Date().getFullYear()} GRG. All Rights Reserved.</p>
 
-          <div className="footer-bottom-links">
-            <Link to="/privacy-policy">Privacy</Link>
+          <div className="footer-bottom-right">
+            <span>Learn. Understand. Remember. Apply.</span>
 
-            <Link to="/terms">Terms</Link>
+            <div className="footer-bottom-links">
+              <Link to="/privacy-policy">Privacy</Link>
+              <Link to="/terms">Terms</Link>
+            </div>
           </div>
         </div>
       </div>
