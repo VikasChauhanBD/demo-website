@@ -7,14 +7,16 @@ import WhoSection from "../components/home/whoSection/WhoSection";
 import AboutSection from "../components/home/aboutSection/AboutSection";
 import OurVision from "../components/home/ourVision/OurVision";
 import Approach from "../components/home/approach/Approach";
+import PlatformSection from "../components/home/platformSection/PlatformSection";
 
 function HomePage() {
   return (
     <div>
       <VideoHero />
-      <AboutSection />
-      <WhoSection />
       <IntroSection />
+      <WhoSection />
+      <PlatformSection />
+      {/* <AboutSection /> */}
       <WhatSection />
       <Approach />
       {/* <WhySection /> */}

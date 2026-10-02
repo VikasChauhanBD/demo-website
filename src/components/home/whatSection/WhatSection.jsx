@@ -6,136 +6,141 @@ import "./WhatSection.css";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const restState = [
-  { rotation: -4, origin: "bottom center", x: 0, y: 0 },
-  { rotation: 3, origin: "bottom center", x: 0, y: 0 },
-  { rotation: -2, origin: "top center", x: 0, y: 0 },
-  { rotation: 4, origin: "top center", x: 0, y: 0 },
-  { rotation: -3, origin: "top center", x: 0, y: 0 },
-];
-
-const pileTilts = [-8, 6, -3, 9, -5];
-
 function WhatSection() {
   const container = useRef(null);
 
+  const cardsData = [
+    {
+      id: 1,
+      image:
+        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp",
+      label: "01 · DETAILED LEARNING",
+      title: "GOGA Master Class",
+      description: (
+        <>
+          <strong>Where Concepts Become Confidence.</strong>
+          <br />
+          Detailed Pharmacology teaching for building your understanding from
+          the ground up.
+        </>
+      ),
+    },
+    {
+      id: 2,
+      image:
+        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp",
+      label: "02 · REVISION",
+      title: "Power Pack Revision",
+      description: (
+        <>
+          <strong>Quick. Clear. To the Point.</strong>
+          <br />
+          Concise reinforcement for efficient revision.
+        </>
+      ),
+    },
+    {
+      id: 3,
+      image:
+        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp",
+      label: "03 · RAPID LEARNING",
+      title: "GOGA Express",
+      description: (
+        <>
+          <strong>Pharmacology, When Time Is Short.</strong>
+          <br />
+          For focused, time-efficient preparation.
+        </>
+      ),
+    },
+    {
+      id: 4,
+      image:
+        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-03-jpg.webp",
+      label: "04 · PRACTICE",
+      title: "Master Class Q.Bank",
+      description: (
+        <>
+          <strong>Questions That Make You Think.</strong>
+          <br />
+          MCQs, PYQs and concept-based questions that show you how Pharmacology
+          is asked.
+        </>
+      ),
+    },
+    {
+      id: 5,
+      image:
+        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-04-jpg.webp",
+      label: "05 · ASSESSMENT",
+      title: "GOGA Test Approach",
+      description: (
+        <>
+          <strong>Attempt. Analyse. Improve.</strong>
+          <br />
+          Use questions to identify weak areas and improve recall.
+        </>
+      ),
+    },
+  ];
+
   useGSAP(
-    (context, contextSafe) => {
-      const mm = gsap.matchMedia();
+    () => {
+      const cards = gsap.utils.toArray(".what-card", container.current);
+      const cardInners = gsap.utils.toArray(
+        ".what-card-inner",
+        container.current,
+      );
 
-      mm.add("(min-width: 581px)", () => {
-        const cardsContainer = container.current.querySelector(".what-cards");
+      if (!cards.length) return;
 
-        const cards = gsap.utils.toArray(".what-card", cardsContainer);
+      cards.forEach((card, index) => {
+        card.style.setProperty("--card-index", index);
 
-        cards.forEach((card, i) => {
-          gsap.set(card, {
-            transformOrigin: restState[i].origin,
-          });
-        });
+        if (index === cards.length - 1) return;
 
-        let played = false;
+        const nextCard = cards[index + 1];
+        const cardInner = cardInners[index];
 
-        // Puts ALL cards in the centered pile
-        const setPile = () => {
-          gsap.set(cards, {
-            x: (i, el) =>
-              cardsContainer.clientWidth / 2 -
-              (el.offsetLeft + el.offsetWidth / 2),
-            y: (i, el) =>
-              cardsContainer.clientHeight / 2 -
-              (el.offsetTop + el.offsetHeight / 2),
-            rotation: (i) => pileTilts[i],
-            scale: 0.85,
-          });
-        };
+        if (!nextCard || !cardInner) return;
 
-        setPile();
+        const toScale = 1 - (cards.length - 1 - index) * 0.08;
 
-        // Pile -> rest positions
-        const spread = gsap.to(cards, {
-          x: (i) => restState[i].x,
-          y: (i) => restState[i].y,
-          rotation: (i) => restState[i].rotation,
-          scale: 1,
-          duration: 1.4,
-          ease: "power3.inOut",
-          stagger: 0.08,
-          paused: true,
-        });
+        ScrollTrigger.create({
+          trigger: nextCard,
+          start: "top 20px",
+          end: () => `bottom ${window.innerHeight - card.offsetHeight}px`,
+          scrub: true,
 
-        const trigger = ScrollTrigger.create({
-          trigger: cardsContainer,
-          start: "center 85%",
-          end: "max",
-          once: true,
-          onEnter: () => {
-            played = true;
-            spread.play();
+          onUpdate: (self) => {
+            const progress = self.progress;
+
+            const scale = gsap.utils.interpolate(1, toScale, progress);
+
+            const brightness = gsap.utils.interpolate(1, 0.65, progress);
+
+            gsap.set(cardInner, {
+              scale,
+              filter: `brightness(${brightness})`,
+            });
           },
         });
-
-        // Re-apply the pile if layout changes before the animation has played
-        const onRefreshInit = contextSafe(() => {
-          if (!played) setPile();
-        });
-
-        ScrollTrigger.addEventListener("refreshInit", onRefreshInit);
-
-        // Images change card heights when they load, so re-measure
-        const onImgLoad = contextSafe(() => {
-          if (!played) setPile();
-          ScrollTrigger.refresh();
-        });
-
-        const imgs = Array.from(cardsContainer.querySelectorAll("img"));
-
-        imgs.forEach((img) => {
-          if (!img.complete) img.addEventListener("load", onImgLoad);
-        });
-
-        const cleanups = cards.map((card, i) => {
-          const straighten = contextSafe(() => {
-            if (spread.progress() < 1) return;
-
-            gsap.to(card, {
-              rotation: 0,
-              duration: 0.4,
-              ease: "power2.out",
-              overwrite: "auto",
-            });
-          });
-
-          const tiltBack = contextSafe(() => {
-            if (spread.progress() < 1) return;
-
-            gsap.to(card, {
-              rotation: restState[i].rotation,
-              duration: 0.4,
-              ease: "power2.out",
-              overwrite: "auto",
-            });
-          });
-
-          card.addEventListener("mouseenter", straighten);
-          card.addEventListener("mouseleave", tiltBack);
-
-          return () => {
-            card.removeEventListener("mouseenter", straighten);
-            card.removeEventListener("mouseleave", tiltBack);
-          };
-        });
-
-        return () => {
-          cleanups.forEach((fn) => fn());
-          ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
-          imgs.forEach((img) => img.removeEventListener("load", onImgLoad));
-          trigger.kill();
-          spread.kill();
-        };
       });
 
-      return () => mm.revert();
+      gsap.from(".what-header > *", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".what-header",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      ScrollTrigger.refresh();
     },
     {
       scope: container,
@@ -143,96 +148,35 @@ function WhatSection() {
   );
 
   return (
-    <div className="what-container" ref={container}>
+    <section className="what-container" ref={container}>
       <div className="what-header">
         <h2 className="what-heading">WHAT’S INSIDE</h2>
-        <p className="what-para">
+
+        <h3 className="what-sub-heading">
           Different ways to learn, revise and practise Pharmacology.
-        </p>
+        </h3>
       </div>
 
       <div className="what-cards">
-        <div className="what-card">
-          <div className="what-card-image">
-            <img
-              src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp"
-              alt=""
-            />
-          </div>
+        {cardsData.map((card) => (
+          <article className="what-card" key={card.id}>
+            <div className="what-card-inner">
+              <div className="what-card-image">
+                <img src={card.image} alt={card.title} />
+              </div>
 
-          <div className="what-card-content">
-            <h3>GOGA MASTER CLASS</h3>
-            <p>
-              Where Concepts Become Confidence.
-              <br />
-              Detailed Pharmacology teaching for building your understanding
-              from the ground up.
-            </p>
-          </div>
-        </div>
+              <div className="what-card-content">
+                <span className="what-card-label">{card.label}</span>
 
-        <div className="what-card">
-          <div className="what-card-image">
-            <img
-              src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp"
-              alt=""
-            />
-          </div>
+                <h3>{card.title}</h3>
 
-          <div className="what-card-content">
-            <h3>POWER PACK REVISION</h3>
-            <p>Quick. Clear. To the Point.</p>
-          </div>
-        </div>
-
-        <div className="what-card">
-          <div className="what-card-image">
-            <img
-              src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp"
-              alt=""
-            />
-          </div>
-
-          <div className="what-card-content">
-            <h3>GOGA EXPRESS</h3>
-            <p>Pharmacology, When Time Is Short.</p>
-          </div>
-        </div>
-
-        <div className="what-card">
-          <div className="what-card-image">
-            <img
-              src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-03-jpg.webp"
-              alt=""
-            />
-          </div>
-
-          <div className="what-card-content">
-            <h3>MASTER CLASS Q.BANK</h3>
-            <p>
-              Questions That Make You Think.
-              <br />
-              MCQs, PYQs and concept based questions that show you how
-              Pharmacology is asked.
-            </p>
-          </div>
-        </div>
-
-        <div className="what-card">
-          <div className="what-card-image">
-            <img
-              src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-04-jpg.webp"
-              alt=""
-            />
-          </div>
-
-          <div className="what-card-content">
-            <h3>GOGA TEST APPROACH</h3>
-            <p>Attempt. Analyse. Improve.</p>
-          </div>
-        </div>
+                <p>{card.description}</p>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 

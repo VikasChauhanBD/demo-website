@@ -8,7 +8,7 @@
 .who-container {
   position: relative;
   z-index: 2;
-  max-width: 1300px;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -130,6 +130,12 @@
 }
 
 /* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 1300px) {
+  .who-container {
+    width: 100%;
+  }
+}
 
 @media (max-width: 900px) {
   .who-section {

@@ -128,20 +128,18 @@ const VideoHero = () => {
 
       <div className="video-hero-content">
         <div className="video-hero-text">
-          <h1>
-            FROM PHARMACOPHOBIA TO PHARMACOPHILIA
-            <br />
-            <span>Pharmacology by Dr. GRG</span>
-            <br />
+          <h2 className="video-hero-sub-heading">Pharmacology by Dr. GRG</h2>
+          <h1 className="video-hero-heading">
+            From Pharmacophobia To Pharmacophilia
+          </h1>
+
+          <p className="video-hero-para">
             Make difficult things simple.
             <br />
-            The GRG way of learning Pharmacology, now in one dedicated platform.
-            <br />
-            Concepts. Clinical connections. Mnemonics. Stories. Questions.
-            Revision.
+            Learn. Revise. Practise.
             <br />
             <b>• NEET PG • INI CET • FMGE</b>
-          </h1>
+          </p>
 
           <NavLink to="#" className="video-hero-cta">
             Start Learning

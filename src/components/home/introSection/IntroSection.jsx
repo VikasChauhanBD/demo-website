@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { NavLink } from "react-router-dom";
+import Image from "../../../assets/images/hero.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -189,28 +190,35 @@ function IntroSection() {
         />
 
         <div className="intro-circle">
-          <h2 className="intro-heading">ABOUT THE PLATFORM</h2>
+          <h2 className="intro-heading">ABOUT DR. GRG</h2>
 
           <h4 className="intro-sub-heading">
-            Built by a Teacher. Built Around Students.
+            The Teacher Behind Pharmacology by Dr. GRG
           </h4>
 
           <p className="intro-para">
-            Pharmacology by Dr. GRG brings them together in one place, helping
-            you understand the concept, remember what matters and practise what
-            you have learnt.
-            <span className="intro-tagline">Make difficult things simple.</span>
+            For more than two decades, Dr. Gobind Rai Garg has taught
+            Pharmacology in classrooms, through books and on digital platforms.
+            <br />
+            <br />
+            His approach has remained simple:
+            <br />
+            Make difficult things simple.
+            <br />
+            Teach the concept first. Then make it easier to remember, revise and
+            apply.
+            {/* <span className="intro-tagline">Make difficult things simple.</span>
             <span className="intro-chips">
               <span className="intro-chip">Concepts</span>
               <span className="intro-chip">Clinical Connections</span>
               <span className="intro-chip">Mnemonics</span>
               <span className="intro-chip">Questions</span>
               <span className="intro-chip">Revision</span>
-            </span>
+            </span> */}
           </p>
 
           <NavLink to="#" className="intro-cta">
-            Explore the Platform →
+            Meet Dr. GRG →
           </NavLink>
         </div>
 
@@ -220,11 +228,7 @@ function IntroSection() {
           alt=""
         />
 
-        <img
-          className="intro-right-bottom-img"
-          src="https://www.hejlfoundation.org/app/uploads/2024/06/cdc-n6z8c6nugfe-unsplash-1-jpg.webp"
-          alt=""
-        />
+        <img className="intro-right-bottom-img" src={Image} alt="" />
       </div>
     </div>
   );
