@@ -3,12 +3,7 @@ import "./WhoSection.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  FaUserGraduate,
-  FaStethoscope,
-  FaBookMedical,
-  FaGlobe,
-} from "react-icons/fa";
+import { FaStethoscope, FaBookMedical, FaGlobe } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,6 +15,9 @@ const WhoSection = () => {
     () => {
       const introItems = gsap.utils.toArray(".who-intro > *");
       const cards = gsap.utils.toArray(".who-card");
+      const lastSection = document.querySelector(".who-last-section");
+      const lastHeading = lastSection?.querySelector(".who-tag");
+      const lastCta = lastSection?.querySelector(".who-cta");
 
       gsap.fromTo(
         introItems,
@@ -62,6 +60,45 @@ const WhoSection = () => {
           },
         },
       );
+
+      if (lastSection && lastHeading && lastCta) {
+        gsap.set(lastHeading, {
+          opacity: 0,
+          y: 50,
+        });
+
+        gsap.set(lastCta, {
+          opacity: 0,
+          y: 30,
+          scale: 0.95,
+        });
+
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: lastSection,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          })
+          .to(lastHeading, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          })
+          .to(
+            lastCta,
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.6,
+              ease: "back.out(1.5)",
+            },
+            "-=0.3",
+          );
+      }
 
       cards.forEach((card) => {
         const icon = card.querySelector(".who-card-icon");

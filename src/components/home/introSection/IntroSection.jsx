@@ -199,11 +199,14 @@ function IntroSection() {
             Pharmacology by Dr. GRG brings them together in one place, helping
             you understand the concept, remember what matters and practise what
             you have learnt.
-            <br />
-            <br />
-            Make difficult things simple.
-            <br />
-            Concepts | Clinical Connections | Mnemonics | Questions | Revision
+            <span className="intro-tagline">Make difficult things simple.</span>
+            <span className="intro-chips">
+              <span className="intro-chip">Concepts</span>
+              <span className="intro-chip">Clinical Connections</span>
+              <span className="intro-chip">Mnemonics</span>
+              <span className="intro-chip">Questions</span>
+              <span className="intro-chip">Revision</span>
+            </span>
           </p>
 
           <NavLink to="#" className="intro-cta">

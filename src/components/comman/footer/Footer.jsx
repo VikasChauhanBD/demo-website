@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import gsap from "gsap";
 import "./Footer.css";
@@ -62,9 +62,9 @@ function Footer() {
 
         <div className="footer-main">
           <div className="footer-brand footer-content-item">
-            <Link to="/" className="footer-logo">
+            <NavLink to="/" className="footer-logo">
               <img src={Logo} alt="GRG Logo" />
-            </Link>
+            </NavLink>
 
             <p>
               Understand Pharmacology. Remember it. Apply it. Learn with GRG Sir
@@ -109,25 +109,25 @@ function Footer() {
             <div className="footer-column">
               <h3>Explore</h3>
 
-              <Link to="/">Home</Link>
-              <Link to="/about">About Dr. GRG</Link>
-              <Link to="/classes">Classes</Link>
-              <Link to="/buy-new-plans">Buy New Plans</Link>
-              <Link to="/schedules">Schedules</Link>
-              <Link to="/results">Results</Link>
-              <Link to="/blogs">Blogs</Link>
-              <Link to="/faqs">FAQs</Link>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/about">About Dr. GRG</NavLink>
+              <NavLink to="/classes">Classes</NavLink>
+              <NavLink to="/buy-new-plans">Buy New Plans</NavLink>
+              <NavLink to="/schedules">Schedules</NavLink>
+              <NavLink to="/results">Results</NavLink>
+              <NavLink to="/blogs">Blogs</NavLink>
+              <NavLink to="/faqs">FAQs</NavLink>
             </div>
 
             <div className="footer-column">
               <h3>Policies</h3>
 
-              <Link to="/privacy-policy">Privacy Policy</Link>
-              <Link to="/terms">Terms & Conditions</Link>
-              <Link to="/cancellation-refund">Cancellation & Refund</Link>
-              <Link to="/shipping-delivery">Shipping & Delivery</Link>
-              <Link to="/device-policy">Device Policy</Link>
-              <Link to="/fair-usage-policy">Fair Usage Policy</Link>
+              <NavLink to="/privacy-policy">Privacy Policy</NavLink>
+              <NavLink to="/terms">Terms & Conditions</NavLink>
+              <NavLink to="/cancellation-refund">Cancellation & Refund</NavLink>
+              <NavLink to="/shipping-delivery">Shipping & Delivery</NavLink>
+              <NavLink to="/device-policy">Device Policy</NavLink>
+              <NavLink to="/fair-usage-policy">Fair Usage Policy</NavLink>
             </div>
           </div>
         </div>
@@ -135,15 +135,18 @@ function Footer() {
         <div className="footer-line"></div>
 
         <div className="footer-bottom footer-content-item">
-          <p>© {new Date().getFullYear()} GRG. All Rights Reserved.</p>
+          <div>
+            <p>
+              &copy; {new Date().getFullYear()} GRG. All Rights Reserved.
+              Designed & Managed By:{" "}
+              <NavLink to="https://believersdestination.com/" target="_blank">
+                Believers Destination Pvt Ltd
+              </NavLink>
+            </p>
+          </div>
 
           <div className="footer-bottom-right">
             <span>Learn. Understand. Remember. Apply.</span>
-
-            <div className="footer-bottom-links">
-              <Link to="/privacy-policy">Privacy</Link>
-              <Link to="/terms">Terms</Link>
-            </div>
           </div>
         </div>
       </div>

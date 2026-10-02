@@ -1,7 +1,7 @@
 .footer-section {
   position: relative;
   overflow: hidden;
-  padding: 100px 50px 30px;
+  padding: 100px 50px 20px;
   background: #e1dace;
   color: #222222;
 }
@@ -22,7 +22,7 @@
   margin: 0;
   font-size: clamp(38px, 11vw, 175px);
   font-weight: 400;
-  line-height: 0.82;
+  line-height: 0.8;
   letter-spacing: -0.07em;
 }
 
@@ -174,9 +174,12 @@
   gap: 30px;
 }
 
+.footer-bottom a {
+  color: #004d7a;
+}
+
 .footer-bottom p,
-.footer-bottom span,
-.footer-bottom-links a {
+.footer-bottom span {
   margin: 0;
   color: #222222;
   font-size: 14px;
@@ -188,27 +191,11 @@
   gap: 40px;
 }
 
-.footer-bottom-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.footer-bottom-links a {
-  color: #222222;
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-
-.footer-bottom-links a:hover {
-  color: #004d7a;
-}
-
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1300px) {
   .footer-section {
-    padding: 80px 35px 25px;
+    padding: 80px 40px 20px;
   }
 
   .footer-main {
@@ -222,16 +209,20 @@
 
 @media (max-width: 900px) {
   .footer-section {
-    padding: 70px 25px 25px;
+    padding: 60px 30px 20px;
   }
 
   .footer-hero {
-    margin-bottom: 65px;
+    margin-bottom: 40px;
+  }
+
+  .footer-title {
+    line-height: 1.02;
   }
 
   .footer-main {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
 
   .footer-brand {
@@ -262,15 +253,7 @@
 
 @media (max-width: 500px) {
   .footer-section {
-    padding: 55px 18px 20px;
-  }
-
-  .footer-hero {
-    margin-bottom: 55px;
-  }
-
-  .footer-main {
-    gap: 50px;
+    padding: 40px 20px 10px;
   }
 
   .footer-logo img {
