@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "./VideoHero.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { NavLink } from "react-router-dom";
 
 const VideoHero = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -128,14 +129,23 @@ const VideoHero = () => {
       <div className="video-hero-content">
         <div className="video-hero-text">
           <h1>
-            A NEW ERA OF <span>PHARMACOLOGY</span>.
+            FROM PHARMACOPHOBIA TO PHARMACOPHILIA
             <br />
-            Learn Pharmacology directly from Dr. Gobind Rai Garg (Pharma Guru)
+            <span>Pharmacology by Dr. GRG</span>
             <br />
-            For <b>MBBS • NEET PG • INI-CET • FMGE</b>
+            Make difficult things simple.
+            <br />
+            The GRG way of learning Pharmacology, now in one dedicated platform.
+            <br />
+            Concepts. Clinical connections. Mnemonics. Stories. Questions.
+            Revision.
+            <br />
+            <b>• NEET PG • INI CET • FMGE</b>
           </h1>
 
-          <button className="video-hero-cta">START LEARNING</button>
+          <NavLink to="#" className="video-hero-cta">
+            Start Learning
+          </NavLink>
         </div>
       </div>
     </section>

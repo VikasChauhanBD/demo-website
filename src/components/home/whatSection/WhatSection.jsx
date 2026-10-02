@@ -8,12 +8,13 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const restState = [
   { rotation: -4, origin: "bottom center", x: 0, y: 0 },
-  { rotation: 3, origin: "top center", x: 0, y: 90 },
-  { rotation: 4, origin: "bottom center", x: 40, y: 0 },
-  { rotation: -3, origin: "top center", x: -30, y: 40 },
+  { rotation: 3, origin: "bottom center", x: 0, y: 0 },
+  { rotation: -2, origin: "top center", x: 0, y: 0 },
+  { rotation: 4, origin: "top center", x: 0, y: 0 },
+  { rotation: -3, origin: "top center", x: 0, y: 0 },
 ];
 
-const pileTilts = [-8, 6, -5, 9];
+const pileTilts = [-8, 6, -3, 9, -5];
 
 function WhatSection() {
   const container = useRef(null);
@@ -35,7 +36,7 @@ function WhatSection() {
 
         let played = false;
 
-        // Puts ALL cards in the centered pile (explicit, for every card)
+        // Puts ALL cards in the centered pile
         const setPile = () => {
           gsap.set(cards, {
             x: (i, el) =>
@@ -51,7 +52,7 @@ function WhatSection() {
 
         setPile();
 
-        // Pile -> rest positions (start values are read from the pile above)
+        // Pile -> rest positions
         const spread = gsap.to(cards, {
           x: (i) => restState[i].x,
           y: (i) => restState[i].y,
@@ -134,18 +135,6 @@ function WhatSection() {
         };
       });
 
-      mm.add("(max-width: 500px)", () => {
-        const cards = gsap.utils.toArray(".what-card", container.current);
-
-        gsap.set(cards, {
-          x: 0,
-          y: 0,
-          rotation: 0,
-          scale: 1,
-          clearProps: "transform",
-        });
-      });
-
       return () => mm.revert();
     },
     {
@@ -156,28 +145,14 @@ function WhatSection() {
   return (
     <div className="what-container" ref={container}>
       <div className="what-header">
-        <div>
-          <h4 className="what-label">
-            <span></span>What You Get
-          </h4>
-          <h2 className="what-heading">In Pharmacology By Dr. GRG</h2>
-        </div>
-
-        <div className="what-para">
-          <h3>GOGA Express - where Pharmacology Comes Alive</h3>
-          <p>
-            When you study with Goga Express, you don’t just memories. You
-            understand the concepts, mechanisms, clinical connections and
-            applications behind Pharmacology.
-            <br />
-            <br />
-            Inside the lectures, you get:
-          </p>
-        </div>
+        <h2 className="what-heading">WHAT’S INSIDE</h2>
+        <p className="what-para">
+          Different ways to learn, revise and practise Pharmacology.
+        </p>
       </div>
 
       <div className="what-cards">
-        <div className="what-card card-1">
+        <div className="what-card">
           <div className="what-card-image">
             <img
               src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp"
@@ -186,16 +161,17 @@ function WhatSection() {
           </div>
 
           <div className="what-card-content">
-            <h3>Arts & Culture</h3>
+            <h3>GOGA MASTER CLASS</h3>
             <p>
-              Art and artists are crucial for fostering human connection,
-              inspiring creativity, promoting cultural understanding, and
-              enriching communities.
+              Where Concepts Become Confidence.
+              <br />
+              Detailed Pharmacology teaching for building your understanding
+              from the ground up.
             </p>
           </div>
         </div>
 
-        <div className="what-card card-2">
+        <div className="what-card">
           <div className="what-card-image">
             <img
               src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp"
@@ -204,18 +180,26 @@ function WhatSection() {
           </div>
 
           <div className="what-card-content">
-            <h3>Education</h3>
-            <p>
-              enabling informed decisions, fostering innovation, and driving
-              social and economic progress. Knowledge holds the key to
-              empowerment,
-            </p>
+            <h3>POWER PACK REVISION</h3>
+            <p>Quick. Clear. To the Point.</p>
           </div>
         </div>
 
-        <h2>GOGA EXPRESS</h2>
+        <div className="what-card">
+          <div className="what-card-image">
+            <img
+              src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp"
+              alt=""
+            />
+          </div>
 
-        <div className="what-card card-3">
+          <div className="what-card-content">
+            <h3>GOGA EXPRESS</h3>
+            <p>Pharmacology, When Time Is Short.</p>
+          </div>
+        </div>
+
+        <div className="what-card">
           <div className="what-card-image">
             <img
               src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-03-jpg.webp"
@@ -224,16 +208,17 @@ function WhatSection() {
           </div>
 
           <div className="what-card-content">
-            <h3>Health</h3>
+            <h3>MASTER CLASS Q.BANK</h3>
             <p>
-              Healthy futures for people and the planet promote sustainability,
-              well-being, and resilience against environmental and health
-              challenges.
+              Questions That Make You Think.
+              <br />
+              MCQs, PYQs and concept based questions that show you how
+              Pharmacology is asked.
             </p>
           </div>
         </div>
 
-        <div className="what-card card-4">
+        <div className="what-card">
           <div className="what-card-image">
             <img
               src="https://www.hejlfoundation.org/app/uploads/2024/06/img-program-04-jpg.webp"
@@ -242,12 +227,8 @@ function WhatSection() {
           </div>
 
           <div className="what-card-content">
-            <h3>Policy & Advocacy</h3>
-            <p>
-              Promoting economic fairness and prosperity is crucial for reducing
-              inequality, fostering social stability, and creating opportunities
-              for everyone to thrive.
-            </p>
+            <h3>GOGA TEST APPROACH</h3>
+            <p>Attempt. Analyse. Improve.</p>
           </div>
         </div>
       </div>

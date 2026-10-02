@@ -5,53 +5,29 @@
 }
 
 .what-header {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  text-align: center;
   color: #ffffff;
-}
-
-.what-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 24px;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.what-label span {
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-color: #ff9b6b;
-  border-radius: 50px;
-  flex-shrink: 0;
 }
 
 .what-heading {
-  width: 100%;
-  max-width: 600px;
-  font-size: 72px;
-  font-weight: 400;
+  font-size: 38px;
+  font-weight: 700;
 }
 
 .what-para {
-  width: 100%;
-  max-width: 600px;
-  color: #ffffff;
-}
-
-.what-para {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.what-para p {
   font-size: 18px;
-  font-weight: 400;
+}
+
+.what-cards {
+  position: relative;
+  width: 80%;
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 200px;
+  row-gap: 100px;
+  justify-items: center;
 }
 
 .what-card {
@@ -62,6 +38,10 @@
   position: relative;
   z-index: 1;
   will-change: transform;
+}
+
+.what-card:nth-child(3) {
+  grid-column: 1 / -1;
 }
 
 .what-card-image {
@@ -89,31 +69,6 @@
   font-size: 20px;
 }
 
-.what-cards {
-  position: relative;
-  width: 80%;
-  margin: 80px auto 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 200px;
-  row-gap: 250px;
-  justify-items: center;
-}
-
-.what-cards > h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font-size: clamp(120px, 15vw, 250px);
-  font-weight: 200;
-  line-height: 1;
-  white-space: nowrap;
-  z-index: 0;
-  color: #ffffff;
-}
-
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1300px) {
@@ -124,36 +79,17 @@
 }
 
 @media (max-width: 900px) {
-  .what-header {
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-  }
-
-  .what-cards {
-    column-gap: 40px;
-    row-gap: 200px;
-  }
-}
-
-@media (max-width: 500px) {
-  .what-label {
-    font-size: 20px;
-  }
-
-  .what-label span {
-    width: 12px;
-    height: 12px;
-  }
-
   .what-heading {
-    font-size: 42px;
+    font-size: 32px;
+  }
+
+  .what-para {
+    font-size: 16px;
   }
 
   .what-cards {
-    grid-template-columns: 1fr;
-    column-gap: 0;
-    row-gap: 40px;
+    column-gap: 100px;
+    row-gap: 80px;
   }
 
   .what-card-content h3 {
@@ -163,8 +99,12 @@
   .what-card-content p {
     font-size: 18px;
   }
+}
 
-  .what-cards > h2 {
-    display: none;
+@media (max-width: 500px) {
+  .what-cards {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 40px;
   }
 }

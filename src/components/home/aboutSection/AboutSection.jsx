@@ -3,6 +3,7 @@ import "./AboutSection.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { NavLink } from "react-router-dom";
 import Image from "../../../assets/images/hero.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -126,39 +127,33 @@ const AboutSection = () => {
       <section className="home-about-section" ref={container}>
         <div className="home-about-container">
           <div className="home-about-content">
-            <span className="home-about-badge">MEET</span>
+            {/* <span className="home-about-badge">MEET</span> */}
 
             <h2 className="home-about-heading">
-              <span className="home-about-heading-line">
-                Dr. Gobind Rai Garg
-              </span>
+              <span className="home-about-heading-line">ABOUT DR. GRG</span>
             </h2>
 
+            <h3 className="home-about-subheading">
+              The Teacher Behind Pharmacology by Dr. GRG
+            </h3>
+
             <p className="home-about-description">
-              <b>
-                MBBS | MD Pharmacology, UCMS Delhi Ex-Assistant Professor,
-                Department of Pharmacology, Maulana Azad Medical College
-              </b>
+              For more than two decades, Dr. Gobind Rai Garg has taught
+              Pharmacology in classrooms, through books and on digital
+              platforms.
               <br />
               <br />
-              Known to generations of medical students as <b>
-                GRG Sir
-              </b> and <b>GOGA Sir</b>, Dr. Gobind Rai Garg has spent more than
-              18 years teaching undergraduate medical students and medical
-              entrance aspirants.
+              His approach has remained simple:
               <br />
               <br />
-              His teaching is known for making difficult drug names easier to
-              remember, breaking down complicated mechanisms and using stories
-              and mnemonics that stay with you long after the lecture ends.
-              <br />
-              <br />
-              Because Pharmacology is not only about remembering a drug.
-              <br />
-              <br />
-              It is about knowing{" "}
-              <b>why it works, where it is used, and what can go wrong</b>.
+              Make difficult things simple. <br />
+              Teach the concept first. Then make it easier to remember, revise
+              and apply.
             </p>
+
+            <NavLink to="#" className="home-about-cta">
+              Meet Dr. GRG →
+            </NavLink>
           </div>
 
           <div className="home-about-image-col">

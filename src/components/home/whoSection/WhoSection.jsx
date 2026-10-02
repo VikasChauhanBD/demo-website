@@ -9,6 +9,7 @@ import {
   FaBookMedical,
   FaGlobe,
 } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,11 +112,14 @@ const WhoSection = () => {
     <section className="who-section" ref={sectionRef}>
       <div className="who-container">
         <div className="who-intro">
-          <h2 className="who-title">Who Is This App Designed For?</h2>
+          <h2 className="who-title">WHO IS IT FOR?</h2>
 
-          <h3 className="who-sub-title">
-            Wherever You Are in Your Medical Journey
-          </h3>
+          <p className="who-para">
+            Wherever You Are in Your Medical Journey, Start Here.
+            <br />
+            The way you study Pharmacology changes with where you are in your
+            preparation.
+          </p>
         </div>
 
         <div className="who-cards">
@@ -123,15 +127,12 @@ const WhoSection = () => {
             <div className="who-card-number">01</div>
 
             <div className="who-card-icon">
-              <FaUserGraduate />
+              <FaStethoscope />
             </div>
 
             <div className="who-card-content">
-              <h3>Second Prof MBBS Students</h3>
-              <p>
-                Starting Pharmacology from the basics? Build a strong foundation
-                for your university exams and the subjects that follow.
-              </p>
+              <h3>NEET PG</h3>
+              <p>Bring concepts, revision and questions together.</p>
             </div>
           </article>
 
@@ -139,14 +140,14 @@ const WhoSection = () => {
             <div className="who-card-number">02</div>
 
             <div className="who-card-icon">
-              <FaStethoscope />
+              <FaBookMedical />
             </div>
 
             <div className="who-card-content">
-              <h3>NEET PG Aspirants</h3>
+              <h3>INI CET</h3>
               <p>
-                Revise important mechanisms, drug choices, adverse effects and
-                frequently tested areas with an exam-focused approach.
+                Build the understanding that helps you work through mechanisms,
+                clinical connections and unfamiliar questions.
               </p>
             </div>
           </article>
@@ -155,33 +156,25 @@ const WhoSection = () => {
             <div className="who-card-number">03</div>
 
             <div className="who-card-icon">
-              <FaBookMedical />
-            </div>
-
-            <div className="who-card-content">
-              <h3>INI-CET Aspirants</h3>
-              <p>
-                Go beyond recall with concepts and clinical application that
-                help you approach integrated questions.
-              </p>
-            </div>
-          </article>
-
-          <article className="who-card">
-            <div className="who-card-number">04</div>
-
-            <div className="who-card-icon">
               <FaGlobe />
             </div>
 
             <div className="who-card-content">
-              <h3>FMGE Aspirants</h3>
-              <p>
-                Focus on the Pharmacology areas that matter for your
-                preparation, revision and question practice.
-              </p>
+              <h3>FMGE</h3>
+              <p>Make Pharmacology easier to understand, revise and recall.</p>
             </div>
           </article>
+        </div>
+
+        <div className="who-last-section">
+          <h3 className="who-tag">
+            Starting from zero or revising for the fifth time, there is a place
+            for you here.
+          </h3>
+
+          <NavLink to="#" className="who-cta">
+            Find Your Starting Point →
+          </NavLink>
         </div>
       </div>
     </section>

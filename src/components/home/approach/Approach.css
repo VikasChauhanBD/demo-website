@@ -1,0 +1,131 @@
+.approach-section {
+  width: 100%;
+  padding: 100px 20px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.approach-main {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: #222222;
+}
+
+.approach-title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #004d7a;
+}
+
+.approach-sub-title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.approach-para {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.approach-tag {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+.approach-main-cta,
+.approach-final-cta {
+  display: inline-block;
+  border: 2px solid #ff9b6b;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: #ff9b6b;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.approach-main-cta:hover,
+.approach-final-cta:hover {
+  color: #ff9b6b;
+  background: transparent;
+}
+
+.approach-final {
+  width: 80%;
+  margin: 2.5rem auto 0;
+  text-align: center;
+  background-color: #004d7a;
+  padding: 40px 20px;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.approach-final-title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.approach-final-para {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.approach-final-tag {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 900px) {
+  .approach-section {
+    padding: 60px 20px;
+  }
+
+  .approach-main,
+  .approach-final {
+    width: 100%;
+  }
+
+  .approach-title {
+    font-size: 32px;
+  }
+
+  .approach-sub-title {
+    font-size: 24px;
+  }
+
+  .approach-para,
+  .approach-final-para {
+    font-size: 16px;
+  }
+
+  .approach-final-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .approach-tag,
+  .approach-final-tag {
+    font-size: 18px;
+  }
+
+  .approach-main-cta,
+  .approach-final-cta {
+    font-size: 16px;
+    padding: 9px 18px;
+    margin-top: 1.5rem;
+  }
+}

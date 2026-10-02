@@ -189,31 +189,26 @@ function IntroSection() {
         />
 
         <div className="intro-circle">
-          <h2 className="intro-heading">Pharmacology With Dr. GRG</h2>
+          <h2 className="intro-heading">ABOUT THE PLATFORM</h2>
 
           <h4 className="intro-sub-heading">
-            Understand It. Enjoy it. Apply It.
+            Built by a Teacher. Built Around Students.
           </h4>
 
           <p className="intro-para">
-            Pharmacology can feel like a lot when you first start studying it.
+            Pharmacology by Dr. GRG brings them together in one place, helping
+            you understand the concept, remember what matters and practise what
+            you have learnt.
             <br />
-            There are drug names, mechanisms, classifications, adverse effects
-            and clinical uses , and somehow, you have to remember all of it.
             <br />
-            Pharmacology By GRG's approach is simple:
+            Make difficult things simple.
             <br />
-            <b>
-              Understand the concept first. Find an easy way to remember it.
-              Then practise using it.
-            </b>
-            <br />
-            Whether you're starting Pharmacology in <b>Second Prof MBBS</b> or
-            preparing for <b>NEET PG, INI-CET or FMGE</b>, this is a place to
-            learn, practise and revise Pharmacology with GRG Sir.
+            Concepts | Clinical Connections | Mnemonics | Questions | Revision
           </p>
 
-          <NavLink className="intro-cta">Start Learning</NavLink>
+          <NavLink to="#" className="intro-cta">
+            Explore the Platform →
+          </NavLink>
         </div>
 
         <img

@@ -92,8 +92,6 @@
   z-index: 2;
 }
 
-/* Cursor Following Lines */
-
 .video-hero-cursor-horizontal-line {
   position: absolute;
   top: 50%;
@@ -116,8 +114,6 @@
   pointer-events: none;
 }
 
-/* Hero Content */
-
 .video-hero-content {
   position: relative;
   z-index: 3;
@@ -127,13 +123,10 @@
 }
 
 .video-hero-text h1 {
-  font-size: 60px;
+  font-size: 38px;
   font-weight: 400;
   line-height: 1.2;
-  margin: 0;
 }
-
-/* Gradient Text */
 
 /* .video-hero-text h1 span {
   background: linear-gradient(
@@ -153,6 +146,7 @@
 } */
 
 .video-hero-text h1 span {
+  font-weight: 700;
   background: linear-gradient(
     90deg,
     #00f5ff 0%,
@@ -170,7 +164,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-
   animation: gradient-flow 6s linear infinite;
 }
 
@@ -189,13 +182,15 @@
 }
 
 .video-hero-cta {
-  margin-top: 30px;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 2.5rem;
   padding: 16px 34px;
   border: 1px solid #ff9b6b;
   border-radius: 50px;
   background: #ff9b6b;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 1.5px;
   cursor: pointer;
@@ -216,10 +211,6 @@
   .video-hero-content {
     width: 80%;
   }
-
-  .video-hero-text h1 {
-    font-size: 52px;
-  }
 }
 
 @media (max-width: 900px) {
@@ -234,7 +225,7 @@
   }
 
   .video-hero-text h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .video-hero-background-video {
@@ -245,12 +236,12 @@
 
 @media (max-width: 500px) {
   .video-hero-text h1 {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .video-hero-cta {
-    margin-top: 20px;
+    margin-top: 1.5rem;
     padding: 13px 26px;
-    font-size: 12px;
+    font-size: 16px;
   }
 }
