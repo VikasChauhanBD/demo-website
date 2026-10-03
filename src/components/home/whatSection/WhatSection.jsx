@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import "./WhatSection.css";
+import { NavLink } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -175,6 +176,11 @@ function WhatSection() {
             </div>
           </article>
         ))}
+      </div>
+      <div className="what-guidance">
+        <h3>Not sure where to start?</h3>
+        <p>Build your foundation with Master Class, revisit concepts with Power Pack Revision, or choose GOGA Express when time is short.</p>
+        <NavLink to="/buy-new-plans">Find Your Plan →</NavLink>
       </div>
     </section>
   );

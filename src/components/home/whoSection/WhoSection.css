@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   padding: 110px 20px;
-  background: #004d7a;
+  background: #e1dace;
 }
 
 .who-container {
@@ -15,7 +15,7 @@
 .who-intro {
   margin-bottom: 60px;
   text-align: center;
-  color: #ffffff;
+  color: #004d7a;
 }
 
 .who-title {
@@ -98,7 +98,7 @@
 
 .who-tag {
   margin-top: 2rem;
-  color: #ffffff;
+  color: #004d7a;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.08;

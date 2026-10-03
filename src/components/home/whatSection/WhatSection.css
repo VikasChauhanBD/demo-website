@@ -1,3 +1,22 @@
+.what-guidance {
+  max-width: 800px;
+  margin: 60px auto 0;
+  text-align: center;
+  color: white;
+}
+
+.what-guidance h3 { font-size: 28px; }
+.what-guidance p { margin: 18px 0; line-height: 1.7; }
+.what-guidance a {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 50px;
+  background: #ff9b6b;
+  color: #17384d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .what-container {
   width: 100%;
   background-image: linear-gradient(

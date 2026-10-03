@@ -203,6 +203,11 @@
     font-size: 32px;
   }
 
+  .platform-para {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
   .platform-strip {
     font-size: 24px;
   }

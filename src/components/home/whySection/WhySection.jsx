@@ -1,70 +1,65 @@
-import React, { useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import React from "react";
+import { FiLayers, FiGitBranch, FiTarget } from "react-icons/fi";
 import "./WhySection.css";
 
-gsap.registerPlugin(ScrollTrigger);
+const reasons = [
+  {
+    number: "01",
+    icon: FiLayers,
+    label: "RECALL",
+    title: "You understand it — but forget it.",
+    description:
+      "Mechanisms, drug names, adverse effects and classifications can be hard to retain and retrieve under exam pressure.",
+  },
+  {
+    number: "02",
+    icon: FiGitBranch,
+    label: "CONNECTION",
+    title: "You know the facts — but can't connect them.",
+    description:
+      "Build the link between mechanism, clinical use, adverse effects, contraindications and relevant physiology or pathology.",
+  },
+  {
+    number: "03",
+    icon: FiTarget,
+    label: "CLARITY",
+    title: "You don't know what matters most.",
+    description:
+      "Identify high-yield concepts, repeated themes, common traps, newer drugs and the right material to revisit.",
+  },
+];
 
 function WhySection() {
-  const container = useRef(null);
-
-  useGSAP(
-    () => {
-      const section = container.current;
-      const text = section.querySelector(".why-section-para");
-
-      if (!section || !text) return;
-
-      const words = text.textContent.trim().split(/\s+/);
-
-      text.innerHTML = words
-        .map((word) => `<span class="why-word">${word}</span>`)
-        .join(" ");
-
-      const wordElements = text.querySelectorAll(".why-word");
-
-      gsap.fromTo(
-        wordElements,
-        {
-          color: "#d1d1d1",
-        },
-        {
-          color: "#222222",
-          ease: "none",
-          stagger: 0.08,
-          duration: 0.08,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
-    },
-    {
-      scope: container,
-    },
-  );
-
   return (
-    <section className="why-section" ref={container}>
+    <section className="why-section" aria-labelledby="why-section-heading">
       <div className="why-section-content">
-        <h2 className="why-section-heading">Why This App?</h2>
+        <div className="why-section-header">
+          <p className="why-section-eyebrow">WHY THIS PLATFORM</p>
+          <h2 className="why-section-heading" id="why-section-heading">
+            Everything you learn.<br /><span>Finally connected.</span>
+          </h2>
+          <p className="why-section-sub-heading">
+            Pharmacology is not difficult because there are too many drugs. It
+            becomes difficult when everything feels disconnected.
+          </p>
+        </div>
 
-        <h4 className="why-section-sub-heading">
-          Because You Don't Need Another Resource.You Need the Right One.
-        </h4>
-
-        <p className="why-section-para">
-          You already have lectures to watch, books to read, questions to solve
-          and topics to revise. The problem is finding the time to manage all of
-          it. This platform is designed to make that process simpler. Study when
-          you have time. Pause when you need to. Revisit a difficult topic
-          before your exam. Practise questions after finishing a chapter. You
-          don't have to study everything at once. Take one topic. Understand it.
-          Revise it. Move ahead.
-        </p>
+        <ol className="why-section-reasons">
+          {reasons.map((reason) => (
+            <li className="why-section-reason" key={reason.number}>
+              <div className="why-section-node" aria-hidden="true">
+                <reason.icon />
+                <span className="why-section-number">{reason.number}</span>
+              </div>
+              <div className="why-section-reason-copy">
+                <p className="why-section-label">{reason.label}</p>
+                <h3 className="why-section-reason-title">{reason.title}</h3>
+              </div>
+              <p className="why-section-para">{reason.description}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="why-section-footer">Understand the concepts. <span>Connect the dots.</span> Retain what matters.</p>
       </div>
     </section>
   );

@@ -4,23 +4,23 @@ import IntroSection from "../components/home/introSection/IntroSection";
 import WhatSection from "../components/home/whatSection/WhatSection";
 import WhySection from "../components/home/whySection/WhySection";
 import WhoSection from "../components/home/whoSection/WhoSection";
-import AboutSection from "../components/home/aboutSection/AboutSection";
-import OurVision from "../components/home/ourVision/OurVision";
-import Approach from "../components/home/approach/Approach";
+import BeforeYouJoin from "../components/home/beforeYouJoin/BeforeYouJoin";
 import PlatformSection from "../components/home/platformSection/PlatformSection";
+import PromiseSection from "../components/home/promiseSection/PromiseSection";
+import GrgWaySection from "../components/home/grgWaySection/GrgWaySection";
 
 function HomePage() {
   return (
     <div>
       <VideoHero />
-      <IntroSection />
-      <WhoSection />
+      <WhySection />
       <PlatformSection />
-      {/* <AboutSection /> */}
+      <PromiseSection />
+      <GrgWaySection />
+      <WhoSection />
       <WhatSection />
-      <Approach />
-      {/* <WhySection /> */}
-      {/* <OurVision /> */}
+      <IntroSection />
+      <BeforeYouJoin />
     </div>
   );
 }

@@ -1,194 +1,575 @@
+/* =========================================================
+   MAIN NAVBAR
+========================================================= */
 .navbar-container {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 34px;
+  /* IMPORTANT:
+     No full-width border */
+  border: none;
+  box-shadow: none;
 }
-
+/* =========================================================
+   NAVBAR INNER
+========================================================= */
 .navbar-inner {
   width: 100%;
+  max-width: 1550px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 }
-
-/* Logo */
-
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+/* =========================================================
+   LOGO
+========================================================= */
 .navbar-logo {
   display: flex;
   align-items: center;
 }
-
 .navbar-logo a {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
-
 .navbar-logo img {
   display: block;
-  width: 60px;
-  height: auto;
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
   border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
-
-/* Desktop Menu */
-
-.navbar-content {
+/* =========================================================
+   SMALL DIVIDER AFTER LOGO
+========================================================= */
+.navbar-divider {
+  width: 1px;
+  height: 38px;
+  margin: 0 2px;
+  background: #dfe3e8;
+}
+/* =========================================================
+   PROGRAM SELECTOR
+========================================================= */
+.program-selector {
+  position: relative;
+  flex-shrink: 0;
+}
+/* =========================================================
+   PROGRAM BUTTON
+========================================================= */
+.program-button {
+  width: 145px;
+  height: 46px;
+  padding: 0 15px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.navbar-content a {
-  position: relative;
-  padding: 10px 16px;
-  border-radius: 14px;
-  color: #222222;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
+  justify-content: space-between;
+  gap: 15px;
+  border: 1px solid #cfd6df;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #292765;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   transition:
-    color 0.25s ease,
-    background-color 0.25s ease;
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
-
-.navbar-content a:hover {
-  background-color: #f1f6ff;
+.program-button:hover,
+.program-button.open {
+  border-color: #9da8b6;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+}
+/* =========================================================
+   PROGRAM ARROW
+========================================================= */
+.program-arrow {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-right: 2px solid #344054;
+  border-bottom: 2px solid #344054;
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition:
+    transform 0.25s ease,
+    margin 0.25s ease;
+}
+.program-button.open .program-arrow {
+  transform: rotate(225deg);
+  margin-top: 4px;
+}
+/* =========================================================
+   PROGRAM DROPDOWN
+========================================================= */
+.program-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 145px;
+  padding: 7px;
+  background: #ffffff;
+  border: 1px solid #e1e5eb;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-7px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+  z-index: 10000;
+}
+.program-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/* =========================================================
+   PROGRAM DROPDOWN BUTTONS
+========================================================= */
+.program-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  background: transparent;
+  color: #344054;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.program-dropdown button:hover,
+.program-dropdown button.selected {
+  background: #f1f6ff;
+  color: #005b8f;
+}
+/* =========================================================
+   RIGHT NAVIGATION
+   ONLY THIS PART HAS BORDER
+========================================================= */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  padding: 5px 8px;
+  background: #ffffff;
+  border: 1px solid #e1e5eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+/* =========================================================
+   RIGHT NAVIGATION LINKS
+========================================================= */
+.navbar-right > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 13px;
+  border-radius: 8px;
+  background: transparent;
+  color: #292765;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.navbar-right > a:hover {
+  background: #f1f6ff;
   color: #004d7a;
 }
-
-.navbar-content a.active {
-  background-color: #004d7a;
-  color: #ffffff;
+/* =========================================================
+   PHARMA APP
+========================================================= */
+.pharma-dropdown {
+  position: relative;
 }
-
-/* Hamburger */
-
+.pharma-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 13px;
+  gap: 9px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  color: #292765;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.pharma-button:hover {
+  background: #f1f6ff;
+  color: #004d7a;
+}
+/* =========================================================
+   PHARMA ARROW
+========================================================= */
+.pharma-arrow {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-right: 1.8px solid #344054;
+  border-bottom: 1.8px solid #344054;
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition:
+    transform 0.25s ease,
+    margin 0.25s ease;
+}
+.pharma-dropdown:hover .pharma-arrow {
+  transform: rotate(225deg);
+  margin-top: 4px;
+}
+/* =========================================================
+   PHARMA DROPDOWN
+========================================================= */
+.pharma-menu {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 50%;
+  width: 210px;
+  padding: 7px;
+  background: #ffffff;
+  border: 1px solid #e1e5eb;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-7px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+  z-index: 10000;
+}
+.pharma-dropdown:hover .pharma-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+/* =========================================================
+   PHARMA DROPDOWN LINKS
+========================================================= */
+.pharma-menu a {
+  display: block;
+  padding: 11px 13px;
+  border-radius: 7px;
+  background: transparent;
+  color: #344054;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.pharma-menu a:hover {
+  background: #f1f6ff;
+  color: #004d7a;
+}
+/* =========================================================
+   HAMBURGER
+========================================================= */
 .navbar-hamburger {
   display: none;
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
   padding: 0;
-  border: 0;
-  border-radius: 14px;
+  border: 1px solid #dfe3e8;
+  border-radius: 9px;
+  outline: none;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   cursor: pointer;
-
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
 }
-
 .navbar-hamburger span {
   display: block;
   width: 21px;
   height: 2px;
   border-radius: 10px;
-  background: #101828;
+  background: #292765;
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
 }
-
-/* Hamburger → X */
-
+/* =========================================================
+   HAMBURGER → X
+========================================================= */
 .navbar-hamburger.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-
 .navbar-hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-
 .navbar-hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
-
-/* Mobile Menu */
-
-.navbar-mobile-wrapper {
+/* =========================================================
+   MOBILE MENU WRAPPER
+========================================================= */
+.mobile-menu-wrapper {
   display: none;
-}
-
-.navbar-mobile {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 12px;
-  padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 20px;
-  background: #ffffff;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+  height: 0;
+  opacity: 0;
   overflow: hidden;
 }
-
-.navbar-mobile a {
-  display: block;
-  padding: 14px 16px;
-  border-radius: 13px;
-  color: #222222;
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 12px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #e1e5eb;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+/* =========================================================
+   MOBILE NORMAL LINKS
+========================================================= */
+.mobile-menu > div > a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: transparent !important;
+  color: #292765 !important;
   text-decoration: none;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition:
-    background-color 0.25s ease,
-    color 0.25s ease;
+    background 0.2s ease,
+    color 0.2s ease;
 }
-
-.navbar-mobile a:hover,
-.navbar-mobile a.active {
-  background: #eaf3ff;
-  color: #004d7a;
+.mobile-menu > div > a:hover {
+  background: #f1f6ff !important;
+  color: #004d7a !important;
 }
-
-/* ---------------------------------- Responsive ------------------------- */
-
+/* =========================================================
+   MOBILE DROPDOWN BUTTON
+========================================================= */
+.mobile-dropdown-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  color: #292765 !important;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.mobile-dropdown-button:hover {
+  background: #f1f6ff;
+}
+/* =========================================================
+   MOBILE ARROW
+========================================================= */
+.mobile-arrow {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-right: 2px solid #344054;
+  border-bottom: 2px solid #344054;
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition:
+    transform 0.25s ease,
+    margin 0.25s ease;
+}
+.mobile-arrow.open {
+  transform: rotate(225deg);
+  margin-top: 4px;
+}
+/* =========================================================
+   MOBILE SUBMENU
+========================================================= */
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease;
+}
+.mobile-submenu.show {
+  max-height: 300px;
+  opacity: 1;
+}
+/* =========================================================
+   MOBILE SUBMENU LINKS
+========================================================= */
+.mobile-submenu button,
+.mobile-submenu a {
+  display: block;
+  width: 100%;
+  padding: 10px 14px 10px 28px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  background: transparent;
+  color: #475467 !important;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mobile-submenu button:hover,
+.mobile-submenu a:hover {
+  background: #f1f6ff;
+  color: #004d7a !important;
+}
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 1150px) {
+  .navbar-container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .navbar-left {
+    gap: 12px;
+  }
+  .navbar-logo img {
+    width: 54px;
+    height: 54px;
+  }
+  .navbar-divider {
+    height: 34px;
+  }
+  .program-button {
+    width: 130px;
+  }
+  .program-dropdown {
+    width: 130px;
+  }
+  .navbar-right {
+    gap: 0;
+    padding: 4px 6px;
+  }
+  .navbar-right > a,
+  .pharma-button {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 13px;
+  }
+}
+/* =========================================================
+   MOBILE
+========================================================= */
 @media (max-width: 900px) {
   .navbar-container {
-    padding: 16px 20px;
+    padding: 10px 16px;
+    background: #ffffff;
+    border: none;
+    box-shadow: none;
   }
-
+  .navbar-inner {
+    gap: 12px;
+  }
   .navbar-logo img {
-    width: 55px;
+    width: 50px;
+    height: 50px;
   }
-
+  /* Hide desktop navigation */
   .navbar-desktop {
     display: none;
   }
-
+  /* Hide desktop selector */
+  .program-selector {
+    display: none;
+  }
+  /* Hide divider */
+  .navbar-divider {
+    display: none;
+  }
+  /* Show hamburger */
   .navbar-hamburger {
     display: flex;
+    margin-left: auto;
   }
-
-  .navbar-mobile-wrapper {
+  /* Show mobile menu */
+  .mobile-menu-wrapper {
     display: block;
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
   }
 }
-
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 @media (max-width: 500px) {
   .navbar-container {
-    padding: 14px 16px;
+    padding: 9px 13px;
   }
-
   .navbar-logo img {
-    width: 50px;
+    width: 46px;
+    height: 46px;
   }
-
   .navbar-hamburger {
-    width: 44px;
-    height: 44px;
+    width: 43px;
+    height: 43px;
   }
 }

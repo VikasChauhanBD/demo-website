@@ -194,7 +194,7 @@ function PlatformSection() {
     <section className="platform-section" ref={container}>
       <div className="platform-container">
         <div className="platform-header">
-          <span className="platform-tag">ABOUT THE PLATFORM</span>
+          <span className="platform-tag">GRG PROMISE</span>
 
           <h2 className="platform-heading">
             <span>Built by a Teacher.</span>{" "}
@@ -204,9 +204,9 @@ function PlatformSection() {
           </h2>
 
           <p className="platform-para">
-            Pharmacology by Dr. GRG brings them together in one place, helping
-            you understand the concept, remember what matters and practise what
-            you have learnt.
+            Concepts, clinical connections, mnemonics, questions and revision
+            come together in one place, helping you understand the concept,
+            remember what matters and practise what you have learnt.
           </p>
         </div>
 

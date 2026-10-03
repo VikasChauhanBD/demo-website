@@ -149,7 +149,7 @@ const WhoSection = () => {
     <section className="who-section" ref={sectionRef}>
       <div className="who-container">
         <div className="who-intro">
-          <h2 className="who-title">WHO IS IT FOR?</h2>
+          <h2 className="who-title">BUILT FOR YOUR EXAM</h2>
 
           <p className="who-para">
             Wherever You Are in Your Medical Journey, Start Here.
@@ -205,11 +205,11 @@ const WhoSection = () => {
 
         <div className="who-last-section">
           <h3 className="who-tag">
-            Starting from zero or revising for the fifth time, there is a place
-            for you here.
+            Start Here — whether you are building your foundation or revising
+            for your next exam.
           </h3>
 
-          <NavLink to="#" className="who-cta">
+          <NavLink to="/buy-new-plans" className="who-cta">
             Find Your Starting Point →
           </NavLink>
         </div>

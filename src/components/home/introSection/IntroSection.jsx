@@ -190,7 +190,7 @@ function IntroSection() {
         />
 
         <div className="intro-circle">
-          <h2 className="intro-heading">ABOUT DR. GRG</h2>
+          <h2 className="intro-heading">EXPERIENCE THE TEACHING</h2>
 
           <h4 className="intro-sub-heading">
             The Teacher Behind Pharmacology by Dr. GRG
@@ -217,8 +217,8 @@ function IntroSection() {
             </span> */}
           </p>
 
-          <NavLink to="#" className="intro-cta">
-            Meet Dr. GRG →
+          <NavLink to="/classes" className="intro-cta">
+            Explore Classes →
           </NavLink>
         </div>
 
