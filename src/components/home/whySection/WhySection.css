@@ -31,10 +31,10 @@
 }
 .why-section-heading {
   margin: 0;
-  font-size: 38px;
+  font-size: clamp(40px, 4.8vw, 68px);
   font-weight: 600;
   line-height: 1.12;
-  letter-spacing: normal;
+  letter-spacing: -2.5px;
 }
 .why-section-heading span {
   font-family: Georgia, "Times New Roman", serif;
@@ -145,12 +145,6 @@
   }
 }
 @media (max-width: 900px) {
-  .why-section-heading {
-    font-size: 32px;
-  }
-  .why-section-sub-heading {
-    font-size: 16px;
-  }
   .why-section {
     padding: 72px 24px 56px;
   }
@@ -172,8 +166,8 @@
     padding: 56px 20px 40px;
   }
   .why-section-heading {
-    font-size: 32px;
-    letter-spacing: normal;
+    font-size: 40px;
+    letter-spacing: -1.5px;
   }
   .why-section-sub-heading {
     font-size: 16px;

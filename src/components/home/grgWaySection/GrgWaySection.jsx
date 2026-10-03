@@ -25,11 +25,10 @@ export default function GrgWaySection() {
             <p className="grg-way-note">The system combines conceptual teaching with exam orientation, recall tools and continuous assessment — because concepts and exam preparation do not have to compete with each other.</p>
           </div>
           <ol className="grg-way-steps" aria-label="The five stages of the GRG learning roadmap">
-            {steps.map((step, index) => {
+            {steps.map((step) => {
               const StepIcon = step.icon;
               return <li key={step.title}>
                 <div className="grg-way-step">
-                  <span className="grg-way-step-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                   <span className="grg-way-icon"><StepIcon aria-hidden="true" /></span>
                   <span className="grg-way-step-title">{step.title}</span>
                   <span className="grg-way-step-label">{step.label}</span>

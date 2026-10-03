@@ -5,12 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaStethoscope, FaBookMedical, FaGlobe } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-
 gsap.registerPlugin(ScrollTrigger);
-
 const WhoSection = () => {
   const sectionRef = useRef(null);
-
   useGSAP(
     () => {
       const introItems = gsap.utils.toArray(".who-intro > *");
@@ -18,7 +15,6 @@ const WhoSection = () => {
       const lastSection = document.querySelector(".who-last-section");
       const lastHeading = lastSection?.querySelector(".who-tag");
       const lastCta = lastSection?.querySelector(".who-cta");
-
       gsap.fromTo(
         introItems,
         {
@@ -38,7 +34,6 @@ const WhoSection = () => {
           },
         },
       );
-
       gsap.fromTo(
         cards,
         {
@@ -60,19 +55,16 @@ const WhoSection = () => {
           },
         },
       );
-
       if (lastSection && lastHeading && lastCta) {
         gsap.set(lastHeading, {
           opacity: 0,
           y: 50,
         });
-
         gsap.set(lastCta, {
           opacity: 0,
           y: 30,
           scale: 0.95,
         });
-
         gsap
           .timeline({
             scrollTrigger: {
@@ -99,17 +91,14 @@ const WhoSection = () => {
             "-=0.3",
           );
       }
-
       cards.forEach((card) => {
         const icon = card.querySelector(".who-card-icon");
-
         const enter = () => {
           gsap.to(card, {
             y: -8,
             duration: 0.3,
             ease: "power2.out",
           });
-
           gsap.to(icon, {
             rotate: 8,
             scale: 1.08,
@@ -117,14 +106,12 @@ const WhoSection = () => {
             ease: "power2.out",
           });
         };
-
         const leave = () => {
           gsap.to(card, {
             y: 0,
             duration: 0.3,
             ease: "power2.out",
           });
-
           gsap.to(icon, {
             rotate: 0,
             scale: 1,
@@ -132,10 +119,8 @@ const WhoSection = () => {
             ease: "power2.out",
           });
         };
-
         card.addEventListener("mouseenter", enter);
         card.addEventListener("mouseleave", leave);
-
         return () => {
           card.removeEventListener("mouseenter", enter);
           card.removeEventListener("mouseleave", leave);
@@ -144,13 +129,11 @@ const WhoSection = () => {
     },
     { scope: sectionRef },
   );
-
   return (
     <section className="who-section" ref={sectionRef}>
       <div className="who-container">
         <div className="who-intro">
           <h2 className="who-title">BUILT FOR YOUR EXAM</h2>
-
           <p className="who-para">
             Wherever You Are in Your Medical Journey, Start Here.
             <br />
@@ -158,28 +141,22 @@ const WhoSection = () => {
             preparation.
           </p>
         </div>
-
         <div className="who-cards">
           <article className="who-card">
             <div className="who-card-number">01</div>
-
             <div className="who-card-icon">
               <FaStethoscope />
             </div>
-
             <div className="who-card-content">
               <h3>NEET PG</h3>
               <p>Bring concepts, revision and questions together.</p>
             </div>
           </article>
-
           <article className="who-card">
             <div className="who-card-number">02</div>
-
             <div className="who-card-icon">
               <FaBookMedical />
             </div>
-
             <div className="who-card-content">
               <h3>INI CET</h3>
               <p>
@@ -188,27 +165,22 @@ const WhoSection = () => {
               </p>
             </div>
           </article>
-
           <article className="who-card">
             <div className="who-card-number">03</div>
-
             <div className="who-card-icon">
               <FaGlobe />
             </div>
-
             <div className="who-card-content">
               <h3>FMGE</h3>
               <p>Make Pharmacology easier to understand, revise and recall.</p>
             </div>
           </article>
         </div>
-
         <div className="who-last-section">
           <h3 className="who-tag">
             Start Here — whether you are building your foundation or revising
             for your next exam.
           </h3>
-
           <NavLink to="/buy-new-plans" className="who-cta">
             Find Your Starting Point →
           </NavLink>
@@ -217,5 +189,4 @@ const WhoSection = () => {
     </section>
   );
 };
-
 export default WhoSection;

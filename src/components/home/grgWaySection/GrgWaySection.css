@@ -11,7 +11,7 @@
 .grg-way-roadmap-heading h3 { margin: 10px 0 0; font-size: 23px; font-weight: 600; letter-spacing: -.5px; }
 .grg-way-explore { display: flex; align-items: center; gap: 8px; color: #627680; font-size: 12px; }
 .grg-way-steps { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0 0 28px; gap: 8px; }
-.grg-way-steps::before { content: ''; position: absolute; top: 66px; left: 8%; right: 8%; height: 2px; background: #ccdce3; }
+.grg-way-steps::before { content: ''; position: absolute; top: 53px; left: 8%; right: 8%; height: 2px; background: #ccdce3; }
 .grg-way-steps li { min-width: 0; position: relative; }
 .grg-way-step { display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; padding: 14px 6px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: #004d7a; font: inherit;  text-align: center; transition: background .2s, border-color .2s; }
 .grg-way-step-number { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: #667b85; }
