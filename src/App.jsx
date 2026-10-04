@@ -15,6 +15,8 @@ import FaqsPage from "./pages/FaqsPage";
 
 import NeetPgPlansPage from "./pages/NeetPgPlansPage";
 
+import FmgePlansPage from "./pages/FmgePlansPage";
+
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsAndConditions from "./pages/TermsAndConditionsPage";
 import CancellationPolicyPage from "./pages/CancellationPolicyPage";
@@ -43,6 +45,10 @@ function App() {
           {/* ----------- Neet PG Pages ---------------- */}
 
           <Route path="/course/neet-pg/plans" element={<NeetPgPlansPage />} />
+
+          {/* ----------- Neet PG Pages ---------------- */}
+
+          <Route path="/course/fmge/plans" element={<FmgePlansPage />} />
 
           {/* ----------- Policy Pages ---------------- */}
 
