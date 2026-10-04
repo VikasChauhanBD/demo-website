@@ -1,5 +1,5 @@
 import React from "react";
-import "./PlansHeader.css";
+import "./PgPlansHeader.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,13 +7,13 @@ import { NavLink } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function PlansHeader() {
+function PgPlansHeader() {
   useGSAP(() => {
-    const words = gsap.utils.toArray(".plans-header-word");
+    const words = gsap.utils.toArray(".pg-plans-header-word");
 
     // Circle animation
     gsap.fromTo(
-      ".plans-header-circle",
+      ".pg-plans-header-circle",
       {
         scale: 0.5,
         opacity: 0,
@@ -44,16 +44,16 @@ function PlansHeader() {
   });
 
   const headingText =
-    "We are deeply immersed in the areas in which we invest, supporting ideas and organizations that contribute to our four program areas";
+    "Complete Pharmacology learning, revision and practice with Dr. GRG - built for NEET PG & INI-CET preparation.";
 
   return (
-    <div className="plans-header-section">
-      <div className="plans-header-circle-div">
-        <div className="plans-header-circle">
-          <div className="plans-header-content">
-            <h1 className="plans-header-heading">
+    <div className="pg-plans-header-section">
+      <div className="pg-plans-header-circle-div">
+        <div className="pg-plans-header-circle">
+          <div className="pg-plans-header-content">
+            <h1 className="pg-plans-header-heading">
               {headingText.split(" ").map((word, index) => (
-                <span className="plans-header-word" key={index}>
+                <span className="pg-plans-header-word" key={index}>
                   {word}&nbsp;
                 </span>
               ))}
@@ -65,4 +65,4 @@ function PlansHeader() {
   );
 }
 
-export default PlansHeader;
+export default PgPlansHeader;

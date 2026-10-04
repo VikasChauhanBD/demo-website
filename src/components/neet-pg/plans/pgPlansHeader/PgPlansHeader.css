@@ -1,4 +1,4 @@
-.plans-header-section {
+.pg-plans-header-section {
   width: 100%;
   height: 100vh;
   background-color: #ecf3f3;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.plans-header-circle-div {
+.pg-plans-header-circle-div {
   width: 100%;
   height: 100%;
   position: relative;
@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-.plans-header-circle {
+.pg-plans-header-circle {
   width: 1100px;
   height: 1100px;
   flex-shrink: 0;
@@ -29,7 +29,7 @@
   margin-bottom: 12rem;
 }
 
-.plans-header-content {
+.pg-plans-header-content {
   width: 82%;
   max-width: 1000px;
   display: flex;
@@ -37,7 +37,7 @@
   justify-content: center;
 }
 
-.plans-header-heading {
+.pg-plans-header-heading {
   width: 100%;
   margin: 0;
   font-size: clamp(32px, 4.3vw, 62px);
@@ -45,9 +45,10 @@
   line-height: 1.08;
   text-align: center;
   overflow: hidden;
+  text-transform: capitalize;
 }
 
-.plans-header-word {
+.pg-plans-header-word {
   display: inline-block;
   opacity: 0;
   transform: translateY(60px);
@@ -57,59 +58,59 @@
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1300px) {
-  .plans-header-circle {
+  .pg-plans-header-circle {
     width: 1000px;
     height: 1000px;
   }
 
-  .plans-header-content {
+  .pg-plans-header-content {
     width: 80%;
   }
 }
 
 @media (max-width: 900px) {
-  .plans-header-section {
+  .pg-plans-header-section {
     height: 100svh;
   }
 
-  .plans-header-circle {
+  .pg-plans-header-circle {
     width: 850px;
     height: 850px;
     margin-bottom: 6rem;
   }
 
-  .plans-header-content {
+  .pg-plans-header-content {
     width: 72%;
   }
 
-  .plans-header-heading {
+  .pg-plans-header-heading {
     font-size: clamp(36px, 6vw, 48px);
   }
 }
 
 @media (max-width: 500px) {
-  .plans-header-section {
+  .pg-plans-header-section {
     height: 100svh;
   }
 
-  .plans-header-circle {
+  .pg-plans-header-circle {
     width: 700px;
     height: 700px;
     margin-bottom: 0;
   }
 
-  .plans-header-content {
+  .pg-plans-header-content {
     width: 58%;
   }
 
-  .plans-header-heading {
+  .pg-plans-header-heading {
     font-size: clamp(28px, 8vw, 42px);
     line-height: 1.5;
   }
 }
 
 @media (max-width: 380px) {
-  .plans-header-content {
+  .pg-plans-header-content {
     width: 350px;
   }
 }

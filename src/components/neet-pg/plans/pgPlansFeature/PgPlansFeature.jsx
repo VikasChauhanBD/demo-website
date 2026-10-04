@@ -2,34 +2,40 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import "./PlansFeature.css";
+import "./PgPlansFeature.css";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const programData = [
   {
-    title: "Arts & Culture",
-    para: "Art and artists are crucial for fostering human connection and enriching our lives. Through our Arts and Culture program, the foundation champions the arts' ability to inspire, uplift, and strengthen human connections. We recognize that the arts play a vital role in creating vibrant, healthy communities. </br> With a focus on Florida, we collaborate with artists, curators, scholars, and organizations to ensure equal access to outstanding arts and cultural experiences. Our initiatives emphasize the importance of making the arts accessible to all, regardless of background or income. By supporting a diverse array of artistic expressions and cultural programs, we aim to celebrate creativity, foster inclusivity, and build a more connected and culturally rich society.",
+    title: "GOGA MASTER CLASS",
+    para: "Where Concepts Become Confidence. </br> Detailed, concept-based learning with Dr. GRG — helping you understand the why behind Pharmacology rather than simply memorising facts. </br> Learn • Understand • Connect • Apply",
     image:
       "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp",
   },
   {
-    title: "Education",
-    para: "Knowledge holds the key to empowerment, and quality education is paramount for unlocking opportunities. Our Education program funds initiatives aimed at expanding learning and support for children, especially those from low- and moderate-income communities. </br> By increasing educational opportunities, we address poverty and equip all children with the tools they need to succeed in school, careers, and life. Additionally, we focus on post-secondary education by collaborating with colleges, universities, and organizations. We fund fellowships, seminars, and projects in various fields, ensuring that students have access to higher education and the resources necessary for academic and professional success. Through these efforts, we aim to create a more equitable and prosperous future for all.",
+    title: "POWER PACK REVISION",
+    para: "Quick. Clear. To the Point. </br> A focused revision pathway to help you revisit important concepts, reinforce recall and keep your preparation exam-oriented. </br> Revise • Reinforce • Recall",
     image:
       "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp",
   },
   {
-    title: "Health",
-    para: "Ensuring healthy futures for people and the planet is at the heart of our mission. Our Health program strives to diminish health inequities by funding innovative tools, strategies, and research. This includes supporting the development of vaccines, biologics, and cross-cutting technology platforms. </br> These efforts aim to reduce the overall burden of viruses and diseases that affect everyone, ultimately promoting a healthier, more equitable world for all.",
+    title: "GOGA EXPRESS",
+    para: "Pharmacology, When Time Is Short. </br> A rapid-learning pathway designed to help you cover and revisit essential Pharmacology efficiently. </br> Focus • Revise • Remember",
     image:
       "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-03-jpg.webp",
   },
   {
-    title: "Privacy & Advocacy",
-    para: "Our Policy & Advocacy program is dedicated to establishing strategic partnerships and advocating for policies that support the advancement of the foundation's mission. By shaping global policies, fostering financial innovation, and providing strategic advisory services, we aim to create a supportive environment for our major program and policy objectives. </br> We also focus on building strong partnerships and alliances that can advance the foundation’s goals both nationally and globally. Through these efforts, we strive to drive impactful change and support sustainable progress across all areas of our work.",
+    title: "QUESTIONS & PRACTICE",
+    para: "Turn understanding into exam readiness. </br> Practise what you learn and use questions to identify gaps, reinforce concepts and improve your exam approach. </br> Practise • Identify • Improve",
     image:
       "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-04-jpg.webp",
+  },
+  {
+    title: "REVISION & RECALL",
+    para: "Keep Pharmacology active throughout your preparation. </br> Move between detailed learning, revision and rapid recall depending on where you are in your preparation. </br> Learn → Revise → Recall",
+    image:
+      "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp",
   },
 ];
 
@@ -42,7 +48,7 @@ const circleData = [
   { top: "90%", left: "80%", size: 110, type: "ring" },
 ];
 
-function PlansFeature() {
+function PgPlansFeature() {
   const sectionRef = useRef(null);
   const svgRef = useRef(null);
   const dotPathRef = useRef(null);
@@ -63,7 +69,7 @@ function PlansFeature() {
         svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
 
         const points = gsap.utils
-          .toArray(".plans-feature-media", section)
+          .toArray(".pg-plans-feature-media", section)
           .map((el) => {
             const r = el.getBoundingClientRect();
             return {
@@ -131,9 +137,19 @@ function PlansFeature() {
         };
       });
 
+      /* ---------- re-measure the line whenever the section size changes ---------- */
+      let refreshTimer;
+      const resizeObserver = new ResizeObserver(() => {
+        clearTimeout(refreshTimer);
+        refreshTimer = setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 100);
+      });
+      resizeObserver.observe(section);
+
       /* ---------- circles zoom up with scroll ---------- */
       gsap.utils
-        .toArray(".plans-feature-circle", sectionRef.current)
+        .toArray(".pg-plans-feature-circle", sectionRef.current)
         .forEach((circle) => {
           gsap.fromTo(
             circle,
@@ -152,17 +168,21 @@ function PlansFeature() {
           );
         });
 
-      return () => mm.revert();
+      return () => {
+        clearTimeout(refreshTimer);
+        resizeObserver.disconnect();
+        mm.revert();
+      };
     },
     { scope: sectionRef },
   );
 
   return (
-    <div className="plans-feature-section" ref={sectionRef}>
+    <div className="pg-plans-feature-section" ref={sectionRef}>
       {circleData.map((c, i) => (
         <span
           key={i}
-          className={`plans-feature-circle plans-feature-circle--${c.type}`}
+          className={`pg-plans-feature-circle pg-plans-feature-circle--${c.type}`}
           style={{
             top: c.top,
             left: c.left,
@@ -173,13 +193,13 @@ function PlansFeature() {
       ))}
 
       <svg
-        className="plans-feature-line"
+        className="pg-plans-feature-line"
         ref={svgRef}
         preserveAspectRatio="none"
       >
         <defs>
           <mask
-            id="plans-feature-line-mask"
+            id="pg-plans-feature-line-mask"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -197,27 +217,27 @@ function PlansFeature() {
         <path
           ref={dotPathRef}
           fill="none"
-          stroke="#1a4fd6"
+          stroke="#004d7a"
           strokeWidth="4"
           strokeLinecap="butt"
           strokeDasharray="16 12"
-          mask="url(#plans-feature-line-mask)"
+          mask="url(#pg-plans-feature-line-mask)"
         />
       </svg>
 
-      <h2>Program Areas</h2>
+      <h2>WHAT YOU GET WITH PHARMA BY DR. GRG</h2>
 
-      <div className="plans-feature-wrap">
+      <div className="pg-plans-feature-wrap">
         {programData.map((item, index) => (
           <div
             key={item.title}
-            className={`plans-feature-card ${index % 2 !== 0 ? "plans-feature-card--reverse" : ""}`}
+            className={`pg-plans-feature-card ${index % 2 !== 0 ? "pg-plans-feature-card--reverse" : ""}`}
           >
-            <div className="plans-feature-media">
+            <div className="pg-plans-feature-media">
               <img src={item.image} alt={item.title} />
             </div>
 
-            <div className="plans-feature-content">
+            <div className="pg-plans-feature-content">
               <h3>{item.title}</h3>
               {item.para.split("</br>").map((text, i) => (
                 <p key={i}>{text.trim()}</p>
@@ -230,4 +250,4 @@ function PlansFeature() {
   );
 }
 
-export default PlansFeature;
+export default PgPlansFeature;
