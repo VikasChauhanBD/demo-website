@@ -2,6 +2,38 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import Logo from "../../../assets/images/grg.jpeg";
 import gsap from "gsap";
+
+const PROGRAMS = {
+  "NEET PG": {
+    landing: "/course/neet-pg",
+    plans: "/course/neet-pg/plans",
+    books: "/course/neet-pg/books",
+  },
+  FMGE: {
+    landing: "/course/fmge",
+    plans: "/course/fmge/plans",
+    books: "/course/fmge/books",
+  },
+};
+
+const STORAGE_KEY = "selectedProgram";
+
+const getInitialProgram = () => {
+  const path = window.location.pathname;
+
+  if (path.startsWith("/course/fmge")) return "FMGE";
+  if (path.startsWith("/course/neet-pg")) return "NEET PG";
+
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && PROGRAMS[saved]) return saved;
+  } catch (e) {
+    // localStorage not available, fall back to default
+  }
+
+  return "NEET PG";
+};
+
 function Navbar() {
   const navbarRef = useRef(null);
   const logoRef = useRef(null);
@@ -9,14 +41,11 @@ function Navbar() {
   const mobileMenuRef = useRef(null);
   const mobileItemsRef = useRef([]);
   const [mobileOpen, setMobileOpen] = useState(false);
-  // NEET PG / FMGE
   const [programOpen, setProgramOpen] = useState(false);
-  const [selectedProgram, setSelectedProgram] = useState("NEET PG");
-  // Pharma App
-  const [pharmaOpen, setPharmaOpen] = useState(false);
-  /* =========================================================
-     NAVBAR ANIMATION
-  ========================================================= */
+  const [selectedProgram, setSelectedProgram] = useState(getInitialProgram);
+
+  const links = PROGRAMS[selectedProgram];
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -63,9 +92,7 @@ function Navbar() {
     }, navbarRef);
     return () => ctx.revert();
   }, []);
-  /* =========================================================
-     MOBILE MENU ANIMATION
-  ========================================================= */
+
   useEffect(() => {
     if (!mobileMenuRef.current) return;
     if (mobileOpen) {
@@ -97,42 +124,38 @@ function Navbar() {
         ease: "power2.inOut",
       });
       setProgramOpen(false);
-      setPharmaOpen(false);
     }
   }, [mobileOpen]);
-  /* =========================================================
-     PROGRAM SELECT
-  ========================================================= */
+
   const handleProgramSelect = (program) => {
     setSelectedProgram(program);
     setProgramOpen(false);
+
+    try {
+      localStorage.setItem(STORAGE_KEY, program);
+    } catch (e) {
+      // ignore storage errors
+    }
+
+    window.location.href = PROGRAMS[program].landing;
   };
-  /* =========================================================
-     CLOSE MOBILE MENU
-  ========================================================= */
+
   const closeMobileMenu = () => {
     setMobileOpen(false);
     setProgramOpen(false);
-    setPharmaOpen(false);
   };
+
   return (
     <nav className="navbar-container" ref={navbarRef}>
       <div className="navbar-inner">
-        {/* =====================================================
-            LEFT SIDE
-        ===================================================== */}
         <div className="navbar-left">
-          {/* LOGO */}
           <div className="navbar-logo" ref={logoRef}>
             <a href="/" onClick={closeMobileMenu}>
               <img src={Logo} alt="GRG Logo" />
             </a>
           </div>
-          {/* SMALL DIVIDER */}
           <div className="navbar-divider"></div>
-          {/* =================================================
-              NEET PG / FMGE SELECTOR
-          ================================================= */}
+
           <div className="program-selector">
             <button
               type="button"
@@ -144,7 +167,6 @@ function Navbar() {
               <span>{selectedProgram}</span>
               <span className="program-arrow"></span>
             </button>
-            {/* PROGRAM DROPDOWN */}
             <div className={`program-dropdown ${programOpen ? "show" : ""}`}>
               <button
                 type="button"
@@ -163,43 +185,16 @@ function Navbar() {
             </div>
           </div>
         </div>
-        {/* =====================================================
-            DESKTOP RIGHT NAVIGATION
-        ===================================================== */}
+
         <div className="navbar-right navbar-desktop" ref={desktopNavRef}>
-          {/* HOME */}
           <a href="/">Home</a>
-          {/* ABOUT */}
           <a href="/about">About Dr. GRG</a>
-          {/* =================================================
-              PHARMA APP DROPDOWN
-          ================================================= */}
-          <div className="pharma-dropdown">
-            <button
-              type="button"
-              className="pharma-button"
-              aria-haspopup="true"
-            >
-              <span>Pharma App</span>
-              <span className="pharma-arrow"></span>
-            </button>
-            <div className="pharma-menu">
-              <a href="/buy-new-plans">Plans</a>
-              <a href="/free-resources">Free Resources</a>
-              <a href="/schedule">Schedule</a>
-              <a href="/new-drugs">New Drugs</a>
-            </div>
-          </div>
-          {/* BOOKS */}
-          <a href="/books">Books</a>
-          {/* STUDENTS */}
-          <a href="/students">Students</a>
-          {/* FAQ */}
-          <a href="/faqs">FAQ&apos;s</a>
+          <a href={links.plans}>Plans</a>
+          <a href={links.books}>Books</a>
+          {/* <a href="/students">Students</a> */}
+          {/* <a href="/faqs">FAQ&apos;s</a> */}
         </div>
-        {/* =====================================================
-            MOBILE HAMBURGER
-        ===================================================== */}
+
         <button
           type="button"
           className={`navbar-hamburger ${mobileOpen ? "active" : ""}`}
@@ -212,14 +207,9 @@ function Navbar() {
           <span></span>
         </button>
       </div>
-      {/* =====================================================
-          MOBILE MENU
-      ===================================================== */}
+
       <div className="mobile-menu-wrapper" ref={mobileMenuRef}>
         <div className="mobile-menu">
-          {/* =================================================
-              PROGRAM
-          ================================================= */}
           <div
             className="mobile-program"
             ref={(el) => {
@@ -248,9 +238,7 @@ function Navbar() {
               </button>
             </div>
           </div>
-          {/* =================================================
-              HOME
-          ================================================= */}
+
           <div
             ref={(el) => {
               mobileItemsRef.current[1] = el;
@@ -260,9 +248,7 @@ function Navbar() {
               Home
             </a>
           </div>
-          {/* =================================================
-              ABOUT
-          ================================================= */}
+
           <div
             ref={(el) => {
               mobileItemsRef.current[2] = el;
@@ -272,56 +258,28 @@ function Navbar() {
               About Dr. GRG
             </a>
           </div>
-          {/* =================================================
-              PHARMA APP
-          ================================================= */}
+
           <div
-            className="mobile-pharma"
             ref={(el) => {
               mobileItemsRef.current[3] = el;
             }}
           >
-            <button
-              type="button"
-              className="mobile-dropdown-button"
-              onClick={() => setPharmaOpen((prev) => !prev)}
-            >
-              <span>Pharma App</span>
-              <span
-                className={`mobile-arrow ${pharmaOpen ? "open" : ""}`}
-              ></span>
-            </button>
-            <div className={`mobile-submenu ${pharmaOpen ? "show" : ""}`}>
-              <a href="/plans" onClick={closeMobileMenu}>
-                Plans
-              </a>
-              <a href="/free-resources" onClick={closeMobileMenu}>
-                Free Resources
-              </a>
-              <a href="/schedule" onClick={closeMobileMenu}>
-                Schedule
-              </a>
-              <a href="/new-drugs" onClick={closeMobileMenu}>
-                New Drugs
-              </a>
-            </div>
+            <a href={links.plans} onClick={closeMobileMenu}>
+              Plans
+            </a>
           </div>
-          {/* =================================================
-              BOOKS
-          ================================================= */}
+
           <div
             ref={(el) => {
               mobileItemsRef.current[4] = el;
             }}
           >
-            <a href="/books" onClick={closeMobileMenu}>
+            <a href={links.books} onClick={closeMobileMenu}>
               Books
             </a>
           </div>
-          {/* =================================================
-              STUDENTS
-          ================================================= */}
-          <div
+
+          {/* <div
             ref={(el) => {
               mobileItemsRef.current[5] = el;
             }}
@@ -329,11 +287,9 @@ function Navbar() {
             <a href="/students" onClick={closeMobileMenu}>
               Students
             </a>
-          </div>
-          {/* =================================================
-              FAQ
-          ================================================= */}
-          <div
+          </div> */}
+
+          {/* <div
             ref={(el) => {
               mobileItemsRef.current[6] = el;
             }}
@@ -341,7 +297,7 @@ function Navbar() {
             <a href="/faqs" onClick={closeMobileMenu}>
               FAQ&apos;s
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

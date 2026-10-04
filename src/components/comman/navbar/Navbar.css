@@ -1,6 +1,3 @@
-/* =========================================================
-   MAIN NAVBAR
-========================================================= */
 .navbar-container {
   position: fixed;
   top: 0;
@@ -8,44 +5,38 @@
   z-index: 9999;
   width: 100%;
   padding: 10px 34px;
-  /* IMPORTANT:
-     No full-width border */
   border: none;
   box-shadow: none;
 }
-/* =========================================================
-   NAVBAR INNER
-========================================================= */
+
 .navbar-inner {
   width: 100%;
-  max-width: 1550px;
+  max-width: 85%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
 }
-/* =========================================================
-   LEFT SIDE
-========================================================= */
+
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 18px;
   flex-shrink: 0;
 }
-/* =========================================================
-   LOGO
-========================================================= */
+
 .navbar-logo {
   display: flex;
   align-items: center;
 }
+
 .navbar-logo a {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
+
 .navbar-logo img {
   display: block;
   width: 58px;
@@ -55,25 +46,19 @@
   background: #ffffff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
-/* =========================================================
-   SMALL DIVIDER AFTER LOGO
-========================================================= */
+
 .navbar-divider {
   width: 1px;
   height: 38px;
   margin: 0 2px;
   background: #dfe3e8;
 }
-/* =========================================================
-   PROGRAM SELECTOR
-========================================================= */
+
 .program-selector {
   position: relative;
   flex-shrink: 0;
 }
-/* =========================================================
-   PROGRAM BUTTON
-========================================================= */
+
 .program-button {
   width: 145px;
   height: 46px;
@@ -87,7 +72,6 @@
   outline: none;
   background: #ffffff;
   color: #292765;
-  font-family: inherit;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -96,14 +80,13 @@
     border-color 0.25s ease,
     box-shadow 0.25s ease;
 }
+
 .program-button:hover,
 .program-button.open {
   border-color: #9da8b6;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
 }
-/* =========================================================
-   PROGRAM ARROW
-========================================================= */
+
 .program-arrow {
   width: 8px;
   height: 8px;
@@ -116,13 +99,12 @@
     transform 0.25s ease,
     margin 0.25s ease;
 }
+
 .program-button.open .program-arrow {
   transform: rotate(225deg);
   margin-top: 4px;
 }
-/* =========================================================
-   PROGRAM DROPDOWN
-========================================================= */
+
 .program-dropdown {
   position: absolute;
   top: calc(100% + 8px);
@@ -142,14 +124,13 @@
     transform 0.2s ease;
   z-index: 10000;
 }
+
 .program-dropdown.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-/* =========================================================
-   PROGRAM DROPDOWN BUTTONS
-========================================================= */
+
 .program-dropdown button {
   display: block;
   width: 100%;
@@ -159,7 +140,6 @@
   outline: none;
   background: transparent;
   color: #344054;
-  font-family: inherit;
   font-size: 14px;
   font-weight: 500;
   text-align: left;
@@ -168,15 +148,13 @@
     background 0.2s ease,
     color 0.2s ease;
 }
+
 .program-dropdown button:hover,
 .program-dropdown button.selected {
   background: #f1f6ff;
   color: #005b8f;
 }
-/* =========================================================
-   RIGHT NAVIGATION
-   ONLY THIS PART HAS BORDER
-========================================================= */
+
 .navbar-right {
   display: flex;
   align-items: center;
@@ -188,9 +166,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
-/* =========================================================
-   RIGHT NAVIGATION LINKS
-========================================================= */
+
 .navbar-right > a {
   display: flex;
   align-items: center;
@@ -208,16 +184,16 @@
     background 0.2s ease,
     color 0.2s ease;
 }
+
 .navbar-right > a:hover {
   background: #f1f6ff;
   color: #004d7a;
 }
-/* =========================================================
-   PHARMA APP
-========================================================= */
+
 .pharma-dropdown {
   position: relative;
 }
+
 .pharma-button {
   display: flex;
   align-items: center;
@@ -230,7 +206,6 @@
   outline: none;
   background: transparent;
   color: #292765;
-  font-family: inherit;
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
@@ -239,13 +214,12 @@
     background 0.2s ease,
     color 0.2s ease;
 }
+
 .pharma-button:hover {
   background: #f1f6ff;
   color: #004d7a;
 }
-/* =========================================================
-   PHARMA ARROW
-========================================================= */
+
 .pharma-arrow {
   width: 7px;
   height: 7px;
@@ -258,13 +232,12 @@
     transform 0.25s ease,
     margin 0.25s ease;
 }
+
 .pharma-dropdown:hover .pharma-arrow {
   transform: rotate(225deg);
   margin-top: 4px;
 }
-/* =========================================================
-   PHARMA DROPDOWN
-========================================================= */
+
 .pharma-menu {
   position: absolute;
   top: calc(100% + 7px);
@@ -285,15 +258,14 @@
     transform 0.2s ease;
   z-index: 10000;
 }
+
 .pharma-dropdown:hover .pharma-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
 }
-/* =========================================================
-   PHARMA DROPDOWN LINKS
-========================================================= */
+
 .pharma-menu a {
   display: block;
   padding: 11px 13px;
@@ -308,13 +280,12 @@
     background 0.2s ease,
     color 0.2s ease;
 }
+
 .pharma-menu a:hover {
   background: #f1f6ff;
   color: #004d7a;
 }
-/* =========================================================
-   HAMBURGER
-========================================================= */
+
 .navbar-hamburger {
   display: none;
   width: 45px;
@@ -330,6 +301,7 @@
   justify-content: center;
   gap: 5px;
 }
+
 .navbar-hamburger span {
   display: block;
   width: 21px;
@@ -340,30 +312,26 @@
     transform 0.3s ease,
     opacity 0.3s ease;
 }
-/* =========================================================
-   HAMBURGER → X
-========================================================= */
+
 .navbar-hamburger.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .navbar-hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .navbar-hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
-/* =========================================================
-   MOBILE MENU WRAPPER
-========================================================= */
+
 .mobile-menu-wrapper {
   display: none;
   height: 0;
   opacity: 0;
   overflow: hidden;
 }
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+
 .mobile-menu {
   display: flex;
   flex-direction: column;
@@ -375,9 +343,7 @@
   border-radius: 14px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
-/* =========================================================
-   MOBILE NORMAL LINKS
-========================================================= */
+
 .mobile-menu > div > a {
   display: flex;
   align-items: center;
@@ -396,13 +362,12 @@
     background 0.2s ease,
     color 0.2s ease;
 }
+
 .mobile-menu > div > a:hover {
   background: #f1f6ff !important;
   color: #004d7a !important;
 }
-/* =========================================================
-   MOBILE DROPDOWN BUTTON
-========================================================= */
+
 .mobile-dropdown-button {
   display: flex;
   align-items: center;
@@ -415,18 +380,16 @@
   outline: none;
   background: transparent;
   color: #292765 !important;
-  font-family: inherit;
   font-size: 16px;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
 }
+
 .mobile-dropdown-button:hover {
   background: #f1f6ff;
 }
-/* =========================================================
-   MOBILE ARROW
-========================================================= */
+
 .mobile-arrow {
   width: 8px;
   height: 8px;
@@ -439,13 +402,12 @@
     transform 0.25s ease,
     margin 0.25s ease;
 }
+
 .mobile-arrow.open {
   transform: rotate(225deg);
   margin-top: 4px;
 }
-/* =========================================================
-   MOBILE SUBMENU
-========================================================= */
+
 .mobile-submenu {
   max-height: 0;
   overflow: hidden;
@@ -454,13 +416,12 @@
     max-height 0.3s ease,
     opacity 0.2s ease;
 }
+
 .mobile-submenu.show {
   max-height: 300px;
   opacity: 1;
 }
-/* =========================================================
-   MOBILE SUBMENU LINKS
-========================================================= */
+
 .mobile-submenu button,
 .mobile-submenu a {
   display: block;
@@ -471,46 +432,53 @@
   outline: none;
   background: transparent;
   color: #475467 !important;
-  font-family: inherit;
   font-size: 15px;
   font-weight: 500;
   text-align: left;
   text-decoration: none;
   cursor: pointer;
 }
+
 .mobile-submenu button:hover,
 .mobile-submenu a:hover {
   background: #f1f6ff;
   color: #004d7a !important;
 }
-/* =========================================================
-   TABLET
-========================================================= */
+
+/* ---------------------------------- Responsive ------------------------- */
+
 @media (max-width: 1150px) {
   .navbar-container {
     padding-left: 22px;
     padding-right: 22px;
   }
+
   .navbar-left {
     gap: 12px;
   }
+
   .navbar-logo img {
     width: 54px;
     height: 54px;
   }
+
   .navbar-divider {
     height: 34px;
   }
+
   .program-button {
     width: 130px;
   }
+
   .program-dropdown {
     width: 130px;
   }
+
   .navbar-right {
     gap: 0;
     padding: 4px 6px;
   }
+
   .navbar-right > a,
   .pharma-button {
     padding-left: 8px;
@@ -518,9 +486,7 @@
     font-size: 13px;
   }
 }
-/* =========================================================
-   MOBILE
-========================================================= */
+
 @media (max-width: 900px) {
   .navbar-container {
     padding: 10px 16px;
@@ -528,46 +494,48 @@
     border: none;
     box-shadow: none;
   }
+
   .navbar-inner {
     gap: 12px;
   }
+
   .navbar-logo img {
     width: 50px;
     height: 50px;
   }
-  /* Hide desktop navigation */
+
   .navbar-desktop {
     display: none;
   }
-  /* Hide desktop selector */
+
   .program-selector {
     display: none;
   }
-  /* Hide divider */
+
   .navbar-divider {
     display: none;
   }
-  /* Show hamburger */
+
   .navbar-hamburger {
     display: flex;
     margin-left: auto;
   }
-  /* Show mobile menu */
+
   .mobile-menu-wrapper {
     display: block;
   }
 }
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+
 @media (max-width: 500px) {
   .navbar-container {
     padding: 9px 13px;
   }
+
   .navbar-logo img {
     width: 46px;
     height: 46px;
   }
+
   .navbar-hamburger {
     width: 43px;
     height: 43px;
