@@ -1,43 +1,233 @@
-.grg-way-section { padding: 88px 40px; background: #fff; color: #004d7a; }
-.grg-way-container { max-width: 1120px; margin: 0 auto; }
-.grg-way-intro { max-width: 850px; margin: 0 auto; text-align: center; }
-.grg-way-eyebrow { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
-.grg-way-intro .grg-way-eyebrow { justify-content: center; }
-.grg-way-eyebrow > span { width: 8px; height: 8px; border-radius: 50%; background: #ff9b6b; }
-.grg-way-intro h2 { margin: 22px 0; font-size: clamp(30px, 3.5vw, 44px); font-weight: 600; line-height: 1.2; letter-spacing: -1px; }
-.grg-way-description { max-width: 690px; margin: 0 auto; color: #52636d; font-size: 17px; line-height: 1.8; }
-.grg-way-roadmap { margin-top: 44px; padding: 32px; border: 1px solid #dce5e9; border-radius: 24px; background: #f6f8f8; }
-.grg-way-roadmap-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 32px; }
-.grg-way-roadmap-heading h3 { margin: 10px 0 0; font-size: 23px; font-weight: 600; letter-spacing: -.5px; }
-.grg-way-explore { display: flex; align-items: center; gap: 8px; color: #627680; font-size: 12px; }
-.grg-way-steps { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0 0 28px; gap: 8px; }
-.grg-way-steps::before { content: ''; position: absolute; top: 53px; left: 8%; right: 8%; height: 2px; background: #ccdce3; }
-.grg-way-steps li { min-width: 0; position: relative; }
-.grg-way-step { display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; padding: 14px 6px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: #004d7a; font: inherit;  text-align: center; transition: background .2s, border-color .2s; }
-.grg-way-step-number { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: #667b85; }
-.grg-way-icon { z-index: 1; display: grid; place-items: center; width: 52px; height: 52px; margin: 13px 0 15px; border: 1px solid #cbdde5; border-radius: 50%; background: #fff; font-size: 22px; }
-.grg-way-step-title { max-width: 125px; font-size: 14px; font-weight: 600; line-height: 1.45; }
-.grg-way-step-label { margin-top: 7px; font-size: 11px; color: #627680; }
-@media (max-width: 950px) {
-  .grg-way-section { padding: 64px 24px; }
-  .grg-way-roadmap { padding: 24px; }
-  .grg-way-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-  .grg-way-steps::before { display: none; }
-  .grg-way-step { border-color: #dce5e9; background: white; }
-  .grg-way-explore { display: none; }
+.grg-way-section {
+  padding: 88px 40px;
+  background: #ffffff;
 }
-@media (max-width: 600px) {
-  .grg-way-section { padding: 56px 20px; }
-  .grg-way-heading-break { display: none; }
-  .grg-way-description { font-size: 16px; }
-  .grg-way-roadmap { padding: 18px; border-radius: 18px; margin-top: 32px; }
-  .grg-way-roadmap-heading h3 { font-size: 21px; }
-  .grg-way-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-}
-@media (prefers-reduced-motion: reduce) { .grg-way-step { transition: none; } }
 
-.grg-way-roadmap-heading { flex-direction: column; text-align: center; gap: 12px; }
-.grg-way-roadmap-heading .grg-way-eyebrow { text-transform: uppercase; }
-.grg-way-roadmap-heading h3 { margin: 0; font-size: 30px; font-style: italic; }
-.grg-way-note { max-width: 720px; margin: 0; color: #52636d; font-size: 15px; line-height: 1.8; }
-.grg-way-step-label { max-width: 150px; line-height: 1.6; }
+.grg-way-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.grg-way-intro {
+  text-align: center;
+}
+
+.grg-way-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #004d7a;
+  background-color: #ffffff;
+  border: 1px solid #e1dace;
+  border-radius: 50px;
+}
+
+.grg-way-intro .grg-way-eyebrow {
+  justify-content: center;
+}
+
+.grg-way-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #ff9b6b;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.grg-way-intro h2 {
+  margin: 24px 0 0;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #004d7a;
+}
+
+.grg-way-description {
+  width: 100%;
+  max-width: 860px;
+  margin: 24px auto 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #222222;
+}
+
+.grg-way-roadmap {
+  margin-top: 44px;
+  padding: 32px;
+  border: 1px solid #dce5e9;
+  border-radius: 24px;
+  background: #f6f8f8;
+}
+
+.grg-way-roadmap-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.grg-way-roadmap-heading {
+  margin: 10px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.grg-way-note {
+  font-size: 18px;
+  width: 100%;
+  max-width: 860px;
+}
+
+.grg-way-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  gap: 8px;
+}
+
+.grg-way-steps::before {
+  content: "";
+  position: absolute;
+  top: 53px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: #ccdce3;
+}
+
+.grg-way-steps li {
+  min-width: 0;
+  position: relative;
+}
+
+.grg-way-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 14px 6px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: transparent;
+  color: #004d7a;
+  font: inherit;
+  text-align: center;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.grg-way-step-number {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #667b85;
+}
+
+.grg-way-icon {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 13px 0 15px;
+  border: 1px solid #cbdde5;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 22px;
+}
+
+.grg-way-step-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.grg-way-step-label {
+  margin-top: 7px;
+  font-size: 14px;
+  color: #222222;
+}
+
+/* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 1300px) {
+  .grg-way-section {
+    padding: 64px 24px;
+  }
+
+  .grg-way-container {
+    width: 100%;
+  }
+
+  .grg-way-roadmap {
+    padding: 24px;
+  }
+
+  .grg-way-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .grg-way-steps::before {
+    display: none;
+  }
+
+  .grg-way-step {
+    border-color: #dce5e9;
+    background: white;
+  }
+}
+
+@media (max-width: 900px) {
+  .grg-way-section {
+    padding: 56px 20px;
+  }
+
+  .grg-way-intro h2 {
+    font-size: 32px;
+  }
+
+  .grg-way-description {
+    font-size: 16px;
+  }
+
+  .grg-way-roadmap {
+    padding: 18px;
+    border-radius: 18px;
+    margin-top: 32px;
+  }
+
+  .grg-way-roadmap-heading {
+    font-size: 20px;
+  }
+
+  .grg-way-note {
+    font-size: 16px;
+  }
+
+  .grg-way-steps {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grg-way-step {
+    transition: none;
+  }
+}

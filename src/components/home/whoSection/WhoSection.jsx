@@ -3,7 +3,7 @@ import "./WhoSection.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaStethoscope, FaBookMedical, FaGlobe } from "react-icons/fa";
+import { FaStethoscope, FaGlobe } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 const WhoSection = () => {
@@ -133,57 +133,70 @@ const WhoSection = () => {
     <section className="who-section" ref={sectionRef}>
       <div className="who-container">
         <div className="who-intro">
-          <h2 className="who-title">BUILT FOR YOUR EXAM</h2>
+          <span className="who-eyebrow">BUILT FOR YOUR EXAM</span>
+          <h2 className="who-title">
+            One Pharmacology platform. Two focused preparation pathways.
+          </h2>
           <p className="who-para">
-            Wherever You Are in Your Medical Journey, Start Here.
-            <br />
-            The way you study Pharmacology changes with where you are in your
-            preparation.
+            Dedicated video lectures and learning resources, curated separately
+            for:
           </p>
         </div>
-        <div className="who-cards">
-          <article className="who-card">
-            <div className="who-card-number">01</div>
-            <div className="who-card-icon">
-              <FaStethoscope />
-            </div>
-            <div className="who-card-content">
-              <h3>NEET PG</h3>
-              <p>Bring concepts, revision and questions together.</p>
-            </div>
-          </article>
-          <article className="who-card">
-            <div className="who-card-number">02</div>
-            <div className="who-card-icon">
-              <FaBookMedical />
-            </div>
-            <div className="who-card-content">
-              <h3>INI CET</h3>
-              <p>
-                Build the understanding that helps you work through mechanisms,
-                clinical connections and unfamiliar questions.
-              </p>
-            </div>
-          </article>
-          <article className="who-card">
-            <div className="who-card-number">03</div>
-            <div className="who-card-icon">
-              <FaGlobe />
-            </div>
-            <div className="who-card-content">
-              <h3>FMGE</h3>
-              <p>Make Pharmacology easier to understand, revise and recall.</p>
-            </div>
-          </article>
+
+        <div className="who-pathways">
+          <span className="who-pathway">NEET PG | INI-CET</span>
+          <span className="who-pathway">FMGE</span>
         </div>
+
+        <hr className="who-divider" />
+
         <div className="who-last-section">
+          <span className="who-eyebrow">START HERE</span>
           <h3 className="who-tag">
-            Start Here — whether you are building your foundation or revising
-            for your next exam.
+            Wherever you are in your preparation, there is a place for you here.
           </h3>
-          <NavLink to="/buy-new-plans" className="who-cta">
+          <p className="who-para who-start-para">
+            The same subject needs a different learning experience depending on
+            your exam and stage of preparation.
+          </p>
+
+          <div className="who-cards">
+            <article className="who-card">
+              <div className="who-card-number">01</div>
+              <div className="who-card-icon">
+                <FaStethoscope />
+              </div>
+              <div className="who-card-content">
+                <h3>NEET PG | INI-CET</h3>
+                <p>
+                  Build concepts, strengthen recall and prepare with questions,
+                  PYQs and exam-oriented revision.
+                </p>
+              </div>
+            </article>
+            <article className="who-card">
+              <div className="who-card-number">02</div>
+              <div className="who-card-icon">
+                <FaGlobe />
+              </div>
+              <div className="who-card-content">
+                <h3>FMGE</h3>
+                <p>
+                  Access separate video lectures designed specifically for FMGE
+                  aspirants and their preparation needs.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <p className="who-language">
+            Choose the language that works for you. Video lectures available in
+            English &amp; Hinglish.
+          </p>
+
+          {/* <NavLink to="/buy-new-plans" className="who-cta">
             Find Your Starting Point →
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
     </section>

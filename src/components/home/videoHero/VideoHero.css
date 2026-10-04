@@ -31,8 +31,6 @@
   pointer-events: none;
 }
 
-/* Loading screen */
-
 .video-hero-video-loading {
   position: absolute;
   top: 0;
@@ -194,8 +192,12 @@
   font-size: 20px;
   line-height: 1.4;
   letter-spacing: 1.2px;
-
   margin: 1.5rem 0;
+}
+
+.video-hero-cta-div {
+  display: flex;
+  gap: 20px;
 }
 
 .video-hero-cta {

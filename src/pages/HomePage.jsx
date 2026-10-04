@@ -8,6 +8,9 @@ import BeforeYouJoin from "../components/home/beforeYouJoin/BeforeYouJoin";
 import PlatformSection from "../components/home/platformSection/PlatformSection";
 import PromiseSection from "../components/home/promiseSection/PromiseSection";
 import GrgWaySection from "../components/home/grgWaySection/GrgWaySection";
+import LearningPathSection from "../components/home/learningPathSection/LearningPathSection";
+import ExperienceTeaching from "../components/home/experienceTeaching/ExperienceTeaching";
+import ThePromise from "../components/home/thePromise/ThePromise";
 
 function HomePage() {
   return (
@@ -15,12 +18,15 @@ function HomePage() {
       <VideoHero />
       <WhySection />
       <PlatformSection />
-      <PromiseSection />
       <GrgWaySection />
       <WhoSection />
       <WhatSection />
+      <LearningPathSection />
       <IntroSection />
+      <ExperienceTeaching />
       <BeforeYouJoin />
+      <ThePromise />
+      {/* <PromiseSection /> */}
     </div>
   );
 }

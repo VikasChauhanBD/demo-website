@@ -64,8 +64,8 @@ function WhatSection() {
         <>
           <strong>Questions That Make You Think.</strong>
           <br />
-          MCQs, PYQs and concept-based questions that show you how Pharmacology
-          is asked.
+          MCQs, PYQs and concept-based questions with explanations that
+          reinforce learning.
         </>
       ),
     },
@@ -151,11 +151,16 @@ function WhatSection() {
   return (
     <section className="what-container" ref={container}>
       <div className="what-header">
-        <h2 className="what-heading">WHAT’S INSIDE</h2>
+        <span className="what-eyebrow">WHAT’S INSIDE</span>
 
-        <h3 className="what-sub-heading">
-          Different ways to learn, revise and practise Pharmacology.
-        </h3>
+        <h2 className="what-heading">
+          Everything you need to learn, revise and practise Pharmacology.
+        </h2>
+
+        <p className="what-para">
+          From dedicated exam-focused video lectures to revision, question
+          practice and tests - each component has a role in your preparation.
+        </p>
       </div>
 
       <div className="what-cards">
@@ -176,11 +181,6 @@ function WhatSection() {
             </div>
           </article>
         ))}
-      </div>
-      <div className="what-guidance">
-        <h3>Not sure where to start?</h3>
-        <p>Build your foundation with Master Class, revisit concepts with Power Pack Revision, or choose GOGA Express when time is short.</p>
-        <NavLink to="/buy-new-plans">Find Your Plan →</NavLink>
       </div>
     </section>
   );

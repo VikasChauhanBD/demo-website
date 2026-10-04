@@ -141,7 +141,7 @@
 
 /* ---------------------------------- Responsive ------------------------- */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .vision-section {
     padding: 100px 30px;
   }
@@ -160,7 +160,7 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 500px) {
   .vision-section {
     padding: 80px 20px;
   }

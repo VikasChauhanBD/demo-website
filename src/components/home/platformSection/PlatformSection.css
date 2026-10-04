@@ -1,6 +1,7 @@
 .platform-section {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #004d7a;
+  color: #ffffff;
   padding: 120px 20px;
 }
 
@@ -45,7 +46,6 @@
   font-size: 38px;
   font-weight: 700;
   line-height: 1.2;
-  color: #004d7a;
 }
 
 .platform-heading span {
@@ -63,49 +63,25 @@
 
 .platform-para {
   width: 100%;
-  max-width: 760px;
+  max-width: 860px;
   margin: 24px 0 0;
   font-size: 18px;
   font-weight: 400;
   line-height: 32px;
-  color: #222222;
-}
-
-.platform-strip {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin: 80px 0 32px;
-  font-size: 28px;
-  font-weight: 700;
-  color: #004d7a;
-  white-space: nowrap;
-}
-
-.platform-strip::before,
-.platform-strip::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background-color: #e1dace;
 }
 
 .platform-cards {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin-top: 2.5rem;
 }
 
 .platform-card {
-  grid-column: span 2;
-  padding: 16px 16px 24px;
-  background-color: #e1dace;
+  padding: 16px 16px 28px;
+  background-color: #ffffff;
   border-radius: 24px;
   transition: box-shadow 0.3s ease;
-}
-
-.platform-card:nth-child(n + 4) {
-  grid-column: span 3;
 }
 
 .platform-card:hover {
@@ -141,24 +117,32 @@
   transform: scale(1.08);
 }
 
+.platform-card-number {
+  margin: 20px 8px 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ff9b6b;
+}
+
 .platform-card-title {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 20px 0 0;
+  margin: 8px 0 0;
   padding: 0 8px;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
+  line-height: 1.2;
   color: #004d7a;
 }
 
-.platform-card-title::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: #ff9b6b;
-  border-radius: 50%;
-  flex-shrink: 0;
+.platform-card-description {
+  margin: 16px 8px 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #222222;
 }
 
 .platform-cta-wrap {
@@ -208,21 +192,8 @@
     line-height: 28px;
   }
 
-  .platform-strip {
-    font-size: 24px;
-  }
-
   .platform-cards {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .platform-card,
-  .platform-card:nth-child(n + 4) {
-    grid-column: span 1;
-  }
-
-  .platform-card:last-child {
-    grid-column: 1 / -1;
   }
 
   .platform-media {
@@ -230,7 +201,11 @@
   }
 
   .platform-card-title {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .platform-card-description {
+    font-size: 16px;
   }
 }
 
@@ -243,18 +218,11 @@
     font-size: 12px;
   }
 
-  .platform-para {
-    font-size: 16px;
-    line-height: 28px;
-  }
-
   .platform-cards {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .platform-card,
-  .platform-card:nth-child(n + 4),
   .platform-card:last-child {
     grid-column: auto;
   }
