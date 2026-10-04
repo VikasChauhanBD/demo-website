@@ -44,7 +44,7 @@ function FmgePlansHeader() {
   });
 
   const headingText =
-    "Complete Pharmacology learning, revision and practice with Dr. GRG - built for NEET PG & INI-CET preparation.";
+    "Complete Pharmacology learning, revision and practice with Dr. GRG - built specifically for FMGE preparation.";
 
   return (
     <div className="fmge-plans-header-section">

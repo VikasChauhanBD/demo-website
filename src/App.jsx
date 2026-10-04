@@ -13,9 +13,13 @@ import ResultsPage from "./pages/ResultsPage";
 import BlogsPage from "./pages/BlogsPage";
 import FaqsPage from "./pages/FaqsPage";
 
+import NeetPgHomePage from "./pages/NeetPgHomePage";
 import NeetPgPlansPage from "./pages/NeetPgPlansPage";
+import NeetPgBooksPage from "./pages/NeetPgBooksPage";
 
+import FmgeHomePage from "./pages/FmgeHomePage";
 import FmgePlansPage from "./pages/FmgePlansPage";
+import FmgeBooksPage from "./pages/FmgeBooksPage";
 
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsAndConditions from "./pages/TermsAndConditionsPage";
@@ -44,11 +48,15 @@ function App() {
 
           {/* ----------- Neet PG Pages ---------------- */}
 
+          <Route path="/course/neet-pg" element={<NeetPgHomePage />} />
           <Route path="/course/neet-pg/plans" element={<NeetPgPlansPage />} />
+          <Route path="/course/neet-pg/books" element={<NeetPgBooksPage />} />
 
           {/* ----------- Neet PG Pages ---------------- */}
 
+          <Route path="/course/fmge" element={<FmgeHomePage />} />
           <Route path="/course/fmge/plans" element={<FmgePlansPage />} />
+          <Route path="/course/fmge/books" element={<FmgeBooksPage />} />
 
           {/* ----------- Policy Pages ---------------- */}
 
