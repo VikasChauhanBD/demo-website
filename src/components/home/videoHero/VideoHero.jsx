@@ -20,6 +20,48 @@ const VideoHero = () => {
       const heroTimeline = gsap.timeline();
 
       heroTimeline.fromTo(
+        ".video-hero-background-video",
+        {
+          scale: 1.1,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power3.out",
+        },
+      );
+
+      heroTimeline.fromTo(
+        ".video-hero-overlay",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=1",
+      );
+
+      heroTimeline.fromTo(
+        ".video-hero-sub-heading",
+        {
+          y: 30,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.5",
+      );
+
+      heroTimeline.fromTo(
         ".video-hero-text h1",
         {
           y: 40,
@@ -33,6 +75,22 @@ const VideoHero = () => {
           duration: 1.5,
           ease: "power3.out",
         },
+        "-=0.4",
+      );
+
+      heroTimeline.fromTo(
+        ".video-hero-para",
+        {
+          y: 30,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power3.out",
+        },
+        "-=0.7",
       );
 
       heroTimeline.fromTo(
@@ -48,6 +106,7 @@ const VideoHero = () => {
           scale: 1,
           duration: 0.8,
           ease: "back.out(1.7)",
+          stagger: 0.15,
         },
         "-=0.4",
       );

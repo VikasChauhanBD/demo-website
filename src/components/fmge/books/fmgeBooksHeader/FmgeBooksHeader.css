@@ -1,7 +1,189 @@
-.fmge-books-section {
+.fmge-books-header {
+  position: relative;
   width: 100%;
-  height: 100dvh;
+  background: #fbf9f6;
+  color: #222222;
+  overflow: hidden;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.fmge-books-header *,
+.fmge-books-header *::before,
+.fmge-books-header *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- typography (from your base styles) ---------- */
+.fmge-books-header .fmge-books-header-heading {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.fmge-books-header .fmge-books-header-sub-heading {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.fmge-books-header .fmge-books-header-description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---------- background decoration ---------- */
+.fmge-books-header-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fmge-books-header-blob-1 {
+  width: 420px;
+  height: 420px;
+  background: rgba(0, 77, 122, 0.14);
+  top: -120px;
+  left: -100px;
+}
+
+.fmge-books-header-blob-2 {
+  width: 380px;
+  height: 380px;
+  background: rgba(255, 155, 107, 0.2);
+  top: 120px;
+  right: -120px;
+}
+
+.fmge-books-header-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 77, 122, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 77, 122, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- hero ---------- */
+.fmge-books-header-hero {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  margin: 0 auto;
+  padding: 110px 0 80px;
+  text-align: center;
+}
+
+.fmge-books-header-hero-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 18px;
+}
+
+.fmge-books-header-eyebrow {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #e1dace;
+  color: #004d7a;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fmge-books-header-hero .fmge-books-header-heading {
+  color: #004d7a;
+  font-size: 52px;
+}
+
+.fmge-books-header-hero .fmge-books-header-sub-heading {
+  color: #222222;
+}
+
+.fmge-books-header-hero .fmge-books-header-description {
+  max-width: 780px;
+}
+
+/* ---------- button ---------- */
+.fmge-books-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background: #ff9b6b;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(255, 155, 107, 0.4);
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.fmge-books-header-btn:hover {
+  background: #ff8a53;
+  box-shadow: 0 14px 30px rgba(255, 155, 107, 0.55);
+}
+
+.fmge-books-header-arrow {
+  display: inline-block;
+}
+
+.fmge-books-header-hero-cta {
+  margin-top: 14px;
+}
+
+/* -------------------------------- responsive ------------------------------ */
+
+@media (max-width: 1300px) {
+  .fmge-books-header-hero {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .fmge-books-header .fmge-books-header-heading {
+    font-size: 32px;
+  }
+
+  .fmge-books-header-hero .fmge-books-header-heading {
+    font-size: 36px;
+  }
+
+  .fmge-books-header .fmge-books-header-sub-heading {
+    font-size: 24px;
+  }
+
+  .fmge-books-header .fmge-books-header-description {
+    font-size: 16px;
+  }
+
+  .fmge-books-header-hero {
+    padding: 80px 0 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .fmge-books-header {
+    padding: 0 16px;
+  }
+
+  .fmge-books-header-hero-cta {
+    width: 100%;
+    justify-content: center;
+  }
 }

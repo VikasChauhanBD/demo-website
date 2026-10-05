@@ -268,7 +268,12 @@
     font-size: 18px;
   }
 
+  .video-hero-cta-div {
+    flex-direction: column;
+  }
+
   .video-hero-cta {
     font-size: 16px;
+    text-align: center;
   }
 }
