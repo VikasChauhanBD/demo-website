@@ -16,7 +16,7 @@ const books = [
     subHeading: "Where Concepts Become Confidence.",
     lead: "Build your Pharmacology understanding from the ground up.",
     description:
-      "The GOGA Master Class book brings the detailed teaching of Dr. GRG into a structured written format — helping you understand concepts logically, connect them clinically and build a strong foundation for your NEET PG & INI-CET preparation.",
+      "The GOGA Master Class book brings the detailed teaching of Dr. GRG into a structured written format - helping you understand concepts logically, connect them clinically and build a strong foundation for your NEET PG & INI-CET preparation.",
     listLabel: "Designed to help you:",
     points: [
       "Build concepts systematically",

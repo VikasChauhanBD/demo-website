@@ -395,14 +395,17 @@ function FmgeBooksExperience() {
         card.addEventListener("mouseleave", () => hover.reverse());
       });
 
-      // Closing band
+      // Closing band entrance
       const band = gsap.timeline({
-        defaults: { ease: "power3.out" },
+        defaults: {
+          ease: "power3.out",
+        },
         scrollTrigger: {
           trigger: ".fmge-books-experience-band",
           start: "top 80%",
         },
       });
+
       band
         .from(".fmge-books-experience-band", {
           y: 60,
@@ -411,21 +414,63 @@ function FmgeBooksExperience() {
         })
         .from(
           ".fmge-books-experience-band .fmge-books-experience-sub-heading",
-          { y: 24, opacity: 0, duration: 0.7 },
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.7,
+          },
           "-=0.5",
         )
         .from(
-          ".fmge-books-experience-band .fmge-books-experience-description",
-          { y: 24, opacity: 0, duration: 0.7 },
-          "-=0.5",
+          ".fmge-books-experience-band-text",
+          {
+            y: 25,
+            opacity: 0,
+            duration: 0.7,
+          },
+          "-=0.45",
         )
         .from(
           ".fmge-books-experience-stage",
-          { y: 40, opacity: 0, scale: 0.94, duration: 0.7, stagger: 0.15 },
+          {
+            y: 50,
+            opacity: 0,
+            scale: 0.94,
+            duration: 0.7,
+            stagger: 0.15,
+          },
+          "-=0.3",
+        )
+        .from(
+          ".fmge-books-experience-footer",
+          {
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+          },
           "-=0.3",
         );
 
-      // Gentle nudge on the stage arrows
+      // Floating background orbs
+      gsap.to(".fmge-books-experience-band-orb-1", {
+        x: 14,
+        y: 20,
+        duration: 5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(".fmge-books-experience-band-orb-2", {
+        x: -12,
+        y: -18,
+        duration: 6,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      // Stage arrows
       gsap.to(".fmge-books-experience-stage-arrow", {
         y: 6,
         duration: 0.9,
@@ -433,23 +478,6 @@ function FmgeBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
         stagger: 0.2,
-      });
-
-      gsap.to(".fmge-books-experience-band-orb-1", {
-        y: 20,
-        x: 14,
-        duration: 5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-      gsap.to(".fmge-books-experience-band-orb-2", {
-        y: -18,
-        x: -12,
-        duration: 6,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
       });
 
       // Stage hover
@@ -460,9 +488,28 @@ function FmgeBooksExperience() {
           ease: "power2.out",
           paused: true,
         });
+
         stage.addEventListener("mouseenter", () => hover.play());
         stage.addEventListener("mouseleave", () => hover.reverse());
       });
+
+      // CTA hover
+      const button = document.querySelector(
+        ".fmge-books-experience-footer-btn",
+      );
+
+      if (button) {
+        const buttonHover = gsap.to(button, {
+          y: -4,
+          scale: 1.03,
+          duration: 0.3,
+          ease: "power2.out",
+          paused: true,
+        });
+
+        button.addEventListener("mouseenter", () => buttonHover.play());
+        button.addEventListener("mouseleave", () => buttonHover.reverse());
+      }
     }, rootRef);
 
     return () => {
@@ -574,6 +621,22 @@ function FmgeBooksExperience() {
                 </span>
               </div>
             ))}
+          </div>
+
+          <div className="fmge-books-experience-footer">
+            <h3 className="fmge-books-experience-footer-title">
+              Pharmacology by Dr. GRG
+            </h3>
+            <h4 className="fmge-books-experience-footer-sub-heading">
+              Make difficult things simple.
+            </h4>
+            <p className="fmge-books-experience-footer-text">
+              Learn it. Understand it. Revise it.
+            </p>
+            <button type="button" className="fmge-books-experience-footer-btn">
+              <span>Explore FMGE Books</span>
+              <span className="fmge-books-experience-footer-arrow">→</span>
+            </button>
           </div>
         </div>
       </div>

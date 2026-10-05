@@ -8,13 +8,6 @@
   box-sizing: border-box;
 }
 
-.fmge-books-details *,
-.fmge-books-details *::before,
-.fmge-books-details *::after {
-  box-sizing: border-box;
-}
-
-/* ---------- typography (from your base styles) ---------- */
 .fmge-books-details .fmge-books-details-sub-heading {
   font-size: 28px;
   font-weight: 600;
@@ -28,7 +21,6 @@
   margin: 0;
 }
 
-/* ---------- background decoration ---------- */
 .fmge-books-details-blob {
   position: absolute;
   border-radius: 50%;
@@ -53,7 +45,6 @@
   right: -120px;
 }
 
-/* ---------- buttons ---------- */
 .fmge-books-details-btn {
   display: inline-flex;
   align-items: center;
@@ -81,11 +72,10 @@
   display: inline-block;
 }
 
-/* ---------- divider ---------- */
 .fmge-books-details-divider {
   position: relative;
   z-index: 1;
-  max-width: 1280px;
+  width: 80%;
   margin: 0 auto 70px;
   display: flex;
   align-items: center;
@@ -111,7 +101,6 @@
   text-align: center;
 }
 
-/* ---------- books list ---------- */
 .fmge-books-details-list {
   position: relative;
   z-index: 1;
@@ -169,11 +158,9 @@
   background: rgba(255, 155, 107, 0.16);
 }
 
-/* ---------- centered title + description ---------- */
 .fmge-books-details-head {
   position: relative;
   z-index: 1;
-  max-width: 860px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -210,7 +197,6 @@
   color: #004d7a;
 }
 
-/* ---------- image + content row (zig-zag) ---------- */
 .fmge-books-details-row {
   position: relative;
   z-index: 1;
@@ -228,7 +214,6 @@
   order: 1;
 }
 
-/* ---------- book image (static) ---------- */
 .fmge-books-details-media {
   display: flex;
   align-items: center;
@@ -238,14 +223,12 @@
 .fmge-books-details-cover-img {
   display: block;
   width: 100%;
-  max-width: 500px;
   height: auto;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 24px 48px rgba(0, 77, 122, 0.2);
 }
 
-/* ---------- content panel ---------- */
 .fmge-books-details-panel {
   display: flex;
   flex-direction: column;
@@ -330,7 +313,8 @@
 /* -------------------------------- responsive ------------------------------ */
 
 @media (max-width: 1300px) {
-  .fmge-books-details-list {
+  .fmge-books-details-list,
+  .fmge-books-details-divider {
     width: 100%;
   }
 
@@ -371,10 +355,6 @@
   .fmge-books-details-panel,
   .fmge-books-details-card-reverse .fmge-books-details-panel {
     order: 2;
-  }
-
-  .fmge-books-details-cover-img {
-    max-width: 420px;
   }
 
   .fmge-books-details-title {

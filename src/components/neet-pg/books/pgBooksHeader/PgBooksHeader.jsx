@@ -107,7 +107,7 @@ function PgBooksHeader() {
           <p className="pg-books-header-description">
             Learn Pharmacology with Dr. Gobind Rai Garg through concepts,
             clinical connections, memory tools, questions and structured
-            revision — now brought together in books designed specifically for
+            revision - now brought together in books designed specifically for
             NEET PG and INI-CET aspirants.
           </p>
           <p className="pg-books-header-description">

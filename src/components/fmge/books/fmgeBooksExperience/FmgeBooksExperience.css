@@ -8,13 +8,6 @@
   box-sizing: border-box;
 }
 
-.fmge-books-experience *,
-.fmge-books-experience *::before,
-.fmge-books-experience *::after {
-  box-sizing: border-box;
-}
-
-/* ---------- typography (from your base styles) ---------- */
 .fmge-books-experience .fmge-books-experience-heading {
   font-size: 38px;
   font-weight: 700;
@@ -35,62 +28,14 @@
   margin: 0;
 }
 
-/* ---------- background decoration ---------- */
-.fmge-books-experience-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.fmge-books-experience-blob-1 {
-  width: 400px;
-  height: 400px;
-  background: rgba(0, 77, 122, 0.12);
-  top: -100px;
-  right: -100px;
-}
-
-.fmge-books-experience-blob-2 {
-  width: 380px;
-  height: 380px;
-  background: rgba(255, 155, 107, 0.18);
-  top: 700px;
-  left: -140px;
-}
-
-.fmge-books-experience-blob-3 {
-  width: 440px;
-  height: 440px;
-  background: rgba(225, 218, 206, 0.9);
-  bottom: 80px;
-  right: 10%;
-}
-
-.fmge-books-experience-grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 77, 122, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 77, 122, 0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 45%);
-  mask-image: linear-gradient(to bottom, #000 0%, transparent 45%);
-  pointer-events: none;
-  z-index: 0;
-}
-
 .fmge-books-experience-container {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  width: 80%;
   margin: 0 auto;
 }
 
-/* ---------- header ---------- */
 .fmge-books-experience-header {
-  max-width: 820px;
   margin: 0 auto 80px;
   display: flex;
   flex-direction: column;
@@ -114,7 +59,6 @@
   color: #004d7a;
 }
 
-/* ---------- steps ---------- */
 .fmge-books-experience-steps {
   position: relative;
   display: grid;
@@ -191,7 +135,6 @@
   line-height: 1.6;
 }
 
-/* ---------- divider ---------- */
 .fmge-books-experience-divider {
   display: flex;
   align-items: center;
@@ -218,7 +161,6 @@
   text-align: center;
 }
 
-/* ---------- reason cards ---------- */
 .fmge-books-experience-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -280,7 +222,6 @@
   line-height: 1.7;
 }
 
-/* ---------- feature card ---------- */
 .fmge-books-experience-feature {
   position: relative;
   display: flex;
@@ -346,7 +287,6 @@
   max-width: 760px;
 }
 
-/* ---------- closing band ---------- */
 .fmge-books-experience-band {
   position: relative;
   display: flex;
@@ -443,8 +383,75 @@
   box-shadow: 0 10px 24px rgba(255, 155, 107, 0.4);
 }
 
-/* ---------- responsive ---------- */
+.fmge-books-experience-footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.fmge-books-experience-footer-title {
+  margin: 0;
+  color: #004d7a;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.fmge-books-experience-footer-sub-heading {
+  margin: 0;
+  color: #222222;
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.fmge-books-experience-footer-text {
+  margin: 0;
+  color: #222222;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.fmge-books-experience-footer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 999px;
+  background: #004d7a;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.fmge-books-experience-footer-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 77, 122, 0.25);
+}
+
+.fmge-books-experience-footer-arrow {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ------------------------------------- responsive ----------------------------------- */
+
 @media (max-width: 1300px) {
+  .fmge-books-experience-container {
+    width: 100%;
+  }
+
   .fmge-books-experience-cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -531,12 +538,20 @@
   }
 
   .fmge-books-experience-band {
-    padding: 54px 24px;
+    padding: 60px 30px;
   }
 
   .fmge-books-experience-stages {
     grid-template-columns: 1fr;
-    gap: 16px;
+    max-width: 500px;
+  }
+
+  .fmge-books-experience-stage {
+    padding: 28px 22px;
+  }
+
+  .fmge-books-experience-footer {
+    margin-top: 25px;
   }
 }
 
@@ -565,6 +580,59 @@
   }
 
   .fmge-books-experience-band {
-    padding: 44px 18px;
+    padding: 50px 20px;
+    border-radius: 24px;
+    gap: 20px;
+  }
+
+  .fmge-books-experience-band-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .fmge-books-experience-stages {
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .fmge-books-experience-stage {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .fmge-books-experience-stage-name {
+    font-size: 18px;
+  }
+
+  .fmge-books-experience-stage-action {
+    padding: 9px 22px;
+    font-size: 16px;
+  }
+
+  .fmge-books-experience-footer {
+    margin-top: 20px;
+  }
+
+  .fmge-books-experience-footer-text {
+    font-size: 16px;
+  }
+
+  .fmge-books-experience-footer-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .fmge-books-experience-band-orb-1 {
+    width: 180px;
+    height: 180px;
+    top: -70px;
+    left: -70px;
+  }
+
+  .fmge-books-experience-band-orb-2 {
+    width: 220px;
+    height: 220px;
+    bottom: -100px;
+    right: -80px;
   }
 }

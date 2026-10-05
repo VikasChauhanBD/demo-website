@@ -8,13 +8,6 @@
   box-sizing: border-box;
 }
 
-.pg-books-details *,
-.pg-books-details *::before,
-.pg-books-details *::after {
-  box-sizing: border-box;
-}
-
-/* ---------- typography (from your base styles) ---------- */
 .pg-books-details .pg-books-details-sub-heading {
   font-size: 28px;
   font-weight: 600;
@@ -28,7 +21,6 @@
   margin: 0;
 }
 
-/* ---------- background decoration ---------- */
 .pg-books-details-blob {
   position: absolute;
   border-radius: 50%;
@@ -53,7 +45,6 @@
   right: -120px;
 }
 
-/* ---------- buttons ---------- */
 .pg-books-details-btn {
   display: inline-flex;
   align-items: center;
@@ -81,11 +72,10 @@
   display: inline-block;
 }
 
-/* ---------- divider ---------- */
 .pg-books-details-divider {
   position: relative;
   z-index: 1;
-  max-width: 1280px;
+  width: 80%;
   margin: 0 auto 70px;
   display: flex;
   align-items: center;
@@ -111,7 +101,6 @@
   text-align: center;
 }
 
-/* ---------- books list ---------- */
 .pg-books-details-list {
   position: relative;
   z-index: 1;
@@ -169,11 +158,9 @@
   background: rgba(255, 155, 107, 0.16);
 }
 
-/* ---------- centered title + description ---------- */
 .pg-books-details-head {
   position: relative;
   z-index: 1;
-  max-width: 860px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -210,7 +197,6 @@
   color: #004d7a;
 }
 
-/* ---------- image + content row (zig-zag) ---------- */
 .pg-books-details-row {
   position: relative;
   z-index: 1;
@@ -228,7 +214,6 @@
   order: 1;
 }
 
-/* ---------- book image (static) ---------- */
 .pg-books-details-media {
   display: flex;
   align-items: center;
@@ -238,14 +223,12 @@
 .pg-books-details-cover-img {
   display: block;
   width: 100%;
-  max-width: 500px;
   height: auto;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 24px 48px rgba(0, 77, 122, 0.2);
 }
 
-/* ---------- content panel ---------- */
 .pg-books-details-panel {
   display: flex;
   flex-direction: column;
@@ -330,6 +313,7 @@
 /* -------------------------------- responsive ------------------------------ */
 
 @media (max-width: 1300px) {
+  .pg-books-details-divider,
   .pg-books-details-list {
     width: 100%;
   }
@@ -371,10 +355,6 @@
   .pg-books-details-panel,
   .pg-books-details-card-reverse .pg-books-details-panel {
     order: 2;
-  }
-
-  .pg-books-details-cover-img {
-    max-width: 420px;
   }
 
   .pg-books-details-title {

@@ -8,13 +8,6 @@
   box-sizing: border-box;
 }
 
-.pg-books-header *,
-.pg-books-header *::before,
-.pg-books-header *::after {
-  box-sizing: border-box;
-}
-
-/* ---------- typography (from your base styles) ---------- */
 .pg-books-header .pg-books-header-heading {
   font-size: 38px;
   font-weight: 700;
@@ -35,7 +28,6 @@
   margin: 0;
 }
 
-/* ---------- background decoration ---------- */
 .pg-books-header-blob {
   position: absolute;
   border-radius: 50%;
@@ -73,7 +65,6 @@
   z-index: 0;
 }
 
-/* ---------- hero ---------- */
 .pg-books-header-hero {
   position: relative;
   z-index: 1;
@@ -111,11 +102,6 @@
   color: #222222;
 }
 
-.pg-books-header-hero .pg-books-header-description {
-  max-width: 780px;
-}
-
-/* ---------- button ---------- */
 .pg-books-header-btn {
   display: inline-flex;
   align-items: center;

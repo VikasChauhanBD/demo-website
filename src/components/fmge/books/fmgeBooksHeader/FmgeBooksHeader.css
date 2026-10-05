@@ -8,13 +8,6 @@
   box-sizing: border-box;
 }
 
-.fmge-books-header *,
-.fmge-books-header *::before,
-.fmge-books-header *::after {
-  box-sizing: border-box;
-}
-
-/* ---------- typography (from your base styles) ---------- */
 .fmge-books-header .fmge-books-header-heading {
   font-size: 38px;
   font-weight: 700;
@@ -35,7 +28,6 @@
   margin: 0;
 }
 
-/* ---------- background decoration ---------- */
 .fmge-books-header-blob {
   position: absolute;
   border-radius: 50%;
@@ -73,7 +65,6 @@
   z-index: 0;
 }
 
-/* ---------- hero ---------- */
 .fmge-books-header-hero {
   position: relative;
   z-index: 1;
@@ -111,11 +102,6 @@
   color: #222222;
 }
 
-.fmge-books-header-hero .fmge-books-header-description {
-  max-width: 780px;
-}
-
-/* ---------- button ---------- */
 .fmge-books-header-btn {
   display: inline-flex;
   align-items: center;
