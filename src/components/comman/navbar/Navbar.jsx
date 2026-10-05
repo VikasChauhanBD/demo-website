@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import Logo from "../../../assets/images/grg.jpeg";
 import gsap from "gsap";
+import { FaStethoscope, FaGlobe } from "react-icons/fa";
 
 const PROGRAMS = {
   "NEET PG": {
@@ -17,6 +18,7 @@ const PROGRAMS = {
 };
 
 const STORAGE_KEY = "selectedProgram";
+const COURSE_POPUP_KEY = "coursePopupShown";
 
 const getInitialProgram = () => {
   const path = window.location.pathname;
@@ -40,8 +42,10 @@ function Navbar() {
   const desktopNavRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const mobileItemsRef = useRef([]);
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [programOpen, setProgramOpen] = useState(false);
+  const [coursePopupOpen, setCoursePopupOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(getInitialProgram);
 
   const links = PROGRAMS[selectedProgram];
@@ -61,6 +65,7 @@ function Navbar() {
           ease: "power3.out",
         },
       );
+
       gsap.fromTo(
         logoRef.current,
         {
@@ -75,6 +80,7 @@ function Navbar() {
           ease: "back.out(1.5)",
         },
       );
+
       gsap.fromTo(
         desktopNavRef.current,
         {
@@ -90,11 +96,13 @@ function Navbar() {
         },
       );
     }, navbarRef);
+
     return () => ctx.revert();
   }, []);
 
   useEffect(() => {
     if (!mobileMenuRef.current) return;
+
     if (mobileOpen) {
       gsap.to(mobileMenuRef.current, {
         height: "auto",
@@ -102,6 +110,7 @@ function Navbar() {
         duration: 0.4,
         ease: "power3.out",
       });
+
       gsap.fromTo(
         mobileItemsRef.current.filter(Boolean),
         {
@@ -123,9 +132,32 @@ function Navbar() {
         duration: 0.3,
         ease: "power2.inOut",
       });
+
       setProgramOpen(false);
     }
   }, [mobileOpen]);
+
+  useEffect(() => {
+    try {
+      const popupShown = localStorage.getItem(COURSE_POPUP_KEY);
+
+      if (!popupShown) {
+        setCoursePopupOpen(true);
+      }
+    } catch (e) {
+      setCoursePopupOpen(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!coursePopupOpen) return;
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [coursePopupOpen]);
 
   const handleProgramSelect = (program) => {
     setSelectedProgram(program);
@@ -140,167 +172,210 @@ function Navbar() {
     window.location.href = PROGRAMS[program].landing;
   };
 
+  const handleCourseSelect = (program) => {
+    setSelectedProgram(program);
+    setCoursePopupOpen(false);
+
+    try {
+      localStorage.setItem(STORAGE_KEY, program);
+      localStorage.setItem(COURSE_POPUP_KEY, "true");
+    } catch (e) {
+      // ignore storage errors
+    }
+
+    window.location.href = PROGRAMS[program].landing;
+  };
+
   const closeMobileMenu = () => {
     setMobileOpen(false);
     setProgramOpen(false);
   };
 
   return (
-    <nav className="navbar-container" ref={navbarRef}>
-      <div className="navbar-inner">
-        <div className="navbar-left">
-          <div className="navbar-logo" ref={logoRef}>
-            <a href="/" onClick={closeMobileMenu}>
-              <img src={Logo} alt="GRG Logo" />
-            </a>
-          </div>
-          <div className="navbar-divider"></div>
+    <>
+      <nav className="navbar-container" ref={navbarRef}>
+        <div className="navbar-inner">
+          <div className="navbar-left">
+            <div className="navbar-logo" ref={logoRef}>
+              <a href="/" onClick={closeMobileMenu}>
+                <img src={Logo} alt="GRG Logo" />
+              </a>
+            </div>
 
-          <div className="program-selector">
-            <button
-              type="button"
-              className={`program-button ${programOpen ? "open" : ""}`}
-              onClick={() => setProgramOpen((prev) => !prev)}
-              aria-expanded={programOpen}
-              aria-haspopup="true"
-            >
-              <span>{selectedProgram}</span>
-              <span className="program-arrow"></span>
-            </button>
-            <div className={`program-dropdown ${programOpen ? "show" : ""}`}>
+            <div className="navbar-divider"></div>
+
+            <div className="program-selector">
               <button
                 type="button"
-                className={selectedProgram === "NEET PG" ? "selected" : ""}
-                onClick={() => handleProgramSelect("NEET PG")}
+                className={`program-button ${programOpen ? "open" : ""}`}
+                onClick={() => setProgramOpen((prev) => !prev)}
+                aria-expanded={programOpen}
+                aria-haspopup="true"
               >
-                NEET PG
+                <span>{selectedProgram}</span>
+                <span className="program-arrow"></span>
               </button>
+
+              <div className={`program-dropdown ${programOpen ? "show" : ""}`}>
+                <button
+                  type="button"
+                  className={selectedProgram === "NEET PG" ? "selected" : ""}
+                  onClick={() => handleProgramSelect("NEET PG")}
+                >
+                  NEET PG
+                </button>
+
+                <button
+                  type="button"
+                  className={selectedProgram === "FMGE" ? "selected" : ""}
+                  onClick={() => handleProgramSelect("FMGE")}
+                >
+                  FMGE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="navbar-right navbar-desktop" ref={desktopNavRef}>
+            <a href="/">Home</a>
+            <a href="/about">About Dr. GRG</a>
+            <a href={links.plans}>Plans</a>
+            <a href={links.books}>Books</a>
+          </div>
+
+          <button
+            type="button"
+            className={`navbar-hamburger ${mobileOpen ? "active" : ""}`}
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <div className="mobile-menu-wrapper" ref={mobileMenuRef}>
+          <div className="mobile-menu">
+            <div
+              className="mobile-program"
+              ref={(el) => {
+                mobileItemsRef.current[0] = el;
+              }}
+            >
               <button
                 type="button"
-                className={selectedProgram === "FMGE" ? "selected" : ""}
-                onClick={() => handleProgramSelect("FMGE")}
+                className="mobile-dropdown-button"
+                onClick={() => setProgramOpen((prev) => !prev)}
               >
-                FMGE
+                <span>{selectedProgram}</span>
+                <span
+                  className={`mobile-arrow ${programOpen ? "open" : ""}`}
+                ></span>
+              </button>
+
+              <div className={`mobile-submenu ${programOpen ? "show" : ""}`}>
+                <button
+                  type="button"
+                  onClick={() => handleProgramSelect("NEET PG")}
+                >
+                  NEET PG
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => handleProgramSelect("FMGE")}
+                >
+                  FMGE
+                </button>
+              </div>
+            </div>
+
+            <div
+              ref={(el) => {
+                mobileItemsRef.current[1] = el;
+              }}
+            >
+              <a href="/" onClick={closeMobileMenu}>
+                Home
+              </a>
+            </div>
+
+            <div
+              ref={(el) => {
+                mobileItemsRef.current[2] = el;
+              }}
+            >
+              <a href="/about" onClick={closeMobileMenu}>
+                About Dr. GRG
+              </a>
+            </div>
+
+            <div
+              ref={(el) => {
+                mobileItemsRef.current[3] = el;
+              }}
+            >
+              <a href={links.plans} onClick={closeMobileMenu}>
+                Plans
+              </a>
+            </div>
+
+            <div
+              ref={(el) => {
+                mobileItemsRef.current[4] = el;
+              }}
+            >
+              <a href={links.books} onClick={closeMobileMenu}>
+                Books
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {coursePopupOpen && (
+        <div className="course-popup-overlay">
+          <div className="course-popup">
+            <div className="course-popup-header">
+              <h2>Choose Your Course</h2>
+
+              <p>Select your preparation pathway to continue.</p>
+            </div>
+
+            <div className="course-popup-options">
+              <button
+                type="button"
+                className="course-popup-option"
+                onClick={() => handleCourseSelect("NEET PG")}
+              >
+                <span className="course-popup-icon">
+                  <FaStethoscope />
+                </span>
+
+                <span className="course-popup-option-title">
+                  NEET PG | INI-CET
+                </span>
+              </button>
+
+              <button
+                type="button"
+                className="course-popup-option"
+                onClick={() => handleCourseSelect("FMGE")}
+              >
+                <span className="course-popup-icon">
+                  <FaGlobe />
+                </span>
+
+                <span className="course-popup-option-title">FMGE</span>
               </button>
             </div>
           </div>
         </div>
-
-        <div className="navbar-right navbar-desktop" ref={desktopNavRef}>
-          <a href="/">Home</a>
-          <a href="/about">About Dr. GRG</a>
-          <a href={links.plans}>Plans</a>
-          <a href={links.books}>Books</a>
-          {/* <a href="/students">Students</a> */}
-          {/* <a href="/faqs">FAQ&apos;s</a> */}
-        </div>
-
-        <button
-          type="button"
-          className={`navbar-hamburger ${mobileOpen ? "active" : ""}`}
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
-      <div className="mobile-menu-wrapper" ref={mobileMenuRef}>
-        <div className="mobile-menu">
-          <div
-            className="mobile-program"
-            ref={(el) => {
-              mobileItemsRef.current[0] = el;
-            }}
-          >
-            <button
-              type="button"
-              className="mobile-dropdown-button"
-              onClick={() => setProgramOpen((prev) => !prev)}
-            >
-              <span>{selectedProgram}</span>
-              <span
-                className={`mobile-arrow ${programOpen ? "open" : ""}`}
-              ></span>
-            </button>
-            <div className={`mobile-submenu ${programOpen ? "show" : ""}`}>
-              <button
-                type="button"
-                onClick={() => handleProgramSelect("NEET PG")}
-              >
-                NEET PG
-              </button>
-              <button type="button" onClick={() => handleProgramSelect("FMGE")}>
-                FMGE
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={(el) => {
-              mobileItemsRef.current[1] = el;
-            }}
-          >
-            <a href="/" onClick={closeMobileMenu}>
-              Home
-            </a>
-          </div>
-
-          <div
-            ref={(el) => {
-              mobileItemsRef.current[2] = el;
-            }}
-          >
-            <a href="/about" onClick={closeMobileMenu}>
-              About Dr. GRG
-            </a>
-          </div>
-
-          <div
-            ref={(el) => {
-              mobileItemsRef.current[3] = el;
-            }}
-          >
-            <a href={links.plans} onClick={closeMobileMenu}>
-              Plans
-            </a>
-          </div>
-
-          <div
-            ref={(el) => {
-              mobileItemsRef.current[4] = el;
-            }}
-          >
-            <a href={links.books} onClick={closeMobileMenu}>
-              Books
-            </a>
-          </div>
-
-          {/* <div
-            ref={(el) => {
-              mobileItemsRef.current[5] = el;
-            }}
-          >
-            <a href="/students" onClick={closeMobileMenu}>
-              Students
-            </a>
-          </div> */}
-
-          {/* <div
-            ref={(el) => {
-              mobileItemsRef.current[6] = el;
-            }}
-          >
-            <a href="/faqs" onClick={closeMobileMenu}>
-              FAQ&apos;s
-            </a>
-          </div> */}
-        </div>
-      </div>
-    </nav>
+      )}
+    </>
   );
 }
+
 export default Navbar;

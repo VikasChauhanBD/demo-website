@@ -5,14 +5,13 @@ import "./FmgeBooksDetails.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BOOK_IMAGE =
-  "https://cdn.dribbble.com/userupload/47187682/file/35fd36049bdc1dfe49efe682ccfd99bc.jpeg";
-
 const books = [
   {
+    image:
+      "https://cdn.dribbble.com/userupload/49226167/file/0468ba410e834a8f27b8aa6b462fd1e8.png",
     stage: "01 · DETAILED LEARNING",
-    title: "GOGA MASTER CLASS",
-    imageAlt: "GOGA Master Class book cover",
+    title: "GRG MASTER CLASS",
+    imageAlt: "GRG Master Class book cover",
     subHeading: "Where Concepts Become Confidence.",
     lead: "Build your Pharmacology understanding systematically with content designed specifically for the FMGE pathway.",
     description:
@@ -29,14 +28,16 @@ const books = [
     bestFor:
       "FMGE aspirants looking to build their Pharmacology understanding systematically.",
     tagline: "Understand first. Remember better.",
-    cta: "Explore GOGA Master Class",
+    cta: "Explore GRG Master Class",
   },
 
   {
+    image:
+      "https://cdn.dribbble.com/userupload/49226166/file/5a50a38265beca03b2f69390780afa5c.png",
     stage: "02 · REVISION",
     title: "POWER PACK REVISION",
     imageAlt: "Power Pack Revision book cover",
-    subHeading: "Quick. Clear. To the Point.",
+    subHeading: "Quick & Conceptual",
     lead: "Once you've learnt Pharmacology, revision becomes about bringing the important concepts back quickly and clearly.",
     description:
       "Power Pack Revision is designed to work alongside the FMGE revision pathway, helping you reinforce what you've already studied without repeatedly going back through the entire learning process.",
@@ -56,6 +57,8 @@ const books = [
   },
 
   {
+    image:
+      "https://cdn.dribbble.com/userupload/49226169/file/e30f205d25bb74de5ddacaa5364b7ada.png",
     stage: "03 · RAPID LEARNING",
     title: "GOGA EXPRESS",
     imageAlt: "GOGA Express book cover",
@@ -240,7 +243,7 @@ function FmgeBooksDetails() {
                 <div className="fmge-books-details-media">
                   <img
                     className="fmge-books-details-cover-img"
-                    src={BOOK_IMAGE}
+                    src={book.image}
                     alt={book.imageAlt}
                   />
                 </div>

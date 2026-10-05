@@ -8,14 +8,14 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const programData = [
   {
-    title: "GOGA MASTER CLASS",
+    title: "GRG MASTER CLASS",
     para: "Where Concepts Become Confidence. </br> Detailed, concept-based learning with Dr. GRG — helping you understand the why behind Pharmacology rather than simply memorising facts. </br> Learn • Understand • Connect • Apply",
     image:
       "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp",
   },
   {
     title: "POWER PACK REVISION",
-    para: "Quick. Clear. To the Point. </br> A focused revision pathway to help you revisit important concepts, reinforce recall and keep your preparation exam-oriented. </br> Revise • Reinforce • Recall",
+    para: "Quick & Conceptual </br> A focused revision pathway to help you revisit important concepts, reinforce recall and keep your preparation exam-oriented. </br> Revise • Reinforce • Recall",
     image:
       "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp",
   },

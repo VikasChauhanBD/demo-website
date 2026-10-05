@@ -19,7 +19,7 @@ function HomePage() {
       <WhySection />
       <PlatformSection />
       <GrgWaySection />
-      <WhoSection />
+      {/* <WhoSection /> */}
       <WhatSection />
       <LearningPathSection />
       <IntroSection />

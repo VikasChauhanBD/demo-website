@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const videos = [
   {
     number: "01",
-    title: "GOGA MASTER CLASS",
+    title: "GRG MASTER CLASS",
     text: "See how Dr. GRG makes difficult concepts simple.",
   },
   {

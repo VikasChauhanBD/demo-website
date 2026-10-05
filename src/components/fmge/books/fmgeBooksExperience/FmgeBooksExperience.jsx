@@ -63,7 +63,7 @@ const featureReason = {
 };
 
 const stages = [
-  { name: "GOGA Master Class", action: "Build" },
+  { name: "GRG Master Class", action: "Build" },
   { name: "Power Pack Revision", action: "Reinforce" },
   { name: "GOGA Express", action: "Focus" },
 ];

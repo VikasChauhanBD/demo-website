@@ -16,7 +16,7 @@ function WhatSection() {
       image:
         "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp",
       label: "01 · DETAILED LEARNING",
-      title: "GOGA Master Class",
+      title: "GRG Master Class",
       description: (
         <>
           <strong>Where Concepts Become Confidence.</strong>
@@ -34,7 +34,7 @@ function WhatSection() {
       title: "Power Pack Revision",
       description: (
         <>
-          <strong>Quick. Clear. To the Point.</strong>
+          <strong>Quick & Conceptual</strong>
           <br />
           Concise reinforcement for efficient revision.
         </>

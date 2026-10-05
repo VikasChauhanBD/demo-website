@@ -18,7 +18,7 @@ const learningPaths = [
     icon: <FaBookOpen />,
     title: "Learning from the beginning",
     description:
-      "Start with GOGA Master Class and build Pharmacology from the ground up.",
+      "Start with GRG Master Class and build Pharmacology from the ground up.",
   },
   {
     number: "02",

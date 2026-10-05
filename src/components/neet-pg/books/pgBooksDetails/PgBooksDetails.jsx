@@ -5,18 +5,17 @@ import "./PgBooksDetails.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BOOK_IMAGE =
-  "https://cdn.dribbble.com/userupload/47187682/file/35fd36049bdc1dfe49efe682ccfd99bc.jpeg";
-
 const books = [
   {
+    image:
+      "https://cdn.dribbble.com/userupload/49226168/file/c9327c4303801445213c791efbbf342c.png",
     stage: "01 · DETAILED LEARNING",
-    title: "GOGA MASTER CLASS",
-    imageAlt: "GOGA Master Class book cover",
+    title: "GRG MASTER CLASS",
+    imageAlt: "GRG Master Class book cover",
     subHeading: "Where Concepts Become Confidence.",
     lead: "Build your Pharmacology understanding from the ground up.",
     description:
-      "The GOGA Master Class book brings the detailed teaching of Dr. GRG into a structured written format - helping you understand concepts logically, connect them clinically and build a strong foundation for your NEET PG & INI-CET preparation.",
+      "The GRG Master Class book brings the detailed teaching of Dr. GRG into a structured written format - helping you understand concepts logically, connect them clinically and build a strong foundation for your NEET PG & INI-CET preparation.",
     listLabel: "Designed to help you:",
     points: [
       "Build concepts systematically",
@@ -29,13 +28,15 @@ const books = [
     bestFor:
       "Students looking to build a strong Pharmacology foundation for NEET PG & INI-CET.",
     tagline: "Learn deeply. Understand clearly. Build confidence.",
-    cta: "Explore GOGA Master Class",
+    cta: "Explore GRG Master Class",
   },
   {
+    image:
+      "https://cdn.dribbble.com/userupload/49226170/file/cf22b68dc5b14293840e0dff4add6667.png",
     stage: "02 · REVISION",
     title: "POWER PACK REVISION",
     imageAlt: "Power Pack Revision book cover",
-    subHeading: "Quick. Clear. To the Point.",
+    subHeading: "Quick & Conceptual",
     lead: "You've studied it. Now bring it all back.",
     description:
       "Power Pack Revision is designed to help you revisit and reinforce Pharmacology efficiently when you don't need to start from the beginning again.",
@@ -54,6 +55,8 @@ const books = [
     cta: "Explore Power Pack Revision",
   },
   {
+    image:
+      "https://cdn.dribbble.com/userupload/49226169/file/e30f205d25bb74de5ddacaa5364b7ada.png",
     stage: "03 · RAPID LEARNING",
     title: "GOGA EXPRESS",
     imageAlt: "GOGA Express book cover",
@@ -234,7 +237,7 @@ function PgBooksDetails() {
                 <div className="pg-books-details-media">
                   <img
                     className="pg-books-details-cover-img"
-                    src={BOOK_IMAGE}
+                    src={book.image}
                     alt={book.imageAlt}
                   />
                 </div>

@@ -107,10 +107,9 @@
 }
 
 .why-section-reason-title {
-  max-width: 340px;
   margin: 0 auto 16px;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 1.4;
 }
@@ -138,10 +137,6 @@
 
   .why-section-heading {
     font-size: 32px;
-  }
-
-  .why-section-reason-title {
-    font-size: 20px;
   }
 
   .why-section-para {

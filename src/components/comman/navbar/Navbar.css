@@ -445,6 +445,95 @@
   color: #004d7a !important;
 }
 
+.course-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(34, 34, 34, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.course-popup {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  padding: 40px;
+  border: 1px solid rgba(0, 77, 122, 0.12);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(0, 77, 122, 0.2);
+}
+
+.course-popup-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.course-popup-header h2 {
+  margin: 0;
+  color: #004d7a;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+}
+
+.course-popup-header p {
+  margin: 12px 0 0;
+  color: #222222;
+  font-size: 16px;
+}
+
+.course-popup-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.course-popup-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: 20px;
+  border: 1px solid #c9e1f2;
+  border-radius: 22px;
+  background: #ffffff;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.course-popup-option:hover {
+  transform: translateY(-5px);
+  border-color: #004d7a;
+  box-shadow: 0 15px 35px rgba(0, 77, 122, 0.14);
+}
+
+.course-popup-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: #e8f4ff;
+  color: #004d7a;
+  font-size: 30px;
+}
+
+.course-popup-option-title {
+  color: #222222;
+  font-size: 20px;
+  font-weight: 700;
+}
+
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1150px) {
@@ -539,5 +628,18 @@
   .navbar-hamburger {
     width: 43px;
     height: 43px;
+  }
+
+  .course-popup {
+    padding: 30px 18px;
+    border-radius: 24px;
+  }
+
+  .course-popup-options {
+    grid-template-columns: 1fr;
+  }
+
+  .course-popup-option {
+    min-height: 145px;
   }
 }
