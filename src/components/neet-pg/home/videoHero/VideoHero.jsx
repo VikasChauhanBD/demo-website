@@ -199,7 +199,7 @@ const VideoHero = () => {
             <b>Apply</b> it when it counts.
             <br />
             A complete Pharmacology learning and revision ecosystem for <br />
-            <b>• NEET PG • INI CET • FMGE</b>
+            <b>• NEET PG • INI CET</b>
           </p>
 
           <div className="video-hero-cta-div">
