@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
-import Logo from "../../../assets/images/grg.jpeg";
 import gsap from "gsap";
 import { FaStethoscope, FaGlobe } from "react-icons/fa";
 
@@ -204,7 +203,7 @@ function Navbar() {
                 />
 
                 <div className="navbar-logo-text">
-                  <h4>Pharmacology by Dr.GRG</h4>
+                  <h4>Pharmacology by Dr. GRG</h4>
                   <h5>Powered by eConceptual</h5>
                 </div>
               </a>

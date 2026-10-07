@@ -4,8 +4,6 @@ import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import gsap from "gsap";
 import "./Footer.css";
 
-import Logo from "../../../assets/images/grg.jpeg";
-
 function Footer() {
   const footerRef = useRef(null);
 
@@ -62,13 +60,23 @@ function Footer() {
 
         <div className="footer-main">
           <div className="footer-brand footer-content-item">
-            <NavLink to="/" className="footer-logo">
-              <img src={Logo} alt="GRG Logo" />
-            </NavLink>
+            <div className="footer-logo-section">
+              <NavLink to="/" className="footer-logo">
+                <img
+                  src="https://cdn.dribbble.com/userupload/49243456/file/6a33c9e10c12af9bd7e77302ab6f4c10.png"
+                  alt="GRG Logo"
+                />
+              </NavLink>
+
+              <div className="footer-logo-text">
+                <h4>Pharmacology by Dr. GRG</h4>
+                <h5>Powered by eConceptual</h5>
+              </div>
+            </div>
 
             <p>
-              Understand Pharmacology. Remember it. Apply it. Learn with GRG Sir
-              and build concepts that stay with you.
+              Understand Pharmacology. Remember it. Apply it. Learn with Dr. GRG
+              Sir and build concepts that stay with you.
             </p>
 
             <div className="footer-social">
@@ -137,8 +145,8 @@ function Footer() {
         <div className="footer-bottom footer-content-item">
           <div>
             <p>
-              &copy; {new Date().getFullYear()} GRG. All Rights Reserved.
-              Designed & Managed By:{" "}
+              &copy; {new Date().getFullYear()} Pharmacology by Dr. GRG. All
+              Rights Reserved. Designed & Managed By:{" "}
               <NavLink to="https://believersdestination.com/" target="_blank">
                 Believers Destination Pvt Ltd
               </NavLink>
