@@ -1,17 +1,15 @@
-.navbar-container {
+.navbar2-container {
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
-  z-index: 9999;
+  z-index: 999;
   width: 100%;
   padding: 10px 24px;
   border: none;
   box-shadow: none;
-  background-color: #ffffff;
 }
 
-.navbar-inner {
-  width: 100%;
+.navbar2-inner {
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -19,14 +17,14 @@
   gap: 30px;
 }
 
-.navbar-left {
+.navbar2-left {
   display: flex;
   align-items: center;
   gap: 18px;
   flex-shrink: 0;
 }
 
-.navbar-logo {
+.navbar2-logo {
   display: flex;
   align-items: center;
   background-color: #ffffff;
@@ -34,14 +32,14 @@
   border-radius: 10px;
 }
 
-.navbar-logo a {
+.navbar2-logo a {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
 }
 
-.navbar-logo img {
+.navbar2-logo img {
   display: block;
   width: 58px;
   height: 58px;
@@ -49,7 +47,7 @@
   /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12); */
 }
 
-.navbar-logo-text {
+.navbar2-logo-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -57,7 +55,7 @@
   gap: 3px;
 }
 
-.navbar-logo-text h4 {
+.navbar2-logo-text h4 {
   margin: 0;
   color: #222222;
   font-size: 14px;
@@ -65,7 +63,7 @@
   line-height: 1.2;
 }
 
-.navbar-logo-text h5 {
+.navbar2-logo-text h5 {
   margin: 0;
   color: #004d7a;
   font-size: 12px;
@@ -73,11 +71,11 @@
   line-height: 1.2;
 }
 
-.navbar-divider {
-  width: 2px;
+.navbar2-divider {
+  width: 1px;
   height: 38px;
   margin: 0 2px;
-  background: #9da8b6;
+  background: #ffffff;
 }
 
 .program-selector {
@@ -97,7 +95,7 @@
   border-radius: 9px;
   outline: none;
   background: #ffffff;
-  color: #222222;
+  color: #292765;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -181,7 +179,7 @@
   color: #005b8f;
 }
 
-.navbar-right {
+.navbar2-right {
   display: flex;
   align-items: center;
   gap: 2px;
@@ -193,7 +191,7 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
-.navbar-right > a {
+.navbar2-right > a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,7 +199,7 @@
   padding: 0 13px;
   border-radius: 8px;
   background: transparent;
-  color: #222222;
+  color: #292765;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
@@ -211,7 +209,7 @@
     color 0.2s ease;
 }
 
-.navbar-right > a:hover {
+.navbar2-right > a:hover {
   background: #f1f6ff;
   color: #004d7a;
 }
@@ -231,7 +229,7 @@
   border-radius: 8px;
   outline: none;
   background: transparent;
-  color: #222222;
+  color: #292765;
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
@@ -312,7 +310,7 @@
   color: #004d7a;
 }
 
-.navbar-hamburger {
+.navbar2-hamburger {
   display: none;
   width: 45px;
   height: 45px;
@@ -328,26 +326,26 @@
   gap: 5px;
 }
 
-.navbar-hamburger span {
+.navbar2-hamburger span {
   display: block;
   width: 21px;
   height: 2px;
   border-radius: 10px;
-  background: #222222;
+  background: #292765;
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
 }
 
-.navbar-hamburger.active span:nth-child(1) {
+.navbar2-hamburger.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-.navbar-hamburger.active span:nth-child(2) {
+.navbar2-hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 
-.navbar-hamburger.active span:nth-child(3) {
+.navbar2-hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
@@ -378,7 +376,7 @@
   padding: 0 14px;
   border-radius: 8px;
   background: transparent !important;
-  color: #222222 !important;
+  color: #292765 !important;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
@@ -405,7 +403,7 @@
   border-radius: 8px;
   outline: none;
   background: transparent;
-  color: #222222 !important;
+  color: #292765 !important;
   font-size: 16px;
   font-weight: 600;
   text-align: left;
@@ -563,16 +561,16 @@
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1150px) {
-  .navbar-left {
+  .navbar2-left {
     gap: 12px;
   }
 
-  .navbar-logo img {
+  .navbar2-logo img {
     width: 54px;
     height: 54px;
   }
 
-  .navbar-divider {
+  .navbar2-divider {
     height: 34px;
   }
 
@@ -584,12 +582,12 @@
     width: 130px;
   }
 
-  .navbar-right {
+  .navbar2-right {
     gap: 0;
     padding: 4px 6px;
   }
 
-  .navbar-right > a,
+  .navbar2-right > a,
   .pharma-button {
     padding-left: 8px;
     padding-right: 8px;
@@ -598,24 +596,24 @@
 }
 
 @media (max-width: 900px) {
-  .navbar-container {
+  .navbar2-container {
     padding: 10px 16px;
     background: #ffffff;
     border: none;
     box-shadow: none;
   }
 
-  .navbar-inner {
+  .navbar2-inner {
     width: 100%;
     gap: 12px;
   }
 
-  .navbar-logo img {
+  .navbar2-logo img {
     width: 50px;
     height: 50px;
   }
 
-  .navbar-desktop {
+  .navbar2-desktop {
     display: none;
   }
 
@@ -623,11 +621,11 @@
     display: none;
   }
 
-  .navbar-divider {
+  .navbar2-divider {
     display: none;
   }
 
-  .navbar-hamburger {
+  .navbar2-hamburger {
     display: flex;
     margin-left: auto;
   }
@@ -638,16 +636,16 @@
 }
 
 @media (max-width: 500px) {
-  .navbar-container {
+  .navbar2-container {
     padding: 8px 12px;
   }
 
-  .navbar-logo img {
+  .navbar2-logo img {
     width: 46px;
     height: 46px;
   }
 
-  .navbar-hamburger {
+  .navbar2-hamburger {
     width: 42px;
     height: 42px;
   }

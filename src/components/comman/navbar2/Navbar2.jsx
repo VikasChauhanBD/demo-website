@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Navbar.css";
+import "./Navbar2.css";
 import gsap from "gsap";
 import { FaStethoscope, FaGlobe } from "react-icons/fa";
 
@@ -35,7 +35,7 @@ const getInitialProgram = () => {
   return "NEET PG";
 };
 
-function Navbar() {
+function Navbar2() {
   const navbarRef = useRef(null);
   const logoRef = useRef(null);
   const desktopNavRef = useRef(null);
@@ -192,10 +192,10 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar-container" ref={navbarRef}>
-        <div className="navbar-inner">
-          <div className="navbar-left">
-            <div className="navbar-logo" ref={logoRef}>
+      <nav className="navbar2-container" ref={navbarRef}>
+        <div className="navbar2-inner">
+          <div className="navbar2-left">
+            <div className="navbar2-logo" ref={logoRef}>
               <a
                 href={PROGRAMS[selectedProgram].landing}
                 onClick={closeMobileMenu}
@@ -212,7 +212,7 @@ function Navbar() {
               </a>
             </div>
 
-            <div className="navbar-divider"></div>
+            <div className="navbar2-divider"></div>
 
             <div className="program-selector">
               <button
@@ -246,7 +246,7 @@ function Navbar() {
             </div>
           </div>
 
-          <div className="navbar-right navbar-desktop" ref={desktopNavRef}>
+          <div className="navbar2-right navbar2-desktop" ref={desktopNavRef}>
             {/* <a href="/">Home</a> */}
             <a href="/about">About Dr. GRG</a>
             <a href={links.plans}>Plans</a>
@@ -255,7 +255,7 @@ function Navbar() {
 
           <button
             type="button"
-            className={`navbar-hamburger ${mobileOpen ? "active" : ""}`}
+            className={`navbar2-hamburger ${mobileOpen ? "active" : ""}`}
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -388,4 +388,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar2;

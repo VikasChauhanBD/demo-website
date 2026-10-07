@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/comman/navbar/Navbar";
+import Navbar2 from "./components/comman/navbar2/Navbar2";
 import Footer from "./components/comman/footer/Footer";
 
 import HomePage from "./pages/HomePage";
@@ -30,15 +31,33 @@ import ShippingAndDeliveryPolicyPage from "./pages/ShippingAndDeliveryPolicyPage
 
 import ScrollToTop from "./hooks/ScrollToTop";
 
+const getDefaultCourse = () => {
+  try {
+    const selectedProgram = localStorage.getItem("selectedProgram");
+
+    if (selectedProgram === "FMGE") {
+      return "/course/fmge";
+    }
+  } catch (e) {
+    // ignore storage errors
+  }
+
+  return "/course/neet-pg";
+};
+
 function App() {
   return (
     <>
       <BrowserRouter>
         <Navbar />
+        <Navbar2 />
         <ScrollToTop />
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={<Navigate to={getDefaultCourse()} replace />}
+          />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/classes" element={<ClassesPage />} />
           <Route path="/schedules" element={<SchedulesPage />} />
@@ -52,7 +71,7 @@ function App() {
           <Route path="/course/neet-pg/plans" element={<NeetPgPlansPage />} />
           <Route path="/course/neet-pg/books" element={<NeetPgBooksPage />} />
 
-          {/* ----------- Neet PG Pages ---------------- */}
+          {/* ----------- FMGE Pages ---------------- */}
 
           <Route path="/course/fmge" element={<FmgeHomePage />} />
           <Route path="/course/fmge/plans" element={<FmgePlansPage />} />
