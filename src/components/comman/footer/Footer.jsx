@@ -3,14 +3,11 @@ import { NavLink } from "react-router-dom";
 import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import gsap from "gsap";
 import "./Footer.css";
-
 function Footer() {
   const footerRef = useRef(null);
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-
       tl.from(
         ".footer-title",
         {
@@ -43,10 +40,8 @@ function Footer() {
           "-=0.4",
         );
     }, footerRef);
-
     return () => ctx.revert();
   }, []);
-
   return (
     <footer className="footer-section" ref={footerRef}>
       <div className="footer-container">
@@ -57,7 +52,6 @@ function Footer() {
             <span>PHARMACOLOGY.</span>
           </h2>
         </div>
-
         <div className="footer-main">
           <div className="footer-brand footer-content-item">
             <div className="footer-logo-section">
@@ -67,21 +61,17 @@ function Footer() {
                   alt="GRG Logo"
                 />
               </NavLink>
-
               <div className="footer-logo-text">
                 <h4>Pharmacology by Dr. GRG</h4>
                 <h5>Powered by eConceptual</h5>
               </div>
             </div>
-
             <p>
               Understand Pharmacology. Remember it. Apply it. Learn with Dr. GRG
               Sir and build concepts that stay with you.
             </p>
-
             <div className="footer-social">
               <span>FOLLOW GRG SIR</span>
-
               <div className="footer-social-links">
                 <a
                   href="https://www.instagram.com/pharmacologybydrgrg/"
@@ -91,7 +81,6 @@ function Footer() {
                 >
                   <FaInstagram />
                 </a>
-
                 <a
                   href="#"
                   target="_blank"
@@ -100,7 +89,6 @@ function Footer() {
                 >
                   <FaFacebookF />
                 </a>
-
                 <a
                   href="https://www.youtube.com/@DrGobindRaiGarg"
                   target="_blank"
@@ -112,24 +100,23 @@ function Footer() {
               </div>
             </div>
           </div>
-
           <div className="footer-links footer-content-item">
             <div className="footer-column">
-              <h3>Explore</h3>
-
+              <h3>Neet Pg</h3>
               <NavLink to="/">Home</NavLink>
               <NavLink to="/about">About Dr. GRG</NavLink>
-              <NavLink to="/classes">Classes</NavLink>
-              <NavLink to="/buy-new-plans">Buy New Plans</NavLink>
-              <NavLink to="/schedules">Schedules</NavLink>
-              <NavLink to="/results">Results</NavLink>
-              <NavLink to="/blogs">Blogs</NavLink>
-              <NavLink to="/faqs">FAQs</NavLink>
+              <NavLink to="/course/neet-pg/plans">Plans</NavLink>
+              <NavLink to="/course/neet-pg/books">Books</NavLink>
             </div>
-
+            <div className="footer-column">
+              <h3>FMGE</h3>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/about">About Dr. GRG</NavLink>
+              <NavLink to="/course/fmge/plans">Plans</NavLink>
+              <NavLink to="/course/fmge/books">Books</NavLink>
+            </div>
             <div className="footer-column">
               <h3>Policies</h3>
-
               <NavLink to="/privacy-policy">Privacy Policy</NavLink>
               <NavLink to="/terms">Terms & Conditions</NavLink>
               <NavLink to="/cancellation-refund">Cancellation & Refund</NavLink>
@@ -139,9 +126,7 @@ function Footer() {
             </div>
           </div>
         </div>
-
         <div className="footer-line"></div>
-
         <div className="footer-bottom footer-content-item">
           <div>
             <p>
@@ -152,7 +137,6 @@ function Footer() {
               </NavLink>
             </p>
           </div>
-
           <div className="footer-bottom-right">
             <span>Learn. Understand. Remember. Apply.</span>
           </div>
@@ -161,5 +145,4 @@ function Footer() {
     </footer>
   );
 }
-
 export default Footer;
