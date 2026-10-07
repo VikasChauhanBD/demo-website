@@ -198,7 +198,15 @@ function Navbar() {
           <div className="navbar-left">
             <div className="navbar-logo" ref={logoRef}>
               <a href="/" onClick={closeMobileMenu}>
-                <img src={Logo} alt="GRG Logo" />
+                <img
+                  src="https://cdn.dribbble.com/userupload/49243456/file/6a33c9e10c12af9bd7e77302ab6f4c10.png"
+                  alt="GRG Logo"
+                />
+
+                <div className="navbar-logo-text">
+                  <h4>Pharmacology by Dr.GRG</h4>
+                  <h5>Powered by eConceptual</h5>
+                </div>
               </a>
             </div>
 
