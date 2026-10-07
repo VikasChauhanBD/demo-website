@@ -55,7 +55,7 @@ function Footer() {
         <div className="footer-main">
           <div className="footer-brand footer-content-item">
             <div className="footer-logo-section">
-              <NavLink to="/" className="footer-logo">
+              <NavLink to="#" className="footer-logo">
                 <img
                   src="https://cdn.dribbble.com/userupload/49243456/file/6a33c9e10c12af9bd7e77302ab6f4c10.png"
                   alt="GRG Logo"
@@ -103,18 +103,20 @@ function Footer() {
           <div className="footer-links footer-content-item">
             <div className="footer-column">
               <h3>Neet Pg</h3>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/course/neet-pg">Home</NavLink>
               <NavLink to="/about">About Dr. GRG</NavLink>
               <NavLink to="/course/neet-pg/plans">Plans</NavLink>
               <NavLink to="/course/neet-pg/books">Books</NavLink>
             </div>
+
             <div className="footer-column">
               <h3>FMGE</h3>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/course/fmge">Home</NavLink>
               <NavLink to="/about">About Dr. GRG</NavLink>
               <NavLink to="/course/fmge/plans">Plans</NavLink>
               <NavLink to="/course/fmge/books">Books</NavLink>
             </div>
+
             <div className="footer-column">
               <h3>Policies</h3>
               <NavLink to="/privacy-policy">Privacy Policy</NavLink>

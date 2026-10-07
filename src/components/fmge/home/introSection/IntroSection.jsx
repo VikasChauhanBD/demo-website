@@ -11,7 +11,7 @@ function IntroSection() {
   useGSAP(() => {
     // Circle animation
     gsap.fromTo(
-      ".intro-circle",
+      ".fmge-intro-circle",
       {
         scale: 0.5,
         opacity: 0,
@@ -22,7 +22,7 @@ function IntroSection() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".intro-section",
+          trigger: ".fmge-intro-section",
           start: "top 50%",
           toggleActions: "play none none none",
         },
@@ -31,7 +31,7 @@ function IntroSection() {
 
     // Content animation
     gsap.fromTo(
-      ".intro-heading",
+      ".fmge-intro-heading",
       {
         y: 40,
         opacity: 0,
@@ -42,7 +42,7 @@ function IntroSection() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".intro-heading",
+          trigger: ".fmge-intro-heading",
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -50,7 +50,7 @@ function IntroSection() {
     );
 
     gsap.fromTo(
-      ".intro-sub-heading",
+      ".fmge-intro-sub-heading",
       {
         y: 40,
         opacity: 0,
@@ -61,7 +61,7 @@ function IntroSection() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".intro-sub-heading",
+          trigger: ".fmge-intro-sub-heading",
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -69,7 +69,7 @@ function IntroSection() {
     );
 
     gsap.fromTo(
-      ".intro-para",
+      ".fmge-intro-para",
       {
         y: 40,
         opacity: 0,
@@ -80,7 +80,7 @@ function IntroSection() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".intro-para",
+          trigger: ".fmge-intro-para",
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -88,7 +88,7 @@ function IntroSection() {
     );
 
     gsap.fromTo(
-      ".intro-cta",
+      ".fmge-intro-cta",
       {
         y: 40,
         opacity: 0,
@@ -99,7 +99,7 @@ function IntroSection() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".intro-cta",
+          trigger: ".fmge-intro-cta",
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -108,7 +108,7 @@ function IntroSection() {
 
     // Set initial state for all images
     gsap.set(
-      ".intro-left-top-img, .intro-right-top-img, .intro-left-bottom-img, .intro-right-bottom-img",
+      ".fmge-intro-left-top-img, .fmge-intro-right-top-img, .fmge-intro-left-bottom-img, .fmge-intro-right-bottom-img",
       {
         opacity: 0,
         scale: 1.08,
@@ -117,56 +117,56 @@ function IntroSection() {
     );
 
     // TOP LEFT
-    gsap.to(".intro-left-top-img", {
+    gsap.to(".fmge-intro-left-top-img", {
       opacity: 1,
       scale: 1,
       clipPath: "inset(0 0 0% 0)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".intro-section",
+        trigger: ".fmge-intro-section",
         start: "top 50%",
         toggleActions: "play none none none",
       },
     });
 
     // TOP RIGHT
-    gsap.to(".intro-right-top-img", {
+    gsap.to(".fmge-intro-right-top-img", {
       opacity: 1,
       scale: 1,
       clipPath: "inset(0 0 0% 0)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".intro-section",
+        trigger: ".fmge-intro-section",
         start: "top 50%",
         toggleActions: "play none none none",
       },
     });
 
     // BOTTOM LEFT
-    gsap.to(".intro-left-bottom-img", {
+    gsap.to(".fmge-intro-left-bottom-img", {
       opacity: 1,
       scale: 1,
       clipPath: "inset(0 0 0% 0)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".intro-left-bottom-img",
+        trigger: ".fmge-intro-left-bottom-img",
         start: "top 80%",
         toggleActions: "play none none none",
       },
     });
 
     // BOTTOM RIGHT
-    gsap.to(".intro-right-bottom-img", {
+    gsap.to(".fmge-intro-right-bottom-img", {
       opacity: 1,
       scale: 1,
       clipPath: "inset(0 0 0% 0)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".intro-right-bottom-img",
+        trigger: ".fmge-intro-right-bottom-img",
         start: "top 80%",
         toggleActions: "play none none none",
       },
@@ -174,32 +174,32 @@ function IntroSection() {
   });
 
   return (
-    <div className="intro-section">
-      <div className="intro-circle-div">
+    <div className="fmge-intro-section">
+      <div className="fmge-intro-circle-div">
         <img
-          className="intro-left-top-img"
-          src="https://www.hejlfoundation.org/app/uploads/2024/06/pexels-pixabay-33703-1-jpg.webp"
+          className="fmge-intro-left-top-img"
+          src="https://cdn.dribbble.com/userupload/49245648/file/526e7ec8d72c1e435ba7549baeb1740a.png"
           alt=""
         />
 
         <img
-          className="intro-left-bottom-img"
-          src="https://www.hejlfoundation.org/app/uploads/2024/06/ben-mullins-je240kkjiua-unsplash-2-jpg.webp"
+          className="fmge-intro-left-bottom-img"
+          src="https://cdn.dribbble.com/userupload/49245650/file/45a68918dc05668300817ab5674f126c.png"
           alt=""
         />
 
-        <div className="intro-circle">
-          <span className="intro-tag">ABOUT GRG</span>
+        <div className="fmge-intro-circle">
+          <span className="fmge-intro-tag">ABOUT GRG</span>
 
-          <h2 className="intro-heading">
+          <h2 className="fmge-intro-heading">
             The Teacher Behind Pharmacology by Dr. GRG
           </h2>
 
-          {/* <h4 className="intro-sub-heading">
+          {/* <h4 className="fmge-intro-sub-heading">
             The teacher behind Pharmacology by Dr. GRG
           </h4> */}
 
-          <p className="intro-para">
+          <p className="fmge-intro-para">
             For more than two decades, Dr. Gobind Rai Garg has taught
             Pharmacology in classrooms, through books, on digital platforms and
             in large revision programmes. Across those years, one belief has
@@ -224,30 +224,30 @@ function IntroSection() {
             {/* <br />
             Teach the concept first. Then make it easier to remember, revise and
             apply. */}
-            {/* <span className="intro-tagline">Make difficult things simple.</span>
-            <span className="intro-chips">
-              <span className="intro-chip">Concepts</span>
-              <span className="intro-chip">Clinical Connections</span>
-              <span className="intro-chip">Mnemonics</span>
-              <span className="intro-chip">Questions</span>
-              <span className="intro-chip">Revision</span>
+            {/* <span className="fmge-intro-tagline">Make difficult things simple.</span>
+            <span className="fmge-intro-chips">
+              <span className="fmge-intro-chip">Concepts</span>
+              <span className="fmge-intro-chip">Clinical Connections</span>
+              <span className="fmge-intro-chip">Mnemonics</span>
+              <span className="fmge-intro-chip">Questions</span>
+              <span className="fmge-intro-chip">Revision</span>
             </span> */}
           </p>
 
-          <NavLink to="#" className="intro-cta">
+          <NavLink to="#" className="fmge-intro-cta">
             Read About Dr. GRG
           </NavLink>
         </div>
 
         <img
-          className="intro-right-top-img"
-          src="https://www.hejlfoundation.org/app/uploads/2024/06/opera4-e1635375200792-jpg.webp"
+          className="fmge-intro-right-top-img"
+          src="https://cdn.dribbble.com/userupload/49245649/file/032c6cdc0f1b996fdf5d15b80143a087.png"
           alt=""
         />
 
         <img
-          className="intro-right-bottom-img"
-          src="https://cdn.dribbble.com/userupload/49244495/file/8b5ca0bf73e3f68bb683e9baaa205fe3.png"
+          className="fmge-intro-right-bottom-img"
+          src="https://cdn.dribbble.com/userupload/49244495/file/22d27375a033a89a1535301a496f8802.jpg"
           alt=""
         />
       </div>

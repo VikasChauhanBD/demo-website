@@ -1,23 +1,23 @@
-.platform-section {
+.pg-platform-section {
   width: 100%;
   background-color: #004d7a;
   color: #ffffff;
   padding: 120px 20px;
 }
 
-.platform-container {
+.pg-platform-container {
   width: 80%;
   margin: 0 auto;
 }
 
-.platform-header {
+.pg-platform-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.platform-tag {
+.pg-platform-tag {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -32,7 +32,7 @@
   border-radius: 50px;
 }
 
-.platform-tag::before {
+.pg-platform-tag::before {
   content: "";
   width: 8px;
   height: 8px;
@@ -41,18 +41,18 @@
   flex-shrink: 0;
 }
 
-.platform-heading {
+.pg-platform-heading {
   margin: 24px 0 0;
   font-size: 38px;
   font-weight: 700;
   line-height: 1.2;
 }
 
-.platform-heading span {
+.pg-platform-heading span {
   display: block;
 }
 
-.platform-heading .platform-heading-mark {
+.pg-platform-heading .pg-platform-heading-mark {
   display: inline;
   background: linear-gradient(
       rgba(255, 155, 107, 0.55),
@@ -61,7 +61,7 @@
     no-repeat 0 88% / 100% 0.28em;
 }
 
-.platform-para {
+.pg-platform-para {
   width: 100%;
   max-width: 860px;
   margin: 24px 0 0;
@@ -70,25 +70,25 @@
   line-height: 32px;
 }
 
-.platform-cards {
+.pg-platform-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 2.5rem;
 }
 
-.platform-card {
+.pg-platform-card {
   padding: 16px 16px 28px;
   background-color: #ffffff;
   border-radius: 24px;
   transition: box-shadow 0.3s ease;
 }
 
-.platform-card:hover {
+.pg-platform-card:hover {
   box-shadow: 0 20px 40px rgba(0, 77, 122, 0.18);
 }
 
-.platform-media {
+.pg-platform-media {
   position: relative;
   width: 100%;
   height: 340px;
@@ -96,28 +96,20 @@
   border-radius: 16px;
 }
 
-.platform-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  will-change: transform, opacity;
-}
-
-.platform-slide img {
+.pg-platform-media img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
+  will-change: transform;
 }
 
-.platform-media:hover .platform-slide img {
+.pg-platform-media:hover img {
   transform: scale(1.08);
 }
 
-.platform-card-number {
+.pg-platform-card-number {
   margin: 20px 8px 0;
   font-size: 14px;
   font-weight: 700;
@@ -125,7 +117,7 @@
   color: #ff9b6b;
 }
 
-.platform-card-title {
+.pg-platform-card-title {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -137,7 +129,7 @@
   color: #004d7a;
 }
 
-.platform-card-description {
+.pg-platform-card-description {
   margin: 16px 8px 0;
   font-size: 18px;
   font-weight: 400;
@@ -145,13 +137,13 @@
   color: #222222;
 }
 
-.platform-cta-wrap {
+.pg-platform-cta-wrap {
   display: flex;
   justify-content: center;
   margin-top: 60px;
 }
 
-.platform-cta {
+.pg-platform-cta {
   display: inline-block;
   padding: 12px 28px;
   font-size: 18px;
@@ -165,7 +157,7 @@
     background-color 0.3s ease;
 }
 
-.platform-cta:hover {
+.pg-platform-cta:hover {
   color: #ff9b6b;
   background-color: transparent;
 }
@@ -173,65 +165,65 @@
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1300px) {
-  .platform-container {
+  .pg-platform-container {
     width: 100%;
   }
 }
 
 @media (max-width: 900px) {
-  .platform-section {
+  .pg-platform-section {
     padding: 80px 20px;
   }
 
-  .platform-heading {
+  .pg-platform-heading {
     font-size: 32px;
   }
 
-  .platform-para {
+  .pg-platform-para {
     font-size: 16px;
     line-height: 28px;
   }
 
-  .platform-cards {
+  .pg-platform-cards {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .platform-media {
+  .pg-platform-media {
     height: 280px;
   }
 
-  .platform-card-title {
+  .pg-platform-card-title {
     font-size: 20px;
   }
 
-  .platform-card-description {
+  .pg-platform-card-description {
     font-size: 16px;
   }
 }
 
 @media (max-width: 500px) {
-  .platform-section {
+  .pg-platform-section {
     padding: 60px 16px;
   }
 
-  .platform-tag {
+  .pg-platform-tag {
     font-size: 12px;
   }
 
-  .platform-cards {
+  .pg-platform-cards {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .platform-card:last-child {
+  .pg-platform-card:last-child {
     grid-column: auto;
   }
 
-  .platform-media {
+  .pg-platform-media {
     height: 240px;
   }
 
-  .platform-cta {
+  .pg-platform-cta {
     font-size: 16px;
     padding: 10px 24px;
   }

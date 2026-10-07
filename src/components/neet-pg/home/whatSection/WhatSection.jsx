@@ -14,7 +14,7 @@ function WhatSection() {
     {
       id: 1,
       image:
-        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp",
+        "https://cdn.dribbble.com/userupload/49248569/file/71eb1871e457fb270c0443c2efce80a9.jpeg",
       label: "01 · DETAILED LEARNING",
       title: "GRG Master Class",
       description: (
@@ -29,7 +29,7 @@ function WhatSection() {
     {
       id: 2,
       image:
-        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp",
+        "https://cdn.dribbble.com/userupload/49248568/file/440b7f4bcea9edcf6f73762d6f6feab5.jpeg",
       label: "02 · REVISION",
       title: "Power Pack Revision",
       description: (
@@ -43,7 +43,7 @@ function WhatSection() {
     {
       id: 3,
       image:
-        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp",
+        "https://cdn.dribbble.com/userupload/49248774/file/e8c83f70e0e0f7cd72aeef4454d357ff.jpeg",
       label: "03 · RAPID LEARNING",
       title: "GOGA Express",
       description: (

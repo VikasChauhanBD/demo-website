@@ -4,42 +4,31 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { NavLink } from "react-router-dom";
 import "./PlatformSection.css";
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const img = (id) =>
-  `https://framerusercontent.com/images/${id}.webp?scale-down-to=800`;
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const cards = [
   {
     number: "01",
     title: "Understand the why",
-    images: [
-      img("nRwdEgKtKEpASQfN7i07r9Wiw"),
-      img("c3MsKrZxj47RDxRabAHEICoWCU"),
-      img("isDkdsT4u3D0wWio9CB6SQCk7OQ"),
-    ],
+    image:
+      "https://cdn.dribbble.com/userupload/49248039/file/b28b4e3b657177ede0c290883c5a47a9.png",
     description:
       "When you understand why a drug produces an effect, many indications, adverse effects and contraindications become logical rather than isolated facts.",
   },
   {
     number: "02",
     title: "Remember intelligently",
-    images: [
-      img("hixpzry8PTPayIdxie74gS9uAaA"),
-      img("KJ4COTLYCETJNQxWPjzWzDyEEg"),
-      img("kt6nlSCxVUveV9YE8nPjpzY"),
-    ],
+    image:
+      "https://cdn.dribbble.com/userupload/49248099/file/2a0e269a98f6e3cdc7066bf696db4dfa.png",
     description:
       "Use comparisons, tables, mnemonics, visual associations and repeated reinforcement where they genuinely make learning easier.",
   },
   {
     number: "03",
     title: "Apply with confidence",
-    images: [
-      img("b3f2adtVzLxED8ySJcPancPCVI"),
-      img("p9jZ7iV0d51cluuiV46MpIWc"),
-      img("5bTRQ54H4Uh7xtD8ngtCLl5qp80"),
-    ],
+    image:
+      "https://cdn.dribbble.com/userupload/49248040/file/6f7ff7ce47c6e1a953ed6dd193e9beba.png",
     description:
       "Connect concepts to clinical questions, PYQs, newer drugs and common examination traps.",
   },
@@ -47,76 +36,53 @@ const cards = [
 
 function PlatformSection() {
   const container = useRef(null);
+
   useGSAP(
-    (context, contextSafe) => {
-      gsap.from(".platform-header > *", {
+    () => {
+      gsap.from(".pg-platform-header > *", {
         y: 40,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
         stagger: 0.15,
         scrollTrigger: {
-          trigger: ".platform-header",
+          trigger: ".pg-platform-header",
           start: "top 80%",
           toggleActions: "play none none none",
         },
       });
 
-      gsap.from(".platform-strip", {
+      gsap.from(".pg-platform-strip", {
         y: 30,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".platform-strip",
+          trigger: ".pg-platform-strip",
           start: "top 85%",
           toggleActions: "play none none none",
         },
       });
 
-      const cardEls = gsap.utils.toArray(".platform-card", container.current);
-      const mediaEls = gsap.utils.toArray(".platform-media", container.current);
-      const cardsGrid = container.current.querySelector(".platform-cards");
-
-      gsap.set(cardEls, { opacity: 0, y: 60 });
-      gsap.set(mediaEls, { clipPath: "inset(0 0 100% 0)" });
-      const groups = cardEls.map((card) => ({
-        slides: gsap.utils.toArray(".platform-slide", card),
-        current: 0,
-      }));
-
-      groups.forEach((group) => {
-        gsap.set(group.slides.slice(1), { opacity: 0, y: 40 });
-      });
-
-      const showNext = contextSafe(() => {
-        groups.forEach((group) => {
-          const next = (group.current + 1) % group.slides.length;
-          gsap.to(group.slides[group.current], {
-            opacity: 0,
-            y: -40,
-            duration: 0.8,
-            ease: "power2.inOut",
-          });
-          gsap.fromTo(
-            group.slides[next],
-            { opacity: 0, y: 40 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-          );
-          group.current = next;
-        });
-      });
-
-      const loop = gsap.to(
-        {},
-        { duration: 4.5, repeat: -1, paused: true, onRepeat: showNext },
+      const cardEls = gsap.utils.toArray(
+        ".pg-platform-card",
+        container.current,
       );
-      ScrollTrigger.create({
-        trigger: cardsGrid,
-        start: "top bottom",
-        end: "bottom top",
-        onToggle: (self) => (self.isActive ? loop.play() : loop.pause()),
+
+      const mediaEls = gsap.utils.toArray(
+        ".pg-platform-media",
+        container.current,
+      );
+
+      gsap.set(cardEls, {
+        opacity: 0,
+        y: 60,
       });
+
+      gsap.set(mediaEls, {
+        clipPath: "inset(0 0 100% 0)",
+      });
+
       ScrollTrigger.batch(cardEls, {
         start: "top 85%",
         once: true,
@@ -129,8 +95,9 @@ function PlatformSection() {
             stagger: 0.15,
             overwrite: true,
           });
+
           batch.forEach((card, i) => {
-            gsap.to(card.querySelector(".platform-media"), {
+            gsap.to(card.querySelector(".pg-platform-media"), {
               clipPath: "inset(0 0 0% 0)",
               duration: 1,
               ease: "power3.out",
@@ -141,13 +108,13 @@ function PlatformSection() {
         },
       });
 
-      gsap.from(".platform-cta-wrap", {
+      gsap.from(".pg-platform-cta-wrap", {
         y: 40,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".platform-cta-wrap",
+          trigger: ".pg-platform-cta-wrap",
           start: "top 90%",
           toggleActions: "play none none none",
         },
@@ -157,41 +124,43 @@ function PlatformSection() {
   );
 
   return (
-    <section className="platform-section" ref={container}>
-      <div className="platform-container">
-        <div className="platform-header">
-          <span className="platform-tag">THE GRG PROMISE</span>
-          <h2 className="platform-heading">
+    <section className="pg-platform-section" ref={container}>
+      <div className="pg-platform-container">
+        <div className="pg-platform-header">
+          <span className="pg-platform-tag">THE GRG PROMISE</span>
+
+          <h2 className="pg-platform-heading">
             <span>Pharmacology That</span>
-            <span className="platform-heading-mark">Finally Makes Sense.</span>
+            <span className="pg-platform-heading-mark">
+              Finally Makes Sense.
+            </span>
           </h2>
 
-          <p className="platform-para">
+          <p className="pg-platform-para">
             Dr. GRG’s aim is not to make Pharmacology superficial in the name of
             exam preparation. It is to build a strong conceptual base and then
             make that knowledge easier to remember, revise and apply.
           </p>
         </div>
 
-        <div className="platform-cards">
+        <div className="pg-platform-cards">
           {cards.map((card) => (
-            <div className="platform-card" key={card.title}>
-              <div className="platform-media">
-                {card.images.map((src, i) => (
-                  <div className="platform-slide" key={i}>
-                    <img src={src} alt="" loading="lazy" />
-                  </div>
-                ))}
+            <div className="pg-platform-card" key={card.title}>
+              <div className="pg-platform-media">
+                <img src={card.image} alt={card.title} loading="lazy" />
               </div>
-              <div className="platform-card-number"> {card.number} </div>
-              <h4 className="platform-card-title"> {card.title} </h4>
-              <p className="platform-card-description">{card.description}</p>
+
+              <div className="pg-platform-card-number">{card.number}</div>
+
+              <h4 className="pg-platform-card-title">{card.title}</h4>
+
+              <p className="pg-platform-card-description">{card.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="platform-cta-wrap">
-          <NavLink to="#" className="platform-cta">
+        <div className="pg-platform-cta-wrap">
+          <NavLink to="#" className="pg-platform-cta">
             Explore the Platform →
           </NavLink>
         </div>
@@ -199,4 +168,5 @@ function PlatformSection() {
     </section>
   );
 }
+
 export default PlatformSection;

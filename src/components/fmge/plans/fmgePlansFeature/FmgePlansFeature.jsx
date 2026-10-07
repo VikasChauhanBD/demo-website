@@ -11,19 +11,19 @@ const programData = [
     title: "GRG MASTER CLASS",
     para: "Where Concepts Become Confidence. </br> Detailed, concept-based learning with Dr. GRG — helping you understand the why behind Pharmacology rather than simply memorising facts. </br> Learn • Understand • Connect • Apply",
     image:
-      "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp",
+      "https://cdn.dribbble.com/userupload/49248569/file/71eb1871e457fb270c0443c2efce80a9.jpeg",
   },
   {
     title: "POWER PACK REVISION",
     para: "Quick & Conceptual </br> A focused revision pathway to help you revisit important concepts, reinforce recall and keep your preparation exam-oriented. </br> Revise • Reinforce • Recall",
     image:
-      "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp",
+      "https://cdn.dribbble.com/userupload/49248568/file/440b7f4bcea9edcf6f73762d6f6feab5.jpeg",
   },
   {
     title: "GOGA EXPRESS",
     para: "Pharmacology, When Time Is Short. </br> A rapid-learning pathway designed to help you cover and revisit essential Pharmacology efficiently. </br> Focus • Revise • Remember",
     image:
-      "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-03-jpg.webp",
+      "https://cdn.dribbble.com/userupload/49248774/file/e8c83f70e0e0f7cd72aeef4454d357ff.jpeg",
   },
   {
     title: "QUESTIONS & PRACTICE",

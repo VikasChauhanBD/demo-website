@@ -1,10 +1,10 @@
-.intro-section {
+.pg-intro-section {
   width: 100%;
   background-color: #ffffff;
   padding: 150px 20px;
 }
 
-.intro-circle-div {
+.pg-intro-circle-div {
   width: 100%;
   position: relative;
   display: flex;
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.intro-circle {
+.pg-intro-circle {
   width: 1100px;
   height: 1100px;
   max-width: 80vw;
@@ -27,13 +27,15 @@
   text-align: center;
 }
 
-.intro-circle-div img {
+.pg-intro-circle-div img {
   position: absolute;
   object-fit: cover;
+  object-position: top center;
   border-radius: 10px;
+  border: 1px solid #e1dace;
 }
 
-.intro-left-top-img {
+.pg-intro-left-top-img {
   width: 220px;
   height: 220px;
   top: 12%;
@@ -41,15 +43,15 @@
   z-index: 1;
 }
 
-.intro-left-bottom-img {
-  width: 250px;
-  height: 150px;
-  bottom: 8%;
-  left: 20%;
+.pg-intro-left-bottom-img {
+  width: 350px;
+  height: 250px;
+  bottom: 0;
+  left: 12%;
   z-index: 1;
 }
 
-.intro-right-top-img {
+.pg-intro-right-top-img {
   width: 320px;
   height: 220px;
   top: 2%;
@@ -57,15 +59,15 @@
   z-index: 1;
 }
 
-.intro-right-bottom-img {
-  width: 300px;
-  height: 350px;
+.pg-intro-right-bottom-img {
+  width: 200px;
+  height: 250px;
   bottom: 2%;
-  right: 10%;
+  right: 15%;
   z-index: 1;
 }
 
-.intro-tag {
+.pg-intro-tag {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -80,7 +82,7 @@
   border-radius: 50px;
 }
 
-.intro-tag::before {
+.pg-intro-tag::before {
   content: "";
   width: 8px;
   height: 8px;
@@ -89,7 +91,7 @@
   flex-shrink: 0;
 }
 
-.intro-heading {
+.pg-intro-heading {
   margin: 24px 0 0;
   font-size: 38px;
   font-weight: 700;
@@ -97,7 +99,7 @@
   color: #004d7a;
 }
 
-.intro-sub-heading {
+.pg-intro-sub-heading {
   font-size: 28px;
   font-weight: 600;
   line-height: 1.4;
@@ -105,7 +107,7 @@
   color: #222222;
 }
 
-.intro-para {
+.pg-intro-para {
   width: 100%;
   max-width: 950px;
   font-size: 18px;
@@ -114,7 +116,7 @@
   color: #222222;
 }
 
-.intro-tagline {
+.pg-intro-tagline {
   display: block;
   margin-top: 28px;
   font-size: 28px;
@@ -123,7 +125,7 @@
   color: #004d7a;
 }
 
-.intro-tagline::after {
+.pg-intro-tagline::after {
   content: "";
   display: block;
   width: 60px;
@@ -133,7 +135,7 @@
   border-radius: 50px;
 }
 
-.intro-chips {
+.pg-intro-chips {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -142,7 +144,7 @@
   margin-top: 22px;
 }
 
-.intro-chip {
+.pg-intro-chip {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -161,7 +163,7 @@
     color 0.3s ease;
 }
 
-.intro-chip::before {
+.pg-intro-chip::before {
   content: "";
   width: 8px;
   height: 8px;
@@ -170,13 +172,13 @@
   flex-shrink: 0;
 }
 
-.intro-chip:hover {
+.pg-intro-chip:hover {
   transform: translateY(-3px);
   color: #ffffff;
   background-color: #004d7a;
 }
 
-.intro-cta {
+.pg-intro-cta {
   border: 2px solid #ff9b6b;
   padding: 10px 20px;
   border-radius: 50px;
@@ -187,7 +189,7 @@
   margin-top: 2rem;
 }
 
-.intro-cta:hover {
+.pg-intro-cta:hover {
   color: #ff9b6b;
   background: transparent;
 }
@@ -195,56 +197,55 @@
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1300px) {
-  .intro-left-top-img {
+  .pg-intro-left-top-img {
     top: 2%;
     left: 4%;
   }
 
-  .intro-left-bottom-img {
-    bottom: 4%;
-    left: 10%;
+  .pg-intro-left-bottom-img {
+    bottom: 0;
+    left: 5%;
   }
 
-  .intro-right-top-img {
+  .pg-intro-right-top-img {
     top: 0;
     right: 4%;
   }
 
-  .intro-right-bottom-img {
+  .pg-intro-right-bottom-img {
     bottom: 0;
     right: 0;
   }
 }
 
-/* Tablet and mobile: images move out of the circle into normal flow.
-   Layout: 2 images on top, text card in the middle, 2 images at the bottom. */
-@media (max-width: 1200px) {
-  .intro-section {
+@media (max-width: 1024px) {
+  .pg-intro-section {
     padding: 80px 20px;
   }
 
-  .intro-circle-div {
+  .pg-intro-circle-div {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     align-items: stretch;
   }
 
-  .intro-circle-div img {
+  .pg-intro-circle-div img {
     position: static;
     width: 100%;
-    height: 220px;
+    height: 400px;
   }
 
-  .intro-left-top-img {
+  .pg-intro-left-top-img {
     order: 1;
   }
 
-  .intro-right-top-img {
+  .pg-intro-right-top-img {
     order: 2;
+    object-position: right center !important;
   }
 
-  .intro-circle {
+  .pg-intro-circle {
     order: 3;
     grid-column: 1 / -1;
     width: 100%;
@@ -255,107 +256,98 @@
     padding: 50px 40px;
   }
 
-  .intro-left-bottom-img {
+  .pg-intro-left-bottom-img {
     order: 4;
+    object-position: left center !important;
   }
 
-  .intro-right-bottom-img {
+  .pg-intro-right-bottom-img {
     order: 5;
   }
-}
 
-@media (max-width: 900px) {
-  .intro-section {
-    padding: 60px 16px;
-  }
-
-  .intro-circle-div img {
-    height: 180px;
-  }
-
-  .intro-circle {
+  .pg-intro-circle {
     padding: 40px 24px;
     border-radius: 28px;
   }
 
-  .intro-heading {
+  .pg-intro-heading {
     font-size: 30px;
   }
 
-  .intro-sub-heading {
+  .pg-intro-sub-heading {
     font-size: 24px;
   }
 
-  .intro-para {
+  .pg-intro-para {
     font-size: 16px;
   }
 
-  .intro-tagline {
+  .pg-intro-tagline {
     font-size: 24px;
   }
 
-  .intro-chip {
+  .pg-intro-chip {
     font-size: 14px;
     padding: 6px 14px;
   }
 }
 
 @media (max-width: 500px) {
-  .intro-section {
+  .pg-intro-section {
     padding: 50px 14px;
   }
 
-  .intro-circle-div {
+  .pg-intro-circle-div {
     gap: 10px;
   }
 
-  .intro-circle-div img {
-    height: 130px;
+  .pg-intro-circle-div img {
+    height: 180px;
   }
 
-  .intro-circle {
+  .pg-intro-circle {
     padding: 32px 20px;
     border-radius: 24px;
   }
 
-  .intro-heading {
+  .pg-intro-heading {
     font-size: 26px;
     line-height: 1.3;
   }
 
-  .intro-para {
+  .pg-intro-para {
     font-size: 15px;
     line-height: 26px;
   }
 
-  .intro-tagline {
+  .pg-intro-tagline {
     margin-top: 16px;
     font-size: 20px;
   }
 
-  .intro-tagline::after {
+  .pg-intro-tagline::after {
     width: 44px;
     height: 3px;
     margin-top: 8px;
   }
 
-  .intro-chips {
+  .pg-intro-chips {
     gap: 6px;
     margin-top: 14px;
   }
 
-  .intro-chip {
+  .pg-intro-chip {
     font-size: 12px;
     padding: 5px 10px;
     gap: 6px;
   }
 
-  .intro-chip::before {
+  .pg-intro-chip::before {
     width: 6px;
     height: 6px;
   }
 
-  .intro-cta {
+  .pg-intro-cta {
     font-size: 16px;
     padding: 9px 18px;
     margin-top: 1.5rem;

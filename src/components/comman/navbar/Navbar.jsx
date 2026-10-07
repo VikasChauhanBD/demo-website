@@ -247,7 +247,7 @@ function Navbar() {
           </div>
 
           <div className="navbar-right navbar-desktop" ref={desktopNavRef}>
-            {/* <a href="/">Home</a> */}
+            <a href={links.landing}>Home</a>
             <a href="/about">About Dr. GRG</a>
             <a href={links.plans}>Plans</a>
             <a href={links.books}>Books</a>
@@ -302,15 +302,15 @@ function Navbar() {
               </div>
             </div>
 
-            {/* <div
+            <div
               ref={(el) => {
                 mobileItemsRef.current[1] = el;
               }}
             >
-              <a href="/" onClick={closeMobileMenu}>
+              <a href={links.landing} onClick={closeMobileMenu}>
                 Home
               </a>
-            </div> */}
+            </div>
 
             <div
               ref={(el) => {
