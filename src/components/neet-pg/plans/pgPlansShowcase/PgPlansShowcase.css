@@ -447,6 +447,12 @@
   line-height: 1.1;
 }
 
+.pg-showcase-ext {
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
 .pg-showcase-price-footer {
   margin-top: 56px;
 }

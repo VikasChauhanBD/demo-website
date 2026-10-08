@@ -433,6 +433,9 @@ function PgPlansShowcase() {
                   >
                     {plan.prebooking}
                   </span>
+                  <span className="pg-showcase-ext">
+                    + 3 Months FREE Bonus Extension
+                  </span>
                 </div>
               </article>
             ))}

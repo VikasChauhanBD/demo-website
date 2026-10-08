@@ -437,6 +437,9 @@ function FmgePlansShowcase() {
                   >
                     {plan.prebooking}
                   </span>
+                  <span className="fmge-showcase-ext">
+                    + 3 Months FREE Bonus Extension
+                  </span>
                 </div>
               </article>
             ))}

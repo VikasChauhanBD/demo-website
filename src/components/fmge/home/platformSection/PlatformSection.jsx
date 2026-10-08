@@ -28,7 +28,7 @@ const cards = [
     number: "03",
     title: "Apply with confidence",
     image:
-      "https://cdn.dribbble.com/userupload/49248040/file/6f7ff7ce47c6e1a953ed6dd193e9beba.png",
+      "https://cdn.dribbble.com/userupload/49255008/file/5b2985665bfbe8975a012b6b8b064386.png",
     description:
       "Connect concepts to clinical questions, PYQs, newer drugs and common examination traps.",
   },
