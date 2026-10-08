@@ -7,34 +7,29 @@
   padding: 110px 24px 120px;
   box-sizing: border-box;
 }
-
 .pg-books-experience .pg-books-experience-heading {
   font-size: 38px;
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
 }
-
 .pg-books-experience .pg-books-experience-sub-heading {
   font-size: 28px;
   font-weight: 600;
   margin: 0;
 }
-
 .pg-books-experience .pg-books-experience-description {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.7;
   margin: 0;
 }
-
 .pg-books-experience-container {
   position: relative;
   z-index: 1;
   width: 80%;
   margin: 0 auto;
 }
-
 .pg-books-experience-header {
   margin: 0 auto 80px;
   display: flex;
@@ -43,7 +38,6 @@
   gap: 18px;
   text-align: center;
 }
-
 .pg-books-experience-eyebrow {
   display: inline-block;
   padding: 8px 18px;
@@ -54,11 +48,9 @@
   font-weight: 700;
   letter-spacing: 0.1em;
 }
-
 .pg-books-experience-header .pg-books-experience-heading {
   color: #004d7a;
 }
-
 .pg-books-experience-steps {
   position: relative;
   display: grid;
@@ -66,7 +58,6 @@
   gap: 24px;
   margin-bottom: 110px;
 }
-
 .pg-books-experience-line {
   position: absolute;
   top: 44px;
@@ -77,14 +68,12 @@
   background: #e1dace;
   z-index: 0;
 }
-
 .pg-books-experience-line-fill {
   width: 100%;
   height: 100%;
   border-radius: 3px;
   background: linear-gradient(90deg, #004d7a, #ff9b6b);
 }
-
 .pg-books-experience-step {
   position: relative;
   z-index: 1;
@@ -94,7 +83,6 @@
   gap: 20px;
   text-align: center;
 }
-
 .pg-books-experience-step-circle {
   display: flex;
   align-items: center;
@@ -109,18 +97,15 @@
     0 12px 28px rgba(0, 77, 122, 0.16),
     0 0 0 8px #fbf9f6;
 }
-
 .pg-books-experience-step-icon {
   display: flex;
   width: 36px;
   height: 36px;
 }
-
 .pg-books-experience-step-icon svg {
   width: 100%;
   height: 100%;
 }
-
 .pg-books-experience-step-title {
   margin: 0 0 8px;
   font-size: 20px;
@@ -128,20 +113,17 @@
   letter-spacing: 0.14em;
   color: #004d7a;
 }
-
 .pg-books-experience-step-text {
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
 }
-
 .pg-books-experience-divider {
   display: flex;
   align-items: center;
   gap: 24px;
   margin-bottom: 56px;
 }
-
 .pg-books-experience-divider-line {
   flex: 1;
   height: 2px;
@@ -152,7 +134,6 @@
     rgba(0, 77, 122, 0)
   );
 }
-
 .pg-books-experience-divider-label {
   color: #004d7a;
   font-size: 15px;
@@ -160,14 +141,12 @@
   letter-spacing: 0.14em;
   text-align: center;
 }
-
 .pg-books-experience-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-bottom: 24px;
 }
-
 .pg-books-experience-card {
   position: relative;
   display: flex;
@@ -180,7 +159,6 @@
   box-shadow: 0 16px 40px rgba(0, 77, 122, 0.08);
   overflow: hidden;
 }
-
 .pg-books-experience-card::before {
   content: "";
   position: absolute;
@@ -190,7 +168,6 @@
   height: 5px;
   background: linear-gradient(90deg, #004d7a, #ff9b6b);
 }
-
 .pg-books-experience-card-icon {
   display: flex;
   align-items: center;
@@ -202,12 +179,10 @@
   background: #e1dace;
   color: #004d7a;
 }
-
 .pg-books-experience-card-icon svg {
   width: 100%;
   height: 100%;
 }
-
 .pg-books-experience-card-title {
   margin: 0;
   font-size: 22px;
@@ -215,13 +190,11 @@
   color: #004d7a;
   line-height: 1.3;
 }
-
 .pg-books-experience-card-text {
   margin: 0;
   font-size: 16px;
   line-height: 1.7;
 }
-
 .pg-books-experience-feature {
   position: relative;
   display: flex;
@@ -235,7 +208,6 @@
   box-shadow: 0 24px 50px rgba(0, 77, 122, 0.28);
   overflow: hidden;
 }
-
 .pg-books-experience-feature-glow {
   position: absolute;
   right: -80px;
@@ -247,7 +219,6 @@
   filter: blur(40px);
   pointer-events: none;
 }
-
 .pg-books-experience-feature-icon {
   position: relative;
   flex-shrink: 0;
@@ -261,32 +232,27 @@
   background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
 }
-
 .pg-books-experience-feature-icon svg {
   width: 100%;
   height: 100%;
 }
-
 .pg-books-experience-feature-body {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .pg-books-experience-feature-title {
   margin: 0;
   font-size: 28px;
   font-weight: 600;
 }
-
 .pg-books-experience-feature-text {
   margin: 0;
   font-size: 18px;
   line-height: 1.7;
   max-width: 760px;
 }
-
 .pg-books-experience-band {
   position: relative;
   display: flex;
@@ -299,13 +265,11 @@
   text-align: center;
   overflow: hidden;
 }
-
 .pg-books-experience-band-orb {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
 }
-
 .pg-books-experience-band-orb-1 {
   width: 260px;
   height: 260px;
@@ -313,7 +277,6 @@
   left: -70px;
   background: rgba(255, 255, 255, 0.55);
 }
-
 .pg-books-experience-band-orb-2 {
   width: 320px;
   height: 320px;
@@ -321,12 +284,10 @@
   right: -90px;
   background: rgba(0, 77, 122, 0.12);
 }
-
 .pg-books-experience-band .pg-books-experience-sub-heading {
   position: relative;
   color: #004d7a;
 }
-
 .pg-books-experience-chips {
   position: relative;
   display: flex;
@@ -335,13 +296,11 @@
   justify-content: center;
   gap: 12px;
 }
-
 .pg-books-experience-chip-wrap {
   display: inline-flex;
   align-items: center;
   gap: 12px;
 }
-
 .pg-books-experience-chip {
   display: inline-block;
   padding: 12px 22px;
@@ -352,7 +311,6 @@
   font-weight: 700;
   box-shadow: 0 8px 20px rgba(0, 77, 122, 0.12);
 }
-
 .pg-books-experience-plus {
   display: inline-block;
   color: #004d7a;
@@ -360,7 +318,6 @@
   font-weight: 700;
   line-height: 1;
 }
-
 .pg-books-experience-cta {
   position: relative;
   display: inline-flex;
@@ -380,59 +337,46 @@
     box-shadow 0.3s ease,
     background 0.3s ease;
 }
-
 .pg-books-experience-cta:hover {
   background: #ff8a53;
   box-shadow: 0 14px 30px rgba(255, 155, 107, 0.6);
 }
-
 .pg-books-experience-arrow {
   display: inline-block;
 }
-
 /* ----------------------------------- responsive ----------------------------- */
-
 @media (max-width: 1300px) {
   .pg-books-experience-container {
     width: 100%;
   }
-
   .pg-books-experience-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .pg-books-experience-steps {
     gap: 16px;
   }
 }
-
 @media (max-width: 900px) {
   .pg-books-experience {
     padding: 80px 20px 90px;
   }
-
   .pg-books-experience .pg-books-experience-heading {
     font-size: 32px;
   }
-
   .pg-books-experience .pg-books-experience-sub-heading {
     font-size: 24px;
   }
-
   .pg-books-experience .pg-books-experience-description {
     font-size: 16px;
   }
-
   .pg-books-experience-header {
     margin-bottom: 60px;
   }
-
   .pg-books-experience-steps {
     grid-template-columns: 1fr;
     gap: 32px;
     margin-bottom: 80px;
   }
-
   .pg-books-experience-line {
     top: 36px;
     bottom: 36px;
@@ -441,86 +385,69 @@
     width: 3px;
     height: auto;
   }
-
   .pg-books-experience-line-fill {
     background: linear-gradient(180deg, #004d7a, #ff9b6b);
   }
-
   .pg-books-experience-step {
     flex-direction: row;
     align-items: center;
     gap: 22px;
     text-align: left;
   }
-
   .pg-books-experience-step-circle {
     flex-shrink: 0;
     width: 72px;
     height: 72px;
   }
-
   .pg-books-experience-step-icon {
     width: 30px;
     height: 30px;
   }
-
   .pg-books-experience-divider-label {
     font-size: 13px;
   }
-
   .pg-books-experience-feature {
     padding: 32px 28px;
     gap: 24px;
     margin-bottom: 80px;
   }
-
   .pg-books-experience-feature-title {
     font-size: 24px;
   }
-
   .pg-books-experience-feature-text {
     font-size: 16px;
   }
-
   .pg-books-experience-band {
     padding: 54px 24px;
   }
 }
-
 @media (max-width: 500px) {
   .pg-books-experience {
     padding: 64px 16px 72px;
   }
-
   .pg-books-experience-cards {
     grid-template-columns: 1fr;
   }
-
   .pg-books-experience-feature {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .pg-books-experience-divider {
     flex-direction: column;
     gap: 12px;
   }
-
   .pg-books-experience-divider-line {
     width: 100%;
     flex: none;
   }
-
   .pg-books-experience-chips {
     flex-direction: column;
     gap: 8px;
   }
-
   .pg-books-experience-chip-wrap {
     flex-direction: column;
     gap: 8px;
   }
-
   .pg-books-experience-cta {
     width: 100%;
     justify-content: center;

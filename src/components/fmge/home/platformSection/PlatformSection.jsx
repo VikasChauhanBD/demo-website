@@ -4,9 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { NavLink } from "react-router-dom";
 import "./PlatformSection.css";
-
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 const cards = [
   {
     number: "01",
@@ -33,10 +31,8 @@ const cards = [
       "Connect concepts to clinical questions, PYQs, newer drugs and common examination traps.",
   },
 ];
-
 function PlatformSection() {
   const container = useRef(null);
-
   useGSAP(
     () => {
       gsap.from(".fmge-platform-header > *", {
@@ -51,7 +47,6 @@ function PlatformSection() {
           toggleActions: "play none none none",
         },
       });
-
       gsap.from(".fmge-platform-strip", {
         y: 30,
         opacity: 0,
@@ -63,26 +58,21 @@ function PlatformSection() {
           toggleActions: "play none none none",
         },
       });
-
       const cardEls = gsap.utils.toArray(
         ".fmge-platform-card",
         container.current,
       );
-
       const mediaEls = gsap.utils.toArray(
         ".fmge-platform-media",
         container.current,
       );
-
       gsap.set(cardEls, {
         opacity: 0,
         y: 60,
       });
-
       gsap.set(mediaEls, {
         clipPath: "inset(0 0 100% 0)",
       });
-
       ScrollTrigger.batch(cardEls, {
         start: "top 85%",
         once: true,
@@ -95,7 +85,6 @@ function PlatformSection() {
             stagger: 0.15,
             overwrite: true,
           });
-
           batch.forEach((card, i) => {
             gsap.to(card.querySelector(".fmge-platform-media"), {
               clipPath: "inset(0 0 0% 0)",
@@ -107,7 +96,6 @@ function PlatformSection() {
           });
         },
       });
-
       gsap.from(".fmge-platform-cta-wrap", {
         y: 40,
         opacity: 0,
@@ -122,45 +110,37 @@ function PlatformSection() {
     },
     { scope: container },
   );
-
   return (
     <section className="fmge-platform-section" ref={container}>
       <div className="fmge-platform-container">
         <div className="fmge-platform-header">
           <span className="fmge-platform-tag">THE GRG PROMISE</span>
-
           <h2 className="fmge-platform-heading">
             <span>Pharmacology That</span>
             <span className="fmge-platform-heading-mark">
               Finally Makes Sense.
             </span>
           </h2>
-
           <p className="fmge-platform-para">
             Dr. GRG’s aim is not to make Pharmacology superficial in the name of
             exam preparation. It is to build a strong conceptual base and then
             make that knowledge easier to remember, revise and apply.
           </p>
         </div>
-
         <div className="fmge-platform-cards">
           {cards.map((card) => (
             <div className="fmge-platform-card" key={card.title}>
               <div className="fmge-platform-media">
                 <img src={card.image} alt={card.title} loading="lazy" />
               </div>
-
               <div className="fmge-platform-card-number">{card.number}</div>
-
               <h4 className="fmge-platform-card-title">{card.title}</h4>
-
               <p className="fmge-platform-card-description">
                 {card.description}
               </p>
             </div>
           ))}
         </div>
-
         <div className="fmge-platform-cta-wrap">
           <NavLink to="#" className="fmge-platform-cta">
             Explore the Platform →
@@ -170,5 +150,4 @@ function PlatformSection() {
     </section>
   );
 }
-
 export default PlatformSection;

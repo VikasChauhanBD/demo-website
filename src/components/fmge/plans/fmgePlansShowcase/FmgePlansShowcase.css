@@ -4,7 +4,6 @@
   padding: 110px 20px;
   background: linear-gradient(180deg, #ffffff 0%, #eaf3ff 50%, #ffffff 100%);
 }
-
 .fmge-showcase-blob {
   position: absolute;
   z-index: 0;
@@ -12,7 +11,6 @@
   pointer-events: none;
   filter: blur(60px);
 }
-
 .fmge-showcase-blob--one {
   top: 2%;
   left: -120px;
@@ -21,7 +19,6 @@
   background: #ff9b6b;
   opacity: 0.18;
 }
-
 .fmge-showcase-blob--two {
   top: 34%;
   right: -150px;
@@ -30,7 +27,6 @@
   background: #004d7a;
   opacity: 0.1;
 }
-
 .fmge-showcase-blob--three {
   bottom: 22%;
   left: -100px;
@@ -39,7 +35,6 @@
   background: #e1dace;
   opacity: 0.8;
 }
-
 .fmge-showcase-blob--four {
   bottom: 2%;
   right: -100px;
@@ -48,22 +43,18 @@
   background: #ff9b6b;
   opacity: 0.15;
 }
-
 .fmge-showcase-container {
   position: relative;
   z-index: 1;
   width: 80%;
   margin: 0 auto;
 }
-
 .fmge-showcase-block + .fmge-showcase-block {
   margin-top: 130px;
 }
-
 .fmge-showcase-center {
   text-align: center;
 }
-
 .fmge-showcase-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -77,7 +68,6 @@
   background-color: #004d7a;
   border-radius: 50px;
 }
-
 .fmge-showcase-eyebrow::before {
   content: "";
   width: 8px;
@@ -86,7 +76,6 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
-
 .fmge-showcase-title {
   margin: 22px 0 0;
   color: #004d7a;
@@ -94,7 +83,6 @@
   font-weight: 700;
   line-height: 1.15;
 }
-
 .fmge-showcase-para {
   max-width: 760px;
   margin: 16px auto 0;
@@ -102,11 +90,9 @@
   font-size: 18px;
   line-height: 1.7;
 }
-
 .fmge-showcase-para--left {
   margin-left: 0;
 }
-
 .fmge-showcase-closing {
   margin: 0;
   color: #004d7a;
@@ -114,7 +100,6 @@
   font-weight: 700;
   line-height: 1.4;
 }
-
 .fmge-showcase-btn {
   padding: 12px 26px;
   border: 1px solid #ff9b6b;
@@ -129,19 +114,16 @@
     background 0.3s ease,
     color 0.3s ease;
 }
-
 .fmge-showcase-btn:hover {
   background: transparent;
   color: #ff9b6b;
 }
-
 .fmge-showcase-video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 60px;
 }
-
 .fmge-showcase-video-card {
   overflow: hidden;
   border: 1px solid rgba(0, 77, 122, 0.15);
@@ -149,7 +131,6 @@
   background: #ffffff;
   box-shadow: 0 16px 40px rgba(0, 77, 122, 0.12);
 }
-
 .fmge-showcase-video-thumb {
   position: relative;
   display: flex;
@@ -159,7 +140,6 @@
   aspect-ratio: 16 / 10;
   background: linear-gradient(135deg, #004d7a 0%, #222222 100%);
 }
-
 .fmge-showcase-video-thumb::before {
   content: "";
   position: absolute;
@@ -170,7 +150,6 @@
   border-radius: 50%;
   background: rgba(255, 155, 107, 0.25);
 }
-
 .fmge-showcase-video-thumb::after {
   content: "";
   position: absolute;
@@ -181,7 +160,6 @@
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.25);
 }
-
 .fmge-showcase-video-number {
   position: absolute;
   top: 16px;
@@ -190,7 +168,6 @@
   font-size: 20px;
   font-weight: 800;
 }
-
 .fmge-showcase-play {
   position: relative;
   z-index: 1;
@@ -205,7 +182,6 @@
   color: #ffffff;
   font-size: 24px;
 }
-
 .fmge-showcase-play-ring {
   position: absolute;
   top: 0;
@@ -216,12 +192,10 @@
   border: 2px solid #ff9b6b;
   pointer-events: none;
 }
-
 .fmge-showcase-video-body {
   padding: 26px;
   text-align: center;
 }
-
 .fmge-showcase-video-body h3 {
   margin: 0;
   color: #004d7a;
@@ -230,32 +204,27 @@
   letter-spacing: 1px;
   line-height: 1.25;
 }
-
 .fmge-showcase-video-body p {
   margin: 12px 0 22px;
   color: #222222;
   font-size: 16px;
   line-height: 1.65;
 }
-
 .fmge-showcase-exp-closing {
   margin-top: 56px;
   text-align: center;
 }
-
 .fmge-showcase-live-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   align-items: center;
   gap: 60px;
 }
-
 .fmge-showcase-live-list {
   margin: 28px 0 0;
   padding: 0;
   list-style: none;
 }
-
 .fmge-showcase-live-list li {
   display: flex;
   align-items: center;
@@ -266,7 +235,6 @@
   font-weight: 600;
   line-height: 1.4;
 }
-
 .fmge-showcase-check {
   display: flex;
   align-items: center;
@@ -279,7 +247,6 @@
   color: #ffffff;
   font-size: 12px;
 }
-
 .fmge-showcase-live-card {
   position: relative;
   overflow: hidden;
@@ -289,7 +256,6 @@
   text-align: center;
   box-shadow: 0 24px 50px rgba(0, 77, 122, 0.25);
 }
-
 .fmge-showcase-live-card::before {
   content: "";
   position: absolute;
@@ -300,7 +266,6 @@
   border-radius: 50%;
   background: rgba(255, 155, 107, 0.22);
 }
-
 .fmge-showcase-live-indicator {
   position: relative;
   z-index: 1;
@@ -308,7 +273,6 @@
   align-items: center;
   gap: 12px;
 }
-
 .fmge-showcase-live-dot {
   position: relative;
   width: 12px;
@@ -316,7 +280,6 @@
   border-radius: 50%;
   background: #ff9b6b;
 }
-
 .fmge-showcase-live-ring {
   position: absolute;
   top: 0;
@@ -326,14 +289,12 @@
   border-radius: 50%;
   background: #ff9b6b;
 }
-
 .fmge-showcase-live-label {
   color: #ffffff;
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 1.5px;
 }
-
 .fmge-showcase-live-card h3 {
   position: relative;
   z-index: 1;
@@ -343,7 +304,6 @@
   font-weight: 800;
   line-height: 1.1;
 }
-
 .fmge-showcase-live-card p {
   position: relative;
   z-index: 1;
@@ -352,7 +312,6 @@
   font-size: 17px;
   line-height: 1.65;
 }
-
 .fmge-showcase-offer {
   display: inline-block;
   max-width: 860px;
@@ -367,14 +326,12 @@
   line-height: 1.5;
   box-shadow: 0 8px 24px rgba(255, 155, 107, 0.2);
 }
-
 .fmge-showcase-price-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 56px;
 }
-
 .fmge-showcase-price-card {
   padding: 34px 30px;
   border: 1px solid rgba(0, 77, 122, 0.15);
@@ -383,7 +340,6 @@
   text-align: center;
   box-shadow: 0 16px 40px rgba(0, 77, 122, 0.12);
 }
-
 .fmge-showcase-price-label {
   color: #004d7a;
   font-size: 13px;
@@ -391,7 +347,6 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
-
 .fmge-showcase-price-validity {
   margin: 6px 0 24px;
   color: #004d7a;
@@ -399,7 +354,6 @@
   font-weight: 800;
   line-height: 1.1;
 }
-
 .fmge-showcase-price-row {
   display: flex;
   align-items: center;
@@ -410,17 +364,14 @@
   color: #222222;
   font-size: 15px;
 }
-
 .fmge-showcase-price-row span:last-child {
   font-size: 20px;
   font-weight: 700;
 }
-
 .fmge-showcase-price-original {
   opacity: 0.6;
   text-decoration: line-through;
 }
-
 .fmge-showcase-prebook {
   display: flex;
   flex-direction: column;
@@ -430,7 +381,6 @@
   border-radius: 18px;
   background: linear-gradient(135deg, #004d7a 0%, #222222 100%);
 }
-
 .fmge-showcase-prebook-label {
   color: #ffd0b8;
   font-size: 13px;
@@ -438,7 +388,6 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
-
 .fmge-showcase-prebook-value {
   margin-top: 6px;
   color: #ffffff;
@@ -446,17 +395,14 @@
   font-weight: 800;
   line-height: 1.1;
 }
-
 .fmge-showcase-ext {
   color: #ffffff;
   font-size: 16px;
   margin-top: 10px;
 }
-
 .fmge-showcase-price-footer {
   margin-top: 56px;
 }
-
 .fmge-showcase-cta {
   margin-top: 28px;
   padding: 16px 44px;
@@ -473,57 +419,45 @@
     background 0.3s ease,
     color 0.3s ease;
 }
-
 .fmge-showcase-cta:hover {
   background: transparent;
   color: #ff9b6b;
 }
-
 /* ---------------------------------- Responsive ------------------------- */
-
 @media (max-width: 1300px) {
   .fmge-showcase-container {
     width: 100%;
   }
 }
-
 @media (max-width: 900px) {
   .fmge-showcase-section {
     padding: 75px 16px;
   }
-
   .fmge-showcase-container {
     width: 100%;
   }
-
   .fmge-showcase-block + .fmge-showcase-block {
     margin-top: 90px;
   }
-
   .fmge-showcase-title {
     font-size: 32px;
   }
-
   .fmge-showcase-para {
     font-size: 16px;
   }
-
   .fmge-showcase-closing {
     font-size: 20px;
   }
-
   .fmge-showcase-video-grid {
     grid-template-columns: 1fr;
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
   }
-
   .fmge-showcase-live-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-
   .fmge-showcase-price-grid {
     grid-template-columns: 1fr;
     max-width: 480px;
@@ -531,34 +465,27 @@
     margin-right: auto;
   }
 }
-
 @media (max-width: 500px) {
   .fmge-showcase-title {
     font-size: 28px;
   }
-
   .fmge-showcase-offer {
     padding: 12px 20px;
     border-radius: 24px;
     font-size: 16px;
   }
-
   .fmge-showcase-live-list li {
     font-size: 16px;
   }
-
   .fmge-showcase-live-card {
     padding: 36px 22px;
   }
-
   .fmge-showcase-live-card h3 {
     font-size: 38px;
   }
-
   .fmge-showcase-prebook-value {
     font-size: 36px;
   }
-
   .fmge-showcase-cta {
     width: 100%;
     padding: 14px 20px;

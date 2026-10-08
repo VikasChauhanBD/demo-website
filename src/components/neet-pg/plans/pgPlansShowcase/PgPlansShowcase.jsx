@@ -4,9 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { FaPlay, FaCheck } from "react-icons/fa";
 import "./PgPlansShowcase.css";
-
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 const videos = [
   {
     number: "01",
@@ -20,18 +18,16 @@ const videos = [
   },
   {
     number: "03",
-    title: "GOGA EXPRESS",
+    title: "GRG EXPRESS",
     text: "See how Pharmacology can be made faster and more focused.",
   },
 ];
-
 const liveBullets = [
   "Interactive learning with Dr. GRG",
   "Concept clarification & revision",
   "Important exam-focused discussions",
   "Student questions & doubt-solving",
 ];
-
 const plans = [
   {
     validity: "6 Months",
@@ -52,20 +48,15 @@ const plans = [
     prebooking: "₹2,999",
   },
 ];
-
 const toNumber = (price) => Number(price.replace(/[^\d]/g, ""));
-
 function PgPlansShowcase() {
   const sectionRef = useRef(null);
-
   useGSAP(
     () => {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         return;
       }
-
       const cleanups = [];
-
       /* ---------- floating background blobs ---------- */
       gsap.utils.toArray(".pg-showcase-blob").forEach((blob) => {
         gsap.to(blob, {
@@ -77,7 +68,6 @@ function PgPlansShowcase() {
           yoyo: true,
         });
       });
-
       /* ---------- generic scroll reveal helper ---------- */
       const reveal = (targets, trigger, vars = {}) => {
         gsap.fromTo(
@@ -98,10 +88,8 @@ function PgPlansShowcase() {
           },
         );
       };
-
       /* ---------- EXPERIENCE THE GRG WAY ---------- */
       reveal(".pg-showcase-exp-header > *", ".pg-showcase-exp-header");
-
       gsap.fromTo(
         ".pg-showcase-video-card",
         { opacity: 0, y: 60, scale: 0.94 },
@@ -119,11 +107,9 @@ function PgPlansShowcase() {
           },
         },
       );
-
       reveal(".pg-showcase-exp-closing", ".pg-showcase-exp-closing", {
         stagger: 0,
       });
-
       /* pulsing ring around every play button */
       gsap.fromTo(
         ".pg-showcase-play-ring",
@@ -137,7 +123,6 @@ function PgPlansShowcase() {
           stagger: 0.4,
         },
       );
-
       /* ---------- LIVE SESSIONS ---------- */
       gsap.fromTo(
         ".pg-showcase-live-text > *",
@@ -155,7 +140,6 @@ function PgPlansShowcase() {
           },
         },
       );
-
       gsap.fromTo(
         ".pg-showcase-live-list li",
         { opacity: 0, x: -30 },
@@ -172,7 +156,6 @@ function PgPlansShowcase() {
           },
         },
       );
-
       gsap.fromTo(
         ".pg-showcase-live-card",
         { opacity: 0, x: 60, scale: 0.95 },
@@ -189,7 +172,6 @@ function PgPlansShowcase() {
           },
         },
       );
-
       /* pulsing live dot */
       gsap.fromTo(
         ".pg-showcase-live-ring",
@@ -202,10 +184,8 @@ function PgPlansShowcase() {
           repeat: -1,
         },
       );
-
       /* ---------- PLANS & PRICING ---------- */
       reveal(".pg-showcase-price-header > *", ".pg-showcase-price-header");
-
       gsap.fromTo(
         ".pg-showcase-price-card",
         { opacity: 0, y: 60, scale: 0.94 },
@@ -223,14 +203,12 @@ function PgPlansShowcase() {
           },
         },
       );
-
       /* count-up for every price */
       gsap.utils.toArray(".pg-showcase-price-card").forEach((card) => {
         gsap.utils.toArray(".pg-showcase-count", card).forEach((el) => {
           const target = Number(el.dataset.value);
           const counter = { value: 0 };
           el.textContent = "₹0";
-
           gsap.to(counter, {
             value: target,
             duration: 1.6,
@@ -247,7 +225,6 @@ function PgPlansShowcase() {
           });
         });
       });
-
       gsap.fromTo(
         ".pg-showcase-price-footer > *",
         { opacity: 0, y: 30, scale: 0.95 },
@@ -265,7 +242,6 @@ function PgPlansShowcase() {
           },
         },
       );
-
       /* ---------- hover lift on cards ---------- */
       gsap.utils
         .toArray(".pg-showcase-video-card, .pg-showcase-price-card")
@@ -284,7 +260,6 @@ function PgPlansShowcase() {
               ease: "power2.out",
               overwrite: "auto",
             });
-
           card.addEventListener("mouseenter", enter);
           card.addEventListener("mouseleave", leave);
           cleanups.push(() => {
@@ -292,19 +267,16 @@ function PgPlansShowcase() {
             card.removeEventListener("mouseleave", leave);
           });
         });
-
       return () => cleanups.forEach((fn) => fn());
     },
     { scope: sectionRef },
   );
-
   return (
     <section className="pg-showcase-section" ref={sectionRef}>
       <span className="pg-showcase-blob pg-showcase-blob--one"></span>
       <span className="pg-showcase-blob pg-showcase-blob--two"></span>
       <span className="pg-showcase-blob pg-showcase-blob--three"></span>
       <span className="pg-showcase-blob pg-showcase-blob--four"></span>
-
       <div className="pg-showcase-container">
         <div className="pg-showcase-block">
           <div className="pg-showcase-exp-header pg-showcase-center">
@@ -317,7 +289,6 @@ function PgPlansShowcase() {
               GRG&apos;s teaching before you choose your plan.
             </p>
           </div>
-
           <div className="pg-showcase-video-grid">
             {videos.map((item) => (
               <article className="pg-showcase-video-card" key={item.title}>
@@ -340,12 +311,10 @@ function PgPlansShowcase() {
               </article>
             ))}
           </div>
-
           <p className="pg-showcase-exp-closing pg-showcase-closing">
             Watch. Experience. Choose the way you want to learn Pharmacology.
           </p>
         </div>
-
         <div className="pg-showcase-block">
           <div className="pg-showcase-live-grid">
             <div className="pg-showcase-live-text">
@@ -368,7 +337,6 @@ function PgPlansShowcase() {
                 ))}
               </ul>
             </div>
-
             <div className="pg-showcase-live-card">
               <div className="pg-showcase-live-indicator">
                 <span className="pg-showcase-live-dot">
@@ -386,7 +354,6 @@ function PgPlansShowcase() {
             </div>
           </div>
         </div>
-
         <div className="pg-showcase-block">
           <div className="pg-showcase-price-header pg-showcase-center">
             <span className="pg-showcase-eyebrow">PLANS &amp; PRICING</span>
@@ -396,13 +363,11 @@ function PgPlansShowcase() {
               valid till 21st October 11:59pm
             </p>
           </div>
-
           <div className="pg-showcase-price-grid">
             {plans.map((plan) => (
               <article className="pg-showcase-price-card" key={plan.validity}>
                 <span className="pg-showcase-price-label">Validity</span>
                 <h3 className="pg-showcase-price-validity">{plan.validity}</h3>
-
                 <div className="pg-showcase-price-row">
                   <span>Original Price</span>
                   <span
@@ -412,7 +377,6 @@ function PgPlansShowcase() {
                     {plan.original}
                   </span>
                 </div>
-
                 <div className="pg-showcase-price-row">
                   <span>Special Price</span>
                   <span
@@ -422,7 +386,6 @@ function PgPlansShowcase() {
                     {plan.special}
                   </span>
                 </div>
-
                 <div className="pg-showcase-prebook">
                   <span className="pg-showcase-prebook-label">
                     Pre-Booking Offer
@@ -440,7 +403,6 @@ function PgPlansShowcase() {
               </article>
             ))}
           </div>
-
           <div className="pg-showcase-price-footer pg-showcase-center">
             <p className="pg-showcase-closing">
               Your Pharmacology preparation. One connected system.
@@ -454,5 +416,4 @@ function PgPlansShowcase() {
     </section>
   );
 }
-
 export default PgPlansShowcase;

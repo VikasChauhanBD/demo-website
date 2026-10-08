@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import "./BeforeYouJoin.css";
-
 const questions = [
   [
     "Is this for NEET PG, INI-CET and FMGE?",
@@ -31,7 +30,6 @@ const questions = [
     "The platform intends to update content when science, guidelines or examination patterns change.",
   ],
 ];
-
 export default function BeforeYouJoin() {
   return (
     <section className="home-faq" aria-labelledby="home-faq-heading">

@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./FmgeBooksExperience.css";
-
 gsap.registerPlugin(ScrollTrigger);
-
 const steps = [
   {
     icon: "watch",
@@ -32,7 +30,6 @@ const steps = [
     text: "Retrieve what you know when it matters.",
   },
 ];
-
 const reasons = [
   {
     icon: "exam",
@@ -55,19 +52,16 @@ const reasons = [
     text: "Designed to support both detailed learning and focused revision.",
   },
 ];
-
 const featureReason = {
   icon: "link",
   title: "Connected to the FMGE video lectures",
   text: "Your book and video learning work as one system rather than as separate resources.",
 };
-
 const stages = [
   { name: "GRG Master Class", action: "Build" },
   { name: "Power Pack Revision", action: "Reinforce" },
   { name: "GOGA Express", action: "Focus" },
 ];
-
 function Icon({ name }) {
   const props = {
     viewBox: "0 0 24 24",
@@ -77,7 +71,6 @@ function Icon({ name }) {
     strokeLinecap: "round",
     strokeLinejoin: "round",
   };
-
   switch (name) {
     case "watch":
       return (
@@ -158,13 +151,10 @@ function Icon({ name }) {
       return null;
   }
 }
-
 function FmgeBooksExperience() {
   const rootRef = useRef(null);
-
   useEffect(() => {
     const mm = gsap.matchMedia();
-
     const ctx = gsap.context(() => {
       // Header timeline
       const tl = gsap.timeline({
@@ -189,7 +179,6 @@ function FmgeBooksExperience() {
           { y: 30, opacity: 0, duration: 0.7 },
           "-=0.4",
         );
-
       // Floating background blobs
       gsap.to(".fmge-books-experience-blob-1", {
         x: 60,
@@ -215,7 +204,6 @@ function FmgeBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
       });
-
       // Connector line fill (horizontal on desktop, vertical on mobile)
       mm.add("(min-width: 901px)", () => {
         gsap.fromTo(
@@ -249,7 +237,6 @@ function FmgeBooksExperience() {
           },
         );
       });
-
       // Steps entrance
       gsap.from(".fmge-books-experience-step", {
         y: 50,
@@ -274,7 +261,6 @@ function FmgeBooksExperience() {
           start: "top 80%",
         },
       });
-
       // Looping highlight that walks through the five steps
       const circles = gsap.utils.toArray(".fmge-books-experience-step-circle");
       const loop = gsap.timeline({
@@ -313,7 +299,6 @@ function FmgeBooksExperience() {
         end: "bottom 10%",
         onToggle: (self) => (self.isActive ? loop.play() : loop.pause()),
       });
-
       // Step hover
       gsap.utils.toArray(".fmge-books-experience-step").forEach((step) => {
         const circle = step.querySelector(".fmge-books-experience-step-circle");
@@ -326,7 +311,6 @@ function FmgeBooksExperience() {
         step.addEventListener("mouseenter", () => hover.play());
         step.addEventListener("mouseleave", () => hover.reverse());
       });
-
       // "WHY THESE BOOKS?" divider
       gsap.from(".fmge-books-experience-divider-line", {
         scaleX: 0,
@@ -348,7 +332,6 @@ function FmgeBooksExperience() {
           start: "top 85%",
         },
       });
-
       // Reason cards
       gsap.from(".fmge-books-experience-card", {
         y: 60,
@@ -379,7 +362,6 @@ function FmgeBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
       });
-
       // Card hover
       gsap.utils.toArray(".fmge-books-experience-card").forEach((card) => {
         const icon = card.querySelector(".fmge-books-experience-card-icon");
@@ -394,7 +376,6 @@ function FmgeBooksExperience() {
         card.addEventListener("mouseenter", () => hover.play());
         card.addEventListener("mouseleave", () => hover.reverse());
       });
-
       // Closing band entrance
       const band = gsap.timeline({
         defaults: {
@@ -405,7 +386,6 @@ function FmgeBooksExperience() {
           start: "top 80%",
         },
       });
-
       band
         .from(".fmge-books-experience-band", {
           y: 60,
@@ -450,7 +430,6 @@ function FmgeBooksExperience() {
           },
           "-=0.3",
         );
-
       // Floating background orbs
       gsap.to(".fmge-books-experience-band-orb-1", {
         x: 14,
@@ -460,7 +439,6 @@ function FmgeBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
       });
-
       gsap.to(".fmge-books-experience-band-orb-2", {
         x: -12,
         y: -18,
@@ -469,7 +447,6 @@ function FmgeBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
       });
-
       // Stage arrows
       gsap.to(".fmge-books-experience-stage-arrow", {
         y: 6,
@@ -479,7 +456,6 @@ function FmgeBooksExperience() {
         ease: "sine.inOut",
         stagger: 0.2,
       });
-
       // Stage hover
       gsap.utils.toArray(".fmge-books-experience-stage").forEach((stage) => {
         const hover = gsap.to(stage, {
@@ -488,16 +464,13 @@ function FmgeBooksExperience() {
           ease: "power2.out",
           paused: true,
         });
-
         stage.addEventListener("mouseenter", () => hover.play());
         stage.addEventListener("mouseleave", () => hover.reverse());
       });
-
       // CTA hover
       const button = document.querySelector(
         ".fmge-books-experience-footer-btn",
       );
-
       if (button) {
         const buttonHover = gsap.to(button, {
           y: -4,
@@ -506,25 +479,21 @@ function FmgeBooksExperience() {
           ease: "power2.out",
           paused: true,
         });
-
         button.addEventListener("mouseenter", () => buttonHover.play());
         button.addEventListener("mouseleave", () => buttonHover.reverse());
       }
     }, rootRef);
-
     return () => {
       mm.revert();
       ctx.revert();
     };
   }, []);
-
   return (
     <section className="fmge-books-experience" ref={rootRef}>
       <div className="fmge-books-experience-blob fmge-books-experience-blob-1" />
       <div className="fmge-books-experience-blob fmge-books-experience-blob-2" />
       <div className="fmge-books-experience-blob fmge-books-experience-blob-3" />
       <div className="fmge-books-experience-grid-bg" />
-
       <div className="fmge-books-experience-container">
         {/* HEADER */}
         <div className="fmge-books-experience-header">
@@ -538,7 +507,6 @@ function FmgeBooksExperience() {
             Your book and video lectures work together.
           </p>
         </div>
-
         {/* STEPS */}
         <div className="fmge-books-experience-steps">
           <div className="fmge-books-experience-line">
@@ -558,7 +526,6 @@ function FmgeBooksExperience() {
             </div>
           ))}
         </div>
-
         {/* WHY THESE BOOKS */}
         <div className="fmge-books-experience-divider">
           <span className="fmge-books-experience-divider-line" />
@@ -567,7 +534,6 @@ function FmgeBooksExperience() {
           </span>
           <span className="fmge-books-experience-divider-line" />
         </div>
-
         <div className="fmge-books-experience-cards">
           {reasons.map((r) => (
             <div className="fmge-books-experience-card" key={r.title}>
@@ -579,7 +545,6 @@ function FmgeBooksExperience() {
             </div>
           ))}
         </div>
-
         <div className="fmge-books-experience-feature">
           <span className="fmge-books-experience-feature-glow" />
           <span className="fmge-books-experience-feature-icon">
@@ -594,7 +559,6 @@ function FmgeBooksExperience() {
             </p>
           </div>
         </div>
-
         {/* CLOSING BAND */}
         <div className="fmge-books-experience-band">
           <span className="fmge-books-experience-band-orb fmge-books-experience-band-orb-1" />
@@ -622,7 +586,6 @@ function FmgeBooksExperience() {
               </div>
             ))}
           </div>
-
           <div className="fmge-books-experience-footer">
             <h3 className="fmge-books-experience-footer-title">
               Pharmacology by Dr. GRG
@@ -643,5 +606,4 @@ function FmgeBooksExperience() {
     </section>
   );
 }
-
 export default FmgeBooksExperience;

@@ -1,105 +1,23 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./PgBooksHeader.css";
-
-gsap.registerPlugin(ScrollTrigger);
-
+import booksHeader from "../../../../assets/images/books-header.jpeg";
 function PgBooksHeader() {
-  const rootRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Hero intro timeline
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.from(".pg-books-header-eyebrow", { y: 20, opacity: 0, duration: 0.6 })
-        .from(
-          ".pg-books-header-heading",
-          { y: 40, opacity: 0, duration: 0.8 },
-          "-=0.3",
-        )
-        .from(
-          ".pg-books-header-sub-heading",
-          { y: 30, opacity: 0, duration: 0.7 },
-          "-=0.5",
-        )
-        .from(
-          ".pg-books-header-description",
-          { y: 30, opacity: 0, duration: 0.7, stagger: 0.15 },
-          "-=0.4",
-        )
-        .from(
-          ".pg-books-header-hero-cta",
-          { y: 20, opacity: 0, scale: 0.92, duration: 0.6 },
-          "-=0.3",
-        );
-
-      // Floating background blobs
-      gsap.to(".pg-books-header-blob-1", {
-        x: 60,
-        y: 40,
-        duration: 8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-      gsap.to(".pg-books-header-blob-2", {
-        x: -50,
-        y: -30,
-        duration: 10,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      // Hero parallax on scroll
-      gsap.to(".pg-books-header-hero-inner", {
-        y: -40,
-        opacity: 0.6,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".pg-books-header-hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-
-      // Button hover micro-interaction
-      const btn = rootRef.current.querySelector(".pg-books-header-btn");
-      const arrow = btn.querySelector(".pg-books-header-arrow");
-      const hover = gsap.to(arrow, {
-        x: 6,
-        duration: 0.25,
-        ease: "power2.out",
-        paused: true,
-      });
-      btn.addEventListener("mouseenter", () => hover.play());
-      btn.addEventListener("mouseleave", () => hover.reverse());
-    }, rootRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  // Scrolls to the PgBooksDetails section (it has id="pg-books-details")
   const scrollToBooks = () => {
-    const el = document.getElementById("pg-books-details");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("pg-books-details")?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+      block: "start",
+    });
   };
-
   return (
-    <section className="pg-books-header" ref={rootRef}>
-      <div className="pg-books-header-blob pg-books-header-blob-1" />
-      <div className="pg-books-header-blob pg-books-header-blob-2" />
-      <div className="pg-books-header-grid-bg" />
-
+    <section className="pg-books-header">
       <div className="pg-books-header-hero">
         <div className="pg-books-header-hero-inner">
           <span className="pg-books-header-eyebrow">
             For NEET PG &amp; INI-CET
           </span>
           <h1 className="pg-books-header-heading">
-            Pharmacology that makes sense.
+            Pharmacology <span>that makes sense.</span>
           </h1>
           <h2 className="pg-books-header-sub-heading">
             Built for NEET PG &amp; INI-CET preparation.
@@ -124,9 +42,16 @@ function PgBooksHeader() {
             <span className="pg-books-header-arrow">→</span>
           </button>
         </div>
+        <div className="pg-books-header-art">
+          <img
+            src={booksHeader}
+            width="900"
+            height="800"
+            alt="GRG Master Class, Power Pack Revision and GRG Express Pharmacology books"
+          />
+        </div>
       </div>
     </section>
   );
 }
-
 export default PgBooksHeader;

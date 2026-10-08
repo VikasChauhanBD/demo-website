@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./PgBooksExperience.css";
-
 gsap.registerPlugin(ScrollTrigger);
-
 const steps = [
   {
     icon: "watch",
@@ -32,7 +30,6 @@ const steps = [
     text: "Retrieve what you know when the exam demands it.",
   },
 ];
-
 const reasons = [
   {
     icon: "concept",
@@ -55,15 +52,12 @@ const reasons = [
     text: "Structured so you can return to important concepts again and again.",
   },
 ];
-
 const featureReason = {
   icon: "teaching",
   title: "Built around Dr. GRG's teaching",
   text: "The books extend the same teaching philosophy into a format you can keep beside you throughout preparation.",
 };
-
 const system = ["Video Lectures", "Books", "Questions", "Revision", "Tests"];
-
 function Icon({ name }) {
   const props = {
     viewBox: "0 0 24 24",
@@ -73,7 +67,6 @@ function Icon({ name }) {
     strokeLinecap: "round",
     strokeLinejoin: "round",
   };
-
   switch (name) {
     case "watch":
       return (
@@ -148,13 +141,10 @@ function Icon({ name }) {
       return null;
   }
 }
-
 function PgBooksExperience() {
   const rootRef = useRef(null);
-
   useEffect(() => {
     const mm = gsap.matchMedia();
-
     const ctx = gsap.context(() => {
       // Header timeline
       const tl = gsap.timeline({
@@ -179,7 +169,6 @@ function PgBooksExperience() {
           { y: 30, opacity: 0, duration: 0.7 },
           "-=0.4",
         );
-
       // Floating background blobs
       gsap.to(".pg-books-experience-blob-1", {
         x: 60,
@@ -205,7 +194,6 @@ function PgBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
       });
-
       // Connector line fill (horizontal on desktop, vertical on mobile)
       mm.add("(min-width: 901px)", () => {
         gsap.fromTo(
@@ -239,7 +227,6 @@ function PgBooksExperience() {
           },
         );
       });
-
       // Steps entrance
       gsap.from(".pg-books-experience-step", {
         y: 50,
@@ -264,7 +251,6 @@ function PgBooksExperience() {
           start: "top 80%",
         },
       });
-
       // Looping highlight that walks through the five steps
       const circles = gsap.utils.toArray(".pg-books-experience-step-circle");
       const loop = gsap.timeline({
@@ -303,7 +289,6 @@ function PgBooksExperience() {
         end: "bottom 10%",
         onToggle: (self) => (self.isActive ? loop.play() : loop.pause()),
       });
-
       // Step hover
       gsap.utils.toArray(".pg-books-experience-step").forEach((step) => {
         const circle = step.querySelector(".pg-books-experience-step-circle");
@@ -316,7 +301,6 @@ function PgBooksExperience() {
         step.addEventListener("mouseenter", () => hover.play());
         step.addEventListener("mouseleave", () => hover.reverse());
       });
-
       // "WHY THESE BOOKS?" divider
       gsap.from(".pg-books-experience-divider-line", {
         scaleX: 0,
@@ -338,7 +322,6 @@ function PgBooksExperience() {
           start: "top 85%",
         },
       });
-
       // Reason cards
       gsap.from(".pg-books-experience-card", {
         y: 60,
@@ -369,7 +352,6 @@ function PgBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
       });
-
       // Card hover
       gsap.utils.toArray(".pg-books-experience-card").forEach((card) => {
         const icon = card.querySelector(".pg-books-experience-card-icon");
@@ -384,7 +366,6 @@ function PgBooksExperience() {
         card.addEventListener("mouseenter", () => hover.play());
         card.addEventListener("mouseleave", () => hover.reverse());
       });
-
       // Closing band
       const band = gsap.timeline({
         defaults: { ease: "power3.out" },
@@ -421,7 +402,6 @@ function PgBooksExperience() {
           { y: 20, opacity: 0, duration: 0.6 },
           "-=0.2",
         );
-
       gsap.to(".pg-books-experience-band-orb-1", {
         y: 20,
         x: 14,
@@ -438,7 +418,6 @@ function PgBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
       });
-
       // CTA hover
       const cta = rootRef.current.querySelector(".pg-books-experience-cta");
       const arrow = cta.querySelector(".pg-books-experience-arrow");
@@ -451,20 +430,17 @@ function PgBooksExperience() {
       cta.addEventListener("mouseenter", () => ctaHover.play());
       cta.addEventListener("mouseleave", () => ctaHover.reverse());
     }, rootRef);
-
     return () => {
       mm.revert();
       ctx.revert();
     };
   }, []);
-
   return (
     <section className="pg-books-experience" ref={rootRef}>
       <div className="pg-books-experience-blob pg-books-experience-blob-1" />
       <div className="pg-books-experience-blob pg-books-experience-blob-2" />
       <div className="pg-books-experience-blob pg-books-experience-blob-3" />
       <div className="pg-books-experience-grid-bg" />
-
       <div className="pg-books-experience-container">
         {/* HEADER */}
         <div className="pg-books-experience-header">
@@ -479,7 +455,6 @@ function PgBooksExperience() {
             your visual learning and written revision stay connected.
           </p>
         </div>
-
         {/* STEPS */}
         <div className="pg-books-experience-steps">
           <div className="pg-books-experience-line">
@@ -499,7 +474,6 @@ function PgBooksExperience() {
             </div>
           ))}
         </div>
-
         {/* WHY THESE BOOKS */}
         <div className="pg-books-experience-divider">
           <span className="pg-books-experience-divider-line" />
@@ -508,7 +482,6 @@ function PgBooksExperience() {
           </span>
           <span className="pg-books-experience-divider-line" />
         </div>
-
         <div className="pg-books-experience-cards">
           {reasons.map((r) => (
             <div className="pg-books-experience-card" key={r.title}>
@@ -520,7 +493,6 @@ function PgBooksExperience() {
             </div>
           ))}
         </div>
-
         <div className="pg-books-experience-feature">
           <span className="pg-books-experience-feature-glow" />
           <span className="pg-books-experience-feature-icon">
@@ -535,7 +507,6 @@ function PgBooksExperience() {
             </p>
           </div>
         </div>
-
         {/* CLOSING BAND */}
         <div className="pg-books-experience-band">
           <span className="pg-books-experience-band-orb pg-books-experience-band-orb-1" />
@@ -562,5 +533,4 @@ function PgBooksExperience() {
     </section>
   );
 }
-
 export default PgBooksExperience;

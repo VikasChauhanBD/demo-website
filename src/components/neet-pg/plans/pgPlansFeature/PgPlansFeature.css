@@ -1,134 +1,147 @@
 .pg-plans-feature-section {
-  position: relative;
-  overflow: hidden;
-  padding: 100px 24px 140px;
+  padding: 100px 24px;
   background: #ecf3f3;
 }
-
 .pg-plans-feature-section h2 {
-  position: relative;
-  z-index: 2;
-  margin: 0 0 100px;
+  margin: 0 0 50px;
   text-align: center;
   font-size: 48px;
   font-weight: 700;
   color: #004d7a;
 }
-
-.pg-plans-feature-circle {
-  position: absolute;
-  z-index: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  transform-origin: center center;
-}
-
-.pg-plans-feature-circle--fill {
-  background: #ffffff;
-}
-
-.pg-plans-feature-circle--ring {
-  border: 3px solid #b7cdfc;
-  background: transparent;
-  box-sizing: border-box;
-}
-
 .pg-plans-feature-wrap {
-  position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
-
-.pg-plans-feature-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.pg-plans-feature-card {
+.pg-plans-feature-track {
   position: relative;
-  z-index: 2;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: 24px;
+}
+.pg-plans-feature-track::-webkit-scrollbar {
+  display: none;
+}
+.pg-plans-feature-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 96px;
-  margin-bottom: 180px;
-}
-
-.pg-plans-feature-card:last-child {
-  margin-bottom: 0;
-}
-
-.pg-plans-feature-card--reverse .pg-plans-feature-media {
-  order: 2;
-}
-
-.pg-plans-feature-media {
-  width: 100%;
-  /* aspect-ratio: 4 / 3; */
-  overflow: hidden;
-  border-radius: 24px;
+  gap: 48px;
+  padding: 32px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   background: #ffffff;
-  box-shadow: 0 20px 50px rgba(11, 27, 63, 0.15);
 }
-
+.pg-plans-feature-media {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+}
 .pg-plans-feature-media img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
-
 .pg-plans-feature-content h3 {
   margin: 0 0 20px;
   font-size: 34px;
   font-weight: 700;
   color: #222222;
 }
-
 .pg-plans-feature-content p {
   margin: 0 0 16px;
   font-size: 16px;
   line-height: 1.7;
   color: #222222;
 }
-
 .pg-plans-feature-content p:last-child {
   margin-bottom: 0;
 }
-
-/* ---------------------------------- Responsive ------------------------- */
-
+.pg-plans-feature-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 28px;
+}
+.pg-plans-feature-arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #004d7a;
+  border-radius: 50%;
+  background: #004d7a;
+  color: #ffffff;
+  cursor: pointer;
+}
+.pg-plans-feature-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.pg-plans-feature-dots {
+  display: flex;
+  gap: 4px;
+}
+.pg-plans-feature-dot {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.pg-plans-feature-dot::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #a9bdc9;
+}
+.pg-plans-feature-dot[aria-current="true"]::before {
+  background: #ff9b6b;
+}
+.pg-plans-feature-track:focus-visible,
+.pg-plans-feature-controls button:focus-visible {
+  outline: 3px solid #004d7a;
+  outline-offset: 3px;
+}
+.pg-plans-feature-status {
+  margin: 12px 0 0;
+  text-align: center;
+  color: #004d7a;
+  font-size: 14px;
+}
 @media (max-width: 900px) {
   .pg-plans-feature-section {
-    padding: 70px 20px 90px;
+    padding: 70px 20px;
   }
-
   .pg-plans-feature-section h2 {
-    margin-bottom: 60px;
+    margin-bottom: 36px;
     font-size: 34px;
   }
-
-  .pg-plans-feature-line {
-    display: none;
-  }
-
   .pg-plans-feature-card {
     grid-template-columns: 1fr;
+    align-content: start;
     gap: 28px;
-    margin-bottom: 80px;
+    padding: 24px;
   }
-
-  .pg-plans-feature-card--reverse .pg-plans-feature-media {
-    order: 0;
-  }
-
   .pg-plans-feature-content h3 {
     font-size: 26px;
+  }
+}
+@media (max-width: 500px) {
+  .pg-plans-feature-card {
+    padding: 18px;
+  }
+  .pg-plans-feature-controls {
+    gap: 12px;
   }
 }

@@ -4,12 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import "./WhatSection.css";
 import { NavLink } from "react-router-dom";
-
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 function WhatSection() {
   const container = useRef(null);
-
   const cardsData = [
     {
       id: 1,
@@ -57,7 +54,7 @@ function WhatSection() {
     {
       id: 4,
       image:
-        "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-03-jpg.webp",
+        "https://cdn.dribbble.com/userupload/49258499/file/d4a9edc8527c817227e8832161f1f6ce.jpeg",
       label: "04 · PRACTICE",
       title: "Master Class Q.Bank",
       description: (
@@ -84,7 +81,6 @@ function WhatSection() {
       ),
     },
   ];
-
   useGSAP(
     () => {
       const cards = gsap.utils.toArray(".what-card", container.current);
@@ -92,34 +88,23 @@ function WhatSection() {
         ".what-card-inner",
         container.current,
       );
-
       if (!cards.length) return;
-
       cards.forEach((card, index) => {
         card.style.setProperty("--card-index", index);
-
         if (index === cards.length - 1) return;
-
         const nextCard = cards[index + 1];
         const cardInner = cardInners[index];
-
         if (!nextCard || !cardInner) return;
-
         const toScale = 1 - (cards.length - 1 - index) * 0.08;
-
         ScrollTrigger.create({
           trigger: nextCard,
           start: "top 20px",
           end: () => `bottom ${window.innerHeight - card.offsetHeight}px`,
           scrub: true,
-
           onUpdate: (self) => {
             const progress = self.progress;
-
             const scale = gsap.utils.interpolate(1, toScale, progress);
-
             const brightness = gsap.utils.interpolate(1, 0.65, progress);
-
             gsap.set(cardInner, {
               scale,
               filter: `brightness(${brightness})`,
@@ -127,7 +112,6 @@ function WhatSection() {
           },
         });
       });
-
       gsap.from(".what-header > *", {
         opacity: 0,
         y: 30,
@@ -140,29 +124,24 @@ function WhatSection() {
           toggleActions: "play none none none",
         },
       });
-
       ScrollTrigger.refresh();
     },
     {
       scope: container,
     },
   );
-
   return (
     <section className="what-container" ref={container}>
       <div className="what-header">
         <span className="what-eyebrow">WHAT’S INSIDE</span>
-
         <h2 className="what-heading">
           Everything you need to learn, revise and practise Pharmacology.
         </h2>
-
         <p className="what-para">
           From dedicated exam-focused video lectures to revision, question
           practice and tests - each component has a role in your preparation.
         </p>
       </div>
-
       <div className="what-cards">
         {cardsData.map((card) => (
           <article className="what-card" key={card.id}>
@@ -170,12 +149,9 @@ function WhatSection() {
               <div className="what-card-image">
                 <img src={card.image} alt={card.title} />
               </div>
-
               <div className="what-card-content">
                 <span className="what-card-label">{card.label}</span>
-
                 <h3>{card.title}</h3>
-
                 <p>{card.description}</p>
               </div>
             </div>
@@ -185,5 +161,4 @@ function WhatSection() {
     </section>
   );
 }
-
 export default WhatSection;

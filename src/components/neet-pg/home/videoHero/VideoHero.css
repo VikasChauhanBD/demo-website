@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
 }
-
 .video-hero-video-wrapper {
   position: absolute;
   top: 0;
@@ -16,7 +15,6 @@
   overflow: hidden;
   z-index: 1;
 }
-
 .video-hero-background-video {
   position: absolute;
   top: 50%;
@@ -30,7 +28,6 @@
   border: none;
   pointer-events: none;
 }
-
 .video-hero-video-loading {
   position: absolute;
   top: 0;
@@ -43,7 +40,6 @@
   justify-content: center;
   z-index: 5;
 }
-
 .video-hero-spinner {
   width: 50px;
   height: 50px;
@@ -52,34 +48,29 @@
   border-radius: 50%;
   animation: video-hero-spin 1s linear infinite;
 }
-
 .video-hero-loading-text {
   position: absolute;
   color: #ffffff;
   font-size: 1.2rem;
   margin-top: 100px;
 }
-
 @keyframes video-hero-spin {
   to {
     transform: rotate(360deg);
   }
 }
-
 @media (min-aspect-ratio: 16/9) {
   .video-hero-background-video {
     width: 100%;
     height: auto;
   }
 }
-
 @media (max-aspect-ratio: 16/9) {
   .video-hero-background-video {
     width: auto;
     height: 100%;
   }
 }
-
 .video-hero-overlay {
   position: absolute;
   top: 0;
@@ -89,7 +80,6 @@
   background: rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
-
 .video-hero-cursor-horizontal-line {
   position: absolute;
   top: 50%;
@@ -100,7 +90,6 @@
   z-index: 4;
   pointer-events: none;
 }
-
 .video-hero-cursor-vertical-line {
   position: absolute;
   top: 0;
@@ -111,7 +100,6 @@
   z-index: 4;
   pointer-events: none;
 }
-
 .video-hero-content {
   position: relative;
   z-index: 3;
@@ -121,7 +109,6 @@
   /* padding: 40px 20px; */
   margin-left: 20px;
 }
-
 /* .video-hero-content {
   position: relative;
   z-index: 3;
@@ -130,22 +117,29 @@
   max-width: 920px;
   padding: 40px 20px;
   margin-left: 20px;
-
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 } */
-
+.video-hero-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+}
 .video-hero-heading {
   font-size: 72px;
   font-weight: 700;
   line-height: 1.1;
 }
-
 /* .video-hero-heading span {
   background: linear-gradient(
     90deg,
@@ -162,7 +156,6 @@
   color: transparent;
   animation: gradient-flow 5s ease-in-out infinite;
 } */
-
 .video-hero-sub-heading {
   font-size: 28px;
   text-transform: uppercase;
@@ -175,7 +168,6 @@
     #e1dace 75%,
     #ff9b6b 100%
   );
-
   background-size: 300% 100%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -183,33 +175,27 @@
   color: transparent;
   animation: gradient-flow 6s linear infinite;
 }
-
 @keyframes gradient-flow {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
 }
-
 .video-hero-para {
   font-size: 20px;
   line-height: 1.4;
   letter-spacing: 1.2px;
   margin: 1.5rem 0;
 }
-
 .video-hero-cta-div {
   display: flex;
   gap: 20px;
 }
-
 .video-hero-cta {
   display: inline-block;
   text-decoration: none;
@@ -227,32 +213,24 @@
     color 0.3s ease,
     transform 0.3s ease;
 }
-
 .video-hero-cta:hover {
   background: transparent;
   color: #ff9b6b;
 }
-
 /* ---------------------------------- Responsive ------------------------- */
-
 /* @media (max-width: 1300px) {
-  
 } */
-
 @media (max-width: 900px) {
   .video-hero-header {
     align-items: end;
   }
-
   .video-hero-content {
     padding: 20px;
     margin: 2rem;
   }
-
   .video-hero-heading {
     font-size: 52px;
   }
-
   .video-hero-background-video {
     left: auto;
     right: 0;
@@ -266,30 +244,24 @@
     object-position: right center;
   }
 }
-
 @media (max-width: 500px) {
   .video-hero-content {
     padding: 20px 10px;
     margin: 2rem 0.5rem;
   }
-
   .video-hero-heading {
     font-size: 30px;
     margin-top: 12px;
   }
-
   .video-hero-sub-heading {
     font-size: 22px;
   }
-
   .video-hero-para {
     font-size: 18px;
   }
-
   .video-hero-cta-div {
     flex-direction: column;
   }
-
   .video-hero-cta {
     font-size: 16px;
     text-align: center;

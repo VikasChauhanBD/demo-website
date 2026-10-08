@@ -7,20 +7,17 @@
   padding: 0 24px 120px;
   box-sizing: border-box;
 }
-
 .fmge-books-details .fmge-books-details-sub-heading {
   font-size: 28px;
   font-weight: 600;
   margin: 0;
 }
-
 .fmge-books-details .fmge-books-details-description {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.7;
   margin: 0;
 }
-
 .fmge-books-details-blob {
   position: absolute;
   border-radius: 50%;
@@ -28,7 +25,6 @@
   pointer-events: none;
   z-index: 0;
 }
-
 .fmge-books-details-blob-1 {
   width: 460px;
   height: 460px;
@@ -36,7 +32,6 @@
   top: 300px;
   left: 30%;
 }
-
 .fmge-books-details-blob-2 {
   width: 380px;
   height: 380px;
@@ -44,7 +39,6 @@
   bottom: 120px;
   right: -120px;
 }
-
 .fmge-books-details-btn {
   display: inline-flex;
   align-items: center;
@@ -62,16 +56,13 @@
     box-shadow 0.3s ease,
     background 0.3s ease;
 }
-
 .fmge-books-details-btn:hover {
   background: #ff8a53;
   box-shadow: 0 14px 30px rgba(255, 155, 107, 0.55);
 }
-
 .fmge-books-details-arrow {
   display: inline-block;
 }
-
 .fmge-books-details-divider {
   position: relative;
   z-index: 1;
@@ -80,8 +71,8 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  padding-top: 60px;
 }
-
 .fmge-books-details-divider-line {
   flex: 1;
   height: 2px;
@@ -92,7 +83,6 @@
     rgba(0, 77, 122, 0)
   );
 }
-
 .fmge-books-details-divider-label {
   color: #004d7a;
   font-size: 15px;
@@ -100,7 +90,6 @@
   letter-spacing: 0.14em;
   text-align: center;
 }
-
 .fmge-books-details-list {
   position: relative;
   z-index: 1;
@@ -110,11 +99,9 @@
   flex-direction: column;
   gap: 56px;
 }
-
 .fmge-books-details-card {
   position: relative;
 }
-
 .fmge-books-details-card-body {
   position: relative;
   display: flex;
@@ -127,7 +114,6 @@
   box-shadow: 0 20px 50px rgba(0, 77, 122, 0.08);
   overflow: hidden;
 }
-
 .fmge-books-details-card-body::before {
   content: "";
   position: absolute;
@@ -137,7 +123,6 @@
   height: 6px;
   background: linear-gradient(90deg, #004d7a, #ff9b6b);
 }
-
 .fmge-books-details-card-body::after {
   content: "";
   position: absolute;
@@ -149,15 +134,12 @@
   background: rgba(225, 218, 206, 0.55);
   pointer-events: none;
 }
-
 .fmge-books-details-tone-2::after {
   background: rgba(0, 77, 122, 0.07);
 }
-
 .fmge-books-details-tone-3::after {
   background: rgba(255, 155, 107, 0.16);
 }
-
 .fmge-books-details-head {
   position: relative;
   z-index: 1;
@@ -168,7 +150,6 @@
   gap: 16px;
   text-align: center;
 }
-
 .fmge-books-details-stage {
   padding: 7px 16px;
   border-radius: 999px;
@@ -178,25 +159,21 @@
   font-weight: 700;
   letter-spacing: 0.08em;
 }
-
 .fmge-books-details-title {
   color: #004d7a;
   font-size: 34px;
   letter-spacing: 0.02em;
 }
-
 .fmge-books-details-subline {
   margin: 0;
   font-size: 22px;
   font-weight: 600;
   color: #222222;
 }
-
 .fmge-books-details-lead {
   font-weight: 600;
   color: #004d7a;
 }
-
 .fmge-books-details-row {
   position: relative;
   z-index: 1;
@@ -205,21 +182,17 @@
   align-items: center;
   gap: 56px;
 }
-
 .fmge-books-details-card-reverse .fmge-books-details-media {
   order: 2;
 }
-
 .fmge-books-details-card-reverse .fmge-books-details-panel {
   order: 1;
 }
-
 .fmge-books-details-media {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .fmge-books-details-cover-img {
   display: block;
   width: 100%;
@@ -229,7 +202,6 @@
   padding: 32px;
   box-shadow: 0 24px 48px rgba(0, 77, 122, 0.2);
 }
-
 .fmge-books-details-panel {
   display: flex;
   flex-direction: column;
@@ -239,14 +211,12 @@
   background: #fbf9f6;
   border: 1px solid #ece6dc;
 }
-
 .fmge-books-details-list-label {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
   color: #004d7a;
 }
-
 .fmge-books-details-points {
   list-style: none;
   margin: 0;
@@ -255,7 +225,6 @@
   flex-direction: column;
   gap: 12px;
 }
-
 .fmge-books-details-point {
   display: flex;
   align-items: flex-start;
@@ -263,7 +232,6 @@
   font-size: 17px;
   line-height: 1.5;
 }
-
 .fmge-books-details-tick {
   flex-shrink: 0;
   position: relative;
@@ -273,7 +241,6 @@
   border-radius: 50%;
   background: #004d7a;
 }
-
 .fmge-books-details-tick::after {
   content: "";
   position: absolute;
@@ -285,7 +252,6 @@
   border-bottom: 2px solid #ffffff;
   transform: rotate(45deg);
 }
-
 .fmge-books-details-best {
   margin: 4px 0 0;
   padding: 16px 18px;
@@ -295,120 +261,100 @@
   font-size: 16px;
   line-height: 1.6;
 }
-
 .fmge-books-details-best strong {
   color: #004d7a;
 }
-
 .fmge-books-details-tagline {
   margin: 0;
   font-size: 18px;
   font-weight: 700;
   color: #004d7a;
 }
-
 .fmge-books-details-panel .fmge-books-details-btn {
   align-self: flex-start;
 }
-
 /* -------------------------------- responsive ------------------------------ */
-
 @media (max-width: 1300px) {
   .fmge-books-details-list,
   .fmge-books-details-divider {
     width: 100%;
   }
-
   .fmge-books-details-card-body {
     padding: 48px 36px 40px;
     gap: 40px;
   }
-
   .fmge-books-details-row {
     gap: 36px;
   }
 }
-
 @media (max-width: 900px) {
   .fmge-books-details .fmge-books-details-sub-heading {
     font-size: 24px;
   }
-
   .fmge-books-details .fmge-books-details-description {
     font-size: 16px;
   }
-
   .fmge-books-details-card-body {
     padding: 40px 24px 32px;
     gap: 32px;
   }
-
   .fmge-books-details-row {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-
   .fmge-books-details-media,
   .fmge-books-details-card-reverse .fmge-books-details-media {
     order: 1;
   }
-
   .fmge-books-details-panel,
   .fmge-books-details-card-reverse .fmge-books-details-panel {
     order: 2;
   }
-
   .fmge-books-details-title {
     font-size: 28px;
   }
-
   .fmge-books-details-subline {
     font-size: 20px;
   }
-
   .fmge-books-details-divider-label {
     font-size: 13px;
   }
 }
-
 @media (max-width: 500px) {
   .fmge-books-details {
     padding: 0 16px 80px;
   }
-
   .fmge-books-details-panel .fmge-books-details-btn {
     width: 100%;
     justify-content: center;
   }
-
   .fmge-books-details-list {
     gap: 36px;
   }
-
   .fmge-books-details-card-body {
     padding: 34px 18px 26px;
     border-radius: 24px;
   }
-
   .fmge-books-details-panel {
     padding: 22px 16px;
   }
-
   .fmge-books-details-divider {
     flex-direction: column;
     gap: 12px;
   }
-
   .fmge-books-details-divider-line {
     width: 100%;
     flex: none;
   }
-
   .fmge-books-details-cover-img {
     padding: 0px;
   }
-
   .fmge-books-details-point {
     font-size: 15px;
   }
+}
+.fmge-books-details-panel .fmge-books-details-lead {
+  max-width: none;
+  margin: 0 0 20px;
+  text-align: left;
 }

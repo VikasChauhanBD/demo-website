@@ -4,9 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { FaPlay, FaCheck } from "react-icons/fa";
 import "./FmgePlansShowcase.css";
-
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 const videos = [
   {
     number: "01",
@@ -20,18 +18,16 @@ const videos = [
   },
   {
     number: "03",
-    title: "GOGA EXPRESS",
+    title: "GRG EXPRESS",
     text: "See how Pharmacology can be made faster and more focused.",
   },
 ];
-
 const liveBullets = [
   "Interactive learning with Dr. GRG",
   "Concept clarification & revision",
   "Important exam-focused discussions",
   "Student questions & doubt-solving",
 ];
-
 const plans = [
   {
     validity: "6 Months",
@@ -52,20 +48,15 @@ const plans = [
     prebooking: "₹2,998",
   },
 ];
-
 const toNumber = (price) => Number(price.replace(/[^\d]/g, ""));
-
 function FmgePlansShowcase() {
   const sectionRef = useRef(null);
-
   useGSAP(
     () => {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         return;
       }
-
       const cleanups = [];
-
       /* ---------- floating background blobs ---------- */
       gsap.utils.toArray(".fmge-showcase-blob").forEach((blob) => {
         gsap.to(blob, {
@@ -77,7 +68,6 @@ function FmgePlansShowcase() {
           yoyo: true,
         });
       });
-
       /* ---------- generic scroll reveal helper ---------- */
       const reveal = (targets, trigger, vars = {}) => {
         gsap.fromTo(
@@ -98,10 +88,8 @@ function FmgePlansShowcase() {
           },
         );
       };
-
       /* ---------- EXPERIENCE THE GRG WAY ---------- */
       reveal(".fmge-showcase-exp-header > *", ".fmge-showcase-exp-header");
-
       gsap.fromTo(
         ".fmge-showcase-video-card",
         { opacity: 0, y: 60, scale: 0.94 },
@@ -119,11 +107,9 @@ function FmgePlansShowcase() {
           },
         },
       );
-
       reveal(".fmge-showcase-exp-closing", ".fmge-showcase-exp-closing", {
         stagger: 0,
       });
-
       /* pulsing ring around every play button */
       gsap.fromTo(
         ".fmge-showcase-play-ring",
@@ -137,7 +123,6 @@ function FmgePlansShowcase() {
           stagger: 0.4,
         },
       );
-
       /* ---------- LIVE SESSIONS ---------- */
       gsap.fromTo(
         ".fmge-showcase-live-text > *",
@@ -155,7 +140,6 @@ function FmgePlansShowcase() {
           },
         },
       );
-
       gsap.fromTo(
         ".fmge-showcase-live-list li",
         { opacity: 0, x: -30 },
@@ -172,7 +156,6 @@ function FmgePlansShowcase() {
           },
         },
       );
-
       gsap.fromTo(
         ".fmge-showcase-live-card",
         { opacity: 0, x: 60, scale: 0.95 },
@@ -189,7 +172,6 @@ function FmgePlansShowcase() {
           },
         },
       );
-
       /* pulsing live dot */
       gsap.fromTo(
         ".fmge-showcase-live-ring",
@@ -202,10 +184,8 @@ function FmgePlansShowcase() {
           repeat: -1,
         },
       );
-
       /* ---------- PLANS & PRICING ---------- */
       reveal(".fmge-showcase-price-header > *", ".fmge-showcase-price-header");
-
       gsap.fromTo(
         ".fmge-showcase-price-card",
         { opacity: 0, y: 60, scale: 0.94 },
@@ -223,14 +203,12 @@ function FmgePlansShowcase() {
           },
         },
       );
-
       /* count-up for every price */
       gsap.utils.toArray(".fmge-showcase-price-card").forEach((card) => {
         gsap.utils.toArray(".fmge-showcase-count", card).forEach((el) => {
           const target = Number(el.dataset.value);
           const counter = { value: 0 };
           el.textContent = "₹0";
-
           gsap.to(counter, {
             value: target,
             duration: 1.6,
@@ -247,7 +225,6 @@ function FmgePlansShowcase() {
           });
         });
       });
-
       gsap.fromTo(
         ".fmge-showcase-price-footer > *",
         { opacity: 0, y: 30, scale: 0.95 },
@@ -265,7 +242,6 @@ function FmgePlansShowcase() {
           },
         },
       );
-
       /* ---------- hover lift on cards ---------- */
       gsap.utils
         .toArray(".fmge-showcase-video-card, .fmge-showcase-price-card")
@@ -284,7 +260,6 @@ function FmgePlansShowcase() {
               ease: "power2.out",
               overwrite: "auto",
             });
-
           card.addEventListener("mouseenter", enter);
           card.addEventListener("mouseleave", leave);
           cleanups.push(() => {
@@ -292,19 +267,16 @@ function FmgePlansShowcase() {
             card.removeEventListener("mouseleave", leave);
           });
         });
-
       return () => cleanups.forEach((fn) => fn());
     },
     { scope: sectionRef },
   );
-
   return (
     <section className="fmge-showcase-section" ref={sectionRef}>
       <span className="fmge-showcase-blob fmge-showcase-blob--one"></span>
       <span className="fmge-showcase-blob fmge-showcase-blob--two"></span>
       <span className="fmge-showcase-blob fmge-showcase-blob--three"></span>
       <span className="fmge-showcase-blob fmge-showcase-blob--four"></span>
-
       <div className="fmge-showcase-container">
         <div className="fmge-showcase-block">
           <div className="fmge-showcase-exp-header fmge-showcase-center">
@@ -319,7 +291,6 @@ function FmgePlansShowcase() {
               GRG&apos;s teaching before you choose your plan.
             </p>
           </div>
-
           <div className="fmge-showcase-video-grid">
             {videos.map((item) => (
               <article className="fmge-showcase-video-card" key={item.title}>
@@ -342,12 +313,10 @@ function FmgePlansShowcase() {
               </article>
             ))}
           </div>
-
           <p className="fmge-showcase-exp-closing fmge-showcase-closing">
             Watch. Experience. Choose the way you want to learn Pharmacology.
           </p>
         </div>
-
         <div className="fmge-showcase-block">
           <div className="fmge-showcase-live-grid">
             <div className="fmge-showcase-live-text">
@@ -370,7 +339,6 @@ function FmgePlansShowcase() {
                 ))}
               </ul>
             </div>
-
             <div className="fmge-showcase-live-card">
               <div className="fmge-showcase-live-indicator">
                 <span className="fmge-showcase-live-dot">
@@ -388,7 +356,6 @@ function FmgePlansShowcase() {
             </div>
           </div>
         </div>
-
         <div className="fmge-showcase-block">
           <div className="fmge-showcase-price-header fmge-showcase-center">
             <span className="fmge-showcase-eyebrow">PLANS &amp; PRICING</span>
@@ -398,7 +365,6 @@ function FmgePlansShowcase() {
               valid till 21st October 11:59pm
             </p>
           </div>
-
           <div className="fmge-showcase-price-grid">
             {plans.map((plan) => (
               <article className="fmge-showcase-price-card" key={plan.validity}>
@@ -406,7 +372,6 @@ function FmgePlansShowcase() {
                 <h3 className="fmge-showcase-price-validity">
                   {plan.validity}
                 </h3>
-
                 <div className="fmge-showcase-price-row">
                   <span>Original Price</span>
                   <span
@@ -416,7 +381,6 @@ function FmgePlansShowcase() {
                     {plan.original}
                   </span>
                 </div>
-
                 <div className="fmge-showcase-price-row">
                   <span>Special Price</span>
                   <span
@@ -426,7 +390,6 @@ function FmgePlansShowcase() {
                     {plan.special}
                   </span>
                 </div>
-
                 <div className="fmge-showcase-prebook">
                   <span className="fmge-showcase-prebook-label">
                     Pre-Booking Offer
@@ -444,7 +407,6 @@ function FmgePlansShowcase() {
               </article>
             ))}
           </div>
-
           <div className="fmge-showcase-price-footer fmge-showcase-center">
             <p className="fmge-showcase-closing">
               Your Pharmacology preparation. One connected system.
@@ -458,5 +420,4 @@ function FmgePlansShowcase() {
     </section>
   );
 }
-
 export default FmgePlansShowcase;

@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./PgBooksDetails.css";
-
 gsap.registerPlugin(ScrollTrigger);
-
 const books = [
   {
     image:
@@ -56,14 +54,14 @@ const books = [
   },
   {
     image:
-      "https://cdn.dribbble.com/userupload/49226169/file/e30f205d25bb74de5ddacaa5364b7ada.png",
+      "https://cdn.dribbble.com/userupload/49258399/file/42332cceee6a78ece61cf8d5a9fcb63d.png",
     stage: "03 · RAPID LEARNING",
-    title: "GOGA EXPRESS",
-    imageAlt: "GOGA Express book cover",
+    title: "GRG EXPRESS",
+    imageAlt: "GRG Express book cover",
     subHeading: "Pharmacology, When Time Is Short.",
     lead: "When your preparation window gets shorter, your learning needs to become more focused.",
     description:
-      "GOGA Express brings Pharmacology into a time-efficient learning format, helping you cover and revisit what matters when you have limited time before the exam.",
+      "GRG Express brings Pharmacology into a time-efficient learning format, helping you cover and revisit what matters when you have limited time before the exam.",
     listLabel: "Designed to help you:",
     points: [
       "Make the most of limited preparation time",
@@ -74,14 +72,12 @@ const books = [
     bestForLabel: "Best for:",
     bestFor:
       "NEET PG, INI-CET and FMGE aspirants who need a focused, time-efficient approach.",
-    tagline: "One GOGA Express. One focused Pharmacology revision experience.",
-    cta: "Explore GOGA Express",
+    tagline: "One GRG Express. One focused Pharmacology revision experience.",
+    cta: "Explore GRG Express",
   },
 ];
-
 function PgBooksDetails() {
   const rootRef = useRef(null);
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Floating background blobs
@@ -101,7 +97,6 @@ function PgBooksDetails() {
         yoyo: true,
         ease: "sine.inOut",
       });
-
       // Section label
       gsap.from(".pg-books-details-divider-line", {
         scaleX: 0,
@@ -123,11 +118,9 @@ function PgBooksDetails() {
           start: "top 85%",
         },
       });
-
       // Each book card (zig-zag: even cards image left, odd cards image right)
       gsap.utils.toArray(".pg-books-details-card").forEach((card, index) => {
         const dir = index % 2 === 0 ? -1 : 1;
-
         const ctl = gsap.timeline({
           scrollTrigger: { trigger: card, start: "top 80%" },
           defaults: { ease: "power3.out" },
@@ -161,7 +154,6 @@ function PgBooksDetails() {
             { y: 20, opacity: 0, duration: 0.5, stagger: 0.1 },
             "-=0.6",
           );
-
         // Hover: card lift
         const body = card.querySelector(".pg-books-details-card-body");
         const lift = gsap.to(body, {
@@ -173,7 +165,6 @@ function PgBooksDetails() {
         card.addEventListener("mouseenter", () => lift.play());
         card.addEventListener("mouseleave", () => lift.reverse());
       });
-
       // Button hover micro-interaction
       gsap.utils.toArray(".pg-books-details-btn").forEach((btn) => {
         const arrow = btn.querySelector(".pg-books-details-arrow");
@@ -187,15 +178,12 @@ function PgBooksDetails() {
         btn.addEventListener("mouseleave", () => hover.reverse());
       });
     }, rootRef);
-
     return () => ctx.revert();
   }, []);
-
   return (
     <section className="pg-books-details" id="pg-books-details" ref={rootRef}>
       <div className="pg-books-details-blob pg-books-details-blob-1" />
       <div className="pg-books-details-blob pg-books-details-blob-2" />
-
       {/* DIVIDER */}
       <div className="pg-books-details-divider">
         <span className="pg-books-details-divider-line" />
@@ -204,7 +192,6 @@ function PgBooksDetails() {
         </span>
         <span className="pg-books-details-divider-line" />
       </div>
-
       {/* BOOKS */}
       <div className="pg-books-details-list">
         {books.map((book, i) => (
@@ -224,14 +211,10 @@ function PgBooksDetails() {
                   {book.title}
                 </h3>
                 <p className="pg-books-details-subline">{book.subHeading}</p>
-                <p className="pg-books-details-description pg-books-details-lead">
-                  {book.lead}
-                </p>
                 <p className="pg-books-details-description">
                   {book.description}
                 </p>
               </div>
-
               {/* IMAGE + CONTENT (zig-zag) */}
               <div className="pg-books-details-row">
                 <div className="pg-books-details-media">
@@ -241,8 +224,10 @@ function PgBooksDetails() {
                     alt={book.imageAlt}
                   />
                 </div>
-
                 <div className="pg-books-details-panel">
+                  <p className="pg-books-details-description pg-books-details-lead">
+                    {book.lead}
+                  </p>
                   <p className="pg-books-details-list-label">
                     {book.listLabel}
                   </p>
@@ -254,13 +239,10 @@ function PgBooksDetails() {
                       </li>
                     ))}
                   </ul>
-
                   <p className="pg-books-details-best">
                     <strong>{book.bestForLabel}</strong> {book.bestFor}
                   </p>
-
                   <p className="pg-books-details-tagline">{book.tagline}</p>
-
                   <button type="button" className="pg-books-details-btn">
                     <span>{book.cta}</span>
                     <span className="pg-books-details-arrow">→</span>
@@ -274,5 +256,4 @@ function PgBooksDetails() {
     </section>
   );
 }
-
 export default PgBooksDetails;

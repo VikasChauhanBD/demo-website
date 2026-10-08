@@ -3,47 +3,38 @@
   background: #004d7a;
   color: #ffffff;
 }
-
 .home-faq > h2,
 .home-faq > p {
   text-align: center;
 }
-
 .home-faq h2 {
   font-size: clamp(26px, 4vw, 38px);
   color: #ffffff;
 }
-
 .home-faq > p {
   margin: 16px 0 36px;
 }
-
 .home-faq-list {
   max-width: 900px;
   margin: auto;
 }
-
 .home-faq details {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding: 22px 0;
 }
-
 .home-faq summary {
   cursor: pointer;
   font-size: 20px;
   font-weight: 600;
 }
-
 .home-faq details p {
   margin-top: 16px;
   line-height: 1.7;
 }
-
 .home-faq a {
   color: #ffd0b8;
   text-decoration: underline;
 }
-
 .home-faq summary:focus-visible {
   outline: 2px solid #ffd0b8;
   outline-offset: 6px;
