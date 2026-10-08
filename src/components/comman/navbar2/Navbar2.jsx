@@ -262,12 +262,7 @@ function Navbar2() {
                 </button>
               </div>
             </div>
-<<<<<<< HEAD
-
             <div
-=======
-            {/* <div
->>>>>>> 33c35cc (navbar and footer updated)
               ref={(el) => {
                 mobileItemsRef.current[1] = el;
               }}
@@ -275,12 +270,7 @@ function Navbar2() {
               <a href={links.landing} onClick={closeMobileMenu}>
                 Home
               </a>
-<<<<<<< HEAD
             </div>
-
-=======
-            </div> */}
->>>>>>> 33c35cc (navbar and footer updated)
             <div
               ref={(el) => {
                 mobileItemsRef.current[2] = el;

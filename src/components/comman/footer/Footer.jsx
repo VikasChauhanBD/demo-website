@@ -109,7 +109,6 @@ function Footer() {
               <NavLink to="/course/neet-pg/plans">Plans</NavLink>
               <NavLink to="/course/neet-pg/books">Books</NavLink>
             </div>
-
             <div className="footer-column">
               <h3>FMGE</h3>
               <NavLink to="/course/fmge">Home</NavLink>
@@ -117,7 +116,6 @@ function Footer() {
               <NavLink to="/course/fmge/plans">Plans</NavLink>
               <NavLink to="/course/fmge/books">Books</NavLink>
             </div>
-
             <div className="footer-column">
               <h3>Policies</h3>
               <NavLink to="/privacy-policy">Privacy Policy</NavLink>
