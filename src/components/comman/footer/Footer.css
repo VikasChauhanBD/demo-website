@@ -64,6 +64,11 @@
   font-weight: 700;
   line-height: 1.2;
 }
+.footer-logo-text h6 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
 .footer-logo-text h5 {
   font-size: 12px;
   font-weight: 500;

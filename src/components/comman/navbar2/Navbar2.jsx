@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Navbar2.css";
 import gsap from "gsap";
 import { FaStethoscope, FaGlobe } from "react-icons/fa";
-
 const PROGRAMS = {
   "NEET PG": {
     landing: "/course/neet-pg",
@@ -15,40 +14,31 @@ const PROGRAMS = {
     books: "/course/fmge/books",
   },
 };
-
 const STORAGE_KEY = "selectedProgram";
 const COURSE_POPUP_KEY = "coursePopupShown";
-
 const getInitialProgram = () => {
   const path = window.location.pathname;
-
   if (path.startsWith("/course/fmge")) return "FMGE";
   if (path.startsWith("/course/neet-pg")) return "NEET PG";
-
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved && PROGRAMS[saved]) return saved;
   } catch (e) {
     // localStorage not available, fall back to default
   }
-
   return "NEET PG";
 };
-
 function Navbar2() {
   const navbarRef = useRef(null);
   const logoRef = useRef(null);
   const desktopNavRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const mobileItemsRef = useRef([]);
-
   const [mobileOpen, setMobileOpen] = useState(false);
   const [programOpen, setProgramOpen] = useState(false);
   const [coursePopupOpen, setCoursePopupOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(getInitialProgram);
-
   const links = PROGRAMS[selectedProgram];
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -64,7 +54,6 @@ function Navbar2() {
           ease: "power3.out",
         },
       );
-
       gsap.fromTo(
         logoRef.current,
         {
@@ -79,7 +68,6 @@ function Navbar2() {
           ease: "back.out(1.5)",
         },
       );
-
       gsap.fromTo(
         desktopNavRef.current,
         {
@@ -95,13 +83,10 @@ function Navbar2() {
         },
       );
     }, navbarRef);
-
     return () => ctx.revert();
   }, []);
-
   useEffect(() => {
     if (!mobileMenuRef.current) return;
-
     if (mobileOpen) {
       gsap.to(mobileMenuRef.current, {
         height: "auto",
@@ -109,7 +94,6 @@ function Navbar2() {
         duration: 0.4,
         ease: "power3.out",
       });
-
       gsap.fromTo(
         mobileItemsRef.current.filter(Boolean),
         {
@@ -131,15 +115,12 @@ function Navbar2() {
         duration: 0.3,
         ease: "power2.inOut",
       });
-
       setProgramOpen(false);
     }
   }, [mobileOpen]);
-
   useEffect(() => {
     try {
       const popupShown = localStorage.getItem(COURSE_POPUP_KEY);
-
       if (!popupShown) {
         setCoursePopupOpen(true);
       }
@@ -147,49 +128,38 @@ function Navbar2() {
       setCoursePopupOpen(true);
     }
   }, []);
-
   useEffect(() => {
     if (!coursePopupOpen) return;
-
     document.body.style.overflow = "hidden";
-
     return () => {
       document.body.style.overflow = "";
     };
   }, [coursePopupOpen]);
-
   const handleProgramSelect = (program) => {
     setSelectedProgram(program);
     setProgramOpen(false);
-
     try {
       localStorage.setItem(STORAGE_KEY, program);
     } catch (e) {
       // ignore storage errors
     }
-
     window.location.href = PROGRAMS[program].landing;
   };
-
   const handleCourseSelect = (program) => {
     setSelectedProgram(program);
     setCoursePopupOpen(false);
-
     try {
       localStorage.setItem(STORAGE_KEY, program);
       localStorage.setItem(COURSE_POPUP_KEY, "true");
     } catch (e) {
       // ignore storage errors
     }
-
     window.location.href = PROGRAMS[program].landing;
   };
-
   const closeMobileMenu = () => {
     setMobileOpen(false);
     setProgramOpen(false);
   };
-
   return (
     <>
       <nav className="navbar2-container" ref={navbarRef}>
@@ -204,16 +174,14 @@ function Navbar2() {
                   src="https://cdn.dribbble.com/userupload/49243456/file/6a33c9e10c12af9bd7e77302ab6f4c10.png"
                   alt="GRG Logo"
                 />
-
                 <div className="navbar-logo-text">
                   <h4>Pharmacology by Dr. GRG</h4>
+                  <h6>NEETPG | INICET | FMGE</h6>
                   <h5>Powered by eConceptual</h5>
                 </div>
               </a>
             </div>
-
             <div className="navbar2-divider"></div>
-
             <div className="program-selector">
               <button
                 type="button"
@@ -225,7 +193,6 @@ function Navbar2() {
                 <span>{selectedProgram}</span>
                 <span className="program-arrow"></span>
               </button>
-
               <div className={`program-dropdown ${programOpen ? "show" : ""}`}>
                 <button
                   type="button"
@@ -234,7 +201,6 @@ function Navbar2() {
                 >
                   NEET PG
                 </button>
-
                 <button
                   type="button"
                   className={selectedProgram === "FMGE" ? "selected" : ""}
@@ -245,14 +211,12 @@ function Navbar2() {
               </div>
             </div>
           </div>
-
           <div className="navbar2-right navbar2-desktop" ref={desktopNavRef}>
             <a href={links.landing}>Home</a>
             <a href="/about">About Dr. GRG</a>
             <a href={links.plans}>Plans</a>
             <a href={links.books}>Books</a>
           </div>
-
           <button
             type="button"
             className={`navbar2-hamburger ${mobileOpen ? "active" : ""}`}
@@ -265,7 +229,6 @@ function Navbar2() {
             <span></span>
           </button>
         </div>
-
         <div className="mobile-menu-wrapper" ref={mobileMenuRef}>
           <div className="mobile-menu">
             <div
@@ -284,7 +247,6 @@ function Navbar2() {
                   className={`mobile-arrow ${programOpen ? "open" : ""}`}
                 ></span>
               </button>
-
               <div className={`mobile-submenu ${programOpen ? "show" : ""}`}>
                 <button
                   type="button"
@@ -292,7 +254,6 @@ function Navbar2() {
                 >
                   NEET PG
                 </button>
-
                 <button
                   type="button"
                   onClick={() => handleProgramSelect("FMGE")}
@@ -301,8 +262,12 @@ function Navbar2() {
                 </button>
               </div>
             </div>
+<<<<<<< HEAD
 
             <div
+=======
+            {/* <div
+>>>>>>> 33c35cc (navbar and footer updated)
               ref={(el) => {
                 mobileItemsRef.current[1] = el;
               }}
@@ -310,8 +275,12 @@ function Navbar2() {
               <a href={links.landing} onClick={closeMobileMenu}>
                 Home
               </a>
+<<<<<<< HEAD
             </div>
 
+=======
+            </div> */}
+>>>>>>> 33c35cc (navbar and footer updated)
             <div
               ref={(el) => {
                 mobileItemsRef.current[2] = el;
@@ -321,7 +290,6 @@ function Navbar2() {
                 About Dr. GRG
               </a>
             </div>
-
             <div
               ref={(el) => {
                 mobileItemsRef.current[3] = el;
@@ -331,7 +299,6 @@ function Navbar2() {
                 Plans
               </a>
             </div>
-
             <div
               ref={(el) => {
                 mobileItemsRef.current[4] = el;
@@ -344,16 +311,13 @@ function Navbar2() {
           </div>
         </div>
       </nav>
-
       {coursePopupOpen && (
         <div className="course-popup-overlay">
           <div className="course-popup">
             <div className="course-popup-header">
               <h2>Choose Your Course</h2>
-
               <p>Select your preparation pathway to continue.</p>
             </div>
-
             <div className="course-popup-options">
               <button
                 type="button"
@@ -363,12 +327,10 @@ function Navbar2() {
                 <span className="course-popup-icon">
                   <FaStethoscope />
                 </span>
-
                 <span className="course-popup-option-title">
                   NEET PG | INI-CET
                 </span>
               </button>
-
               <button
                 type="button"
                 className="course-popup-option"
@@ -377,7 +339,6 @@ function Navbar2() {
                 <span className="course-popup-icon">
                   <FaGlobe />
                 </span>
-
                 <span className="course-popup-option-title">FMGE</span>
               </button>
             </div>
@@ -387,5 +348,4 @@ function Navbar2() {
     </>
   );
 }
-
 export default Navbar2;

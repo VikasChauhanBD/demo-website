@@ -8,7 +8,6 @@
   border: none;
   box-shadow: none;
 }
-
 .navbar2-inner {
   margin: 0 auto;
   display: flex;
@@ -16,14 +15,12 @@
   justify-content: space-between;
   gap: 30px;
 }
-
 .navbar2-left {
   display: flex;
   align-items: center;
   gap: 18px;
   flex-shrink: 0;
 }
-
 .navbar2-logo {
   display: flex;
   align-items: center;
@@ -31,14 +28,12 @@
   padding: 2px 4px;
   border-radius: 10px;
 }
-
 .navbar2-logo a {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
 }
-
 .navbar2-logo img {
   display: block;
   width: 58px;
@@ -46,7 +41,6 @@
   object-fit: cover;
   /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12); */
 }
-
 .navbar2-logo-text {
   display: flex;
   flex-direction: column;
@@ -54,7 +48,6 @@
   justify-content: center;
   gap: 3px;
 }
-
 .navbar2-logo-text h4 {
   margin: 0;
   color: #222222;
@@ -62,7 +55,13 @@
   font-weight: 700;
   line-height: 1.2;
 }
-
+.navbar2-logo-text h6 {
+  margin: 0;
+  color: #222222;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
 .navbar2-logo-text h5 {
   margin: 0;
   color: #004d7a;
@@ -70,19 +69,16 @@
   font-weight: 500;
   line-height: 1.2;
 }
-
 .navbar2-divider {
   width: 1px;
   height: 38px;
   margin: 0 2px;
   background: #ffffff;
 }
-
 .program-selector {
   position: relative;
   flex-shrink: 0;
 }
-
 .program-button {
   width: 145px;
   height: 46px;
@@ -104,13 +100,11 @@
     border-color 0.25s ease,
     box-shadow 0.25s ease;
 }
-
 .program-button:hover,
 .program-button.open {
   border-color: #9da8b6;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
 }
-
 .program-arrow {
   width: 8px;
   height: 8px;
@@ -123,12 +117,10 @@
     transform 0.25s ease,
     margin 0.25s ease;
 }
-
 .program-button.open .program-arrow {
   transform: rotate(225deg);
   margin-top: 4px;
 }
-
 .program-dropdown {
   position: absolute;
   top: calc(100% + 8px);
@@ -148,13 +140,11 @@
     transform 0.2s ease;
   z-index: 10000;
 }
-
 .program-dropdown.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-
 .program-dropdown button {
   display: block;
   width: 100%;
@@ -172,13 +162,11 @@
     background 0.2s ease,
     color 0.2s ease;
 }
-
 .program-dropdown button:hover,
 .program-dropdown button.selected {
   background: #f1f6ff;
   color: #005b8f;
 }
-
 .navbar2-right {
   display: flex;
   align-items: center;
@@ -190,7 +178,6 @@
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
-
 .navbar2-right > a {
   display: flex;
   align-items: center;
@@ -208,16 +195,13 @@
     background 0.2s ease,
     color 0.2s ease;
 }
-
 .navbar2-right > a:hover {
   background: #f1f6ff;
   color: #004d7a;
 }
-
 .pharma-dropdown {
   position: relative;
 }
-
 .pharma-button {
   display: flex;
   align-items: center;
@@ -238,12 +222,10 @@
     background 0.2s ease,
     color 0.2s ease;
 }
-
 .pharma-button:hover {
   background: #f1f6ff;
   color: #004d7a;
 }
-
 .pharma-arrow {
   width: 7px;
   height: 7px;
@@ -256,12 +238,10 @@
     transform 0.25s ease,
     margin 0.25s ease;
 }
-
 .pharma-dropdown:hover .pharma-arrow {
   transform: rotate(225deg);
   margin-top: 4px;
 }
-
 .pharma-menu {
   position: absolute;
   top: calc(100% + 7px);
@@ -282,14 +262,12 @@
     transform 0.2s ease;
   z-index: 10000;
 }
-
 .pharma-dropdown:hover .pharma-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
 }
-
 .pharma-menu a {
   display: block;
   padding: 11px 13px;
@@ -304,12 +282,10 @@
     background 0.2s ease,
     color 0.2s ease;
 }
-
 .pharma-menu a:hover {
   background: #f1f6ff;
   color: #004d7a;
 }
-
 .navbar2-hamburger {
   display: none;
   width: 45px;
@@ -325,7 +301,6 @@
   justify-content: center;
   gap: 5px;
 }
-
 .navbar2-hamburger span {
   display: block;
   width: 21px;
@@ -336,26 +311,21 @@
     transform 0.3s ease,
     opacity 0.3s ease;
 }
-
 .navbar2-hamburger.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-
 .navbar2-hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-
 .navbar2-hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
-
 .mobile-menu-wrapper {
   display: none;
   height: 0;
   opacity: 0;
   overflow: hidden;
 }
-
 .mobile-menu {
   display: flex;
   flex-direction: column;
@@ -367,7 +337,6 @@
   border-radius: 14px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
-
 .mobile-menu > div > a {
   display: flex;
   align-items: center;
@@ -386,12 +355,10 @@
     background 0.2s ease,
     color 0.2s ease;
 }
-
 .mobile-menu > div > a:hover {
   background: #f1f6ff !important;
   color: #004d7a !important;
 }
-
 .mobile-dropdown-button {
   display: flex;
   align-items: center;
@@ -409,11 +376,9 @@
   text-align: left;
   cursor: pointer;
 }
-
 .mobile-dropdown-button:hover {
   background: #f1f6ff;
 }
-
 .mobile-arrow {
   width: 8px;
   height: 8px;
@@ -426,12 +391,10 @@
     transform 0.25s ease,
     margin 0.25s ease;
 }
-
 .mobile-arrow.open {
   transform: rotate(225deg);
   margin-top: 4px;
 }
-
 .mobile-submenu {
   max-height: 0;
   overflow: hidden;
@@ -440,12 +403,10 @@
     max-height 0.3s ease,
     opacity 0.2s ease;
 }
-
 .mobile-submenu.show {
   max-height: 300px;
   opacity: 1;
 }
-
 .mobile-submenu button,
 .mobile-submenu a {
   display: block;
@@ -462,13 +423,11 @@
   text-decoration: none;
   cursor: pointer;
 }
-
 .mobile-submenu button:hover,
 .mobile-submenu a:hover {
   background: #f1f6ff;
   color: #004d7a !important;
 }
-
 .course-popup-overlay {
   position: fixed;
   inset: 0;
@@ -480,7 +439,6 @@
   background: rgba(34, 34, 34, 0.55);
   backdrop-filter: blur(8px);
 }
-
 .course-popup {
   position: relative;
   width: 100%;
@@ -491,31 +449,26 @@
   background: #ffffff;
   box-shadow: 0 30px 80px rgba(0, 77, 122, 0.2);
 }
-
 .course-popup-header {
   margin-bottom: 30px;
   text-align: center;
 }
-
 .course-popup-header h2 {
   margin: 0;
   color: #004d7a;
   font-size: clamp(28px, 4vw, 40px);
   line-height: 1.15;
 }
-
 .course-popup-header p {
   margin: 12px 0 0;
   color: #222222;
   font-size: 16px;
 }
-
 .course-popup-options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
-
 .course-popup-option {
   display: flex;
   flex-direction: column;
@@ -532,13 +485,11 @@
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
-
 .course-popup-option:hover {
   transform: translateY(-5px);
   border-color: #004d7a;
   box-shadow: 0 15px 35px rgba(0, 77, 122, 0.14);
 }
-
 .course-popup-icon {
   display: flex;
   align-items: center;
@@ -551,42 +502,33 @@
   color: #004d7a;
   font-size: 30px;
 }
-
 .course-popup-option-title {
   color: #222222;
   font-size: 20px;
   font-weight: 700;
 }
-
 /* ---------------------------------- Responsive ------------------------- */
-
 @media (max-width: 1150px) {
   .navbar2-left {
     gap: 12px;
   }
-
   .navbar2-logo img {
     width: 54px;
     height: 54px;
   }
-
   .navbar2-divider {
     height: 34px;
   }
-
   .program-button {
     width: 130px;
   }
-
   .program-dropdown {
     width: 130px;
   }
-
   .navbar2-right {
     gap: 0;
     padding: 4px 6px;
   }
-
   .navbar2-right > a,
   .pharma-button {
     padding-left: 8px;
@@ -594,7 +536,6 @@
     font-size: 13px;
   }
 }
-
 @media (max-width: 900px) {
   .navbar2-container {
     padding: 10px 16px;
@@ -602,63 +543,50 @@
     border: none;
     box-shadow: none;
   }
-
   .navbar2-inner {
     width: 100%;
     gap: 12px;
   }
-
   .navbar2-logo img {
     width: 50px;
     height: 50px;
   }
-
   .navbar2-desktop {
     display: none;
   }
-
   .program-selector {
     display: none;
   }
-
   .navbar2-divider {
     display: none;
   }
-
   .navbar2-hamburger {
     display: flex;
     margin-left: auto;
   }
-
   .mobile-menu-wrapper {
     display: block;
   }
 }
-
 @media (max-width: 500px) {
   .navbar2-container {
     padding: 8px 12px;
   }
-
   .navbar2-logo img {
     width: 46px;
     height: 46px;
   }
-
   .navbar2-hamburger {
     width: 42px;
     height: 42px;
   }
-
   .course-popup {
     padding: 30px 18px;
     border-radius: 24px;
   }
-
   .course-popup-options {
     grid-template-columns: 1fr;
   }
-
   .course-popup-option {
     min-height: 145px;
   }

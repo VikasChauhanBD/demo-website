@@ -63,6 +63,7 @@ function Footer() {
               </NavLink>
               <div className="footer-logo-text">
                 <h4>Pharmacology by Dr. GRG</h4>
+                <h6>NEETPG | INICET | FMGE</h6>
                 <h5>Powered by eConceptual</h5>
               </div>
             </div>
