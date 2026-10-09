@@ -12,7 +12,7 @@ import ThePromise from "../components/fmge/home/thePromise/ThePromise";
 
 function FmgeHomePage() {
   return (
-    <div>
+    <div className="fmge-home">
       <VideoHero />
       <WhySection />
       <PlatformSection />

@@ -21,19 +21,19 @@ const programData = [
     title: "GRG EXPRESS",
     para: "Pharmacology, When Time Is Short. </br> A rapid-learning pathway designed to help you cover and revisit essential Pharmacology efficiently. </br> Focus • Revise • Remember",
     image:
-      "https://cdn.dribbble.com/userupload/49258292/file/08474940b4b5fc07d3212681bb0f5940.jpeg",
+      "https://cdn.dribbble.com/userupload/49269850/file/66000d608cd36a0dc54a6e92c65cb9a9.jpeg",
   },
   {
     title: "QUESTIONS & PRACTICE",
     para: "Turn understanding into exam readiness. </br> Practise what you learn and use questions to identify gaps, reinforce concepts and improve your exam approach. </br> Practise • Identify • Improve",
     image:
-      "https://cdn.dribbble.com/userupload/49258499/file/d4a9edc8527c817227e8832161f1f6ce.jpeg",
+      "https://cdn.dribbble.com/userupload/49269849/file/cdcb9064b34c15a773e771ff6c17e2d8.jpeg",
   },
   {
     title: "REVISION & RECALL",
     para: "Keep Pharmacology active throughout your preparation. </br> Move between detailed learning, revision and rapid recall depending on where you are in your preparation. </br> Learn → Revise → Recall",
     image:
-      "https://cdn.dribbble.com/userupload/49258102/file/61fcb64f35ab502a8ddb3e9b69e71070.png",
+      "https://cdn.dribbble.com/userupload/49269851/file/9f69b93276e6819961dded20ce862dbf.png",
   },
 ];
 function FmgePlansFeature() {

@@ -1,7 +1,7 @@
 .intro-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 150px 20px;
+  padding: 0 20px;
 }
 
 .intro-circle-div {
@@ -220,7 +220,7 @@
    Layout: 2 images on top, text card in the middle, 2 images at the bottom. */
 @media (max-width: 1200px) {
   .intro-section {
-    padding: 80px 20px;
+    padding: 0 20px;
   }
 
   .intro-circle-div {
@@ -266,7 +266,7 @@
 
 @media (max-width: 900px) {
   .intro-section {
-    padding: 60px 16px;
+    padding: 0 16px;
   }
 
   .intro-circle-div img {
@@ -302,7 +302,7 @@
 
 @media (max-width: 500px) {
   .intro-section {
-    padding: 50px 14px;
+    padding: 0 14px;
   }
 
   .intro-circle-div {

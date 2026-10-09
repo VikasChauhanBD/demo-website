@@ -1,5 +1,5 @@
 import "./FmgeBooksHeader.css";
-import booksHeader from "../../../../assets/images/neet-pg books.png";
+import booksHeader from "../../../../assets/images/books.png";
 function FmgeBooksHeader() {
   const scrollToBooks = () => {
     document.getElementById("fmge-books-details")?.scrollIntoView({

@@ -1,15 +1,15 @@
 .fmge-intro-section {
   box-sizing: border-box;
   width: 100%;
-  padding: 60px 6.5%;
+  padding: 0 20px;
   background: #ffffff;
 }
 .fmge-intro-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   align-items: start;
-  gap: clamp(32px, 5vw, 80px);
-  max-width: 1280px;
+  gap: clamp(32px, 4vw, 60px);
+  width: 80%;
   margin: 0 auto;
 }
 .fmge-intro-content {
@@ -42,18 +42,15 @@
 }
 .fmge-intro-image {
   min-width: 0;
+  margin-top: 0;
   overflow: hidden;
-  border: 1px solid #e1dace;
-  border-radius: 24px;
-  background: #e1dace;
 }
 .fmge-intro-image img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center center;
 }
 .fmge-intro-cta {
   display: inline-block;
@@ -75,6 +72,33 @@
   outline: 2px solid #004d7a;
   outline-offset: 4px;
 }
+@media (min-width: 961px) {
+  .fmge-home .fmge-intro-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+    gap: clamp(20px, 2vw, 32px);
+  }
+  .fmge-home .fmge-intro-image img {
+    position: static;
+    height: auto;
+    aspect-ratio: auto;
+    object-position: right center;
+  }
+  .fmge-home .fmge-intro-image {
+    width: 85%;
+    justify-self: end;
+    align-self: center;
+  }
+}
+@media (max-width: 960px) {
+  .fmge-home .fmge-intro-image {
+    max-width: 720px;
+  }
+}
+@media (max-width: 1300px) {
+  .fmge-intro-layout {
+    width: 100%;
+  }
+}
 @media (max-width: 960px) {
   .fmge-intro-layout {
     grid-template-columns: 1fr;
@@ -83,18 +107,23 @@
   .fmge-intro-image {
     box-sizing: border-box;
     width: 100%;
-    max-width: 480px;
+    max-width: 640px;
     margin: 0 auto;
   }
 }
 @media (max-width: 600px) {
   .fmge-intro-section {
-    padding: 36px 24px;
+    padding: 0 20px;
   }
   .fmge-intro-heading {
     margin-top: 20px;
   }
   .fmge-intro-para {
     font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .fmge-intro-section {
+    padding-inline: 16px;
   }
 }

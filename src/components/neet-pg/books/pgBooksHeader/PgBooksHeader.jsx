@@ -1,5 +1,5 @@
 import "./PgBooksHeader.css";
-import booksHeader from "../../../../assets/images/neet-pg books.png";
+import booksHeader from "../../../../assets/images/books 2.png";
 function PgBooksHeader() {
   const scrollToBooks = () => {
     document.getElementById("pg-books-details")?.scrollIntoView({

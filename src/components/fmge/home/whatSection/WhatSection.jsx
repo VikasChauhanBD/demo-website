@@ -40,7 +40,7 @@ function WhatSection() {
     {
       id: 3,
       image:
-        "https://cdn.dribbble.com/userupload/49258292/file/08474940b4b5fc07d3212681bb0f5940.jpeg",
+        "https://cdn.dribbble.com/userupload/49269850/file/66000d608cd36a0dc54a6e92c65cb9a9.jpeg",
       label: "03 · RAPID LEARNING",
       title: "GRG Express",
       description: (
@@ -54,7 +54,7 @@ function WhatSection() {
     {
       id: 4,
       image:
-        "https://cdn.dribbble.com/userupload/49258499/file/d4a9edc8527c817227e8832161f1f6ce.jpeg",
+        "https://cdn.dribbble.com/userupload/49269849/file/cdcb9064b34c15a773e771ff6c17e2d8.jpeg",
       label: "04 · PRACTICE",
       title: "Master Class Q.Bank",
       description: (
@@ -69,7 +69,7 @@ function WhatSection() {
     {
       id: 5,
       image:
-        "https://cdn.dribbble.com/userupload/49258102/file/61fcb64f35ab502a8ddb3e9b69e71070.png",
+        "https://cdn.dribbble.com/userupload/49269851/file/9f69b93276e6819961dded20ce862dbf.png",
       label: "05 · ASSESSMENT",
       title: "GOGA Test Approach",
       description: (

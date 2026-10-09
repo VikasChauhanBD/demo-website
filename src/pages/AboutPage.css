@@ -1,8 +1,33 @@
 .about-page {
   padding: 130px 0 40px;
 }
-
+.about-page .pg-intro-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media (min-width: 961px) {
+  .about-page .pg-intro-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+  .about-page .pg-intro-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .about-page .pg-intro-image {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    margin-top: 0;
+  }
+  .about-page .pg-intro-image img {
+    object-position: right center;
+  }
+}
 @media (max-width: 600px) {
+  .about-page .pg-intro-section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
   .about-page {
     padding: 110px 0 24px;
   }
