@@ -59,20 +59,18 @@ const books = [
     title: "GRG EXPRESS",
     imageAlt: "GRG Express book cover",
     subHeading: "Pharmacology, When Time Is Short.",
-    lead: "When your preparation window gets shorter, your learning needs to become more focused.",
-    description:
-      "GRG Express brings Pharmacology into a time-efficient learning format, helping you cover and revisit what matters when you have limited time before the exam.",
+    // lead: "When your preparation window gets shorter, your learning needs to become more focused.",
+    description: "Fast, focused revision for when preparation time is limited.",
     listLabel: "Designed to help you:",
     points: [
-      "Make the most of limited preparation time",
       "Focus on essential Pharmacology",
-      "Quickly revisit important concepts",
-      "Bring structure to last-mile preparation",
+      "Revise key concepts quickly",
+      "Make the most of limited time",
     ],
     bestForLabel: "Best for:",
     bestFor:
-      "NEET PG, INI-CET and FMGE aspirants who need a focused, time-efficient approach.",
-    tagline: "One GRG Express. One focused Pharmacology revision experience.",
+      "NEET PG, INI-CET & FMGE aspirants needing focused, last-mile revision.",
+    tagline: "Revise Fast. Remember More.",
     cta: "Explore GRG Express",
   },
 ];

@@ -11,16 +11,14 @@ const books = [
     title: "GRG MASTER CLASS",
     imageAlt: "GRG Master Class book cover",
     subHeading: "Where Concepts Become Confidence.",
-    lead: "Build your Pharmacology understanding systematically with content designed specifically for the FMGE pathway.",
+    // lead: "Build your Pharmacology understanding systematically with content designed specifically for the FMGE pathway.",
     description:
       "The book works alongside the dedicated FMGE video lectures, helping you understand the concepts, organise the subject and return to important areas during revision.",
     listLabel: "Designed to help you:",
     points: [
-      "Build a clear Pharmacology foundation",
-      "Understand concepts rather than rely only on memorisation",
-      "Connect mechanisms with clinical relevance",
-      "Follow the dedicated FMGE video teaching",
-      "Create a strong base for further revision",
+      "Build a strong Pharmacology foundation.",
+      "Understand concepts. Connect them to clinical relevance.",
+      "Learn systematically with dedicated FMGE-focused content",
     ],
     bestForLabel: "Best for:",
     bestFor:
@@ -56,9 +54,8 @@ const books = [
     title: "GRG EXPRESS",
     imageAlt: "GRG Express book cover",
     subHeading: "Pharmacology, When Time Is Short.",
-    lead: "Fast, focused revision for when preparation time is limited.",
-    // description:
-    //   "GRG Express is the common rapid-learning book across GRG's Pharmacology pathways, providing a focused, time-efficient resource when preparation time is limited.",
+    // lead: "Fast, focused revision for when preparation time is limited.",
+    description: "Fast, focused revision for when preparation time is limited.",
     listLabel: "Designed to help you:",
     points: [
       "Focus on essential Pharmacology",
