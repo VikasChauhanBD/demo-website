@@ -4,25 +4,22 @@
   color: #ffffff;
   padding: 120px 20px;
 }
-
 .pg-platform-container {
   width: 80%;
   margin: 0 auto;
 }
-
 .pg-platform-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-
 .pg-platform-tag {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 18px;
-  font-size: 14px;
+  padding: 10px 20px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -31,7 +28,6 @@
   border: 1px solid #e1dace;
   border-radius: 50px;
 }
-
 .pg-platform-tag::before {
   content: "";
   width: 8px;
@@ -40,18 +36,15 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
-
 .pg-platform-heading {
   margin: 24px 0 0;
   font-size: 38px;
   font-weight: 700;
   line-height: 1.2;
 }
-
 .pg-platform-heading span {
   display: block;
 }
-
 .pg-platform-heading .pg-platform-heading-mark {
   display: inline;
   background: linear-gradient(
@@ -60,7 +53,6 @@
     )
     no-repeat 0 88% / 100% 0.28em;
 }
-
 .pg-platform-para {
   width: 100%;
   max-width: 860px;
@@ -69,25 +61,21 @@
   font-weight: 400;
   line-height: 32px;
 }
-
 .pg-platform-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 2.5rem;
 }
-
 .pg-platform-card {
   padding: 16px 16px 28px;
   background-color: #ffffff;
   border-radius: 24px;
   transition: box-shadow 0.3s ease;
 }
-
 .pg-platform-card:hover {
   box-shadow: 0 20px 40px rgba(0, 77, 122, 0.18);
 }
-
 .pg-platform-media {
   position: relative;
   width: 100%;
@@ -95,7 +83,6 @@
   overflow: hidden;
   border-radius: 16px;
 }
-
 .pg-platform-media img {
   display: block;
   width: 100%;
@@ -104,11 +91,9 @@
   transition: transform 0.6s ease;
   will-change: transform;
 }
-
 .pg-platform-media:hover img {
   transform: scale(1.08);
 }
-
 .pg-platform-card-number {
   margin: 20px 8px 0;
   font-size: 14px;
@@ -116,7 +101,6 @@
   letter-spacing: 2px;
   color: #ff9b6b;
 }
-
 .pg-platform-card-title {
   display: flex;
   align-items: center;
@@ -128,7 +112,6 @@
   line-height: 1.2;
   color: #004d7a;
 }
-
 .pg-platform-card-description {
   margin: 16px 8px 0;
   font-size: 18px;
@@ -136,13 +119,11 @@
   line-height: 28px;
   color: #222222;
 }
-
 .pg-platform-cta-wrap {
   display: flex;
   justify-content: center;
   margin-top: 60px;
 }
-
 .pg-platform-cta {
   display: inline-block;
   padding: 12px 28px;
@@ -156,73 +137,57 @@
     color 0.3s ease,
     background-color 0.3s ease;
 }
-
 .pg-platform-cta:hover {
   color: #ff9b6b;
   background-color: transparent;
 }
-
 /* ---------------------------------- Responsive ------------------------- */
-
 @media (max-width: 1300px) {
   .pg-platform-container {
     width: 100%;
   }
 }
-
 @media (max-width: 900px) {
   .pg-platform-section {
     padding: 80px 20px;
   }
-
   .pg-platform-heading {
     font-size: 32px;
   }
-
   .pg-platform-para {
     font-size: 16px;
     line-height: 28px;
   }
-
   .pg-platform-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .pg-platform-media {
     height: 280px;
   }
-
   .pg-platform-card-title {
     font-size: 20px;
   }
-
   .pg-platform-card-description {
     font-size: 16px;
   }
 }
-
 @media (max-width: 500px) {
   .pg-platform-section {
     padding: 60px 16px;
   }
-
   .pg-platform-tag {
     font-size: 12px;
   }
-
   .pg-platform-cards {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-
   .pg-platform-card:last-child {
     grid-column: auto;
   }
-
   .pg-platform-media {
     height: 240px;
   }
-
   .pg-platform-cta {
     font-size: 16px;
     padding: 10px 24px;

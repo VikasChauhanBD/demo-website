@@ -1,0 +1,9 @@
+.about-page {
+  padding: 130px 0 40px;
+}
+
+@media (max-width: 600px) {
+  .about-page {
+    padding: 110px 0 24px;
+  }
+}

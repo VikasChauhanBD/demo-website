@@ -164,6 +164,7 @@ const VideoHero = () => {
           <h2 className="video-hero-sub-heading">
             Pharmacology By Dr. Gobind Rai Garg
           </h2>
+          <p className="video-hero-powered-by">Powered by eConceptual</p>
           <h1 className="video-hero-heading">
             From Pharmacophobia To Pharmacophilia
           </h1>
@@ -178,7 +179,7 @@ const VideoHero = () => {
             <NavLink to="#" className="video-hero-cta">
               Watch a Sample Class
             </NavLink>
-            <NavLink to="#" className="video-hero-cta">
+            <NavLink to="/course/fmge/plans" className="video-hero-cta">
               View Plans
             </NavLink>
           </div>

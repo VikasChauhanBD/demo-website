@@ -1,10 +1,11 @@
 import "./FmgeBooksHeader.css";
-import booksHeader from "../../../../assets/images/books-header.jpeg";
-
+import booksHeader from "../../../../assets/images/neet-pg books.png";
 function FmgeBooksHeader() {
   const scrollToBooks = () => {
     document.getElementById("fmge-books-details")?.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
       block: "start",
     });
   };
@@ -19,7 +20,7 @@ function FmgeBooksHeader() {
           <h2 className="fmge-books-header-sub-heading">
             Built specifically for FMGE preparation.
           </h2>
-          <p className="fmge-books-header-description">
+          {/* <p className="fmge-books-header-description">
             Pharmacology can feel overwhelming when there is too much to
             remember and too little time to organise it.
           </p>
@@ -30,7 +31,7 @@ function FmgeBooksHeader() {
           <p className="fmge-books-header-description">
             The books are developed alongside the dedicated FMGE video lectures,
             creating a connected learning and revision experience.
-          </p>
+          </p> */}
           <button
             type="button"
             className="fmge-books-header-btn fmge-books-header-hero-cta"
@@ -41,8 +42,12 @@ function FmgeBooksHeader() {
           </button>
         </div>
         <div className="fmge-books-header-art">
-          <img src={booksHeader} width="900" height="800"
-            alt="GRG Master Class, Power Pack Revision and GRG Express Pharmacology books" />
+          <img
+            src={booksHeader}
+            width="900"
+            height="800"
+            alt="GRG Master Class, Power Pack Revision and GRG Express Pharmacology books"
+          />
         </div>
       </div>
     </section>

@@ -16,11 +16,11 @@
 }
 .pg-books-header-eyebrow {
   display: inline-block;
-  padding: 7px 15px;
+  padding: 10px 20px;
   border-radius: 30px;
-  background: #e1dace;
+  background: #ff9b6b;
   color: #004d7a;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.7px;
   text-transform: uppercase;

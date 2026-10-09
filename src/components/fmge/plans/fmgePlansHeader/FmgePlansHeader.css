@@ -1,5 +1,4 @@
 .fmge-plans-header-section {
-  position: relative;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -11,7 +10,6 @@
   background-position: center right;
 }
 .fmge-plans-header-content {
-  position: relative;
   width: 70%;
   max-width: 1150px;
 }
@@ -25,14 +23,13 @@
 }
 .fmge-plans-header-heading span {
   display: block;
+  margin-top: 22px;
+  max-width: 650px;
   color: #ff9b6b;
-}
-.fmge-plans-header-subtitle {
-  margin: 28px 0 0;
-  color: #222222;
-  font-size: clamp(18px, 1.9vw, 34px);
-  line-height: 1.45;
-  letter-spacing: -0.025em;
+  font-size: clamp(20px, 2.1vw, 32px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 @media (max-width: 900px) {
   .fmge-plans-header-section {
@@ -58,8 +55,7 @@
   .fmge-plans-header-heading {
     font-size: clamp(32px, 8.5vw, 46px);
   }
-  .fmge-plans-header-subtitle {
-    margin-top: 20px;
-    font-size: 20px;
+  .fmge-plans-header-heading span {
+    margin-top: 18px;
   }
 }

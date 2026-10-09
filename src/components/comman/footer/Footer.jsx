@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
 import gsap from "gsap";
 import "./Footer.css";
 function Footer() {
@@ -55,7 +60,7 @@ function Footer() {
         <div className="footer-main">
           <div className="footer-brand footer-content-item">
             <div className="footer-logo-section">
-              <NavLink to="#" className="footer-logo">
+              <NavLink to="/" className="footer-logo">
                 <img
                   src="https://cdn.dribbble.com/userupload/49243456/file/6a33c9e10c12af9bd7e77302ab6f4c10.png"
                   alt="GRG Logo"
@@ -67,10 +72,11 @@ function Footer() {
                 <h5>Powered by eConceptual</h5>
               </div>
             </div>
-            <p>
-              Understand Pharmacology. Remember it. Apply it. Learn with Dr. GRG
-              Sir and build concepts that stay with you.
-            </p>
+            <div className="footer-contact-tabs" aria-label="Contact options">
+              <a className="footer-contact" href="tel:+918130036942">
+                <span>Contact Us</span>
+              </a>
+            </div>
             <div className="footer-social">
               <span>FOLLOW GRG SIR</span>
               <div className="footer-social-links">
@@ -103,7 +109,7 @@ function Footer() {
           </div>
           <div className="footer-links footer-content-item">
             <div className="footer-column">
-              <h3>Neet Pg</h3>
+              <h3>NEET PG</h3>
               <NavLink to="/course/neet-pg">Home</NavLink>
               <NavLink to="/about">About Dr. GRG</NavLink>
               <NavLink to="/course/neet-pg/plans">Plans</NavLink>
@@ -142,6 +148,13 @@ function Footer() {
             <span>Learn. Understand. Remember. Apply.</span>
           </div>
         </div>
+      </div>
+      <div
+        className="footer-whatsapp-floating"
+        role="img"
+        aria-label="WhatsApp"
+      >
+        <FaWhatsapp aria-hidden="true" />
       </div>
     </footer>
   );

@@ -9,12 +9,9 @@ function PgPlansHeader() {
     >
       <div className="pg-plans-header-content">
         <h1 className="pg-plans-header-heading">
-          Complete Pharmacology.
-          <span>learning, revision and practice</span>
+          The GRG Approach
+          <span>Learn. Understand. Practise. Revise. Recall.</span>
         </h1>
-        <p className="pg-plans-header-subtitle">
-          with Dr. GRG - built for NEET PG & INI-CET preparation.
-        </p>
       </div>
     </section>
   );

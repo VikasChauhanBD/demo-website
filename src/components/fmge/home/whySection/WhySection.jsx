@@ -1,7 +1,6 @@
 import React from "react";
 import { FiLayers, FiGitBranch, FiTarget } from "react-icons/fi";
 import "./WhySection.css";
-
 const reasons = [
   {
     number: "01",
@@ -25,7 +24,6 @@ const reasons = [
       "Identify high-yield concepts, repeated themes, common traps, newer drugs and the right material to revisit.",
   },
 ];
-
 function WhySection() {
   return (
     <section className="why-section" aria-labelledby="why-section-heading">
@@ -41,7 +39,6 @@ function WhySection() {
             becomes difficult when everything feels disconnected.
           </p> */}
         </div>
-
         <ol className="why-section-reasons">
           {reasons.map((reason) => (
             <li className="why-section-reason" key={reason.number}>
@@ -60,5 +57,4 @@ function WhySection() {
     </section>
   );
 }
-
 export default WhySection;

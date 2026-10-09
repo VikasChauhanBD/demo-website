@@ -1,11 +1,12 @@
 import React from "react";
 import AboutHero from "../components/about/AboutHero";
-import IntroSection from "../components/fmge/home/introSection/IntroSection.jsx";
+import IntroSection from "../components/neet-pg/home/introSection/IntroSection.jsx";
+import "./AboutPage.css";
 function AboutPage() {
   return (
-    <div>
+    <div className="about-page">
       <AboutHero />
-      <IntroSection />
+      <IntroSection showCta={false} showFullContent />
     </div>
   );
 }

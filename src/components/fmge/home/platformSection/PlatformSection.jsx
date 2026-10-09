@@ -10,7 +10,7 @@ const cards = [
     number: "01",
     title: "Understand the why",
     image:
-      "https://cdn.dribbble.com/userupload/49248039/file/b28b4e3b657177ede0c290883c5a47a9.png",
+      "https://cdn.dribbble.com/userupload/49267101/file/062e0e1034e53b5b87c3e30840f9e715.jpg",
     description:
       "When you understand why a drug produces an effect, many indications, adverse effects and contraindications become logical rather than isolated facts.",
   },
@@ -142,7 +142,7 @@ function PlatformSection() {
           ))}
         </div>
         <div className="fmge-platform-cta-wrap">
-          <NavLink to="#" className="fmge-platform-cta">
+          <NavLink to="/course/fmge/plans" className="fmge-platform-cta">
             Explore the Platform →
           </NavLink>
         </div>

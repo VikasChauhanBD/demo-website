@@ -9,12 +9,9 @@ function FmgePlansHeader() {
     >
       <div className="fmge-plans-header-content">
         <h1 className="fmge-plans-header-heading">
-          Complete Pharmacology.
-          <span>learning, revision and practice</span>
+          The GRG Approach
+          <span>Learn. Understand. Practise. Revise. Recall.</span>
         </h1>
-        <p className="fmge-plans-header-subtitle">
-          with Dr. GRG - built specifically for FMGE preparation.
-        </p>
       </div>
     </section>
   );

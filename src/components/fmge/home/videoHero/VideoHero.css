@@ -148,15 +148,7 @@
 .video-hero-sub-heading {
   font-size: 28px;
   text-transform: uppercase;
-  background: linear-gradient(
-    90deg,
-    #004d7a 0%,
-    #e1dace 15%,
-    #ff9b6b 30%,
-    #004d7a 45%,
-    #e1dace 75%,
-    #ff9b6b 100%
-  );
+  background: #ffffff;
   background-size: 300% 100%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -174,6 +166,14 @@
   100% {
     background-position: 0% 50%;
   }
+}
+.video-hero-powered-by {
+  margin: 8px 0 20px;
+  color: #ffffff;
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
 }
 .video-hero-para {
   font-size: 20px;

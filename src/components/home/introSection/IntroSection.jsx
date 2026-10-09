@@ -211,30 +211,10 @@ function IntroSection() {
             years of teaching within larger academic systems, Dr. GRG wanted to
             build a dedicated platform where Pharmacology itself remains at the
             centre and the learning experience could be shaped around how
-            students actually learn. THE PHILOSOPHY Make difficult things simple
-            - without oversimplifying. His approach begins with the concept,
-            then uses memory tools, clinical connections, questions and revision
-            to make that understanding easier to retain and apply. THE PURPOSE
-            Help students move from pharmacophobia to pharmacophilia. The goal
-            goes beyond marks: organise Pharmacology in the student’s mind so
-            they can reason through unfamiliar questions and revise efficiently.
-            <br />
-            “I would like the student to be able to say: ‘Pharmacology finally
-            makes sense to me.’” - Dr. Gobind Rai Garg
-            {/* <br />
-            Teach the concept first. Then make it easier to remember, revise and
-            apply. */}
-            {/* <span className="intro-tagline">Make difficult things simple.</span>
-            <span className="intro-chips">
-              <span className="intro-chip">Concepts</span>
-              <span className="intro-chip">Clinical Connections</span>
-              <span className="intro-chip">Mnemonics</span>
-              <span className="intro-chip">Questions</span>
-              <span className="intro-chip">Revision</span>
-            </span> */}
+            students actually learn.
           </p>
 
-          <NavLink to="#" className="intro-cta">
+          <NavLink to="/about" className="intro-cta">
             Read About Dr. GRG
           </NavLink>
         </div>

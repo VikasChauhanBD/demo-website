@@ -1,6 +1,9 @@
-import React, { useRef, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import "./PgPlansFeature.css";
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 const programData = [
   {
     title: "GRG MASTER CLASS",
@@ -34,122 +37,87 @@ const programData = [
   },
 ];
 function PgPlansFeature() {
-  const trackRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const goToSlide = (index) => {
-    const track = trackRef.current;
-    const slide = track.children[index];
-    track.scrollTo({
-      left: slide.offsetLeft - track.children[0].offsetLeft,
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "instant"
-        : "smooth",
-    });
-  };
-  const updateActiveSlide = () => {
-    const track = trackRef.current;
-    const firstOffset = track.children[0].offsetLeft;
-    let nearest = 0;
-    Array.from(track.children).forEach((slide, index) => {
-      const distance = Math.abs(
-        slide.offsetLeft - firstOffset - track.scrollLeft,
+  const container = useRef(null);
+  useGSAP(
+    () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const cards = gsap.utils.toArray(
+        ".pg-plans-feature-card",
+        container.current,
       );
-      const nearestDistance = Math.abs(
-        track.children[nearest].offsetLeft - firstOffset - track.scrollLeft,
+      const cardInners = gsap.utils.toArray(
+        ".pg-plans-feature-card-inner",
+        container.current,
       );
-      if (distance < nearestDistance) nearest = index;
-    });
-    setActiveIndex(nearest);
-  };
+      if (!cards.length) return;
+      cards.forEach((card, index) => {
+        card.style.setProperty("--card-index", index);
+        if (index === cards.length - 1) return;
+        const nextCard = cards[index + 1];
+        const cardInner = cardInners[index];
+        if (!nextCard || !cardInner) return;
+        const toScale = 1 - (cards.length - 1 - index) * 0.08;
+        ScrollTrigger.create({
+          trigger: nextCard,
+          start: "top 20px",
+          end: () => `bottom ${window.innerHeight - card.offsetHeight}px`,
+          scrub: true,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const scale = gsap.utils.interpolate(1, toScale, progress);
+            const brightness = gsap.utils.interpolate(1, 0.65, progress);
+            gsap.set(cardInner, {
+              scale,
+              filter: `brightness(${brightness})`,
+            });
+          },
+        });
+      });
+      gsap.from(".pg-plans-feature-header > *", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".pg-plans-feature-header",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+      ScrollTrigger.refresh();
+    },
+    {
+      scope: container,
+    },
+  );
   return (
     <section
-      className="pg-plans-feature-section"
+      className="pg-plans-feature-container"
+      ref={container}
       aria-labelledby="pg-feature-heading"
-      aria-roledescription="carousel"
     >
-      <h2 id="pg-feature-heading">WHAT YOU GET WITH PHARMA BY DR. GRG</h2>
-      <div className="pg-plans-feature-wrap">
-        <div
-          className="pg-plans-feature-track"
-          ref={trackRef}
-          onScroll={updateActiveSlide}
-          tabIndex={0}
-          aria-label="NEET PG features"
-          onKeyDown={(event) => {
-            if (event.target !== event.currentTarget) return;
-            if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
-              event.preventDefault();
-              goToSlide(
-                Math.max(
-                  0,
-                  Math.min(
-                    programData.length - 1,
-                    activeIndex + (event.key === "ArrowRight" ? 1 : -1),
-                  ),
-                ),
-              );
-            }
-          }}
-        >
-          {programData.map((item, index) => (
-            <div
-              key={item.title}
-              className="pg-plans-feature-card"
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${index + 1} of ${programData.length}: ${item.title}`}
-            >
-              <div className="pg-plans-feature-media">
+      <div className="pg-plans-feature-header">
+        <h2 className="pg-plans-feature-heading" id="pg-feature-heading">
+          WHAT YOU GET WITH PHARMA BY DR. GRG
+        </h2>
+      </div>
+      <div className="pg-plans-feature-cards">
+        {programData.map((item) => (
+          <article className="pg-plans-feature-card" key={item.title}>
+            <div className="pg-plans-feature-card-inner">
+              <div className="pg-plans-feature-card-image">
                 <img src={item.image} alt={item.title} />
               </div>
-              <div className="pg-plans-feature-content">
+              <div className="pg-plans-feature-card-content">
                 <h3>{item.title}</h3>
-                {item.para.split("</br>").map((text, i) => (
-                  <p key={i}>{text.trim()}</p>
+                {item.para.split("</br>").map((text, index) => (
+                  <p key={index}>{text.trim()}</p>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-        <div className="pg-plans-feature-controls">
-          <button
-            type="button"
-            className="pg-plans-feature-arrow"
-            aria-label="Previous feature"
-            disabled={activeIndex === 0}
-            onClick={() => goToSlide(activeIndex - 1)}
-          >
-            <FaChevronLeft />
-          </button>
-          <div className="pg-plans-feature-dots">
-            {programData.map((item, index) => (
-              <button
-                type="button"
-                key={item.title}
-                className="pg-plans-feature-dot"
-                aria-label={`Show ${item.title}`}
-                aria-current={activeIndex === index ? "true" : undefined}
-                onClick={() => goToSlide(index)}
-              />
-            ))}
-          </div>
-          <button
-            type="button"
-            className="pg-plans-feature-arrow"
-            aria-label="Next feature"
-            disabled={activeIndex === programData.length - 1}
-            onClick={() => goToSlide(activeIndex + 1)}
-          >
-            <FaChevronRight />
-          </button>
-        </div>
-        <p
-          className="pg-plans-feature-status"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          {activeIndex + 1} / {programData.length}
-        </p>
+          </article>
+        ))}
       </div>
     </section>
   );

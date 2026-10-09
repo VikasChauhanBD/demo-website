@@ -1,147 +1,293 @@
-.fmge-plans-feature-section {
-  padding: 100px 24px;
-  background: #ecf3f3;
+.fmge-plans-feature-container {
+  width: 100%;
+  background-image: linear-gradient(
+    135deg,
+    #004d7a 0%,
+    #222222 25%,
+    #004d7a 50%,
+    #ff9b6b 75%,
+    #004d7a 100%
+  );
+  background-size: 300% 300%;
+  animation: fmgePlansFeatureGradientShift 18s ease infinite;
+  padding: 150px 20px 100px;
 }
-.fmge-plans-feature-section h2 {
-  margin: 0 0 50px;
-  text-align: center;
-  font-size: 48px;
-  font-weight: 700;
-  color: #004d7a;
+@keyframes fmgePlansFeatureGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.fmge-plans-feature-wrap {
-  max-width: 1200px;
+.fmge-plans-feature-header {
+  width: 100%;
   margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
 }
-.fmge-plans-feature-track {
-  position: relative;
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  border-radius: 24px;
+.fmge-plans-feature-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #004d7a;
+  background-color: #ffffff;
+  border: 1px solid #e1dace;
+  border-radius: 50px;
 }
-.fmge-plans-feature-track::-webkit-scrollbar {
-  display: none;
+.fmge-plans-feature-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #ff9b6b;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.fmge-plans-feature-heading {
+  margin: 24px 0 0;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.fmge-plans-feature-sub-heading {
+  font-size: 28px;
+  font-weight: 600;
+}
+.fmge-plans-feature-para {
+  width: 100%;
+  max-width: 860px;
+  margin: 24px auto 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+}
+.fmge-plans-feature-cards {
+  width: 100%;
+  max-width: 1000px;
+  margin: 80px auto 0;
+  padding-bottom: 100px;
 }
 .fmge-plans-feature-card {
-  flex: 0 0 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 48px;
-  padding: 32px;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  background: #ffffff;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding-top: 20px;
 }
-.fmge-plans-feature-media {
+.fmge-plans-feature-card:nth-child(2) {
+  padding-top: 40px;
+}
+.fmge-plans-feature-card:nth-child(3) {
+  padding-top: 60px;
+}
+.fmge-plans-feature-card:nth-child(4) {
+  padding-top: 80px;
+}
+.fmge-plans-feature-card:nth-child(5) {
+  padding-top: 100px;
+}
+.fmge-plans-feature-card-inner {
+  width: 100%;
+  height: 350px;
+  display: flex;
   overflow: hidden;
-  border-radius: 20px;
   background: #ffffff;
+  border-radius: 20px;
+  transform-origin: center top;
+  will-change: transform, filter;
 }
-.fmge-plans-feature-media img {
+.fmge-plans-feature-card:nth-child(even) .fmge-plans-feature-card-inner {
+  flex-direction: row-reverse;
+}
+.fmge-plans-feature-card-image {
+  width: 40%;
+  flex-shrink: 0;
+  padding: 16px;
+  display: flex;
+}
+.fmge-plans-feature-card-image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
-.fmge-plans-feature-content h3 {
-  margin: 0 0 20px;
-  font-size: 34px;
-  font-weight: 700;
-  color: #222222;
-}
-.fmge-plans-feature-content p {
-  margin: 0 0 16px;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #222222;
-}
-.fmge-plans-feature-content p:last-child {
-  margin-bottom: 0;
-}
-.fmge-plans-feature-controls {
+.fmge-plans-feature-card-content {
+  flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  gap: 24px;
-  margin-top: 28px;
+  padding: 50px;
+  color: #171c28;
 }
-.fmge-plans-feature-arrow {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid #004d7a;
-  border-radius: 50%;
-  background: #004d7a;
-  color: #ffffff;
-  cursor: pointer;
+.fmge-plans-feature-card-label {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #145666;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
-.fmge-plans-feature-arrow:disabled {
-  opacity: 0.35;
-  cursor: default;
+.fmge-plans-feature-card-content h3 {
+  margin: 0;
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
 }
-.fmge-plans-feature-dots {
-  display: flex;
-  gap: 4px;
+.fmge-plans-feature-card-content p {
+  margin: 35px 0 0;
+  max-width: 600px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #222222;
 }
-.fmge-plans-feature-dot {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 32px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
+.fmge-plans-feature-card-content p strong {
+  font-weight: 700;
 }
-.fmge-plans-feature-dot::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #a9bdc9;
-}
-.fmge-plans-feature-dot[aria-current="true"]::before {
-  background: #ff9b6b;
-}
-.fmge-plans-feature-track:focus-visible,
-.fmge-plans-feature-controls button:focus-visible {
-  outline: 3px solid #004d7a;
-  outline-offset: 3px;
-}
-.fmge-plans-feature-status {
-  margin: 12px 0 0;
-  text-align: center;
-  color: #004d7a;
-  font-size: 14px;
-}
-@media (max-width: 900px) {
-  .fmge-plans-feature-section {
-    padding: 70px 20px;
+/* ---------------------------------- Responsive ------------------------- */
+@media (max-width: 1300px) {
+  .fmge-plans-feature-card-image {
+    width: 42%;
   }
-  .fmge-plans-feature-section h2 {
-    margin-bottom: 36px;
+  .fmge-plans-feature-card-content {
+    padding: 30px;
+  }
+  .fmge-plans-feature-card-label {
+    font-size: 15px;
+  }
+  .fmge-plans-feature-card-content h3 {
     font-size: 34px;
   }
-  .fmge-plans-feature-card {
-    grid-template-columns: 1fr;
-    align-content: start;
-    gap: 28px;
-    padding: 24px;
+  .fmge-plans-feature-card-content p {
+    font-size: 18px;
+    margin-top: 25px;
   }
-  .fmge-plans-feature-content h3 {
-    font-size: 26px;
+}
+@media (max-width: 900px) {
+  .fmge-plans-feature-container {
+    padding: 100px 20px 80px;
+  }
+  .fmge-plans-feature-heading {
+    font-size: 32px;
+  }
+  .fmge-plans-feature-sub-heading {
+    font-size: 24px;
+  }
+  .fmge-plans-feature-cards {
+    margin-top: 60px;
+  }
+  .fmge-plans-feature-card-inner {
+    min-height: 400px;
+  }
+  .fmge-plans-feature-card-image {
+    width: 40%;
+    padding: 12px;
+  }
+  .fmge-plans-feature-card-image img {
+    min-height: 376px;
+  }
+  .fmge-plans-feature-card-content {
+    padding: 25px;
+  }
+  .fmge-plans-feature-card-label {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+  .fmge-plans-feature-card-content h3 {
+    font-size: 28px;
+  }
+  .fmge-plans-feature-card-content p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 20px;
   }
 }
 @media (max-width: 500px) {
-  .fmge-plans-feature-card {
-    padding: 18px;
+  .fmge-plans-feature-container {
+    padding: 80px 15px 60px;
   }
-  .fmge-plans-feature-controls {
-    gap: 12px;
+  .fmge-plans-feature-cards {
+    width: 100%;
+    margin-top: 45px;
+    padding-bottom: 50px;
+  }
+  .fmge-plans-feature-card {
+    padding-top: 15px;
+  }
+  .fmge-plans-feature-card:nth-child(2) {
+    padding-top: 30px;
+  }
+  .fmge-plans-feature-card:nth-child(3) {
+    padding-top: 45px;
+  }
+  .fmge-plans-feature-card:nth-child(4) {
+    padding-top: 60px;
+  }
+  .fmge-plans-feature-card:nth-child(5) {
+    padding-top: 75px;
+  }
+  .fmge-plans-feature-card-inner,
+  .fmge-plans-feature-card:nth-child(even) .fmge-plans-feature-card-inner {
+    flex-direction: column;
+    height: 100%;
+  }
+  .fmge-plans-feature-card-image {
+    width: 100%;
+    padding: 10px;
+  }
+  .fmge-plans-feature-card-image img {
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+  }
+  .fmge-plans-feature-card-content {
+    padding: 25px 20px 30px;
+  }
+  .fmge-plans-feature-card-label {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .fmge-plans-feature-card-content h3 {
+    font-size: 26px;
+  }
+  .fmge-plans-feature-card-content p {
+    font-size: 16px;
+    margin-top: 18px;
+  }
+}
+/* Allow the existing, longer plans descriptions to fit without clipping. */
+.fmge-plans-feature-card-inner {
+  height: auto;
+  min-height: 350px;
+}
+.fmge-plans-feature-card-content p {
+  margin-top: 16px;
+  font-size: 18px;
+}
+.fmge-plans-feature-card-content p:first-of-type {
+  margin-top: 25px;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .fmge-plans-feature-card-content p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .fmge-plans-feature-card-content p:first-of-type {
+    margin-top: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fmge-plans-feature-container {
+    animation: none;
   }
 }

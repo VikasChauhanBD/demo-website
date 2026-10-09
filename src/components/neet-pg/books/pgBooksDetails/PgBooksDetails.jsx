@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 const books = [
   {
     image:
-      "https://cdn.dribbble.com/userupload/49226168/file/c9327c4303801445213c791efbbf342c.png",
+      "https://cdn.dribbble.com/userupload/49266181/file/b5265447702cd193a9a21141e8dcbb4a.png",
     stage: "01 · DETAILED LEARNING",
     title: "GRG MASTER CLASS",
     imageAlt: "GRG Master Class book cover",
@@ -30,7 +30,7 @@ const books = [
   },
   {
     image:
-      "https://cdn.dribbble.com/userupload/49226170/file/cf22b68dc5b14293840e0dff4add6667.png",
+      "https://cdn.dribbble.com/userupload/49266183/file/08e3e660570a3177bdc2991c4cae88b7.png",
     stage: "02 · REVISION",
     title: "POWER PACK REVISION",
     imageAlt: "Power Pack Revision book cover",
@@ -54,7 +54,7 @@ const books = [
   },
   {
     image:
-      "https://cdn.dribbble.com/userupload/49258399/file/42332cceee6a78ece61cf8d5a9fcb63d.png",
+      "https://cdn.dribbble.com/userupload/49266179/file/ab81098d0f33b80cd277696af7cd913d.png",
     stage: "03 · RAPID LEARNING",
     title: "GRG EXPRESS",
     imageAlt: "GRG Express book cover",

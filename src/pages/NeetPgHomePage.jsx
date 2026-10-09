@@ -19,7 +19,7 @@ function NeetPgHomePage() {
       <GrgWaySection />
       <WhatSection />
       <LearningPathSection />
-      <IntroSection />
+      <IntroSection showCta showFullContent={false} />
       <ExperienceTeaching />
       <BeforeYouJoin />
       <ThePromise />

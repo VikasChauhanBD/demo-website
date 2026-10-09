@@ -22,7 +22,7 @@ function PgBooksHeader() {
           <h2 className="pg-books-header-sub-heading">
             Built for NEET PG &amp; INI-CET preparation.
           </h2>
-          <p className="pg-books-header-description">
+          {/* <p className="pg-books-header-description">
             Learn Pharmacology with Dr. Gobind Rai Garg through concepts,
             clinical connections, memory tools, questions and structured
             revision - now brought together in books designed specifically for
@@ -32,7 +32,7 @@ function PgBooksHeader() {
             These books follow the corresponding video-learning pathways, giving
             you a structured resource to read, understand, annotate, revisit and
             revise throughout your preparation.
-          </p>
+          </p> */}
           <button
             type="button"
             className="pg-books-header-btn pg-books-header-hero-cta"

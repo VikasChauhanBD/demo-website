@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 const books = [
   {
     image:
-      "https://cdn.dribbble.com/userupload/49226167/file/0468ba410e834a8f27b8aa6b462fd1e8.png",
+      "https://cdn.dribbble.com/userupload/49266182/file/b4c5d70d39050cb981dbc737a8fb9b30.png",
     stage: "01 · DETAILED LEARNING",
     title: "GRG MASTER CLASS",
     imageAlt: "GRG Master Class book cover",
@@ -24,55 +24,51 @@ const books = [
     ],
     bestForLabel: "Best for:",
     bestFor:
-      "FMGE aspirants looking to build their Pharmacology understanding systematically.",
+      "FMGE aspirants who want to understand Pharmacology, not just memorise it.",
     tagline: "Understand first. Remember better.",
     cta: "Explore GRG Master Class",
   },
   {
     image:
-      "https://cdn.dribbble.com/userupload/49226166/file/5a50a38265beca03b2f69390780afa5c.png",
+      "https://cdn.dribbble.com/userupload/49266180/file/92f5008fe1b91cb59ce873a4742d1337.png",
     stage: "02 · REVISION",
     title: "POWER PACK REVISION",
     imageAlt: "Power Pack Revision book cover",
     subHeading: "Quick & Conceptual",
-    lead: "Once you've learnt Pharmacology, revision becomes about bringing the important concepts back quickly and clearly.",
-    description:
-      "Power Pack Revision is designed to work alongside the FMGE revision pathway, helping you reinforce what you've already studied without repeatedly going back through the entire learning process.",
+    lead: "A focused revision resource to reinforce key Pharmacology concepts without going through the entire learning process again.",
+    description: "Revise smarter. Remember faster.",
     listLabel: "Designed to help you:",
     points: [
-      "Revise Pharmacology efficiently",
-      "Reinforce important concepts",
-      "Refresh previously studied content",
-      "Keep revision focused",
-      "Build confidence as the examination approaches",
+      "Revise efficiently",
+      "Reinforce key concepts",
+      "Keep your revision focused",
     ],
     bestForLabel: "Best for:",
     bestFor:
       "FMGE aspirants who have already studied Pharmacology and need focused revision.",
-    tagline: "Less time searching. More time revising.",
+    tagline: "Revise. Reinforce. Recall.",
     cta: "Explore Power Pack Revision",
   },
   {
     image:
-      "https://cdn.dribbble.com/userupload/49258399/file/42332cceee6a78ece61cf8d5a9fcb63d.png",
+      "https://cdn.dribbble.com/userupload/49266179/file/ab81098d0f33b80cd277696af7cd913d.png",
     stage: "03 · RAPID LEARNING",
     title: "GRG EXPRESS",
     imageAlt: "GRG Express book cover",
     subHeading: "Pharmacology, When Time Is Short.",
-    lead: "When the examination is approaching, you need a way to use your remaining preparation time wisely.",
-    description:
-      "GRG Express is the common rapid-learning book across GRG's Pharmacology pathways, providing a focused, time-efficient resource when preparation time is limited.",
+    lead: "Fast, focused revision for when preparation time is limited.",
+    // description:
+    //   "GRG Express is the common rapid-learning book across GRG's Pharmacology pathways, providing a focused, time-efficient resource when preparation time is limited.",
     listLabel: "Designed to help you:",
     points: [
-      "Make the most of limited preparation time",
       "Focus on essential Pharmacology",
-      "Quickly revisit important concepts",
-      "Bring structure to last-mile preparation",
+      "Revise key concepts quickly",
+      "Make the most of limited time",
     ],
     bestForLabel: "Best for:",
     bestFor:
-      "NEET PG, INI-CET and FMGE aspirants who need a focused, time-efficient approach.",
-    tagline: "One GRG Express. One focused Pharmacology revision experience.",
+      "NEET PG, INI-CET & FMGE aspirants needing focused, last-mile revision.",
+    tagline: "Revise Fast. Remember More.",
     cta: "Explore GRG Express",
   },
 ];

@@ -278,7 +278,7 @@ function PgPlansShowcase() {
       <span className="pg-showcase-blob pg-showcase-blob--three"></span>
       <span className="pg-showcase-blob pg-showcase-blob--four"></span>
       <div className="pg-showcase-container">
-        <div className="pg-showcase-block">
+        {/* <div className="pg-showcase-block">
           <div className="pg-showcase-exp-header pg-showcase-center">
             <span className="pg-showcase-eyebrow">EXPERIENCE THE GRG WAY</span>
             <h2 className="pg-showcase-title">
@@ -314,7 +314,7 @@ function PgPlansShowcase() {
           <p className="pg-showcase-exp-closing pg-showcase-closing">
             Watch. Experience. Choose the way you want to learn Pharmacology.
           </p>
-        </div>
+        </div> */}
         <div className="pg-showcase-block">
           <div className="pg-showcase-live-grid">
             <div className="pg-showcase-live-text">
@@ -357,10 +357,14 @@ function PgPlansShowcase() {
         <div className="pg-showcase-block">
           <div className="pg-showcase-price-header pg-showcase-center">
             <span className="pg-showcase-eyebrow">PLANS &amp; PRICING</span>
-            <br />
             <p className="pg-showcase-offer">
-              Pre-booking starts on 11th October 2026 from 12pm (afternoon)
-              valid till 21st October 11:59pm
+              <span>
+                Pre-booking starts on 11th October 2026 from 12pm (afternoon)
+                valid till 21st October 11:59pm.
+              </span>
+            </p>
+            <p className="pg-showcase-price-note">
+              These Prices will never come back again.
             </p>
           </div>
           <div className="pg-showcase-price-grid">
