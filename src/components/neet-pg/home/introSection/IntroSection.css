@@ -121,4 +121,7 @@
   .pg-intro-section {
     padding-inline: 16px;
   }
+  .pg-intro-cta {
+    font-size: 13px;
+  }
 }

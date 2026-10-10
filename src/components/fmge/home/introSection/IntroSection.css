@@ -126,4 +126,7 @@
   .fmge-intro-section {
     padding-inline: 16px;
   }
+  .fmge-intro-cta {
+    font-size: 13px;
+  }
 }
