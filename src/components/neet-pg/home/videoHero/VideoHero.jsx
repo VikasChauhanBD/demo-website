@@ -12,6 +12,14 @@ const VideoHero = () => {
     setIsLoading(false);
   };
 
+  const handleSampleClassClick = (e) => {
+    e.preventDefault();
+    const target = document.getElementById("experience-teaching");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   useGSAP(
     () => {
       const section = container.current;
@@ -221,7 +229,11 @@ const VideoHero = () => {
           </p>
 
           <div className="video-hero-cta-div">
-            <NavLink to="#" className="video-hero-cta">
+            <NavLink
+              to="#"
+              className="video-hero-cta"
+              onClick={handleSampleClassClick}
+            >
               Watch a Sample Class
             </NavLink>
 

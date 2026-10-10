@@ -21,6 +21,7 @@ const videoCards = [
 export default function ExperienceTeaching() {
   return (
     <section
+      id="experience-teaching"
       className="experience-section experience-section-three-cards"
       aria-labelledby="experience-heading"
     >

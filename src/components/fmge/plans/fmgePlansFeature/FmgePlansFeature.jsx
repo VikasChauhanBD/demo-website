@@ -7,24 +7,29 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const programData = [
   {
-    title: "GRG MASTER CLASS",
-    para: "Where Concepts Become Confidence. </br> Detailed, concept-based learning with Dr. GRG — helping you understand the why behind Pharmacology rather than simply memorising facts. </br> Learn • Understand • Connect • Apply",
+    label: "01 · DETAILED LEARNING",
+    title: "GRG Master Class",
+    para: "Where Concepts Become Confidence.",
   },
   {
-    title: "POWER PACK REVISION",
-    para: "Quick & Conceptual </br> A focused revision pathway to help you revisit important concepts, reinforce recall and keep your preparation exam-oriented. </br> Revise • Reinforce • Recall",
+    label: "02 · REVISION",
+    title: "Power Pack Revision",
+    para: "Quick & Conceptual",
   },
   {
-    title: "GRG EXPRESS",
-    para: "Pharmacology, When Time Is Short. </br> A rapid-learning pathway designed to help you cover and revisit essential Pharmacology efficiently. </br> Focus • Revise • Remember",
+    label: "03 · RAPID LEARNING",
+    title: "GRG Express",
+    para: "Pharmacology, When Time Is Short.",
   },
   {
-    title: "QUESTIONS & PRACTICE",
-    para: "Turn understanding into exam readiness. </br> Practise what you learn and use questions to identify gaps, reinforce concepts and improve your exam approach. </br> Practise • Identify • Improve",
+    label: "04 · PRACTICE",
+    title: "Master Class Q.Bank",
+    para: "Questions That Make You Think.",
   },
   {
-    title: "REVISION & RECALL",
-    para: "Keep Pharmacology active throughout your preparation. </br> Move between detailed learning, revision and rapid recall depending on where you are in your preparation. </br> Learn → Revise → Recall",
+    label: "05 · ASSESSMENT",
+    title: "GOGA Test Approach",
+    para: "Attempt. Analyse. Improve.",
   },
 ];
 
@@ -176,6 +181,7 @@ function FmgePlansFeature() {
               <article className="fmge-plans-feature-card" key={item.title}>
                 <div className="fmge-plans-feature-card-inner">
                   <div className="fmge-plans-feature-card-content">
+                    <span>{item.label}</span>
                     <h3>{item.title}</h3>
                     {item.para.split("</br>").map((text, index) => (
                       <p key={index}>{text.trim()}</p>
