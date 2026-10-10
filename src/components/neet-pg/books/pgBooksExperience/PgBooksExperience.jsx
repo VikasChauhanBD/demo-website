@@ -396,11 +396,6 @@ function PgBooksExperience() {
           ".pg-books-experience-plus",
           { opacity: 0, rotation: -90, duration: 0.4, stagger: 0.1 },
           "-=0.8",
-        )
-        .from(
-          ".pg-books-experience-cta",
-          { y: 20, opacity: 0, duration: 0.6 },
-          "-=0.2",
         );
       gsap.to(".pg-books-experience-band-orb-1", {
         y: 20,
@@ -418,17 +413,6 @@ function PgBooksExperience() {
         yoyo: true,
         ease: "sine.inOut",
       });
-      // CTA hover
-      const cta = rootRef.current.querySelector(".pg-books-experience-cta");
-      const arrow = cta.querySelector(".pg-books-experience-arrow");
-      const ctaHover = gsap.to(arrow, {
-        x: 6,
-        duration: 0.25,
-        ease: "power2.out",
-        paused: true,
-      });
-      cta.addEventListener("mouseenter", () => ctaHover.play());
-      cta.addEventListener("mouseleave", () => ctaHover.reverse());
     }, rootRef);
     return () => {
       mm.revert();
@@ -524,10 +508,6 @@ function PgBooksExperience() {
               </span>
             ))}
           </div>
-          <button type="button" className="pg-books-experience-cta">
-            <span>Explore NEET PG &amp; INI-CET Books</span>
-            <span className="pg-books-experience-arrow">→</span>
-          </button>
         </div>
       </div>
     </section>

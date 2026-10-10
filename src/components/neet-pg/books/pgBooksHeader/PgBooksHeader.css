@@ -121,3 +121,22 @@
     font-size: 12px;
   }
 }
+.pg-books-header-coming-soon {
+  color: #d32f2f;
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+.pg-books-header-art .pg-books-header-coming-soon {
+  margin: 0 0 16px;
+  position: relative;
+  z-index: 1;
+  transform: translateY(clamp(55px, 9vw, 150px));
+  text-align: center;
+  width: 100%;
+}
+.pg-books-header-art {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

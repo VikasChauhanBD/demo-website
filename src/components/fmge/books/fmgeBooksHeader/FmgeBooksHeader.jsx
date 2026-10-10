@@ -32,6 +32,7 @@ function FmgeBooksHeader() {
             The books are developed alongside the dedicated FMGE video lectures,
             creating a connected learning and revision experience.
           </p> */}
+           
           <button
             type="button"
             className="fmge-books-header-btn fmge-books-header-hero-cta"
@@ -42,6 +43,7 @@ function FmgeBooksHeader() {
           </button>
         </div>
         <div className="fmge-books-header-art">
+          <p className="fmge-books-header-coming-soon">Coming Soon</p>
           <img
             src={booksHeader}
             width="900"
