@@ -396,8 +396,8 @@
   }
   .pg-books-experience-step-circle {
     flex-shrink: 0;
-    width: 72px;
-    height: 72px;
+    width: 62px;
+    height: 62px;
   }
   .pg-books-experience-step-icon {
     width: 30px;
@@ -422,6 +422,9 @@
   }
 }
 @media (max-width: 500px) {
+  .pg-books-experience-eyebrow {
+    font-size: 12px;
+  }
   .pg-books-experience {
     padding: 64px 16px 72px;
   }
@@ -451,5 +454,6 @@
   .pg-books-experience-cta {
     width: 100%;
     justify-content: center;
+    font-size: 14px;
   }
 }

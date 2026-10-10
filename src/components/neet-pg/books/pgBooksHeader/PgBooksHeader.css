@@ -117,4 +117,7 @@
   .pg-books-header-heading {
     font-size: clamp(32px, 9vw, 40px);
   }
+  .pg-books-header-eyebrow {
+    font-size: 12px;
+  }
 }

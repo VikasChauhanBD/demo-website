@@ -444,8 +444,8 @@
   }
   .fmge-books-experience-step-circle {
     flex-shrink: 0;
-    width: 72px;
-    height: 72px;
+    width: 62px;
+    height: 62px;
   }
   .fmge-books-experience-step-icon {
     width: 30px;
@@ -480,6 +480,9 @@
   }
 }
 @media (max-width: 500px) {
+  .fmge-books-experience-eyebrow {
+    font-size: 12px;
+  }
   .fmge-books-experience {
     padding: 64px 16px 72px;
   }
@@ -531,6 +534,7 @@
   .fmge-books-experience-footer-btn {
     width: 100%;
     max-width: 280px;
+    font-size: 14px;
   }
   .fmge-books-experience-band-orb-1 {
     width: 180px;
