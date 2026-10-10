@@ -1,12 +1,14 @@
 import React from "react";
-import AboutHero from "../components/about/AboutHero";
-import IntroSection from "../components/neet-pg/home/introSection/IntroSection.jsx";
-import "./AboutPage.css";
+import AboutHero from "../components/about/aboutHero/AboutHero";
+import ThePerson from "../components/about/thePerson/ThePerson";
+import AboutTimeline from "../components/about/aboutTimeline/AboutTimeline";
+
 function AboutPage() {
   return (
-    <div className="about-page">
+    <div>
       <AboutHero />
-      <IntroSection showCta={false} showFullContent />
+      <ThePerson />
+      <AboutTimeline />
     </div>
   );
 }

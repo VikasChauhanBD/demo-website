@@ -1,0 +1,71 @@
+.the-person-section {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 40px 20px;
+  background: #ffffff;
+}
+
+.the-person-layout {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.the-person-content {
+  width: 48%;
+  min-width: 0;
+  text-align: left;
+}
+
+.the-person-heading {
+  margin: 24px 0 20px;
+  color: #004d7a;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.the-person-para {
+  margin: 0;
+  color: #222222;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.the-person-image {
+  width: 48%;
+  margin-top: 48px;
+  overflow: hidden;
+}
+
+.the-person-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+@media (max-width: 900px) {
+  .the-person-layout {
+    flex-direction: column;
+  }
+
+  .the-person-content,
+  .the-person-image {
+    width: 100%;
+  }
+
+  .the-person-heading {
+    font-size: 32px;
+  }
+
+  .the-person-para {
+    font-size: 16px;
+  }
+}
