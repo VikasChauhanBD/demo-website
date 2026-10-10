@@ -130,7 +130,6 @@
     font-size: 13px;
   }
 }
-
 /* Home intro photograph with an overlaid white content card. */
 .fmge-intro-section {
   min-height: 760px;
@@ -151,7 +150,6 @@
   text-align: left;
 }
 .fmge-intro-heading {
-  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(28px, 2.6vw, 40px);
   font-weight: 400;
 }
@@ -170,7 +168,6 @@
     padding: 28px 24px;
   }
 }
-
 @media (max-width: 960px) {
   .fmge-intro-content {
     margin-inline: auto;

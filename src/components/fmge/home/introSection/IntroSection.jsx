@@ -39,7 +39,7 @@ function IntroSection({ showCta = true, showFullContent = false }) {
           </p>
           {showCta && (
             <NavLink to="/about" className="fmge-intro-cta">
-              Read About Dr. GRG
+              About Dr. GRG
             </NavLink>
           )}
         </div>

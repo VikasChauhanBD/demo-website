@@ -125,14 +125,14 @@
     font-size: 13px;
   }
 }
-
 /* Home intro photograph with an overlaid white content card. */
 .pg-intro-section {
   min-height: 760px;
   padding: 88px clamp(24px, 8vw, 150px);
   display: flex;
   align-items: center;
-  background: url("https://cdn.dribbble.com/userupload/49267101/file/062e0e1034e53b5b87c3e30840f9e715.jpg") center / cover no-repeat;
+  background: url("https://cdn.dribbble.com/userupload/49267101/file/062e0e1034e53b5b87c3e30840f9e715.jpg")
+    center / cover no-repeat;
 }
 .pg-intro-section .pg-intro-layout {
   display: block;
@@ -146,7 +146,6 @@
   text-align: left;
 }
 .pg-intro-heading {
-  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(28px, 2.6vw, 40px);
   font-weight: 400;
 }
@@ -165,7 +164,6 @@
     padding: 28px 24px;
   }
 }
-
 @media (max-width: 960px) {
   .pg-intro-content {
     margin-inline: auto;
