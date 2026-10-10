@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 
 import Navbar from "./components/comman/navbar/Navbar";
 import Footer from "./components/comman/footer/Footer";
 import ScrollToTop from "./hooks/ScrollToTop";
+import IntroVideo from "./components/comman/introVideo/IntroVideo";
 
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -43,10 +50,78 @@ const getDefaultCourse = () => {
   return "/course/neet-pg";
 };
 
+// Renders IntroVideo only on the home pages ("/" redirects to one of the course home paths)
+function ConditionalIntroVideo({ show, onEnd }) {
+  const location = useLocation();
+  const isHomePath =
+    location.pathname === "/" ||
+    location.pathname === "/course/neet-pg" ||
+    location.pathname === "/course/fmge";
+  return show && isHomePath ? <IntroVideo onEnd={onEnd} /> : null;
+}
+
 function App() {
+  const [showIntro, setShowIntro] = useState(false);
+  const [introComplete, setIntroComplete] = useState(false);
+
+  useEffect(() => {
+    const CHANNEL_NAME = "coreBTR";
+    let channel;
+
+    try {
+      channel = new BroadcastChannel(CHANNEL_NAME);
+      let otherTabExists = false;
+
+      const handleMessage = (event) => {
+        if (event.data.type === "tab_exists") {
+          otherTabExists = true;
+        } else if (event.data.type === "checking") {
+          channel.postMessage({ type: "tab_exists" });
+        }
+      };
+
+      channel.addEventListener("message", handleMessage);
+      channel.postMessage({ type: "checking" });
+
+      const timeoutId = setTimeout(() => {
+        if (!otherTabExists) {
+          const hasSeenVideo = sessionStorage.getItem("hasSeenIntro");
+          if (!hasSeenVideo) {
+            setShowIntro(true);
+          } else {
+            setIntroComplete(true);
+          }
+        } else {
+          setIntroComplete(true);
+        }
+      }, 100);
+
+      return () => {
+        clearTimeout(timeoutId);
+        if (channel) {
+          channel.removeEventListener("message", handleMessage);
+          channel.close();
+        }
+      };
+    } catch (error) {
+      const hasSeenVideo = sessionStorage.getItem("hasSeenIntro");
+      if (!hasSeenVideo) {
+        setShowIntro(true);
+      }
+    }
+  }, []);
+
+  const handleVideoEnd = () => {
+    sessionStorage.setItem("hasSeenIntro", "true");
+    setShowIntro(false);
+    setTimeout(() => setIntroComplete(true), 1000);
+  };
+
   return (
     <>
       <BrowserRouter>
+        {/* IntroVideo is now inside BrowserRouter so it can read the current route */}
+        <ConditionalIntroVideo show={showIntro} onEnd={handleVideoEnd} />
         <Navbar />
         <ScrollToTop />
         <Routes>

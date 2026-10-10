@@ -5,7 +5,7 @@ function IntroSection({ showCta = true, showFullContent = false }) {
     <section className="pg-intro-section" aria-label="About Dr. GRG">
       <div className="pg-intro-layout">
         <div className="pg-intro-content">
-          <span className="pg-intro-tag">ABOUT GRG</span>
+          <span className="pg-intro-tag">ABOUT DR. GRG</span>
           <h2 className="pg-intro-heading">
             The Teacher Behind Pharmacology by Dr. GRG
           </h2>

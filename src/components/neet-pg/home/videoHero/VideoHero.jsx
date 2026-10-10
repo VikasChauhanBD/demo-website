@@ -3,16 +3,20 @@ import "./VideoHero.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { NavLink } from "react-router-dom";
+
 const VideoHero = () => {
   const [isLoading, setIsLoading] = useState(true);
   const container = useRef(null);
+
   const handleVideoLoad = () => {
     setIsLoading(false);
   };
+
   useGSAP(
     () => {
       const section = container.current;
       const heroTimeline = gsap.timeline();
+
       heroTimeline.fromTo(
         ".video-hero-background-video",
         {
@@ -26,6 +30,7 @@ const VideoHero = () => {
           ease: "power3.out",
         },
       );
+
       heroTimeline.fromTo(
         ".video-hero-overlay",
         {
@@ -38,6 +43,7 @@ const VideoHero = () => {
         },
         "-=1",
       );
+
       heroTimeline.fromTo(
         ".video-hero-sub-heading",
         {
@@ -52,6 +58,24 @@ const VideoHero = () => {
         },
         "-=0.5",
       );
+
+      heroTimeline.fromTo(
+        ".video-hero-powered-by",
+        {
+          y: 20,
+          opacity: 0,
+          scale: 0.95,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.3",
+      );
+
       heroTimeline.fromTo(
         ".video-hero-text h1",
         {
@@ -68,6 +92,7 @@ const VideoHero = () => {
         },
         "-=0.4",
       );
+
       heroTimeline.fromTo(
         ".video-hero-para",
         {
@@ -82,6 +107,7 @@ const VideoHero = () => {
         },
         "-=0.7",
       );
+
       heroTimeline.fromTo(
         ".video-hero-cta",
         {
@@ -99,29 +125,38 @@ const VideoHero = () => {
         },
         "-=0.4",
       );
+
       const horizontalLine = section.querySelector(
         ".video-hero-cursor-horizontal-line",
       );
+
       const verticalLine = section.querySelector(
         ".video-hero-cursor-vertical-line",
       );
+
       if (!horizontalLine || !verticalLine) return;
+
       const moveX = gsap.quickTo(verticalLine, "left", {
         duration: 0.35,
         ease: "power3.out",
       });
+
       const moveY = gsap.quickTo(horizontalLine, "top", {
         duration: 0.35,
         ease: "power3.out",
       });
+
       const handleMouseMove = (e) => {
         const rect = section.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
+
         moveX(x);
         moveY(y);
       };
+
       section.addEventListener("mousemove", handleMouseMove);
+
       return () => {
         section.removeEventListener("mousemove", handleMouseMove);
       };
@@ -130,6 +165,7 @@ const VideoHero = () => {
       scope: container,
     },
   );
+
   return (
     <section className="video-hero-header" ref={container}>
       <div className="video-hero-video-wrapper">
@@ -139,6 +175,7 @@ const VideoHero = () => {
             <p className="video-hero-loading-text">Loading...</p>
           </div>
         )}
+
         <video
           className="video-hero-background-video"
           autoPlay
@@ -154,20 +191,27 @@ const VideoHero = () => {
           />
         </video>
       </div>
+
       <div className="video-hero-overlay"></div>
+
       {/* Cursor Following Lines */}
       <div className="video-hero-cursor-horizontal-line"></div>
       <div className="video-hero-cursor-vertical-line"></div>
+
       <div className="video-hero-content">
         <div className="video-hero-text">
           <h1 className="video-hero-title">NEET PG | INI CET</h1>
+
           <h2 className="video-hero-sub-heading">
             Pharmacology By Dr. Gobind Rai Garg
           </h2>
+
           <p className="video-hero-powered-by">Powered by eConceptual</p>
+
           <h1 className="video-hero-heading">
             From Pharmacophobia To Pharmacophilia
           </h1>
+
           <p className="video-hero-para">
             <b>Understand</b> the concept. <b>Remember</b> what matters.{" "}
             <b>Apply</b> it when it counts.
@@ -175,10 +219,12 @@ const VideoHero = () => {
             <br />A complete Pharmacology learning and revision ecosystem for
             <b> NEET PG | INI CET</b>
           </p>
+
           <div className="video-hero-cta-div">
             <NavLink to="#" className="video-hero-cta">
               Watch a Sample Class
             </NavLink>
+
             <NavLink to="/course/neet-pg/plans" className="video-hero-cta">
               View Plans
             </NavLink>
@@ -188,4 +234,5 @@ const VideoHero = () => {
     </section>
   );
 };
+
 export default VideoHero;

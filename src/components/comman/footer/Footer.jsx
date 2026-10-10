@@ -148,13 +148,16 @@ function Footer() {
           <div className="footer-bottom-right"></div>
         </div>
       </div>
-      <div
+
+      <a
+        href="https://wa.me/918130036944"
         className="footer-whatsapp-floating"
-        role="img"
-        aria-label="WhatsApp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
       >
         <FaWhatsapp aria-hidden="true" />
-      </div>
+      </a>
     </footer>
   );
 }

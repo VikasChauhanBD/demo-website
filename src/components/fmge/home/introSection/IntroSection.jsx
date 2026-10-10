@@ -5,7 +5,7 @@ function IntroSection({ showCta = true, showFullContent = false }) {
     <section className="fmge-intro-section" aria-label="About Dr. GRG">
       <div className="fmge-intro-layout">
         <div className="fmge-intro-content">
-          <span className="fmge-intro-tag">ABOUT GRG</span>
+          <span className="fmge-intro-tag">ABOUT DR. GRG</span>
           <h2 className="fmge-intro-heading">
             The Teacher Behind Pharmacology by Dr. GRG
           </h2>
