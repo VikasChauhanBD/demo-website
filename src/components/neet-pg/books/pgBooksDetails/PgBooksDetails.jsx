@@ -241,10 +241,10 @@ function PgBooksDetails() {
                     <strong>{book.bestForLabel}</strong> {book.bestFor}
                   </p>
                   <p className="pg-books-details-tagline">{book.tagline}</p>
-                  <button type="button" className="pg-books-details-btn">
+                  {/* <button type="button" className="pg-books-details-btn">
                     <span>{book.cta}</span>
                     <span className="pg-books-details-arrow">→</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

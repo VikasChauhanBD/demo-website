@@ -366,7 +366,7 @@ function FmgePlansShowcase() {
               </span>
             </p>
             <p className="fmge-showcase-price-note">
-              These prices will never come back again.
+              These exclusive pre-booking prices won’t be available again.
             </p>
           </div>
           <div className="fmge-showcase-price-grid">
@@ -415,9 +415,9 @@ function FmgePlansShowcase() {
             <p className="fmge-showcase-closing">
               Your Pharmacology preparation. One connected system.
             </p>
-            <button type="button" className="fmge-showcase-cta">
+            {/* <button type="button" className="fmge-showcase-cta">
               CHOOSE YOUR PLAN
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

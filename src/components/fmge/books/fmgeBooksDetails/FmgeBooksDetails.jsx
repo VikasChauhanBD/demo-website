@@ -240,10 +240,10 @@ function FmgeBooksDetails() {
                     <strong>{book.bestForLabel}</strong> {book.bestFor}
                   </p>
                   <p className="fmge-books-details-tagline">{book.tagline}</p>
-                  <button type="button" className="fmge-books-details-btn">
+                  {/* <button type="button" className="fmge-books-details-btn">
                     <span>{book.cta}</span>
                     <span className="fmge-books-details-arrow">→</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

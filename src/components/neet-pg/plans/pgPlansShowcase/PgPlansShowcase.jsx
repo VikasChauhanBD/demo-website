@@ -364,7 +364,7 @@ function PgPlansShowcase() {
               </span>
             </p>
             <p className="pg-showcase-price-note">
-              These prices will never come back again.
+              These exclusive pre-booking prices won’t be available again
             </p>
           </div>
           <div className="pg-showcase-price-grid">
@@ -411,9 +411,9 @@ function PgPlansShowcase() {
             <p className="pg-showcase-closing">
               Your Pharmacology preparation. One connected system.
             </p>
-            <button type="button" className="pg-showcase-cta">
+            {/* <button type="button" className="pg-showcase-cta">
               CHOOSE YOUR PLAN
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

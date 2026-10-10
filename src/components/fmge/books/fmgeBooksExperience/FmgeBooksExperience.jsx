@@ -596,10 +596,10 @@ function FmgeBooksExperience() {
             <p className="fmge-books-experience-footer-text">
               Learn it. Understand it. Revise it.
             </p>
-            <button type="button" className="fmge-books-experience-footer-btn">
+            {/* <button type="button" className="fmge-books-experience-footer-btn">
               <span>Explore FMGE Books</span>
               <span className="fmge-books-experience-footer-arrow">→</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
