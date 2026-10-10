@@ -7,10 +7,10 @@ function DevicePolicy() {
       <p>
         Effective date: 09-Oct-2026 | Version: 2
         <p>
-          Pharmacology by Dr. GRG is a product of Conceptual Physiotherapy
-          Private Limited (CIN: U85499DL2020PTC365706) and Gobind Rai Garg
-          (together, “we”, “us”, or “our”). This Policy forms part of our Terms
-          and Conditions of Use.
+          Pharmacology by Dr. GRG, Powered by eConceptual is a product of
+          Conceptual Physiotherapy Private Limited (CIN: U85499DL2020PTC365706)
+          and Gobind Rai Garg (together, “we”, “us”, or “our”). This Policy
+          forms part of our Terms and Conditions of Use.
         </p>
       </p>
       <h2>Summary</h2>

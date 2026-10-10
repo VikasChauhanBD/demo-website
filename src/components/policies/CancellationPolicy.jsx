@@ -6,11 +6,11 @@ function CancellationPolicy() {
       <h1>Cancellation &amp; Refund Policy – Pharmacology by Dr. GRG</h1>
       <p>Effective date: 09-Oct-2026 | Version: 2</p>
       <p>
-        At Pharmacology by Dr. GRG, a product of Conceptual Physiotherapy
-        Private Limited (CIN: U85499DL2020PTC365706) and Gobind Rai Garg, we
-        strive to offer the best experience to our users. This Policy sets out
-        how cancellations, rescheduling and refunds (where applicable) are
-        handled.
+        At Pharmacology by Dr. GRG, Powered by eConceptual a product of
+        Conceptual Physiotherapy Private Limited (CIN: U85499DL2020PTC365706)
+        and Gobind Rai Garg, we strive to offer the best experience to our
+        users. This Policy sets out how cancellations, rescheduling and refunds
+        (where applicable) are handled.
       </p>
       <h2>1. Cancellations</h2>
       <ul>
