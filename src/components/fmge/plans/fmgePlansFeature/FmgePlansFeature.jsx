@@ -153,64 +153,73 @@ function FmgePlansFeature() {
   );
 
   return (
-    <section
-      className="fmge-plans-feature-container"
-      ref={container}
-      aria-labelledby="pg-feature-heading"
-    >
-      <div className="fmge-plans-feature-header">
-        <h2 className="fmge-plans-feature-heading" id="pg-feature-heading">
-          WHAT YOU GET WITH PHARMA BY DR. GRG
-        </h2>
-      </div>
-      <div className="fmge-plans-feature-carousel">
-        <div
-          className="fmge-plans-feature-cards"
-          ref={trackRef}
-          tabIndex={0}
-          aria-label="Pharmacology plans carousel"
-        >
-          {programData.map((item) => (
-            <article className="fmge-plans-feature-card" key={item.title}>
-              <div className="fmge-plans-feature-card-inner">
-                <div className="fmge-plans-feature-card-content">
-                  <h3>{item.title}</h3>
-                  {item.para.split("</br>").map((text, index) => (
-                    <p key={index}>{text.trim()}</p>
-                  ))}
+    <>
+      {" "}
+      <section
+        className="fmge-plans-feature-container"
+        ref={container}
+        aria-labelledby="pg-feature-heading"
+      >
+        <div className="fmge-plans-feature-header">
+          <h2 className="fmge-plans-feature-heading" id="pg-feature-heading">
+            WHAT YOU GET WITH PHARMA BY DR. GRG
+          </h2>
+        </div>
+        <div className="fmge-plans-feature-carousel">
+          <div
+            className="fmge-plans-feature-cards"
+            ref={trackRef}
+            tabIndex={0}
+            aria-label="Pharmacology plans carousel"
+          >
+            {programData.map((item) => (
+              <article className="fmge-plans-feature-card" key={item.title}>
+                <div className="fmge-plans-feature-card-inner">
+                  <div className="fmge-plans-feature-card-content">
+                    <h3>{item.title}</h3>
+                    {item.para.split("</br>").map((text, index) => (
+                      <p key={index}>{text.trim()}</p>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
+          <div className="fmge-plans-feature-controls">
+            <button
+              type="button"
+              className="fmge-plans-feature-nav-btn"
+              onClick={() => scrollByCard(-1)}
+              disabled={!canPrev}
+              aria-label="Previous card"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 12H5" />
+                <path d="M11 6L5 12L11 18" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              className="fmge-plans-feature-nav-btn"
+              onClick={() => scrollByCard(1)}
+              disabled={!canNext}
+              aria-label="Next card"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12H19" />
+                <path d="M13 6L19 12L13 18" />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div className="fmge-plans-feature-controls">
-          <button
-            type="button"
-            className="fmge-plans-feature-nav-btn"
-            onClick={() => scrollByCard(-1)}
-            disabled={!canPrev}
-            aria-label="Previous card"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19 12H5" />
-              <path d="M11 6L5 12L11 18" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            className="fmge-plans-feature-nav-btn"
-            onClick={() => scrollByCard(1)}
-            disabled={!canNext}
-            aria-label="Next card"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 12H19" />
-              <path d="M13 6L19 12L13 18" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
+      <section className="fmge-plans-feature-banner">
+        <img
+          src="https://cdn.dribbble.com/userupload/49280298/file/d231a543912b2d9fa47ef84d954cad95.jpeg"
+          alt=""
+        />
+      </section>
+    </>
   );
 }
 export default FmgePlansFeature;

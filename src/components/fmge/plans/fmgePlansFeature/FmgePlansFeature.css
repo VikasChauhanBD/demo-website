@@ -217,6 +217,13 @@
   cursor: not-allowed;
 }
 
+.fmge-plans-feature-banner {
+  width: 100%;
+}
+.fmge-plans-feature-banner img {
+  width: 100%;
+}
+
 /* ---------------------------------- Responsive ------------------------- */
 /* Tablet: 2.5 cards visible (2.5 cards + 2 gaps = 100%) */
 @media (max-width: 1024px) {
