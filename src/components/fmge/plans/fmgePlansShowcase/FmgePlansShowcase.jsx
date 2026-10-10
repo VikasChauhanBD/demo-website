@@ -366,7 +366,7 @@ function FmgePlansShowcase() {
               </span>
             </p>
             <p className="fmge-showcase-price-note">
-              These Prices will never come back again.
+              These prices will never come back again.
             </p>
           </div>
           <div className="fmge-showcase-price-grid">

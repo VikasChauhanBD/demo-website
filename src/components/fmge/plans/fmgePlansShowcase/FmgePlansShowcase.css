@@ -312,10 +312,20 @@
   font-size: 17px;
   line-height: 1.65;
 }
+.fmge-showcase-price-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
 .fmge-showcase-offer {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+  width: 100%;
   max-width: 860px;
-  margin: 26px 0 0;
+  margin: 0;
   padding: 14px 28px;
   border: 1px solid #ff9b6b;
   border-radius: 50px;
@@ -324,7 +334,16 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
+  text-wrap: balance;
   box-shadow: 0 8px 24px rgba(255, 155, 107, 0.2);
+}
+.fmge-showcase-price-note {
+  margin: 0;
+  color: #004d7a;
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-wrap: balance;
 }
 .fmge-showcase-price-grid {
   display: grid;

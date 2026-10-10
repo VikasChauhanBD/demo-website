@@ -364,7 +364,7 @@ function PgPlansShowcase() {
               </span>
             </p>
             <p className="pg-showcase-price-note">
-              These Prices will never come back again.
+              These prices will never come back again.
             </p>
           </div>
           <div className="pg-showcase-price-grid">
