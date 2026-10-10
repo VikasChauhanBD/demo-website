@@ -6,11 +6,11 @@ function ShippingAndDeliveryPolicyPage() {
   return (
     <div>
       <Helmet>
-        <title>Shipping & Delivery Policy - Pharma</title>
+        <title>Shipping & Delivery Policy – Pharmacology by Dr. GRG</title>
 
         <meta
           name="description"
-          content="Pharma Shipping & Delivery Policy provides clear details on workbook dispatch, delivery timelines, and order tracking to ensure timely learning support."
+          content="Pharmacology by Dr. GRG Shipping & Delivery Policy provides clear details on workbook dispatch, delivery timelines, and order tracking to ensure timely learning support."
         />
       </Helmet>
 

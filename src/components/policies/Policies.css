@@ -3,14 +3,12 @@
   margin: 4rem auto;
   color: #3f3f3f;
 }
-
 .main-para {
   font-size: 16px;
   font-weight: 400;
   color: #3f3f3f;
   margin-bottom: 1rem;
 }
-
 .main-container h1 {
   padding-bottom: 10px;
   font-size: 38px;
@@ -18,20 +16,17 @@
   font-weight: 700;
   margin-bottom: 2rem;
 }
-
 .main-container h2 {
   font-size: 22px;
   font-weight: 700;
   line-height: 1.25rem;
   margin-bottom: 1rem;
 }
-
 .main-container p {
   font-size: 16px;
   color: #3f3f3f;
   line-height: 1.4;
 }
-
 .main-container h3 {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -39,47 +34,78 @@
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
-
 .main-container h6 {
   color: black;
 }
-
 .main-container a {
   color: #1b746b;
   line-height: 3rem;
 }
-
 .main-container ul {
   margin: 10px 0 10px 32px;
 }
-
 /* -------------------------- Responsive Style -------------------------- */
-
 @media (max-width: 1440px) {
   .main-container {
     width: 75%;
   }
 }
-
 @media (max-width: 1024px) {
   .main-container {
     width: 80%;
   }
 }
-
 @media (max-width: 900px) {
   .main-container {
     width: 85%;
   }
-
   .main-container h1 {
     font-size: 32px;
   }
 }
-
 @media (max-width: 568px) {
   .main-container {
     width: 90%;
     margin: 2rem auto;
+  }
+}
+/* Shared document structure for every policy page. */
+.main-container.policy-document {
+  box-sizing: border-box;
+  padding-top: 32px;
+}
+.policy-document h2 {
+  margin-top: 2.5rem;
+  line-height: 1.4;
+}
+.policy-document p {
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere;
+}
+.policy-document h2,
+.policy-document h3,
+.policy-document b {
+  font-weight: 700;
+}
+.policy-document ul,
+.policy-document ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+.policy-document ul {
+  list-style-type: disc;
+}
+.policy-document ol {
+  list-style-type: decimal;
+}
+.policy-document li {
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 568px) {
+  .main-container.policy-document {
+    padding-top: 24px;
   }
 }

@@ -1,146 +1,68 @@
 import React from "react";
 import "./Policies.css";
-
 function ShippingAndDeliveryPolicy() {
   return (
-    <div className="main-container">
-      <h1>Shipping & Delivery Policy</h1>
-      <h5 className="main-para">
-        Effective Date: 25 April <br />
-        <br />
-        Thank you for visiting Pharma, a brand owned and operated by SABRSHUKR
-        COCARE PRIVATE LIMITED. This Shipping & Delivery Policy outlines the
-        terms and conditions related to the shipment and delivery of products
-        purchased through our website{" "}
-        <a href="https://www.Pharma.com" target="_blank" rel="noreferrer">
-          https://www.Pharma.com
-        </a>{" "}
-        or any of its domain pages.
-      </h5>
-
+    <div className="main-container policy-document">
+      <h1>Shipping &amp; Delivery Policy – Pharmacology by Dr. GRG</h1>
+      <p>Effective date: 09-Oct-2026 | Version: 2</p>
+      <p>
+        Thank you for choosing Pharmacology by Dr. GRG, a product of Conceptual Physiotherapy Private Limited (CIN: U85499DL2020PTC365706) and Gobind Rai Garg. This Shipping &amp; Delivery Policy sets out the terms for the shipment and delivery of books and other physical products purchased through https://learn.pharmacologybydrgrg.com, pharmacologybydrgrg.com, our mobile applications or any of their domain pages.
+      </p>
+      <p>
+        Online courses, tests and other digital content are not shipped; they are made available in your account on activation of your plan.
+      </p>
       <h2>1. General</h2>
+      <ul>
+        <li>We aim to deliver your order in a timely and secure manner.</li>
+        <li>All orders are subject to availability and confirmation of payment.</li>
+        <li>Delivery timelines may vary based on location, courier service and external factors.</li>
+      </ul>
+
+      <h2>2. Shipping locations</h2>
+      <ul>
+        <li>We currently ship within India only.</li>
+        <li>International shipping is not available at this time.</li>
+      </ul>
+
+      <h2>3. Estimated delivery time</h2>
+      <ul>
+        <li>Orders are usually delivered within 3–10 business days of dispatch.</li>
+        <li>Delivery times may vary with your location and external factors such as holidays, weather or courier delays.</li>
+      </ul>
+
+      <h2>4. Shipping charges</h2>
+      <ul>
+        <li>Shipping charges (if any) are displayed at checkout and may be charged separately.</li>
+        <li>We may occasionally offer free shipping as part of special offers or promotions.</li>
+      </ul>
+
+      <h2>5. Order tracking</h2>
       <p>
-        <ul>
-          <li>
-            We aim to ensure that your order is delivered in a timely and secure
-            manner.
-          </li>
-          <li>
-            All orders are subject to availability and confirmation of payment.
-          </li>
-          <li>
-            Delivery timelines may vary based on location, courier service, and
-            external factors.
-          </li>
-        </ul>
+        Once your order is shipped, you may receive a tracking ID by email or SMS, where tracking is available with the courier service used.
       </p>
-      <br />
-      <br />
-
-      <h2>2. Shipping Locations</h2>
+      <h2>6. Delays and issues</h2>
       <p>
-        <ul>
-          <li>We currently offer shipping within India.</li>
-          <li>International shipping may not be available at this time.</li>
-        </ul>
+        While we strive for timely delivery, we are not liable for delays caused by courier partners, weather conditions or other unforeseen circumstances. If your order is delayed beyond a reasonable period, please contact us.
       </p>
-      <br />
-      <br />
-
-      <h2>3. Estimated Delivery Time</h2>
       <p>
-        <ul>
-          <li>
-            Metro cities usually receive orders within 7-10 working days
-            (excluding Saturday and Sunday) after dispatch; other areas may take
-            up to 14 working days.
-          </li>
-          <li>
-            Delivery times may vary depending on your location and external
-            factors like holidays, weather, or courier delays.
-          </li>
-        </ul>
+        Any issue with a book delivery (incorrect items, missing items, misprints, etc.) must be reported within 36 hours of delivery.
       </p>
-      <br />
-      <br />
-
-      <h2>4. Shipping Charges</h2>
+      <h2>7. Damaged or lost items</h2>
       <p>
-        <ul>
-          <li>
-            Shipping charges (if any) will be displayed at the time of checkout
-            and may be charged separately.
-          </li>
-          <li>
-            We may occasionally offer free shipping as part of special offers or
-            promotions.
-          </li>
-        </ul>
+        If you receive a damaged package, or your order is lost in transit, please contact us within 48 hours of delivery (or expected delivery) with your order details and supporting evidence (for example, photos of the package).
       </p>
-      <br />
-      <br />
+      <h2>8. Contact us</h2>
+      <ul>
+        <li>Pharmacology by Dr. GRG Team</li>
+        <li><b>Email:</b>
+        support@pharmacologybydrgrg.com</li>
+        <li><b>Phone:</b>
+        +91-88002 22014</li>
+        <li><b>Website:</b>
+        https://learn.pharmacologybydrgrg.com</li>
+      </ul>
 
-      <h2>5. Order Tracking</h2>
-      <p>
-        Once your order is shipped, you may receive a tracking ID via email or
-        SMS, if tracking is available with the chosen courier service.
-      </p>
-      <br />
-      <br />
-
-      <h2>6. Delays and Issues</h2>
-      <p>
-        While we strive for timely deliveries, we are not liable for delays
-        caused by courier partners, weather conditions, or other unforeseen
-        circumstances. If your order is delayed beyond a reasonable period,
-        please contact us for assistance.
-        <br />
-        For any issues related to book delivery (incorrect items, missing items,
-        misprints, etc.), students must report the concern within 36 hours of
-        delivery.
-      </p>
-      <br />
-      <br />
-
-      <h2>7. Damaged or Lost Items</h2>
-      <p>
-        If you receive a damaged package or your order is lost in transit,
-        please contact us within 48 hours of delivery (or expected delivery)
-        with your order details and evidence (if applicable).
-      </p>
-      <br />
-      <br />
-
-      <h2>8. Contact Us</h2>
-      <div className="contact-section">
-        <p className="company-name">SABRSHUKR COCARE PRIVATE LIMITED</p>
-
-        <div className="contact-row">
-          <span className="contact-icon">📧</span>
-          <span>
-            Email: <a href="mailto:support@Pharma.com">support@Pharma.com</a>
-          </span>
-        </div>
-
-        <div className="contact-row">
-          <span className="contact-icon">📞</span>
-          <span>
-            Phone: <a href="tel:7428581909">7428581909</a> (Only For Calling)
-          </span>
-        </div>
-
-        <div className="contact-row">
-          <span className="contact-icon">🌐</span>
-          <span>
-            Website:{" "}
-            <a href="https://www.Pharma.com" target="_blank" rel="noreferrer">
-              https://www.Pharma.com
-            </a>
-          </span>
-        </div>
-      </div>
     </div>
   );
 }
-
 export default ShippingAndDeliveryPolicy;

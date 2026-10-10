@@ -1,41 +1,28 @@
 import React from "react";
 import "./Policies.css";
-
 function FairUsagePolicy() {
   return (
-    <div className="main-container">
-      <p>
-        <b>Pharma</b> is an exclusive mobile learning platform accessible only
+    <div className="main-container policy-document">
+      <p><b>Pharma</b> is an exclusive mobile learning platform accessible only
         via authorized <b>Android and iOS</b> smartphones and tablets; usage on
-        macOS, Windows, Chromebooks, or emulators is strictly prohibited.
-        <br />
-        <br />
-        Access to paid content requires <b>Device Linking,</b> with a lifetime
+        macOS, Windows, Chromebooks, or emulators is strictly prohibited.</p>
+      <p>Access to paid content requires <b>Device Linking,</b> with a lifetime
         limit of <b>two (2) unique devices</b> per account and only{" "}
         <b>one (1) active session</b> permitted at any time. The devices are
         linked after purchase with the user getting appropriate prompts. Please
         note that linked devices <b>cannot be changed or reset;</b> sharing
         credentials that lead to unauthorized device linking will result in a
-        permanent loss of access.
-        <br />
-        <br />
-        To ensure platform integrity, all usage is monitored under a{" "}
+        permanent loss of access.</p>
+      <p>To ensure platform integrity, all usage is monitored under a{" "}
         <b>Fair Usage Policy,</b> and Pharma reserves the right to perform{" "}
         <b>identity verification</b> at any time. Any unauthorized attempts to
         bypass these device or concurrency limits may result in temporary or
-        permanent account suspension.
-      </p>
-      <br />
-      <br />
-
+        permanent account suspension.</p>
       <h1>Pharma Device & Fair Usage Policy</h1>
-
       <h2>1. Supported Devices & Platforms</h2>
-      <p>
-        Pharma is designed exclusively for learning experience. The application
-        is authorized for use on the following platforms:
-        <br />
-        <ul>
+      <p>Pharma is designed exclusively for learning experience. The application
+        is authorized for use on the following platforms:</p>
+      <ul>
           <li>
             {" "}
             <b>Android:</b> Mobile phones and tablets.
@@ -45,19 +32,14 @@ function FairUsagePolicy() {
             <b>iOS/iPadOS:</b> iPhones and iPads.
           </li>
         </ul>
-        <b>Prohibited Platforms:</b> To maintain security and integrity, the app
+      <p><b>Prohibited Platforms:</b> To maintain security and integrity, the app
         is strictly blocked on non-mobile environments, including but not
         limited to <b>macOS, Windows, ChromeOS (Chromebooks),</b> and any
-        emulators or virtual machines.
-      </p>
-      <br />
-
+        emulators or virtual machines.</p>
       <h2>2. Device Registration & Mapping</h2>
-      <p>
-        To access premium content, you must explicitly link your hardware to
-        your Pharma account:
-        <br />
-        <ul>
+      <p>To access premium content, you must explicitly link your hardware to
+        your Pharma account:</p>
+      <ul>
           <li>
             {" "}
             <b>The "2-Device" Rule:</b> Your account supports a maximum of{" "}
@@ -76,8 +58,8 @@ function FairUsagePolicy() {
             lose your own access slot <b>permanently.</b>
           </li>
         </ul>
-        <b>Identity Verification & Ownership</b>
-        <ul>
+      <p><b>Identity Verification & Ownership</b></p>
+      <ul>
           <li>
             <b>Personal Use Only:</b> Both linked devices{" "}
             <b>must belong to you,</b> the registered subscriber.
@@ -89,15 +71,10 @@ function FairUsagePolicy() {
             mismatch in identity will lead to immediate account termination.
           </li>
         </ul>
-      </p>
-      <br />
-
       <h2>3. Single Concurrent Session</h2>
-      <p>
-        While you may have two registered devices (e.g., a phone and a tablet),
-        Pharma supports <b>only one (1) active session at a time.</b>
-        <br />
-        <ul>
+      <p>While you may have two registered devices (e.g., a phone and a tablet),
+        Pharma supports <b>only one (1) active session at a time.</b></p>
+      <ul>
           <li>
             {" "}
             If you log in on Device B while a session is active on Device A, the
@@ -109,16 +86,11 @@ function FairUsagePolicy() {
             multiple individuals is a violation of this policy.
           </li>
         </ul>
-      </p>
-      <br />
-
       <h2>4. Fair Usage Policy (FUP)</h2>
-      <p>
-        To ensure a high-quality experience for all students and to prevent
+      <p>To ensure a high-quality experience for all students and to prevent
         automated scraping or account sharing, usage is monitored under our Fair
-        Usage Policy:
-        <br />
-        <ul>
+        Usage Policy:</p>
+      <ul>
           <li>
             {" "}
             <b>Tracking:</b> We monitor login frequency, device switches, and
@@ -137,16 +109,11 @@ function FairUsagePolicy() {
             human-usage benchmarks or bypass security protocols.
           </li>
         </ul>
-      </p>
-      <br />
-
       <h2>5. Security & Integrity</h2>
-      <p>
-        To ensure a high-quality experience for all students and to prevent
+      <p>To ensure a high-quality experience for all students and to prevent
         automated scraping or account sharing, usage is monitored under our Fair
-        Usage Policy:
-        <br />
-        <ul>
+        Usage Policy:</p>
+      <ul>
           <li>
             <b>Jailbroken/Rooted Devices:</b> For the safety of our proprietary
             content, Pharma would not function on rooted or jailbroken devices.
@@ -158,10 +125,7 @@ function FairUsagePolicy() {
             may result in an immediate account ban.
           </li>
         </ul>
-      </p>
-      <br />
     </div>
   );
 }
-
 export default FairUsagePolicy;
