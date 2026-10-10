@@ -5,7 +5,7 @@ import Faqs from "../components/faqs/Faqs";
 function FaqsPage() {
   return (
     <div>
-      <FaqsHeader />
+      {/* <FaqsHeader /> */}
       <Faqs />
     </div>
   );
