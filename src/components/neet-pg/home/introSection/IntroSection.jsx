@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import introImage from "../../../../assets/images/grg-intro.png";
 import "./IntroSection.css";
 function IntroSection({ showCta = true, showFullContent = false }) {
   return (
@@ -43,15 +42,6 @@ function IntroSection({ showCta = true, showFullContent = false }) {
               Read About Dr. GRG
             </NavLink>
           )}
-        </div>
-        <div className="pg-intro-image">
-          <img
-            src={introImage}
-            alt="Dr. Gobind Rai Garg on campus, teaching students, and working at his desk"
-            width={2000}
-            height={1600}
-            loading="lazy"
-          />
         </div>
       </div>
     </section>

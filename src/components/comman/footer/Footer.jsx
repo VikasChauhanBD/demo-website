@@ -136,16 +136,16 @@ function Footer() {
         <div className="footer-bottom footer-content-item">
           <div>
             <p>
-              &copy; {new Date().getFullYear()} Pharmacology by Dr. GRG. All
-              Rights Reserved. Designed & Managed By:{" "}
+              &copy; {new Date().getFullYear()} Pharmacology by Dr. GRG. Unit of
+              Conceptual Physiotherapy Pvt.Ltd. Powered by eConceptual
+              <br />
+              All Rights Reserved. Designed & Managed By:{" "}
               <NavLink to="https://believersdestination.com/" target="_blank">
                 Believers Destination Pvt Ltd
               </NavLink>
             </p>
           </div>
-          <div className="footer-bottom-right">
-            <span>Learn. Understand. Remember. Apply.</span>
-          </div>
+          <div className="footer-bottom-right"></div>
         </div>
       </div>
       <div

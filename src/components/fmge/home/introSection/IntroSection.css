@@ -130,3 +130,49 @@
     font-size: 13px;
   }
 }
+
+/* Home intro photograph with an overlaid white content card. */
+.fmge-intro-section {
+  min-height: 760px;
+  padding: 88px clamp(24px, 8vw, 150px);
+  display: flex;
+  align-items: center;
+  background: url("https://cdn.dribbble.com/userupload/49267101/file/062e0e1034e53b5b87c3e30840f9e715.jpg") center / cover no-repeat;
+}
+.fmge-intro-section .fmge-intro-layout {
+  display: block;
+  width: 100%;
+}
+.fmge-intro-content {
+  box-sizing: border-box;
+  width: min(100%, 640px);
+  padding: clamp(28px, 3.5vw, 56px);
+  background: #ffffff;
+  text-align: left;
+}
+.fmge-intro-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 2.6vw, 40px);
+  font-weight: 400;
+}
+@media (max-width: 960px) {
+  .fmge-intro-section {
+    min-height: 0;
+    padding: 72px 32px;
+    background-position: 60% center;
+  }
+}
+@media (max-width: 600px) {
+  .fmge-intro-section {
+    padding: 48px 16px;
+  }
+  .fmge-intro-content {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 960px) {
+  .fmge-intro-content {
+    margin-inline: auto;
+  }
+}
