@@ -12,23 +12,28 @@
   animation: pgPlansFeatureGradientShift 18s ease infinite;
   padding: 150px 20px 100px;
 }
+
 @keyframes pgPlansFeatureGradientShift {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
+
 .pg-plans-feature-header {
   width: 100%;
   margin: 0 auto;
   text-align: center;
   color: #ffffff;
 }
+
 .pg-plans-feature-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -43,6 +48,7 @@
   border: 1px solid #e1dace;
   border-radius: 50px;
 }
+
 .pg-plans-feature-eyebrow::before {
   content: "";
   width: 8px;
@@ -51,16 +57,19 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
+
 .pg-plans-feature-heading {
   margin: 24px 0 0;
   font-size: 38px;
   font-weight: 700;
   line-height: 1.2;
 }
+
 .pg-plans-feature-sub-heading {
   font-size: 28px;
   font-weight: 600;
 }
+
 .pg-plans-feature-para {
   width: 100%;
   max-width: 860px;
@@ -69,64 +78,61 @@
   font-weight: 400;
   line-height: 32px;
 }
+
+/* ---------------------------------- Carousel ------------------------- */
+.pg-plans-feature-carousel {
+  width: 100%;
+  margin: 80px 0 0;
+}
+
 .pg-plans-feature-cards {
   width: 100%;
-  max-width: 1000px;
-  margin: 80px auto 0;
-  padding-bottom: 100px;
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
+.pg-plans-feature-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.pg-plans-feature-cards:focus-visible {
+  outline: 2px solid #ff9b6b;
+  outline-offset: 4px;
+}
+
+/* Desktop: 3.5 cards visible (3.5 cards + 3 gaps = 100%) */
 .pg-plans-feature-card {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  padding-top: 20px;
+  flex: 0 0 calc((100% - 60px) / 3.5);
+  width: calc((100% - 60px) / 3.5);
+  scroll-snap-align: start;
 }
-.pg-plans-feature-card:nth-child(2) {
-  padding-top: 40px;
-}
-.pg-plans-feature-card:nth-child(3) {
-  padding-top: 60px;
-}
-.pg-plans-feature-card:nth-child(4) {
-  padding-top: 80px;
-}
-.pg-plans-feature-card:nth-child(5) {
-  padding-top: 100px;
-}
+
 .pg-plans-feature-card-inner {
   width: 100%;
-  height: 350px;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   background: #ffffff;
   border-radius: 20px;
-  transform-origin: center top;
-  will-change: transform, filter;
 }
-.pg-plans-feature-card:nth-child(even) .pg-plans-feature-card-inner {
-  flex-direction: row-reverse;
-}
-.pg-plans-feature-card-image {
-  width: 40%;
-  flex-shrink: 0;
-  padding: 16px;
-  display: flex;
-}
-.pg-plans-feature-card-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
+
 .pg-plans-feature-card-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 50px;
+  justify-content: flex-start;
+  padding: 30px 24px;
   color: #171c28;
 }
+
 .pg-plans-feature-card-label {
   display: inline-block;
   margin-bottom: 20px;
@@ -135,157 +141,181 @@
   font-weight: 700;
   letter-spacing: 1.5px;
 }
+
 .pg-plans-feature-card-content h3 {
   margin: 0;
-  font-size: clamp(30px, 3vw, 48px);
+  font-size: 26px;
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.15;
 }
+
 .pg-plans-feature-card-content p {
-  margin: 35px 0 0;
-  max-width: 600px;
-  font-size: 20px;
+  margin: 14px 0 0;
+  font-size: 16px;
   line-height: 1.5;
   color: #222222;
 }
+
 .pg-plans-feature-card-content p strong {
   font-weight: 700;
 }
-/* ---------------------------------- Responsive ------------------------- */
-@media (max-width: 1300px) {
-  .pg-plans-feature-card-image {
-    width: 42%;
-  }
-  .pg-plans-feature-card-content {
-    padding: 30px;
-  }
-  .pg-plans-feature-card-label {
-    font-size: 15px;
-  }
-  .pg-plans-feature-card-content h3 {
-    font-size: 34px;
-  }
-  .pg-plans-feature-card-content p {
-    font-size: 18px;
-    margin-top: 25px;
-  }
+
+.pg-plans-feature-card-content p:first-of-type {
+  margin-top: 20px;
+  font-weight: 700;
 }
-@media (max-width: 900px) {
+
+/* ---------------------------------- Controls ------------------------- */
+.pg-plans-feature-controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.pg-plans-feature-nav-btn {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #ffffff;
+  border: 1px solid #e1dace;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.pg-plans-feature-nav-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #004d7a;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pg-plans-feature-nav-btn:hover:not(:disabled) {
+  background-color: #ff9b6b;
+  transform: scale(1.06);
+}
+
+.pg-plans-feature-nav-btn:focus-visible {
+  outline: 2px solid #ff9b6b;
+  outline-offset: 3px;
+}
+
+.pg-plans-feature-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.pg-plans-feature-banner {
+  width: 100%;
+}
+.pg-plans-feature-banner img {
+  width: 100%;
+}
+/* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 1024px) {
   .pg-plans-feature-container {
     padding: 100px 20px 80px;
   }
+
   .pg-plans-feature-heading {
     font-size: 32px;
   }
+
   .pg-plans-feature-sub-heading {
     font-size: 24px;
   }
-  .pg-plans-feature-cards {
+
+  .pg-plans-feature-carousel {
     margin-top: 60px;
   }
-  .pg-plans-feature-card-inner {
-    min-height: 400px;
+
+  .pg-plans-feature-card {
+    flex: 0 0 calc((100% - 40px) / 2.5);
+    width: calc((100% - 40px) / 2.5);
   }
-  .pg-plans-feature-card-image {
-    width: 40%;
-    padding: 12px;
-  }
-  .pg-plans-feature-card-image img {
-    min-height: 376px;
-  }
+
   .pg-plans-feature-card-content {
-    padding: 25px;
+    padding: 26px 20px;
   }
+
   .pg-plans-feature-card-label {
     font-size: 14px;
     letter-spacing: 1px;
     margin-bottom: 15px;
   }
+
   .pg-plans-feature-card-content h3 {
-    font-size: 28px;
+    font-size: 24px;
   }
+
   .pg-plans-feature-card-content p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.4;
-    margin-top: 20px;
   }
 }
-@media (max-width: 500px) {
+
+/* Mobile: 1 card at a time */
+@media (max-width: 600px) {
   .pg-plans-feature-container {
     padding: 80px 15px 60px;
   }
-  .pg-plans-feature-cards {
-    width: 100%;
+
+  .pg-plans-feature-carousel {
     margin-top: 45px;
-    padding-bottom: 50px;
   }
+
+  .pg-plans-feature-cards {
+    gap: 15px;
+  }
+
   .pg-plans-feature-card {
-    padding-top: 15px;
-  }
-  .pg-plans-feature-card:nth-child(2) {
-    padding-top: 30px;
-  }
-  .pg-plans-feature-card:nth-child(3) {
-    padding-top: 45px;
-  }
-  .pg-plans-feature-card:nth-child(4) {
-    padding-top: 60px;
-  }
-  .pg-plans-feature-card:nth-child(5) {
-    padding-top: 75px;
-  }
-  .pg-plans-feature-card-inner,
-  .pg-plans-feature-card:nth-child(even) .pg-plans-feature-card-inner {
-    flex-direction: column;
-    height: 100%;
-  }
-  .pg-plans-feature-card-image {
+    flex: 0 0 100%;
     width: 100%;
-    padding: 10px;
   }
-  .pg-plans-feature-card-image img {
-    width: 100%;
-    height: 280px;
-    min-height: 280px;
-  }
+
   .pg-plans-feature-card-content {
-    padding: 25px 20px 30px;
+    padding: 25px 20px 28px;
   }
+
   .pg-plans-feature-card-label {
     font-size: 13px;
     margin-bottom: 12px;
   }
+
   .pg-plans-feature-card-content h3 {
     font-size: 26px;
   }
-  .pg-plans-feature-card-content p {
-    font-size: 16px;
-    margin-top: 18px;
-  }
-}
-/* Allow the existing, longer plans descriptions to fit without clipping. */
-.pg-plans-feature-card-inner {
-  height: auto;
-  min-height: 350px;
-}
-.pg-plans-feature-card-content p {
-  margin-top: 16px;
-  font-size: 18px;
-}
-.pg-plans-feature-card-content p:first-of-type {
-  margin-top: 25px;
-  font-weight: 700;
-}
-@media (max-width: 900px) {
+
   .pg-plans-feature-card-content p {
     font-size: 16px;
   }
-}
-@media (max-width: 500px) {
+
   .pg-plans-feature-card-content p:first-of-type {
     margin-top: 18px;
   }
+
+  .pg-plans-feature-controls {
+    margin-top: 28px;
+  }
+
+  .pg-plans-feature-nav-btn {
+    width: 46px;
+    height: 46px;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
   .pg-plans-feature-container {
     animation: none;
