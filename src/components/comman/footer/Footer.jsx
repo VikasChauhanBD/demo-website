@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   FaInstagram,
   FaFacebookF,
@@ -8,8 +8,19 @@ import {
 } from "react-icons/fa";
 import gsap from "gsap";
 import "./Footer.css";
+
 function Footer() {
   const footerRef = useRef(null);
+  const location = useLocation();
+
+  const isPlansPage =
+    location.pathname === "/course/neet-pg/plans" ||
+    location.pathname === "/course/fmge/plans";
+
+  const isBooksPage =
+    location.pathname === "/course/neet-pg/books" ||
+    location.pathname === "/course/fmge/books";
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
@@ -47,16 +58,34 @@ function Footer() {
     }, footerRef);
     return () => ctx.revert();
   }, []);
+
   return (
     <footer className="footer-section" ref={footerRef}>
       <div className="footer-container">
         <div className="footer-hero">
           <h2 className="footer-title">
-            MASTER
-            <br />
-            <span>PHARMACOLOGY.</span>
+            {isPlansPage ? (
+              <>
+                YOUR NEXT STEP
+                <br />
+                <span>STARTS HERE.</span>
+              </>
+            ) : isBooksPage ? (
+              <>
+                TURN KNOWLEDGE
+                <br />
+                <span>INTO CONFIDENCE.</span>
+              </>
+            ) : (
+              <>
+                LEARN PHARMACOLOGY.
+                <br />
+                <span>THE GRG WAY.</span>
+              </>
+            )}
           </h2>
         </div>
+
         <div className="footer-main">
           <div className="footer-brand footer-content-item">
             <div className="footer-logo-section">
@@ -72,11 +101,13 @@ function Footer() {
                 <h5>Powered by eConceptual</h5>
               </div>
             </div>
+
             <div className="footer-contact-tabs" aria-label="Contact options">
               <a className="footer-contact" href="tel:+918130036942">
                 <span>Contact Us</span>
               </a>
             </div>
+
             <div className="footer-social">
               <span>FOLLOW GRG SIR</span>
               <div className="footer-social-links">
@@ -107,6 +138,7 @@ function Footer() {
               </div>
             </div>
           </div>
+
           <div className="footer-links footer-content-item">
             <div className="footer-column">
               <h3>NEET PG</h3>
@@ -115,6 +147,7 @@ function Footer() {
               <NavLink to="/course/neet-pg/plans">Plans</NavLink>
               <NavLink to="/course/neet-pg/books">Books</NavLink>
             </div>
+
             <div className="footer-column">
               <h3>FMGE</h3>
               <NavLink to="/course/fmge">Home</NavLink>
@@ -122,6 +155,7 @@ function Footer() {
               <NavLink to="/course/fmge/plans">Plans</NavLink>
               <NavLink to="/course/fmge/books">Books</NavLink>
             </div>
+
             <div className="footer-column">
               <h3>Policies</h3>
               <NavLink to="/privacy-policy">Privacy Policy</NavLink>
@@ -132,7 +166,9 @@ function Footer() {
             </div>
           </div>
         </div>
+
         <div className="footer-line"></div>
+
         <div className="footer-bottom footer-content-item">
           <div>
             <p>
@@ -161,4 +197,5 @@ function Footer() {
     </footer>
   );
 }
+
 export default Footer;
