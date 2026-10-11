@@ -9,10 +9,13 @@ import GrgWaySection from "../components/neet-pg/home/grgWaySection/GrgWaySectio
 import LearningPathSection from "../components/neet-pg/home/learningPathSection/LearningPathSection";
 import ExperienceTeaching from "../components/neet-pg/home/experienceTeaching/ExperienceTeaching";
 import ThePromise from "../components/neet-pg/home/thePromise/ThePromise";
+import Header from "../components/neet-pg/home/header/Header";
+
 function NeetPgHomePage() {
   return (
     <div className="neet-pg-home">
       <VideoHero />
+      {/* <Header /> */}
       <WhySection />
       <PlatformSection />
       <GrgWaySection />

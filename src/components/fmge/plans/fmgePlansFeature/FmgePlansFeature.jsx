@@ -221,7 +221,7 @@ function FmgePlansFeature() {
       </section>
       <section className="fmge-plans-feature-banner">
         <img
-          src="https://cdn.dribbble.com/userupload/49280298/file/d231a543912b2d9fa47ef84d954cad95.jpeg"
+          src="https://cdn.dribbble.com/userupload/49280298/file/08ffaf155723e54f44fb40a1272fe333.jpeg"
           alt=""
         />
       </section>

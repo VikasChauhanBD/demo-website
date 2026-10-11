@@ -1,0 +1,487 @@
+.hdr {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  overflow: hidden;
+}
+
+.hdr__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transform: scale(1.1);
+}
+
+.hdr--phase2 .hdr__bg-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(13, 27, 75, 0.88) 0%,
+    rgba(13, 27, 75, 0.55) 55%,
+    rgba(13, 27, 75, 0.2) 100%
+  );
+}
+
+.hdr__p1 {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* text at top, phone fills rest down to bottom */
+  padding: 60px 24px 0;
+  gap: 32px;
+
+  will-change: opacity, transform;
+  transition:
+    opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hdr--phase1 .hdr__p1 {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.hdr--phase2 .hdr__p1 {
+  opacity: 0;
+  transform: translateY(-32px);
+  pointer-events: none;
+}
+
+.hdr__p1-text {
+  text-align: center;
+  animation: hdr-fadeUp 0.7s 0.1s ease both;
+}
+
+.hdr__p1-welcome {
+  font-size: clamp(16px, 3vw, 22px);
+  font-weight: 400;
+  color: #1d204b;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.hdr__p1-brand {
+  font-size: clamp(56px, 14vw, 120px);
+  font-weight: 700;
+  line-height: 0.9;
+  color: #1d204b;
+  margin: 0 0 12px;
+}
+
+.hdr__p1-brand span {
+  color: #1767be;
+}
+
+.hdr__p1-brand sup {
+  font-size: 0.35em;
+  color: #f0c040;
+  vertical-align: super;
+}
+
+.hdr__p1-tagline {
+  font-size: clamp(14px, 2.2vw, 18px);
+  font-weight: 600;
+  color: #1d204b;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hdr__p1-phone {
+  width: 60%;
+  /* Grow to fill remaining vertical space so image reaches the bottom */
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: -4px; /* micro-trim any subpixel gap */
+  overflow: visible;
+  animation: hdr-riseUp 0.9s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hdr__p1-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  vertical-align: bottom;
+  filter: drop-shadow(0 24px 48px rgba(13, 27, 75, 0.55));
+}
+
+.hdr__p2 {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  /* Desktop: side-by-side, phone flush to bottom */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end; /* ← key: both children anchor to bottom */
+  padding: 80px 40px 0 40px;
+  gap: 40px;
+
+  will-change: opacity;
+  transition: opacity 0.7s 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hdr--phase1 .hdr__p2 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hdr--phase2 .hdr__p2 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hdr__p2-badge {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(12px, 1.4vw, 14px);
+  font-weight: 500;
+  color: #1d204b;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid #1767be;
+  border-radius: 99px;
+  padding: 7px 18px;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+
+  opacity: 0;
+  translate: 0 -16px;
+  transition:
+    opacity 0.6s 0.55s ease,
+    translate 0.6s 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hdr--phase2 .hdr__p2-badge {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.hdr__p2-badge strong {
+  color: #1767be;
+}
+.hdr__p2-badge sup {
+  font-size: 0.65em;
+  color: #1767be;
+  vertical-align: super;
+}
+.hdr__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1d204b;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px #1d204b;
+}
+.hdr__badge-sep {
+  color: #1767be;
+}
+
+.hdr__p2-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1;
+  align-self: center;
+  opacity: 0;
+  translate: -48px 0;
+  transition:
+    opacity 0.75s 0.5s ease,
+    translate 0.85s 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hdr--phase2 .hdr__p2-left {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.hdr__p2-eyebrow {
+  font-size: clamp(11px, 1.5vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #1d204b;
+}
+
+.hdr__p2-heading {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: #1767be;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.hdr__p2-heading2 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: #1d204b;
+  margin-bottom: -20px;
+  letter-spacing: -0.01em;
+}
+
+.hdr__p2-sub {
+  font-size: clamp(15px, 2vw, 20px);
+  font-weight: 600;
+  color: #1d204b;
+  /* margin: 0; */
+  margin-bottom: 30px;
+  letter-spacing: 0.04em;
+}
+.hdr__p2-sub2 {
+  font-size: clamp(15px, 2vw, 30px);
+  font-weight: 600;
+  color: #1d204b;
+  margin: 0;
+  margin-left: 5%;
+  margin-bottom: -5px;
+  letter-spacing: 0.04em;
+}
+
+/* Store buttons */
+.hdr__p2-store {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  opacity: 0;
+  translate: 0 20px;
+  transition:
+    opacity 0.65s 0.75s ease,
+    translate 0.65s 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hdr--phase2 .hdr__p2-store {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.hdr__p2-store img {
+  width: 180px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.hdr__p2-store img:hover {
+  transform: translateY(-3px);
+}
+
+.hdr__p2-phone {
+  flex-shrink: 0;
+  /* Desktop width */
+  width: clamp(240px, 38vw, 480px);
+
+  /* Anchor phone to bottom of the flex row */
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  opacity: 0;
+  translate: 80px 0;
+  transition:
+    opacity 0.85s 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    translate 0.95s 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hdr--phase2 .hdr__p2-phone {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.hdr__p2-phone img {
+  height: 78vh;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 32px 64px rgba(13, 27, 75, 0.6));
+  /* No bottom margin — flush to section edge */
+  margin-bottom: 0;
+  vertical-align: bottom;
+}
+
+@keyframes hdr-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hdr-riseUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================  RESPONSIVE ==================================== */
+
+@media (max-width: 900px) {
+  .hdr__p1 {
+    justify-content: space-between;
+    padding: 72px 20px 0;
+    gap: 0;
+  }
+
+  .hdr__p1-text {
+    padding-top: 8px;
+  }
+
+  .hdr__p1-phone {
+    width: 100%;
+    margin-bottom: 0;
+    align-self: flex-end;
+  }
+
+  .hdr__p1-phone img {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    vertical-align: bottom;
+  }
+
+  .hdr__p2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 48px 24px 0;
+    gap: 0;
+  }
+
+  .hdr--phase1 .hdr__p2-left {
+    translate: 0 24px;
+    opacity: 0;
+  }
+  .hdr--phase2 .hdr__p2-left {
+    translate: 0 0;
+    opacity: 1;
+    transition:
+      opacity 0.75s 0.5s ease,
+      translate 0.85s 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hdr__p2-left {
+    width: 100%;
+    align-self: auto;
+    align-items: center; /* center all children */
+    text-align: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .hdr__p2-store {
+    justify-content: center;
+  }
+
+  .hdr__p2-store img {
+    width: 130px;
+  }
+
+  .hdr--phase1 .hdr__p2-phone {
+    translate: 0 60px;
+    opacity: 0;
+  }
+  .hdr--phase2 .hdr__p2-phone {
+    translate: 0 0;
+    opacity: 1;
+    transition:
+      opacity 0.85s 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      translate 0.95s 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hdr__p2-phone {
+    /* Reset desktop overrides */
+    flex-shrink: 0;
+    width: 100%;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: flex-end;
+    /* Grow to fill remaining vertical space */
+    flex: 1;
+    min-height: 0;
+  }
+
+  .hdr__p2-phone img {
+    /* Fill available space, stay bottom-anchored */
+    height: 100%;
+    width: auto;
+    max-width: 90%;
+    max-height: 52vh;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    margin: 0 auto;
+    vertical-align: bottom;
+  }
+
+  .hdr__p2-heading {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+  .hdr__p2-sub {
+    font-size: 15px;
+  }
+
+  .hdr__p2-badge {
+    top: 14px;
+    font-size: 10px;
+    padding: 5px 12px;
+    gap: 6px;
+  }
+  .hdr__p2-sub2 {
+    font-size: clamp(15px, 2vw, 30px);
+    font-weight: 600;
+    color: #1d204b;
+    margin: 0;
+    margin-left: 0;
+    margin-bottom: -5px;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (max-width: 580px) {
+  .hdr__p1-brand {
+    font-size: clamp(44px, 18vw, 72px);
+  }
+
+  .hdr__p2 {
+    padding: 40px 16px 0;
+  }
+
+  .hdr__p2-phone img {
+    max-height: 48vh;
+  }
+
+  .hdr__p2-store img {
+    width: 110px;
+  }
+
+  .hdr__p2-heading {
+    font-size: clamp(18px, 6vw, 24px);
+  }
+}

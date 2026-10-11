@@ -40,6 +40,7 @@ export default function ExperienceTeaching() {
     <section
       className="experience-section experience-section-three-cards"
       aria-labelledby="experience-heading"
+      id="experience-teaching"
     >
       <div className="experience-container">
         <span className="experience-eyebrow">EXPERIENCE THE TEACHING</span>

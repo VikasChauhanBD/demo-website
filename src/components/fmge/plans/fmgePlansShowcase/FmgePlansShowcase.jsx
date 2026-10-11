@@ -362,7 +362,7 @@ function FmgePlansShowcase() {
             <p className="fmge-showcase-offer">
               <span>
                 Pre-booking opens on 11 October 2026 at 12:00 PM and is valid
-                for a limited time only!
+                for a limited time period only!
               </span>
             </p>
             <p className="fmge-showcase-price-note">
