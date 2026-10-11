@@ -112,7 +112,7 @@
 }
 .about-timeline-milestone article {
   grid-row: 1;
-  width: min(100%, 330px);
+  width: min(100%, 540px);
   box-sizing: border-box;
   min-width: 0;
 }

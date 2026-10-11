@@ -365,6 +365,10 @@ function PgPlansShowcase() {
             </p>
             <p className="pg-showcase-price-note">
               These exclusive pre-booking prices won’t be available again
+              <br />
+              <span className="pg-showcase-hard-copy-note">
+                Hard-copy notes are not included in these plans.
+              </span>
             </p>
           </div>
           <div className="pg-showcase-price-grid">

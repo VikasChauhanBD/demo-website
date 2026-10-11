@@ -17,7 +17,7 @@ const milestones = [
   {
     year: "2005",
     image:
-      "https://cdn.dribbble.com/userupload/49248039/file/b28b4e3b657177ede0c290883c5a47a9.png",
+      "https://cdn.dribbble.com/userupload/49283658/file/d24848734915e72e8faea3d8841a14e9.jpeg",
     imageAlt: "Dr. Gobind Rai Garg — placeholder image",
     title: "From Learning to Writing",
     text: "Authored Experimental Pharmacology for Undergraduates, taking his approach to teaching beyond the classroom and into print.",
@@ -25,23 +25,25 @@ const milestones = [
   {
     year: "2006–2009",
     image:
-      "https://cdn.dribbble.com/userupload/49248040/file/6f7ff7ce47c6e1a953ed6dd193e9beba.png",
+      "https://cdn.dribbble.com/userupload/49248039/file/b28b4e3b657177ede0c290883c5a47a9.png",
     imageAlt: "Dr. Gobind Rai Garg",
     title: "Back to the Classroom",
     text: "Continued his academic journey as a Senior Resident at UCMS, deepening his experience in Pharmacology and medical education.",
   },
   {
     year: "2006",
+    image:
+      "https://cdn.dribbble.com/userupload/49283785/file/676e8fe17ad9ef229cbf2638c48f3a33.jpeg",
     title: "A Flagship Book Takes Shape",
     text: "Review of Pharmacology became a defining part of his contribution to medical education. Now in its 16th edition, it serves medical PG aspirants preparing for NEET PG, INI-CET and FMGE.",
   },
   {
     year: "2009",
     image:
-      "https://cdn.dribbble.com/userupload/49279847/file/09fb135ed677ea1fd79bc600dc2f827e.jpg",
+      "https://cdn.dribbble.com/userupload/49283786/file/04d2a7492dd85548203e8c6463adf80b.jpeg",
     imageAlt: "Dr. Gobind Rai Garg — placeholder image",
     title: "Expanding Beyond Pharmacology",
-    text: "Co-authored Review of Pathology and Genetics with Dr. Sparsh Gupta, extending his contribution to medical learning beyond Pharmacology.",
+    text: "Co-authored Review of Pathology and Genetics, extending his contribution to medical learning beyond Pharmacology.",
   },
   {
     year: "2010–2011",
@@ -57,15 +59,28 @@ const milestones = [
       "https://cdn.dribbble.com/userupload/49248569/file/71eb1871e457fb270c0443c2efce80a9.jpeg",
     imageAlt: "Dr. Gobind Rai Garg",
     title: "The Turning Point",
-    text: "A professional rejection changed the direction of his career. Instead of stepping back from teaching, he chose to build his own path through individual classes and independent academic work.",
+    text: `A professional rejection changed the direction of his career. Instead of stepping back from teaching, he chose to build his own path through individual coaching for undergraduate and postgraduate medical students across India.
+What began as an independent venture soon became a rage. As one of the first teachers to establish independent classes outside established institutes, he demonstrated that great teaching could stand on its own. His success inspired other teachers to believe in themselves, build independently, and create their own paths beyond institutional boundaries.
+A personal turning point became the beginning of a new era in independent medical coaching.`,
+  },
+  {
+    year: "2018",
+    image:
+      "https://cdn.dribbble.com/userupload/49248569/file/71eb1871e457fb270c0443c2efce80a9.jpeg",
+    imageAlt: "Dr. Gobind Rai Garg",
+    title: "Making Pharmacology Easy to Love",
+    text: `In 2018, Dr. GRG took his vision of independent teaching beyond the classroom with the launch of an independent Pharmacology app-bringing his distinctive teaching approach to students across India.
+   The impact was immediate. A subject many MBBS students struggled with became easier to understand, remember and enjoy. Second-year MBBS students, in particular, embraced his ability to simplify complex concepts, turning the app into a huge success.
+What began as a new way to deliver his teaching soon became a new way for students to experience Pharmacology.
+He didn’t just simplify a difficult subject. He changed how students connected with it.`,
   },
   {
     year: "2019",
     image:
-      "https://cdn.dribbble.com/userupload/49279783/file/793898342749ef7c57a5ffba43cc4317.jpg",
+      "https://cdn.dribbble.com/userupload/49283784/file/5f5625617cacb0d78ccdbffd8f2e4c61.jpeg",
     imageAlt: "Dr. Gobind Rai Garg — placeholder image",
     title: "Making Pharmacology Simpler",
-    text: "Co-authored Simplified Pharmacology with Dr. Sparsh Gupta, bringing core pharmacological concepts to students in a more accessible format.",
+    text: "Co-authored Simplified Pharmacology, bringing core pharmacological concepts to students in a more accessible format.",
   },
   {
     year: "The Years That Followed",
