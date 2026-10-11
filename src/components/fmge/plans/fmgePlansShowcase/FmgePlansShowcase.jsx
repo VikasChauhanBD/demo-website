@@ -415,14 +415,14 @@ function FmgePlansShowcase() {
               </article>
             ))}
           </div>
-          <div className="fmge-showcase-price-footer fmge-showcase-center">
+          {/* <div className="fmge-showcase-price-footer fmge-showcase-center">
             <p className="fmge-showcase-closing">
               Your Pharmacology preparation. One connected system.
-            </p>
-            {/* <button type="button" className="fmge-showcase-cta">
+            </p> 
+            <button type="button" className="fmge-showcase-cta">
               CHOOSE YOUR PLAN
-            </button> */}
-          </div>
+            </button>
+          </div> */}
         </div>
       </div>
     </section>

@@ -411,14 +411,14 @@ function PgPlansShowcase() {
               </article>
             ))}
           </div>
-          <div className="pg-showcase-price-footer pg-showcase-center">
+          {/* <div className="pg-showcase-price-footer pg-showcase-center">
             <p className="pg-showcase-closing">
               Your Pharmacology preparation. One connected system.
             </p>
-            {/* <button type="button" className="pg-showcase-cta">
+            <button type="button" className="pg-showcase-cta">
               CHOOSE YOUR PLAN
-            </button> */}
-          </div>
+            </button>
+          </div> */}
         </div>
       </div>
     </section>
