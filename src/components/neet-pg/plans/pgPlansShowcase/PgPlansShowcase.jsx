@@ -359,17 +359,29 @@ function PgPlansShowcase() {
             <span className="pg-showcase-eyebrow">PLANS &amp; PRICING</span>
             <p className="pg-showcase-offer">
               <span>
-                Pre-booking starts on 11th October 2026 from 12pm (afternoon)
-                valid till 21st October 11:59pm.
+                Pre-booking starts on 11th October 2026 from 12 Pm (afternoon)
+                valid till 21st October 11:59 Pm.
               </span>
             </p>
             <p className="pg-showcase-price-note">
               These exclusive pre-booking prices won’t be available again
-              <br />
-              <span className="pg-showcase-hard-copy-note">
-                Hard-copy notes are not included in these plans.
-              </span>
             </p>
+          </div>
+          <div className="pg-showcase-plan-notices">
+            <div className="pg-showcase-plan-notice is-hardcopy">
+              <h3>Hardcopy Notes Disclaimer</h3>
+              <p>
+                The prices mentioned do not include hardcopy notes. Hardcopy notes
+                must be purchased separately once they are available.
+              </p>
+            </div>
+            <div className="pg-showcase-plan-notice is-bonus">
+              <h3>Bonus Extension Offer</h3>
+              <p>
+                Apply code <strong>PHARMAGRG</strong> to avail complimentary
+                3-month extension.
+              </p>
+            </div>
           </div>
           <div className="pg-showcase-price-grid">
             {plans.map((plan) => (
@@ -412,12 +424,12 @@ function PgPlansShowcase() {
             ))}
           </div>
           {/* <div className="pg-showcase-price-footer pg-showcase-center">
-            <p className="pg-showcase-closing">
-              Your Pharmacology preparation. One connected system.
-            </p>
-            <button type="button" className="pg-showcase-cta">
-              CHOOSE YOUR PLAN
-            </button>
+            <a
+              href="https://learn.pharmacologybydrgrg.com"
+              className="pg-showcase-cta"
+            >
+              Pre Book Now
+            </a>
           </div> */}
         </div>
       </div>

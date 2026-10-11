@@ -361,17 +361,29 @@ function FmgePlansShowcase() {
             <span className="fmge-showcase-eyebrow">PLANS &amp; PRICING</span>
             <p className="fmge-showcase-offer">
               <span>
-                Pre-booking starts on 11th October 2026 from 12pm (afternoon)
-                valid till 21st October 11:59pm.
+                Pre-booking starts on 11th October 2026 from 12 Pm (afternoon)
+                valid till 21st October 11:59 Pm.
               </span>
             </p>
             <p className="fmge-showcase-price-note">
               These exclusive pre-booking prices won’t be available again.{" "}
-              <br />
-              <span className="fmge-showcase-hard-copy-note">
-                Hard-copy notes are not included in these plans.
-              </span>
             </p>
+          </div>
+          <div className="fmge-showcase-plan-notices">
+            <div className="fmge-showcase-plan-notice is-hardcopy">
+              <h3>Hardcopy Notes Disclaimer</h3>
+              <p>
+                The prices mentioned do not include hardcopy notes. Hardcopy notes
+                must be purchased separately once they are available.
+              </p>
+            </div>
+            <div className="fmge-showcase-plan-notice is-bonus">
+              <h3>Bonus Extension Offer</h3>
+              <p>
+                Apply code <strong>PHARMAGRG</strong> to avail complimentary
+                3-month extension.
+              </p>
+            </div>
           </div>
           <div className="fmge-showcase-price-grid">
             {plans.map((plan) => (
@@ -416,12 +428,12 @@ function FmgePlansShowcase() {
             ))}
           </div>
           {/* <div className="fmge-showcase-price-footer fmge-showcase-center">
-            <p className="fmge-showcase-closing">
-              Your Pharmacology preparation. One connected system.
-            </p> 
-            <button type="button" className="fmge-showcase-cta">
-              CHOOSE YOUR PLAN
-            </button>
+            <a
+              href="https://learn.pharmacologybydrgrg.com"
+              className="fmge-showcase-cta"
+            >
+              Pre Book Now
+            </a>
           </div> */}
         </div>
       </div>
