@@ -361,8 +361,8 @@ function FmgePlansShowcase() {
             <span className="fmge-showcase-eyebrow">PLANS &amp; PRICING</span>
             <p className="fmge-showcase-offer">
               <span>
-                Pre-booking starts on 11th October 2026 from 12 Pm (afternoon)
-                valid till 21st October 11:59 Pm.
+                Pre-booking opens on 11 October 2026 at 12:00 PM and is valid
+                for a limited time only!
               </span>
             </p>
             <p className="fmge-showcase-price-note">
@@ -373,8 +373,8 @@ function FmgePlansShowcase() {
             <div className="fmge-showcase-plan-notice is-hardcopy">
               <h3>Hardcopy Notes Disclaimer</h3>
               <p>
-                The prices mentioned do not include hardcopy notes. Hardcopy notes
-                must be purchased separately once they are available.
+                The prices mentioned do not include hardcopy notes. Hardcopy
+                notes must be purchased separately once they are available.
               </p>
             </div>
             <div className="fmge-showcase-plan-notice is-bonus">
