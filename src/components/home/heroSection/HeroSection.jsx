@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import "./ClassesHero.css";
+import "./HeroSection.css";
 // import HeroImage from "../../../assets/images/hero.png";
 
-const ClassesHero = () => {
+const HeroSection = () => {
   const container = useRef(null);
 
   useGSAP(
@@ -265,4 +265,4 @@ const ClassesHero = () => {
   );
 };
 
-export default ClassesHero;
+export default HeroSection;
